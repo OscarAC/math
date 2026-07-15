@@ -1,0 +1,23 @@
+# LaTeX build artifacts
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.synctex.gz
+*.out
+*.toc
+*.lof
+*.lot
+*.bbl
+*.blg
+*.nav
+*.snm
+*.vrb
+*.idx
+*.ilg
+*.ind
+*.xdv
+
+# Compiled output — kept in the repo so the solutions are browsable on GitHub.
+# Uncomment to stop tracking it:
+# *.pdf

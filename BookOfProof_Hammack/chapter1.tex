@@ -1,0 +1,295 @@
+\documentclass[DIN, pagenumber=false, fontsize=11pt, parskip=half]{scrartcl}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathtools}
+\usepackage{thmtools}
+\usepackage{xparse}
+\usepackage{enumitem}
+
+\declaretheoremstyle[
+spaceabove=\medskipamount, spacebelow=\medskipamount,
+headfont=\bfseries, notefont=\normalfont\itshape, bodyfont=\normalfont,
+headpunct={},
+postheadhook={\endgraf\nobreak\vspace{1pt}\hrule height 0.4pt\vspace{5pt}\nobreak},
+]{blockdefn}
+
+\declaretheoremstyle[
+spaceabove=\medskipamount, spacebelow=\medskipamount,
+headfont=\bfseries, notefont=\normalfont\itshape, bodyfont=\normalfont\itshape,
+headpunct={},
+postheadhook={\endgraf\nobreak\vspace{1pt}\hrule height 0.4pt\vspace{5pt}\nobreak},
+]{blockthm}
+
+\declaretheorem[style=blockdefn, numberwithin=section, name=Definition]{definition}
+\declaretheorem[style=blockthm,  sibling=definition, name=Theorem]{theorem}
+\declaretheorem[style=blockthm,  sibling=definition, name=Corollary]{corollary}
+\declaretheorem[style=blockthm,  sibling=definition, name=Lemma]{lemma}
+\declaretheorem[style=blockdefn, sibling=definition, name=Example]{example}
+\declaretheorem[style=blockdefn, numbered=no,        name=Remark]{remark}
+
+\newcommand{\exercises}{\par\medskip\noindent{\bfseries Exercises}\par\nobreak\smallskip}
+
+\newenvironment{exercise}[1]
+{\par\medskip\noindent\bfseries #1.\enspace\ignorespaces}
+{\par}
+
+\newenvironment{solution}{\normalfont}{}
+
+\DeclarePairedDelimiterX{\set}[1]{\{}{\}}{\setargs{#1}}
+\NewDocumentCommand{\setargs}{>{\SplitArgument{1}{;}}m}
+{\setargsaux#1}
+\NewDocumentCommand{\setargsaux}{mm}
+{\IfNoValueTF{#2}{#1} {#1\,\delimsize|\,\mathopen{}#2}}%{#1\:;\:#2}
+
+\newcommand{\abs}[1]{\lvert #1 \rvert}
+
+\titlehead{\centering\small
+    Worked solutions to selected exercises from\\
+    Richard Hammack, \emph{Book of Proof, edition 2.2}\\
+\rule{0.4\linewidth}{0.4pt}}
+
+\title{}
+\author{} % Oscar A. Carrera
+\date{}
+
+\begin{document}
+\maketitle
+
+\section{Sets}
+
+\subsection{Introduction to Sets}
+
+\begin{exercise}{A}
+    Write each of the following sets by listing their elements between braces.
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}[label=]
+        \item{2.} $\set{3x+2:x\in\mathbb{Z}} \rightarrow \set{...,-7,-4,-1,2,5,8,11,...}$ 
+        \item{4.} $\set{x \in \mathbb{N}:-2 < x \leq 7} \rightarrow \set{1,2,3,4,5,6,7}$
+        \item{6.} $\set{x \in \mathbb{R}: x^2 = 9} \rightarrow \set{-3,3}$
+        \item{8.} $\set{x \in \mathbb{R}:x^3+5x^2=-6x} \rightarrow \set{-3,-2,0}$
+        \item{10.} $\set{x \in \mathbb{R}: \cos{x}=1} \rightarrow \set{2\pi x: x \in \mathbb{Z}}$
+        \item{12.} $\set{x\in\mathbb{Z}:\abs{x} < 5} \rightarrow \set{-4,-3,-2,-1,0,1,2,3,4}$
+        \item{14.} $\set{5x:x\in\mathbb{Z},\abs{2x}\leq8} \rightarrow \set{-20,-15,-10,-5,0,5,10,15,20}$
+        \item{16.} $\set{6a + 2b : a,b\in\mathbb{Z}} \rightarrow \set{2k:k\in\mathbb{Z}} = \set{...,-4,-2,0,2,4,...}$
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}{B}
+    Write each of the following sets in set-builder notation.
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}[label=]
+        \item{18.} $\set{0,4,16,36,64,100,...} \rightarrow \set{4k^2 : k \in \mathbb{Z}}$
+        \item{20.} $\set{...,-8,-3,2,7,12,17,...} \rightarrow \set{7-5x : x \in \mathbb{Z}}$
+        \item{22.} $\set{3,6,11,18,27,38,...} \rightarrow \set{n^2 + 2 : n \in \mathbb{N}}$
+        \item{24.} $\set{-4,-3,-2,-1,0,1,2} \rightarrow \set{x \in \mathbb{Z} : -4 \leq x \leq 2}$
+        \item{26.} $\set{...,\frac{1}{27},\frac{1}{9},\frac{1}{3},1,3,9,27,...} \rightarrow \set{3^x : x \in \mathbb{Z}}$
+        \item{28.} $\set{...,-\frac{3}{2},-\frac{3}{4},0,\frac{3}{4},\frac{3}{2},\frac{9}{4},3,\frac{15}{4},\frac{9}{2},...} \rightarrow \set{\frac{3}{4}x-\frac{3}{4} : x \in \mathbb{Z}}$
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}{C}
+    Find the following cardinalities.
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}[label=]
+        \item{30.} $|\set{\{1,4\}, a, b, \{\{3,4\}\},\{\emptyset\}}| = 5$
+        \item{32.} $|\set{\{\{1,4\},a,b,\{\{3,4\}\},\emptyset\}}| = 1$
+        \item{34.} $|\set{x\in\mathbb{N} : \abs{x} < 10}| = 9$
+        \item{36.} $|\set{x \in \mathbb{N} : x^2 < 10}| = 3$ 
+        \item{38.} $|\set{x \in \mathbb{N} : 5x \leq 20}| = 4$
+    \end{enumerate}
+\end{solution}
+
+\subsection{The Cartesian Product}
+
+\begin{exercise}{A}
+Write out the indicated sets by listing their elements between braces.
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}[label=]
+        \item{2.} Suppose $A = \set{\pi, e, 0}$ and $B = \set{0,1}$.
+        \item \begin{enumerate}[label=\alph*)]
+                \item $A \times B = \set{(\pi,0),(\pi,1),(e,0),(e,1),(0,0),(0,1)}$
+                \item $B \times A = \set{(0,\pi),(0,e),(0,0),(1,\pi),(1,e),(1,0)}$
+                \item $A \times A = \set{(\pi,\pi),(\pi,e),(\pi,0),(e,\pi),(e,e),(e,0),(0,\pi),(0,e),(0,0)}$
+                \item $B \times B = \set{(0,0),(0,1),(1,0),(1,1)}$
+                \item $A \times \emptyset = \emptyset$
+                \item $(A \times B) \times B = \set{\\
+                        ((\pi,0),0),((\pi,1),0),((e,0),0),((e,1),0),\\
+                        ((0,0),0),((0,1),0),((\pi,0),1),((\pi,1),1),\\
+                        ((e,0),1),((e,1),1),((0,0),1),((0,1),1)\\
+                    }$
+                \item $A \times (B \times B) = \set{\\
+                    (\pi,(0,0)),(\pi,(0,1)),(\pi, (1,0)),(\pi, (1,1)),\\ 
+                    (e,(0,0)),(e,(0,1)),(e,(1,0)),(e,(1,1)),\\ 
+                    (0,(0,0)),(0,(0,1)),(0,(1,0)),(0,(1,1))\\
+                }$
+                \item $A \times B \times B = \set{\\
+                        (\pi, 0, 0), (\pi, 0, 1), (\pi, 1, 0), (\pi, 1, 1),\\ 
+                        (e, 0, 0), (e, 0, 1), (e, 1, 0), (e, 1, 1),\\ 
+                        (0, 0, 0), (0, 0, 1), (0, 1, 0), (0, 1, 1)\\
+                    }$
+            \end{enumerate}
+        \item{4.} $\set{n \in \mathbb{Z} : 2 < n < 5} \times \set{n \in \mathbb{Z} : \abs{n} = 5} = \set{(3,-5),(3,5),(4,-5),(4,5)}$
+        \item{6.} $\set {x \in \mathbb{R} : x^2 = x} \times \set{x \in \mathbb{N} : x^2 = x} = \set{(0,1),(1,1)}$
+        \item{8.} $\set{0,1}^4 = \set{\\
+                (0,0,0,0),(0,0,0,1),(0,0,1,0),(0,0,1,1),\\
+                (0,1,0,0),(0,1,0,1),(0,1,1,0),(0,1,1,1),\\
+                (1,0,0,0),(1,0,0,1),(1,0,1,0),(1,0,1,1),\\
+                (1,1,0,0),(1,1,0,1),(1,1,1,0),(1,1,1,1)\\
+            }$
+    \end{enumerate}
+\end{solution}
+
+\subsection{Subsets}
+
+\begin{exercise}{A}
+    List all the subsets of the following sets.
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}[label=]
+        \item{2.} $\set{1,2,\emptyset} \rightarrow \set{}, \set{1}, \set{2}, \set{\emptyset}, \set{1,2}, \set{1,\emptyset}, \set{2, \emptyset}, \set{1,2,\emptyset}$
+        \item{4.} $\emptyset \rightarrow \set{}$
+        \item{6.} $\set{\mathbb{R}, \mathbb{Q}, \mathbb{N}} \rightarrow \set{}, \set{\mathbb{R}}, \set{\mathbb{Q}}, \set{\mathbb{N}},\set{\mathbb{R},\mathbb{Q}}, \set{\mathbb{R}, \mathbb{N}}, \set{\mathbb{Q},\mathbb{N}}, \set{\mathbb{R}, \mathbb{Q}, \mathbb{N}} $
+        \item{8.} $\set{\{0,1\}, \{0,1,\{2\}\},\{0\}} \rightarrow \set{}, \set{\{0,1\}}, \set{\{0,1,\{2\}\}}, \set{\{0\}},\\
+                \set{\{0,1\}, \{0,1,\{2\}\}}, \set{\{0,1\}, \{0\}}, \set{\{0,1,\{2\}\}, \{0\}}, \set{\{0,1\}, \{0,1,\{2\}\},\{0\}} $
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}{B}
+    Write out the following sets by listing their elements between braces.
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}[label=]
+        \item{10.} $\set{X \subseteq \mathbb{N} : \abs{X} \leq 1} \rightarrow \set{\emptyset, \{1\}, \{2\}, \{3\}, ...}$
+        \item{12.} $\set{X : X \subseteq \{3,2,a\} \textit{ and } \abs{X} = 1} \rightarrow \set{3}, \set{2}, \set{a}$
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}{C}
+    Decide if the following statements are true or false.
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}[label=]
+        \item{14.} $\mathbb{R}^2 \subseteq \mathbb{R}^3 \rightarrow false$
+        \item{16.} $\set{(x,y) : x^2 - x = 0} \subseteq \set{(x,y) : x - 1 = 0} \rightarrow false$
+    \end{enumerate}
+\end{solution}
+
+\subsection{Power Sets}
+
+\begin{exercise}{A}
+    Find the indicated sets.
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}[label=]
+        \item{2.} $\mathcal{P}(\set{1,2,3,4}) = \set{\\
+                \emptyset, \set{1}, \set{2}, \set{3}, \set{4},\\
+                \set{1,2}, \set{1,3}, \set{1,4}, \set{2,3}, \set{2,4}, \set{3,4},\\
+                \set{1,2,3}, \set{1,2,4}, \set{1,3,4}, \set{2,3,4},\\
+                \set{1,2,3,4}\\
+            }$
+        \item{4.} $\mathcal{P}(\set{\mathbb{R},\mathbb{Q}}) =  \set{\emptyset, \set{\mathbb{R}}, \set{\mathbb{Q}}, \set{\mathbb{R}, \mathbb{Q}}}$
+        \item{6.} $\mathcal{P}(\set{1,2}) \times \mathcal{P}(\set{3}) = \set{\\
+                (\emptyset,\emptyset), (\emptyset,\set{3}),\\
+                (\set{1},\emptyset), (\set{1},\set{3}),\\
+                (\set{2},\emptyset), (\set{2},\set{3}),\\
+                (\set{1,2},\emptyset), (\set{1,2},\set{3})\\
+            }$
+        \item{8.} $\mathcal{P}(\set{1,2} \times \set{3}) =  \set{\emptyset, \set{(1,3)}, \set{(2,3)}, \set{(1,3),(2,3)}}$
+        \item{10.} $\set{X \in \mathcal{P}(\set{1,2,3}) : \abs{X} \leq 1} =  \set{\emptyset, \set{1}, \set{2}, \set{3}}$
+        \item{12.} $\set{X \in \mathcal{P}(\set{1,2,3}) : 2 \in X} =  \set{\set{2}, \set{1,2}, \set{2,3}, \set{1,2,3}}$
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}{B}
+    Suppose that $\abs{A} = m$ and $\abs{B} = n$. Find the following cardinalities.
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}[label=]
+        \item{14.} $\abs{\mathcal{P}(\mathcal{P}(A))} = 2^{2^m}$
+        \item{16.} $\abs{\mathcal{P}(A) \times \mathcal{P}(B)} = 2^{m+n}$
+        \item{18.} $\abs{\mathcal{P}(A \times \mathcal{P}(B))} = 2^{m \cdot 2^n}$
+        \item{20.} $\abs{\set{X \subseteq \mathcal{P}(A) : \abs{X} \leq 1}} = 2^m + 1$
+    \end{enumerate}
+\end{solution}
+
+\subsection{Union, Intersection, Difference}
+
+\begin{exercise}{2}
+    Suppose $A = \set{0,2,4,6,8}$, $B = \set{1,3,5,7}$ and $C = \set{2,8,4}$, Find:
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}[label=\alph*)]
+        \item $A \cup B = \set{0,1,2,3,4,5,6,7,8}$
+        \item $A \cap B = \emptyset$
+        \item $A - B = A$
+        \item $A - C = \set{0,6}$
+        \item $B - A = B$
+        \item $A \cap C = C$
+        \item $B \cap C = \emptyset$
+        \item $B \cup C = \set{1,2,3,4,5,7,8}$
+        \item $C - B = C$
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}{4}
+    Suppose $A = \set{b,c,d}$ and $B = \set{a,b}$. Find:
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}[label=\alph*)]
+        \item $(A \times B) \cap (B \times B) = \set{(b,a),(b,b)}$
+        \item $(A \times B) \cup (B \times B) = \set{(b,a),(b,b),(c,a),(c,b),(d,a),(d,b),(a,a),(a,b)}$
+        \item $(A \times B) - (B \times B) = \set{(c,a),(c,b),(d,a),(d,b)}$
+        \item $(A \cap B) \times A = \set{(b,b),(b,c),(b,d)}$
+        \item $(A \times B) \cap B = \emptyset$
+        \item $\mathcal{P}(A) \cap \mathcal{P}(B) = \set{\emptyset, \set{b}}$
+        \item $\mathcal{P}(A) - \mathcal{P}(B) = \set{\set{c},\set{d},\set{b,c},\set{b,d},\set{c,d},\set{b,c,d}}$
+        \item $\mathcal{P}(A \cap B) = \set{\emptyset, \set{b}}$
+        \item $\mathcal{P}(A) \times \mathcal{P}(B) = \set{\\
+                (\emptyset,\emptyset), (\emptyset,\set{a}), (\emptyset,\set{b}), (\emptyset,\set{a,b}),\\
+                (\set{b},\emptyset), (\set{b},\set{a}), (\set{b},\set{b}), (\set{b},\set{a,b}),\\
+                (\set{c},\emptyset), (\set{c},\set{a}), (\set{c},\set{b}), (\set{c},\set{a,b}),\\
+                (\set{d},\emptyset), (\set{d},\set{a}), (\set{d},\set{b}), (\set{d},\set{a,b}),\\
+                (\set{b,c},\emptyset), (\set{b,c},\set{a}), (\set{b,c},\set{b}), (\set{b,c},\set{a,b}),\\
+                (\set{b,d},\emptyset), (\set{b,d},\set{a}), (\set{b,d},\set{b}), (\set{b,d},\set{a,b}),\\
+                (\set{c,d},\emptyset), (\set{c,d},\set{a}), (\set{c,d},\set{b}), (\set{c,d},\set{a,b}),\\
+                (\set{b,c,d},\emptyset), (\set{b,c,d},\set{a}), (\set{b,c,d},\set{b}), (\set{b,c,d},\set{a,b})\\
+            }$
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}{10}
+    Do you think the statement $(\mathbb{R} - \mathbb{Z}) \times \mathbb{N} = (\mathbb{R} \times \mathbb{N}) - (\mathbb{Z} \times \mathbb{N})$ is true, or false? Justify.
+\end{exercise}
+
+\begin{solution}
+    True.
+    An ordered pair $(x,n)$ lies in $(\mathbb{R} \times \mathbb{N}) - (\mathbb{Z} \times \mathbb{N})$ exactly when $(x,n) \in (\mathbb{R} \times \math{N})$ but $(x,n) \notin (\mathbb{Z} \times \mathbb{N})$, that is, $x \in \mathbb{R}$ and $n \in \mathbb{N}$ but not both $x \in \mathbb{Z}$ and $n \in \mathbb{N}$. Since in both cases $n \in \mathbb{N}$, the second premise collapses to $x \notin \mathbb{Z}$, hence, the ordered pair satisfies $x \in (\mathbb{R} - \mathbb{Z})$ and $n \in \mathbb{N}$, that is, $(x,n) \in (\mathbb{R} - \mathbb{Z}) \times \mathbb{N}$, therefore, both sets have exactly the same elements.
+\end{solution}
+
+
+\subsection{Complement}
+
+\begin{exercise}{2}
+    Let $A = \set{0,2,4,6,8}$ and $B = \set{1,3,5,7}$ have universal set $U = \set{0,1,2,...,8}$. Find:
+\end{exercise}
+\end{document}
