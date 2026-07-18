@@ -1,0 +1,88 @@
+\documentclass[DIN, pagenumber=false, fontsize=11pt, parskip=half]{scrartcl}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathtools}
+\usepackage{thmtools}
+\usepackage{xparse}
+\usepackage{enumitem}
+
+\declaretheoremstyle[
+spaceabove=\medskipamount, spacebelow=\medskipamount,
+headfont=\bfseries, notefont=\normalfont\itshape, bodyfont=\normalfont,
+headpunct={},
+postheadhook={\endgraf\nobreak\vspace{1pt}\hrule height 0.4pt\vspace{5pt}\nobreak},
+]{blockdefn}
+
+\declaretheoremstyle[
+spaceabove=\medskipamount, spacebelow=\medskipamount,
+headfont=\bfseries, notefont=\normalfont\itshape, bodyfont=\normalfont\itshape,
+headpunct={},
+postheadhook={\endgraf\nobreak\vspace{1pt}\hrule height 0.4pt\vspace{5pt}\nobreak},
+]{blockthm}
+
+\declaretheorem[style=blockdefn, numberwithin=section, name=Definition]{definition}
+\declaretheorem[style=blockthm,  sibling=definition, name=Theorem]{theorem}
+\declaretheorem[style=blockthm,  sibling=definition, name=Corollary]{corollary}
+\declaretheorem[style=blockthm,  sibling=definition, name=Lemma]{lemma}
+\declaretheorem[style=blockdefn, sibling=definition, name=Example]{example}
+\declaretheorem[style=blockdefn, numbered=no,        name=Remark]{remark}
+
+\newcommand{\exercises}{\par\medskip\noindent{\bfseries Exercises}\par\nobreak\smallskip}
+
+\newenvironment{exercise}[1]
+{\par\medskip\noindent\bfseries #1\enspace\ignorespaces}
+{\par}
+
+\newenvironment{solution}{\normalfont}{}
+
+\DeclarePairedDelimiterX{\set}[1]{\{}{\}}{\setargs{#1}}
+\NewDocumentCommand{\setargs}{>{\SplitArgument{1}{;}}m}
+{\setargsaux#1}
+\NewDocumentCommand{\setargsaux}{mm}
+{\IfNoValueTF{#2}{#1} {#1\,\delimsize|\,\mathopen{}#2}}%{#1\:;\:#2}
+
+\newcommand{\abs}[1]{\lvert #1 \rvert}
+
+\titlehead{\centering\small
+    Worked solutions to selected exercises from\\
+    Richard Hammack, \emph{Book of Proof, edition 2.2}\\
+\rule{0.4\linewidth}{0.4pt}}
+
+\title{}
+\author{} % Oscar A. Carrera
+\date{}
+
+\begin{document}
+\maketitle
+
+\setcounter{section}{1}
+
+\section{Logic}
+
+\subsection{Statements}
+
+\begin{exercise}{}
+    Decide whether or not the following are statements. In the case of a statement, say if it is true or false, if possible.
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}[label=]
+        \item{2.} Every even integer is a real number. $\rightarrow$ Statement, true.
+        \item{4.} Sets $\mathbb{Z}$ and $\mathbb{N}$. $\rightarrow$ Not a statement.
+        \item{6.} Some sets are finite. $\rightarrow$ Statement, true.
+        \item{8.} $\mathbb{N} \notin \mathcal{P}(\mathbb{N}) \rightarrow$ Statement, false.
+        \item{10.} $(\mathbb{R} \times \mathbb{N}) \cap (\mathbb{N} \times \mathbb{R}) = \mathbb{N} \times \mathbb{N}$. $\rightarrow$ Statement, true.
+        \item{12.} If the integer $x$ is a multiple of 7, then it is divisible by 7. $\rightarrow$ Statement, true.
+        \item{14.} Call me Ishmael. $\rightarrow$ Not a statement.
+    \end{enumerate}
+\end{solution}
+
+\end{document}
+
+
+
