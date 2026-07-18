@@ -372,7 +372,14 @@ Write out the indicated sets by listing their elements between braces.
 \end{exercise}
 
 \begin{solution}
-    Yes. If we let $x \in A_{\alpha}$ for every $\alpha \in I$, and since $J \subseteq I$, then, $x \in A_{\alpha}$ for every $\alpha \in J$, so it follows that $x \in \bigcap\limits_{\alpha\in J}A_{\alpha}$. Therefore $\bigcap\limits_{\alpha\in I}A_{\alpha} \subseteq \bigcap\limits_{\alpha\in J}A_{\alpha}$.
+    Yes.\\ 
+    Assume $J \neq \emptyset$ and $J \subseteq I$, then,\\ 
+    take $x \in \bigcap_{\alpha\in I} A_{\alpha}$, this means $x \in A_{\alpha}$ for every $\alpha \in I$,\\ 
+    since $J \subseteq I$, then every element of $J$ is also an element of $I$,\\ 
+    thus $x \in A_{\alpha}$ for every $\alpha \in J$, 
+    then, by definition, $x \in \bigcap_{\alpha \in J}A_{\alpha},$\\ 
+    so we conclude that $\bigcap\limits_{\alpha \in I}A_{\alpha} \subseteq \bigcap\limits_{\alpha\in J}A_{\alpha}. \qed
+
 \end{solution}
 
 \end{document}
