@@ -1,0 +1,104 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{template}
+
+% --- Dependencies ----------------------------------------------------
+\RequirePackage{amsmath}
+\RequirePackage{amssymb}
+\RequirePackage{amsthm}
+\RequirePackage{mathtools}
+\RequirePackage{thmtools}
+\RequirePackage{xparse}
+\RequirePackage{enumitem}
+\RequirePackage{textcomp}
+\RequirePackage{keyval}
+
+% --- Theorem / definition styles -------------------------------------
+\declaretheoremstyle[
+  spaceabove=\medskipamount, spacebelow=\medskipamount,
+  headfont=\bfseries, notefont=\normalfont\itshape, bodyfont=\normalfont,
+  headpunct={},
+  postheadhook={\endgraf\nobreak\vspace{1pt}\hrule height 0.4pt\vspace{5pt}\nobreak},
+]{blockdefn}
+\declaretheoremstyle[
+  spaceabove=\medskipamount, spacebelow=\medskipamount,
+  headfont=\bfseries, notefont=\normalfont\itshape, bodyfont=\normalfont\itshape,
+  headpunct={},
+  postheadhook={\endgraf\nobreak\vspace{1pt}\hrule height 0.4pt\vspace{5pt}\nobreak},
+]{blockthm}
+\declaretheorem[style=blockdefn, numberwithin=section, name=Definition]{definition}
+\declaretheorem[style=blockthm,  sibling=definition, name=Theorem]{theorem}
+\declaretheorem[style=blockthm,  sibling=definition, name=Corollary]{corollary}
+\declaretheorem[style=blockthm,  sibling=definition, name=Lemma]{lemma}
+\declaretheorem[style=blockdefn, sibling=definition, name=Example]{example}
+\declaretheorem[style=blockdefn, numbered=no,        name=Remark]{remark}
+
+% --- Set-builder notation and absolute value -------------------------
+%  \set{a,b,c}         -> {a,b,c}
+%  \set{x \in X ; P}   -> { x \in X | P }   (semicolon = "such that")
+\DeclarePairedDelimiterX{\set}[1]{\{}{\}}{\setargs{#1}}
+\NewDocumentCommand{\setargs}{>{\SplitArgument{1}{;}}m}{\setargsaux#1}
+\NewDocumentCommand{\setargsaux}{mm}
+  {\IfNoValueTF{#2}{#1}{#1\,\delimsize|\,\mathopen{}#2}}
+\newcommand{\abs}[1]{\lvert #1 \rvert}
+
+% --- Exercise --------------------------------------------------------
+%  \begin{exercise}{A}  ... \end{exercise}   (label optional; may be empty)
+%  Renders the prompt in bold, with bold math to match.
+\newenvironment{exercise}[1]
+  {\par\medskip\noindent\bfseries\boldmath #1\enspace\ignorespaces}
+  {\par}
+
+% --- Problem / answer list -------------------------------------------
+%  \begin{problems}[from=2, step=2]
+%      \problem <question>
+%      \answer  <solution>          % omit for an unanswered problem
+%  \end{problems}
+%
+%  Defaults: from=2, step=2 (the even-numbered exercises).
+%  \problem  is bold + bold math; \answer is normal weight, indented.
+\newcounter{ms@problem}
+\newcommand{\ms@from}{2}
+\newcommand{\ms@step}{2}
+\define@key{problems}{from}{\renewcommand{\ms@from}{#1}}
+\define@key{problems}{step}{\renewcommand{\ms@step}{#1}}
+
+\newlength{\ms@answerindent}
+\setlength{\ms@answerindent}{1.8em}
+
+\NewDocumentEnvironment{problems}{O{}}
+  {%
+    \renewcommand{\ms@from}{2}\renewcommand{\ms@step}{2}
+    \setkeys{problems}{#1}%
+    \setcounter{ms@problem}{\numexpr\ms@from-\ms@step\relax}%
+    \parindent=0pt
+    \emergencystretch=3em%
+    \par\medskip
+  }
+  {\par\medskip}
+
+%  \problem      advances the number by \ms@step (default +2)
+%  \problem[10]   sets this problem's number explicitly to 10; the next
+%                 \problem continues from there. Use for non-contiguous runs.
+\NewDocumentCommand{\problem}{o}{%
+  \par\medskip
+  \leftskip=0pt\relax
+  \IfNoValueTF{#1}{\addtocounter{ms@problem}{\ms@step}}{\setcounter{ms@problem}{#1}}%
+  \normalfont\bfseries\boldmath
+  \noindent\arabic{ms@problem}.\enspace\ignorespaces
+}
+
+\newcommand{\answer}{%
+  \par\nobreak\smallskip
+  \leftskip=\ms@answerindent\relax
+  \normalfont\unboldmath
+  \noindent\ignorespaces
+}
+
+% --- Lettered sub-parts:  a) b) c) -----------------------------------
+%  \begin{parts} \item ... \item ... \end{parts}
+%  Use inside a \problem for exercises with multiple parts.
+\newlist{parts}{enumerate}{1}
+\setlist[parts]{label=\alph*), leftmargin=2.2em, itemsep=2pt, topsep=2pt,
+  before=\normalfont\unboldmath}
+
+\endinput
