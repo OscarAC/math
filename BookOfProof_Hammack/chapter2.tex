@@ -2,51 +2,7 @@
 
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage{textcomp}
-\usepackage{amsmath}
-\usepackage{amssymb}
-\usepackage{amsthm}
-\usepackage{mathtools}
-\usepackage{thmtools}
-\usepackage{xparse}
-\usepackage{enumitem}
-
-\declaretheoremstyle[
-spaceabove=\medskipamount, spacebelow=\medskipamount,
-headfont=\bfseries, notefont=\normalfont\itshape, bodyfont=\normalfont,
-headpunct={},
-postheadhook={\endgraf\nobreak\vspace{1pt}\hrule height 0.4pt\vspace{5pt}\nobreak},
-]{blockdefn}
-
-\declaretheoremstyle[
-spaceabove=\medskipamount, spacebelow=\medskipamount,
-headfont=\bfseries, notefont=\normalfont\itshape, bodyfont=\normalfont\itshape,
-headpunct={},
-postheadhook={\endgraf\nobreak\vspace{1pt}\hrule height 0.4pt\vspace{5pt}\nobreak},
-]{blockthm}
-
-\declaretheorem[style=blockdefn, numberwithin=section, name=Definition]{definition}
-\declaretheorem[style=blockthm,  sibling=definition, name=Theorem]{theorem}
-\declaretheorem[style=blockthm,  sibling=definition, name=Corollary]{corollary}
-\declaretheorem[style=blockthm,  sibling=definition, name=Lemma]{lemma}
-\declaretheorem[style=blockdefn, sibling=definition, name=Example]{example}
-\declaretheorem[style=blockdefn, numbered=no,        name=Remark]{remark}
-
-\newcommand{\exercises}{\par\medskip\noindent{\bfseries Exercises}\par\nobreak\smallskip}
-
-\newenvironment{exercise}[1]
-{\par\medskip\noindent\bfseries #1\enspace\ignorespaces}
-{\par}
-
-\newenvironment{solution}{\normalfont}{}
-
-\DeclarePairedDelimiterX{\set}[1]{\{}{\}}{\setargs{#1}}
-\NewDocumentCommand{\setargs}{>{\SplitArgument{1}{;}}m}
-{\setargsaux#1}
-\NewDocumentCommand{\setargsaux}{mm}
-{\IfNoValueTF{#2}{#1} {#1\,\delimsize|\,\mathopen{}#2}}%{#1\:;\:#2}
-
-\newcommand{\abs}[1]{\lvert #1 \rvert}
+\usepackage{template}
 
 \titlehead{\centering\small
     Worked solutions to selected exercises from\\
@@ -70,17 +26,28 @@ postheadhook={\endgraf\nobreak\vspace{1pt}\hrule height 0.4pt\vspace{5pt}\nobrea
     Decide whether or not the following are statements. In the case of a statement, say if it is true or false, if possible.
 \end{exercise}
 
-\begin{solution}
-    \begin{enumerate}[label=]
-        \item{2.} Every even integer is a real number. $\rightarrow$ Statement, true.
-        \item{4.} Sets $\mathbb{Z}$ and $\mathbb{N}$. $\rightarrow$ Not a statement.
-        \item{6.} Some sets are finite. $\rightarrow$ Statement, true.
-        \item{8.} $\mathbb{N} \notin \mathcal{P}(\mathbb{N}) \rightarrow$ Statement, false.
-        \item{10.} $(\mathbb{R} \times \mathbb{N}) \cap (\mathbb{N} \times \mathbb{R}) = \mathbb{N} \times \mathbb{N}$. $\rightarrow$ Statement, true.
-        \item{12.} If the integer $x$ is a multiple of 7, then it is divisible by 7. $\rightarrow$ Statement, true.
-        \item{14.} Call me Ishmael. $\rightarrow$ Not a statement.
-    \end{enumerate}
-\end{solution}
+\begin{problems}
+    \problem Every even integer is a real number.
+    \answer  Statement, true.
+
+    \problem Sets $\mathbb{Z}$ and $\mathbb{N}$.
+    \answer  Not a statement.
+
+    \problem Some sets are finite.
+    \answer  Statement, true.
+
+    \problem $\mathbb{N} \notin \mathcal{P}(\mathbb{N})$
+    \answer  Statement, false.
+
+    \problem $(\mathbb{R} \times \mathbb{N}) \cap (\mathbb{N} \times \mathbb{R}) = \mathbb{N} \times \mathbb{N}$.
+    \answer  Statement, true.
+
+    \problem If the integer $x$ is a multiple of 7, then it is divisible by 7.
+    \answer  Statement, true.
+
+    \problem Call me Ishmael.
+    \answer  Not a statement.
+\end{problems}
 
 \subsection{And, Or, Not}
 
@@ -88,19 +55,53 @@ postheadhook={\endgraf\nobreak\vspace{1pt}\hrule height 0.4pt\vspace{5pt}\nobrea
     Express each statement or open sentence in one of the forms $P \land Q$, $P \lor Q$, or $\lnot P$. Be sure to also state exactly what statements $P$ and $Q$ stand for.
 \end{exercise}
 
-\begin{solution}
-    \begin{enumerate}[label=]
-        \item{2.} The matrix $A$ is not invertible. $\rightarrow$ $\lnot P$, where $P:$ Matrix $A$ is invertible.
-        \item{4.} $x < y$. $\rightarrow$ $\lnot P$, where $P$: $x \geq y$ 
-        \item{6.} There is a quiz scheduled for Wednesday or Friday. $\rightarrow$ $P \lor Q$, where $P$: A quiz is scheduled for Wednesday, and $Q$: A quiz is scheduled for Friday.
-        \item{8.} At least one of the numbers $x$ and $y$ equals $0$. $\rightarrow$ $P \lor Q$, where $P$: $x$ = 0, and $Q$: $y$ = 0.
-        \item{10.} $x \in A \cup B$. $\rightarrow$ $P \lor Q$, where $P$: $x \in A$, and $Q$: $x \in B$.
-        \item{12.} Happy families are all alike, but each unhappy family is unhappy in its own way. (\textit{Leo Tolstoy}, \textit{Anna Karenina}) $\rightarrow$ $P \land Q$, where $P$: Happy families are all alike, and $Q$: Each unhappy family is unhappy in its own way.
-        \item{14.} A man should look for what is, and not for what he thinks should be. (\textit{Albert Einstein}) $\rightarrow$ $P \land \lnot Q$, where $P$: Man should look for what is, and $Q$: Man should look for what he thinks should be.
-    \end{enumerate}
-\end{solution}
+\begin{problems}
+    \problem The matrix $A$ is not invertible.
+    \answer  $\lnot P$, where $P$: Matrix $A$ is invertible.
+
+    \problem $x < y$.
+    \answer  $\lnot P$, where $P$: $x \geq y$.
+
+    \problem There is a quiz scheduled for Wednesday or Friday.
+    \answer  $P \lor Q$, where $P$: A quiz is scheduled for Wednesday, and $Q$: A quiz is scheduled for Friday.
+
+    \problem At least one of the numbers $x$ and $y$ equals $0$.
+    \answer  $P \lor Q$, where $P$: $x = 0$, and $Q$: $y = 0$.
+
+    \problem $x \in A \cup B$.
+    \answer  $P \lor Q$, where $P$: $x \in A$, and $Q$: $x \in B$.
+
+    \problem Happy families are all alike, but each unhappy family is unhappy in its own way. (\textit{Leo Tolstoy}, \textit{Anna Karenina})
+    \answer  $P \land Q$, where $P$: Happy families are all alike, and $Q$: Each unhappy family is unhappy in its own way.
+
+    \problem A man should look for what is, and not for what he thinks should be. (\textit{Albert Einstein})
+    \answer  $P \land \lnot Q$, where $P$: Man should look for what is, and $Q$: Man should look for what he thinks should be.
+\end{problems}
+
+\subsection{Conditional Statements}
+
+\begin{exercise}{}
+    Without changing their meanings, convert each of the following sentences into a sentence having the form ``\textit{If P, then Q}''.
+\end{exercise}
+
+\begin{problems}
+    \problem For a function to be continuous, it is sufficient that it is differentiable.
+    \answer  If a function is differentiable, then the function is continuous.
+
+    \problem A function is rational if it is a polynomial.
+    \answer If a function is a polynomial, then the function is rational.
+
+    \problem Whenever a surface has only one side, it is non-orientable.
+    \answer If a surface has only one side, then the surface is non-orientable.
+
+    \problem A geometric series with ratio $r$ converges if $\abs{r} < 1$.
+    \answer If a geometric series has a ratio with an absolute value less than 1, then the geometric series converges.
+
+    \problem The discriminant is negative only if the quadratic equation has no real solutions.
+    \answer If a quadratic equation has a discriminant that is negative, then the quadratic equation has no real solutions.
+
+    \problem People will generally accept facts as truth only if the facts agree with what they already believe. (\textit{Andy Rooney})
+    \answer If people accept facts as truth, then the facts agree with what they already believe.
+\end{problems}
 
 \end{document}
-
-
-
