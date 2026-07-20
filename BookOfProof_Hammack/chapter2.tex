@@ -2,6 +2,7 @@
 
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
+\usepackage{booktabs} % for \midrule
 \usepackage{template}
 
 \titlehead{\centering\small
@@ -107,7 +108,7 @@
 \subsection{Biconditional Statements}
 
 \begin{exercise}{}
-    Without changing their meanings, covert each of the following sentences into a sentence having the form ``\textit{P if and only if Q}''.
+    Without changing their meanings, convert each of the following sentences into a sentence having the form ``\textit{P if and only if Q}''.
 \end{exercise}
 
 \begin{problems}
@@ -115,6 +116,73 @@
     \answer A function is linear if and only if the function has a constant derivative.
 
     \problem If $a \in \mathbb{Q}$ then $5a \in \mathbb{Q}$, and if $5a \in \mathbb{Q}$ then $a \in \mathbb{Q}$.
-    \answer $5a \in \mathbb{Q}$ if and only if $a \in \mathbb{Q}$.
+    \answer $5a \in \mathbb{Q}$ if and only if $a \in \mathbb{Q}$
 \end{problems}
+
+
+\subsection{Truth Tables for Statements}
+
+\begin{exercise}{}
+    Write a truth table for the logical statements in problems 1-9:
+\end{exercise}
+
+\begin{problems}
+    \problem $(Q \lor R) \iff (R \land Q)$
+    \answer 
+    \begin{center}
+        \begin{tabular}{ccccc}
+            $Q$ & $R$ & $(Q \lor R)$ & $(R \land Q)$ & $(Q \lor R) \iff (R \land Q)$\\
+            \midrule
+            T & T & T & T & T\\  
+            T & F & T & F & F\\
+            F & T & T & F & F\\ 
+            F & F & F & F & T 
+        \end{tabular}
+    \end{center}
+
+    \problem $\lnot (P \lor Q) \lor (\lnot P)$
+    \answer
+    \begin{center}
+        \begin{tabular}{cccccc}
+            $P$ & $Q$ & $(P \lor Q)$ & $\lnot(P \lor Q)$ & $\lnot P$ & $\lnot(P \lor Q) \lor (\lnot P)$\\ 
+            \midrule
+            T & T & T & F & F & F\\ 
+            T & F & T & F & F & F\\ 
+            F & T & T & F & T & T\\ 
+            F & F & F & T & T & T
+        \end{tabular}
+    \end{center}
+
+    \problem $(P \land \lnot P) \land Q$
+    \answer
+    \begin{center}
+        \begin{tabular}{cccc}
+            $P$ & $Q$ & $(P \land \lnot P)$ & $(P \land \lnot P) \land Q$\\ 
+            \midrule
+            T & T & F & F\\ 
+            T & F & F & F\\ 
+            F & T & F & F\\ 
+            F & F & F & F
+        \end{tabular}
+    \end{center}
+
+    \problem $P \lor (Q \land \lnot R)$
+    \answer
+    \begin{center}
+        \begin{tabular}{ccccc}
+            $P$ & $Q$ & $R$ & $(Q \land \lnot R)$ & $P \lor (Q \land \lnot R)$\\ 
+            \midrule
+            T & T & T & F & T\\ 
+            T & T & F & T & T\\ 
+            T & F & T & F & T\\
+            T & F & F & F & T\\
+            F & T & T & F & F\\
+            F & T & F & T & T\\ 
+            F & F & T & F & F\\ 
+            F & F & F & F & F
+        \end{tabular}
+    \end{center}
+
+\end{problems}
+
 \end{document}
