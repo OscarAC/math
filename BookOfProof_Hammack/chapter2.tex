@@ -185,4 +185,129 @@
 
 \end{problems}
 
+\subsection{Logical Equivalence}
+
+\begin{exercise}{A.}
+    Use truth tables to show that the following statements are logically equivalent.
+\end{exercise}
+
+\begin{problems}
+    \problem $P \lor (Q \land R) = (P \lor Q) \land (P \lor R)$
+    \answer
+    \begin{center}
+        \begin{tabular}{cccccccc}
+            $P$ & $Q$ & $R$ & $(Q \land R)$ & $P \lor (Q \land R)$ & $(P \lor Q)$ & $(P \lor R)$ & $(P \lor Q) \land (P \lor R)$\\
+            \midrule
+            T & T & T & T & T & T & T & T\\ 
+            T & T & F & F & T & T & T & T\\ 
+            T & F & T & F & T & T & T & T\\ 
+            T & F & F & F & T & T & T & T\\ 
+            F & T & T & T & T & T & T & T\\ 
+            F & T & F & F & F & T & F & F\\
+            F & F & T & F & F & F & T & F\\ 
+            F & F & F & F & F & F & F & F
+        \end{tabular}
+    \end{center}
+
+    \problem $\lnot (P \lor Q) = (\lnot P) \land (\lnot Q)$
+    \answer
+    \begin{center}
+        \begin{tabular}{ccccccc}
+            $P$ & $Q$ & $(P \lor Q)$ & $\lnot (P \lor Q)$ & $\lnot P$ & $\lnot Q$ & $(\lnot P) \land (\lnot Q)$\\
+            \midrule
+            T & T & T & F & F & F & F\\
+            T & F & T & F & F & T & F\\ 
+            F & T & T & F & T & F & F\\ 
+            F & F & F & T & T & T & T
+        \end{tabular}
+    \end{center}
+
+    \problem $\lnot (P \land Q \land R) = (\lnot P) \lor (\lnot Q) \lor (\lnot R)$
+    \answer
+    \begin{center}
+        \begin{tabular}{ccccccccc}
+            $P$ & $Q$ & $R$ & $(P \land Q \land R)$ & $\lnot (P \land Q \land R)$ & $\lnot P$ & $\lnot Q$ & $\lnot R$ & $(\lnot P) \lor (\lnot Q) \lor (\lnot R)$\\
+            \midrule
+            T & T & T & T & F & F & F & F & F\\
+            T & T & F & F & T & F & F & T & T\\
+            T & F & T & F & T & F & T & F & T\\
+            T & F & F & F & T & F & T & T & T\\
+            F & T & T & F & T & T & F & F & T\\
+            F & T & F & F & T & T & F & T & T\\
+            F & F & T & F & T & T & T & F & T\\
+            F & F & F & F & T & T & T & T & T
+        \end{tabular}
+    \end{center}
+
+    \problem $\lnot P \iff Q = (P \implies \lnot Q) \land (\lnot Q \implies P)$
+    \answer
+    \begin{center}
+        \footnotesize
+        \setlength{\tabcolsep}{4pt}
+        \begin{tabular}{cccccccc}
+            $P$ & $Q$ & $\lnot P$ & $\lnot Q$ & $\lnot P \iff Q$ & $(P \implies \lnot Q)$ & $(\lnot Q \implies P)$ & $(P \implies \lnot Q) \land (\lnot Q \implies P)$\\
+            \midrule
+            T & T & F & F & F & F & T & F\\
+            T & F & F & T & T & T & T & T\\
+            F & T & T & F & T & T & T & T\\
+            F & F & T & T & F & T & F & F
+        \end{tabular}
+    \end{center}
+\end{problems}
+
+\begin{exercise}{B.}
+    Decide whether or not the following pairs of statements are logically equivalent.
+\end{exercise}
+
+\begin{problems}[from=10]
+    \problem $(P \implies Q) \lor R$ and $\lnot((P \land \lnot Q) \land \lnot R)$
+    \answer
+    \begin{center}
+        \footnotesize
+        \setlength{\tabcolsep}{4pt}
+        \begin{tabular}{cccccccccc}
+            $P$ & $Q$ & $R$ & $(P \implies Q)$ & $(P \implies Q) \lor R$ & $\lnot Q$ & $(P \land \lnot Q)$ & $\lnot R$ & $(P \land \lnot Q) \land \lnot R$ & $\lnot((P \land \lnot Q) \land \lnot R)$\\
+            \midrule
+            T & T & T & T & T & F & F & F & F & T\\
+            T & T & F & T & T & F & F & T & F & T\\
+            T & F & T & F & T & T & T & F & F & T\\
+            T & F & F & F & F & T & T & T & T & F\\
+            F & T & T & T & T & F & F & F & F & T\\
+            F & T & F & T & T & F & F & T & F & T\\
+            F & F & T & T & T & T & F & F & F & T\\
+            F & F & F & T & T & T & F & T & F & T
+        \end{tabular}
+    \end{center}
+    The statements are logically equivalent.
+
+    \problem $\lnot (P \implies Q)$ and $P \land \lnot Q$
+    \answer
+    \begin{center}
+        \begin{tabular}{cccccc}
+            $P$ & $Q$ & $(P \implies Q)$ & $\lnot (P \implies Q)$ & $\lnot Q$ & $P \land \lnot Q$\\
+            \midrule
+            T & T & T & F & F & F\\
+            T & F & F & T & T & T\\
+            F & T & T & F & F & F\\
+            F & F & T & F & T & F
+        \end{tabular}
+    \end{center}
+    The statements are logically equivalent.
+
+    \problem $P \land (Q \lor \lnot Q)$ and $(\lnot P) \implies (Q \land \lnot Q)$
+    \answer
+    \begin{center}
+        \small
+        \begin{tabular}{cccccccc}
+            $P$ & $Q$ & $\lnot Q$ & $(Q \lor \lnot Q)$ & $P \land (Q \lor \lnot Q)$ & $\lnot P$ & $(Q \land \lnot Q)$ & $(\lnot P) \implies (Q \land \lnot Q)$\\
+            \midrule
+            T & T & F & T & T & F & F & T\\
+            T & F & T & T & T & F & F & T\\
+            F & T & F & T & F & T & F & F\\
+            F & F & T & T & F & T & F & F
+        \end{tabular}
+    \end{center}
+    The statements are logically equivalent.
+\end{problems}
+
 \end{document}
