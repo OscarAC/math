@@ -338,5 +338,38 @@
     This statement is false, consider $n = 0$ and $n = 1$.
 \end{problems}
 
+\subsection{More on Conditional Statements}
+
+---
+
+\subsection{Translating English to Symbolic Logic}
+
+\begin{exercise}{}
+    Translate each of the following sentences into symbolic logic.
+\end{exercise}
+
+\begin{problems}
+    \problem The number $x$ is positive but the number $y$ is not positive.
+    \answer $(x > 0) \land (y \leq 0)$
+
+    \problem For every prime number $p$ there is another prime number $q$ with $q > p$.
+    \answer $\forall p \in P, \exists q \in P, q > p$. Where $P$ is the set of prime numbers.
+
+    \problem For every positive number $\epsilon$ there is a positive number $M$ for which $|f(x) - b| < \epsilon$, whenever $x > M$.
+    \answer $\forall \epsilon \in \mathbb{R}, \epsilon > 0, \exists M \in \mathbb{R}, M > 0, (x > M) \implies |f(x) - b| < \epsilon$
+
+    \problem I don't eat anything that has a face.
+    \answer $\forall x, Q(x) \implies \lnot P(x)$, where $P(x)$: I eat $x$, and $Q(x)$: $x$ has a face.
+
+    \problem If $\sin(x) < 0$, then it is not the case that $0 \leq x \leq \pi$.
+    \answer $\sin(x) < 0 \implies \lnot(0 \leq x \leq \pi)$.
+
+    \problem You can fool some of the people all of the time, and you can fool all of the people some of the time, but you can't fool all of the people all of the time. (\textit{Abraham Lincoln})
+    \answer $\big(\exists p \in P, \forall t \in T, F(p,t)\big) \land
+    \big(\forall p \in P, \exists t \in T, F(p,t)\big) \land
+    \lnot\big(\forall p \in P, \forall t \in T, F(p,t)\big)$,\\
+    where $P$ is the set of people, $T$ is the set of times, and $F(p,t)$: you can fool
+    person $p$ at time $t$.
+\end{problems}
 
 \end{document}
