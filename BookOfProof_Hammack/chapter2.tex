@@ -310,4 +310,33 @@
     The statements are logically equivalent.
 \end{problems}
 
+\subsection{Quantifiers}
+
+\begin{exercise}{}
+    Write the following as English sentences, Say whether they are true or false.
+\end{exercise}
+
+\begin{problems}
+    \problem $\forall x \in \mathbb{R}, \exists n \in \mathbb{N}, x^n \geq 0$
+    \answer For every real number $x$, there is a natural number $n$ for which $x^n \geq 0$.\\ 
+    The statement is true, consider $n = 2$.
+
+    \problem $\forall X \in \mathcal{P}(\mathbb{N}), X \subseteq \mathbb{R}$
+    \answer Every subset of the natural numbers is also a subset of the real numbers.\\
+    The statement is true, since $\mathbb{N} \subseteq \mathbb{R}$.
+
+    \problem $\exists n \in \mathbb{N}, \forall X \in \mathcal{P}(\mathbb{N}), |X| < n$
+    \answer There exists a natural number $n$ for which $|X| < n$ for all subsets $X$ of the natural numbers.\\ 
+    This statement is false, since $\mathbb{N} \in \mathcal{P}(\mathbb{N})$ and $\mathbb{N}$ is infinite.
+
+    \problem $\forall n \in \mathbb{Z}, \exists X \subseteq \mathbb{N}, |X| = n$
+    \answer For every integer $n$, there exists a subset $X$ of the natural numbers for which $|X| = n$.\\ 
+    This statement is false, consider $n = -1$.
+
+    \problem $\exists m \in \mathbb{Z}, \forall n \in \mathbb{Z}, m = n + 5$
+    \answer There exists an integer $m$ such that for every integer $n$, $m = n + 5$.\\ 
+    This statement is false, consider $n = 0$ and $n = 1$.
+\end{problems}
+
+
 \end{document}
