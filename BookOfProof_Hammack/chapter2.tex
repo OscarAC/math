@@ -372,4 +372,58 @@
     person $p$ at time $t$.
 \end{problems}
 
+\subsection{Negating Statements}
+
+\begin{exercise}{}
+    Negate the following sentences.
+\end{exercise}
+
+\begin{problems}
+    \problem If $x$ is prime, then $\sqrt{x}$ is not a rational number.
+    \answer
+    \begin{enumerate}
+        \item $\forall x \in \mathbb{Z}, x \in P \implies \lnot(\sqrt{x} \in \mathbb{Q})$
+        \item $\exists x \in \mathbb{Z}, x \in P \land \sqrt{x} \in \mathbb{Q}$
+    \end{enumerate}
+    There is a prime number $x$ whose square root is rational.
+
+    \problem For every positive number $\epsilon$, there is a positive number $\delta$ such that $|x - a| < \delta$ implies $|f(x) - f(a)| < \epsilon$.
+    \answer 
+    \begin{enumerate}
+        \item $\forall \epsilon \in \mathbb{R}, \epsilon > 0, \exists \delta \in \mathbb{R}, \delta > 0, |x - a| < \delta \implies |f(x) - f(a)| < \epsilon$ 
+        \item $\lnot(\forall \epsilon \in \mathbb{R}, \epsilon > 0, \exists \delta \in \mathbb{R}, \delta > 0, |x - a| < \delta \implies |f(x) - f(a)| < \epsilon)$ 
+        \item $\exists \epsilon \in \mathbb{R}, \epsilon > 0, \lnot(\exists \delta \in \mathbb{R}, \delta > 0, |x - a| < \delta \implies |f(x) - f(a)| < \epsilon)$
+        \item $\exists \epsilon \in \mathbb{R}, \epsilon > 0, \forall \delta \in \mathbb{R}, \delta > 0, \lnot(|x - a| < \delta \implies |f(x) - f(a)| < \epsilon)$
+        \item $\exists \epsilon \in \mathbb{R}, \epsilon > 0, \forall \delta \in \mathbb{R}, \delta > 0, |x - a| < \delta \land \lnot(|f(x) - f(a)| < \epsilon)$
+    \end{enumerate}
+    There is a positive number $\epsilon$ such that for every positive number $\delta$, $|x - a| < \delta$ and $|f(x) - f(a)| \geq \epsilon$.
+
+
+    \problem There exists a real number $a$ for which $a + x = x$ for every real number $x$.
+    \answer
+    \begin{enumerate}
+        \item $\exists a \in \mathbb{R}, \forall x \in \mathbb{R}, a + x = x$ 
+        \item $\lnot(\exists a \in \mathbb{R}, \forall x \in \mathbb{R}, a + x = x)$
+        \item $\forall a \in \mathbb{R}, \exists x \in \mathbb{R}, a + x \neq x$
+    \end{enumerate}
+    For every real number $a$, there is a real number $x$ for which $a + x \neq x$.
+
+    \problem If $x$ is a rational number and $x \neq 0$, then $\tan(x)$ is not a rational number.
+    \answer
+    \begin{enumerate}
+        \item $\forall x \in \mathbb{Q},x \neq 0 \implies \tan(x) \notin \mathbb{Q}$
+        \item $\lnot(\forall x \in \mathbb{Q}, x \neq 0 \implies \tan(x) \notin \mathbb{Q})$
+        \item $\exists x \in \mathbb{Q}, \lnot(x \neq 0 \implies \tan(x) \notin \mathbb{Q})$
+        \item $\exists{x \in \mathbb{Q}}, x \neq 0 \land \tan(x) \in \mathbb{Q}$
+    \end{enumerate}
+    There is a rational number $x$ where $x \neq 0$ and $\tan(x)$ is rational.
+
+    \problem If $f$ is a polynomial and its degree is greater than 2, then $f'$ is not constant.
+    \answer $f$ is a polynomial with its degree greater than 2 and its derivative is constant.
+
+    \problem Whenever I have to choose between two evils, I choose the one I haven't tried yet. (\textit{Mae West})
+    \answer Sometimes, when I have to choose between two evils, I choose one that I have
+    already tried.
+\end{problems}
+
 \end{document}
