@@ -1,0 +1,66 @@
+\documentclass[DIN, pagenumber=false, fontsize=11pt, parskip=half]{scrartcl}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{booktabs} % for \midrule
+\usepackage{template}
+
+\titlehead{\centering\small
+    Worked solutions to selected exercises from\\
+    Richard Hammack, \emph{Book of Proof, edition 2.2}\\
+\rule{0.4\linewidth}{0.4pt}}
+
+\title{}
+\author{} % Oscar A. Carrera
+\date{}
+
+\begin{document}
+\maketitle
+
+\setcounter{section}{2}
+
+\section{Counting}
+
+\subsection{Counting Lists}
+
+\begin{problems}
+    \problem Airports are identified with 3-letter codes. For example, the Richmond, Virginia airport has the code \textit{RIC}, and Portland, Oregon has \textit{PDX}. How many different 3-letter codes are possible? 
+    \answer There are $26 \cdot 26 \cdot 26 = 17576$ possible 3-letter codes that are different. 
+
+    \problem Five cards are dealt off of a standard 52-card deck and lined up in a row. How many such line-ups are there in which all 5 cards are of the same color (i.e., all black or all red)?
+    \answer From a 52-card deck, there are 26 of each color, from each half we have $26 \cdot 25 \cdot 24 \cdot 23 \cdot 22 = 7,893,600$ line-ups where all 5 cards are of that same particular color, taking into consideration it can be either of the two colors, then we have $2 \cdot 7,893,600 = 15,787,200$ line-ups where all 5 cards are of the same color.
+
+    \problem Five cards are dealt off a standard 52-card deck and lined up in a row. How many such line-ups are there in which exactly one of the 5 cards is a queen?
+    \answer We have 5 positions to place one of the 4 queens, that is $4 \cdot 5 = 20$ different ways, the remaining 4 positions can be any of the remaining 48 cards that are not a queen, therefore there are $4 \cdot 5 \cdot 48 \cdot 47 \cdot 46 \cdot 45 = 93,398,400$ line-ups with such arrangement.
+
+    \problem This problem concerns lists made from the symbols \textit{A,B,C,D,E}.
+    \begin{enumerate}[label=\alph*)]
+        \item How many such length-5 lists have at least one letter repeated?
+        \item How many such length-6 lists have at least one letter repeated?
+    \end{enumerate}
+    \answer
+    \begin{parts}
+        \item We have $5^5$ different possible lists and $5!$ which don't repeat, thus we have $5^5 - 5! = 3005$ length-5 lists with at least one letter repeated.
+        \item There are more positions than symbols, thus all possible length-6 lists have at least one letter repeated, so there are $5^6 = 15,625$ such lists which have at least one letter repeated.
+    \end{parts}
+
+    \problem This problem concerns lists made from the letters \textit{A,\allowbreak B,\allowbreak C,\allowbreak D,\allowbreak E,\allowbreak F,\allowbreak G,\allowbreak H,\allowbreak I,\allowbreak J}.
+    \begin{enumerate}[label=\alph*)]
+        \item How many length-5 lists can be made from these letters if repetition is not allowed and the list must begin with a vowel?
+        \item How many length-5 lists can be made from these letters if repetition is not allowed and the list must begin and end with a vowel?
+        \item How many length-5 lists can be made from these letters if repetition is not allowed and the list must contain exactly one A?
+    \end{enumerate}
+    \answer
+    \begin{parts}
+        \item There are 3 vowels for the first position, the remaining 4 positions are filled from the other 9 without repetition, so there are $3 \cdot 9 \cdot 8 \cdot 7 \cdot 6 = 9,072$ such lists.
+        \item There are 3 choices of vowel for the first position and 2 for the last, and the middle 3 positions are filled from the remaining 8 letters, so there are $3 \cdot 2 \cdot 8 \cdot 7 \cdot 6 = 2,016$ such lists.
+        \item The single \textit{A} can go in any of the 5 positions, and the remaining 4 positions are filled from the 9 letters that are not \textit{A}, so there are $5 \cdot 9 \cdot 8 \cdot 7 \cdot 6 = 15,120$ such lists.
+    \end{parts}
+
+    \problem Consider the lists of length six made with the symbols \textit{P,R,O,F,S}, where repetition is allowed. (For example, the following is such a list: (P,R,O,O,F,S).) How many such lists can be made if the list must end in an S and the symbol O is used more than once?
+    \answer The last position is fixed as \textit{S}, leaving the first 5 positions free, so there are $5^5 = 3125$ lists ending in \textit{S}. From these we subtract the ones where \textit{O} appears fewer than two times: $4^5 = 1024$ lists with no \textit{O}, and $5 \cdot 4^4 = 1280$ lists with exactly one \textit{O} (5 positions for the \textit{O}, the other 4 filled from the 4 remaining symbols). Thus there are $5^5 - 4^5 - 5 \cdot 4^4 = 821$ such lists.
+
+\end{problems}
+
+
+\end{document}
