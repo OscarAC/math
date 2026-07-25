@@ -62,5 +62,99 @@
 
 \end{problems}
 
+\subsection{Factorials}
+
+\begin{problems}
+    \problem For which values of $n$ does $n!$ have $n$ or fewer digits?
+    \answer We assume the problem refers to the length of the list of digits used to represent $n!$ for some $n$ in base 10. If we let $D(n)$ represent the length of the list for such representation, then the problem statement can be written as $D(n) \leq n$.
+
+    From the \textit{Basis Representation Theorem} we know we can represent any positive integer $N$ uniquely in the form $N = \sum_{k=0}^{m}a_k10^k$, $a_m \neq 0, a_k \in \set{0,...,9}$. From this, we see the number of digits of $N$ is exactly $m+1$, and also $10^m \leq N \leq 10^{m+1}-1$.
+
+    If we let $N = n!$, and $d$ be the number of digits of $n!$, then $10^{d-1} \leq n! \leq 10^d - 1 < 10^d$, so $d - 1 \leq \log_{10}(n!) < d$ which is equivalent to $d = \lfloor \log_{10}(n!) \rfloor + 1$. Therefore we have $D(n) = \lfloor \log_{10}(n!) \rfloor + 1$.
+
+    Using \textit{Stirling's formula}, if we let $\delta$ account for some error, then we have, $\log_{10}(n!) = \log_{10}(\sqrt{2\pi n}(\frac{n}{e})^n) + \delta \approx n\log_{10}(\frac{n}{e}) + \frac{1}{2}\log_{10}(2\pi n)$.
+
+    We can find an approximation to the \textit{crossover} point where $\log_{10}(n!)$ grows like $n\log_{10}(\frac{n}{e})$ that is, $n\log_{10}(\frac{n}{e}) = n$, thus,
+    \begin{align}
+        \nonumber n\log_{10}\left(\frac{n}{e}\right) & = n \\
+        \nonumber \log_{10}\left(\frac{n}{e}\right) & = 1\\
+        \nonumber \frac{n}{e} & = 10\\ 
+        \nonumber n & = 10e \approx 27.18
+    \end{align}
+    We try some discrete neighbor values:
+    \begin{align}
+        \nonumber 28! = 304,888,344,611,713,860,501,504,000,000 & \rightarrow 30  \text{ digits}\\ 
+        \nonumber 27! = 10,888,869,450,418,352,160,768,000,000 & \rightarrow 29 \text{ digits}\\ 
+        \nonumber 26! = 403,291,461,126,605,635,584,000,000 & \rightarrow 27 \text{ digits}\\ 
+        \nonumber 25! = 15,511,210,043,330,985,984,000,000 & \rightarrow 26 \text{ digits}\\
+        \nonumber 24! = 620,448,401,733,239,439,360,000 & \rightarrow 24 \text{ digits}
+    \end{align}
+    We see that when $n = 24$, then $n!$ has $n$ or fewer digits, and the trend continues for $1 \leq n \leq 24$.
+
+
+    \problem Using only pencil and paper, find the value of $\frac{100!}{95!}$.
+    \answer $\frac{100!}{95!} = \frac{100\cdot99\cdot98\cdot97\cdot96\cdot95\cdot94\cdot93\cdot...}{95\cdot94\cdot93\cdot...} = 100\cdot99\cdot98\cdot97\cdot96 = 9034502400$
+
+    \problem There are two 0's at the end of $10! = 3,628,800$. Using only pencil and paper, determine how many 0's are at the end of the number $100!$. 
+    \answer The question in hand is determining how many times is $100!$ divisible by 10, in other words, if $100! = 2^m \cdot 5^n \cdot \delta$ (where $5 \nmid \delta$ and $2 \nmid \delta$), then each pair of one 2 and one 5 makes a factor of 10:
+    \[
+        2^m \cdot 5^n = 10^{\min(m,n)} \cdot 2^{m-\min(m,n)} \cdot 5^{n-\min(m,n)}
+    \]
+    Since $100!$ contains more factors of 2 than factors of 5, then $m > n$, thus:
+    \[
+        100! = 10^n \cdot 2^{m-n} \cdot \delta
+    \]
+    So the number of trailing zeros is exactly $n$, and we obtain $n$ by counting the multiples of 5 in $1 \ldots 100$:
+    \[
+        \frac{100}{5} = 20
+    \]
+    So there is at least 20 trailing zeroes, but we have to account for factors that contribute more than one factor, which is the case of 25, 50, 75, 100:
+    \begin{align}
+        \nonumber 25 & = 5^2\\ 
+        \nonumber 50 & = 2 \cdot 5^2\\ 
+        \nonumber 75 & = 3 \cdot 5^2\\ 
+        \nonumber 100 &= 4 \cdot 5^2
+    \end{align}
+    Hence we need to account for $5^2$'s:
+    \[
+        \frac{100}{25} = 4
+    \]
+    Then we have that $100! = 2^m \cdot 5^{20+4} \cdot \delta \implies n = 20 + 4 = 24$, that is, there are 24 trailing zeroes.
+
+
+    \problem Compute how many 7-digit numbers can be made from the digits 1,2,3,4,5,6,7 if there is no repetition and the odd digits must appear in an unbroken sequence.
+    \answer There are $4! \cdot 4! = 576$ such numbers.
+
+    \problem There is another significant function called \textbf{Stirling's formula} that provides an approximation to factorials. It states that $n! \approx \sqrt{2\pi n}(\frac{n}{e})^n$. It is an approximation to $n!$ in the sense that $\frac{n!}{\sqrt{2 \pi n }(\frac{n}{e})^n}$ approaches 1 as $n$ approaches $\infty$. Use Stirling's formula to find approximations to $5!, 10!, 20!$ and $50!$.
+    \answer Writing $S(n) = \sqrt{2\pi n}\left(\frac{n}{e}\right)^n$ for Stirling's approximation, we obtain:
+    \begin{align}
+        \nonumber S(5)  & \approx 118.02\\
+        \nonumber S(10) & \approx 3{,}598{,}695.62\\
+        \nonumber S(20) & \approx 2.4228 \times 10^{18}\\
+        \nonumber S(50) & \approx 3.0363 \times 10^{64}
+    \end{align}
+\end{problems}
+
+\subsection{Counting Subsets}
+
+\begin{problems}
+    \problem Suppose $A$ is a set for which $|A| = 100$. How many subsets of $A$ have 5 elements? How many subsets have 10 elements? How many have 99 elements?
+
+    \problem Suppose a set $B$ has the property that $|\set{X : X \in \mathcal{P}(B),|X| = 6}| = 28$. Find $|B|$.
+
+    \problem $|\set{X \in \mathcal{P}(\set{0,1,2,3,4,5,6,7,8,9}) : |X| = 4}| = $
+
+    \problem This problem concerns lists made from the symbols $A,\allowbreak B,\allowbreak C,\allowbreak D,\allowbreak E,\allowbreak F,\allowbreak G,\allowbreak H,\allowbreak I,\allowbreak J$.
+    \begin{enumerate}[label=\alph*)]
+        \item How many length-5 lists can be made if repetition is not allowed and the list is in alphabetical order? (Example: \textit{BDEFI} or \textit{ABCGH}, but not \textit{BADGH}.)
+        \item How many length-5 lists can be made if repetition is not allowed and the list is \textbf{not} in alphabetical order?
+    \end{enumerate}
+
+    \problem A department consists of 5 men and 7 women. From this department you select a committee with 3 men and 2 women. In how many ways can you do this?
+
+    \problem Twenty-one people are to be divided into two teams, the Red Team and the Blue Team. There will be 10 people on Red Team and 11 people on Blue Team. In how many ways can this be done?
+
+    \problem Suppose $n,k \in \mathbb{Z}$, and $0 \leq k \leq n$. Use Definition 3.2 alone (without using Fact 3.3) to show that ${n \choose k}  = {n \choose n-k}$.
+\end{problems}
 
 \end{document}
