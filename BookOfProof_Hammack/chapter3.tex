@@ -194,14 +194,52 @@
     \answer $(3x - 2y)^9 = (3x + (-2y))^9 = ... + {9 \choose 3}(3x)^{6}(-2y)^3 + ... = ... - 489888x^6y^3 + ...$
 
     \problem Use Definition 3.2 and Fact 1.3 to show $\sum_{k=0}^{n} {n \choose k} = 2^n$.
+    \answer By Definition 3.2, ${n \choose k}$ is the number of subsets that can be made by choosing $k$ elements from a set with $n$ elements, and from Fact 1.3 we know a finite set with $n$ elements has $2^n$ subsets.
+
+    $\sum_{k=0}^{n}{n \choose k}$ is the sum of all possible subsets, and since each of the $n$ elements can be either included or not included in a subset, there are $2 \cdot 2 \cdot ... \cdot 2 = 2^n$ possible subsets.
+
+    Therefore, $\sum_{k=0}^{n}{n \choose k} = 2^n$
 
     \problem Use Fact 3.3 to derive Equation 3.2.
+    \answer Fact 3.3 states that ${n \choose k} = \frac{n!}{k!(n-k)!}$ for $n,k \in \mathbb{Z}$ and $0 \leq k \leq n$. Equation 3.2 states that ${n + 1 \choose k} = {n \choose k - 1} + {n \choose k}$.
+    \begin{align}
+        \nonumber {n \choose k - 1} + {n \choose k} & = \frac{n!}{(k-1)!(n-k+1)!} + \frac{n!}{k!(n-k)!}\\ 
+        \nonumber & = \frac{n!k}{k!(n-k+1)!} + \frac{n!(n-k+1)}{k!(n-k+1)!}\\ 
+        \nonumber & = \frac{n!k + n!(n-k+1)}{k!(n-k+1)!} = \frac{n!(n+1)}{k!(n-k+1)!}\\
+        \nonumber & = \frac{(n+1)!}{k!(n + 1 - k)!}\\ 
+        \nonumber & = {n + 1 \choose k}
+    \end{align}
 
     \problem Show that the formula $k{n \choose k} = n{n-1 \choose k-1}$ is true for all integers $n,k$ with $0 \leq k \leq n$.
+    \answer
+    \begin{align}
+        \nonumber n {n-1 \choose k-1} & = n\left(\frac{(n-1)!}{(k-1)!([n-1]-[k-1])!}\right)\\ 
+        \nonumber & = n\left(\frac{(n-1)!}{(k-1)!(n-k)!}\right)\\ 
+        \nonumber & = n\left(\frac{k(n-1)!}{k!(n-k)!}\right)\\ 
+        \nonumber & = \frac{kn(n-1)!}{k!(n-k)!}\\ 
+        \nonumber & = k\left(\frac{n(n-1)!}{k!(n-k)!}\right)\\ 
+        \nonumber & = k\left(\frac{n!}{k!(n-k)!}\right)\\
+        \nonumber & = k{n \choose k}
+    \end{align}
 
     \problem Show that ${n \choose k} {k \choose m} = {n \choose m} {n-m \choose k-m}$.
+    \answer 
+    \begin{align}
+        \nonumber {n \choose k}{k \choose m} & = \left(\frac{n!}{k!(n-k)!}\right) \left(\frac{k!}{m!(k-m)!}\right)\\ 
+        \nonumber & = \frac{n!}{m!(k-m)!(n-k)!}\\ 
+        \nonumber {n \choose m}{n-m \choose k-m} & = \left(\frac{n!}{m!(n-m)!}\right) \left(\frac{(n-m)!}{(k-m)!([n-m]-[k-m])!}\right)\\ 
+        \nonumber & = \frac{n!}{m!(k-m)!(n-k)!}
+    \end{align}
+
 
     \problem The first five rows of Pascal's triangle appear in the digits of powers of 11: $11^0 = 1$, $11^1 = 11$, $11^2 = 121$, $11^3 = 1331$, $11^4 = 14641$. Why is this so? Why does the pattern not continue with $11^5$?
+    \answer This comes from the Binomial Theorem:
+
+    $(10 + 1)^n = \sum_{k=0}^{n}{n \choose k}10^{n-k}$
+
+    And as long every binomial coefficient is a single digit, the decimal representation of $11^n$ is simply the row of Pascal's triangle.
+
+    This fails at $11^5$ because the 5th row of Pascal's triangle contains coefficients with double digits.
 \end{problems}
 
 \end{document}
