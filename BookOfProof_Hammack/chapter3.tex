@@ -139,22 +139,49 @@
 
 \begin{problems}
     \problem Suppose $A$ is a set for which $|A| = 100$. How many subsets of $A$ have 5 elements? How many subsets have 10 elements? How many have 99 elements?
+    \answer
+    \begin{align}
+        \nonumber {100 \choose 5} & = \frac{100!}{5!(100-5)!} & = 75,287,520\\ 
+        \nonumber {100 \choose 10} & = \frac{100!}{10!(100-10)!} & = 17,310,309,456,440\\ 
+        \nonumber {100 \choose 99} & = \frac{100!}{99!(100-99)!} & = 100
+    \end{align}
+
 
     \problem Suppose a set $B$ has the property that $|\set{X : X \in \mathcal{P}(B),|X| = 6}| = 28$. Find $|B|$.
+    \answer From the problem statement we know that ${\abs{B} \choose 6} = 28$, since 28 is small, we check neighbor values of 6:
+    \begin{align}
+        \nonumber {6 \choose 6} & = 1\\ 
+        \nonumber {7 \choose 6} & = 7\\ 
+        \nonumber {8 \choose 6} & = 28
+    \end{align}
+    So we see that $\abs{B} = 8$.
 
     \problem $|\set{X \in \mathcal{P}(\set{0,1,2,3,4,5,6,7,8,9}) : |X| = 4}| = $
+    \answer ${10 \choose 4} = 210$
 
     \problem This problem concerns lists made from the symbols $A,\allowbreak B,\allowbreak C,\allowbreak D,\allowbreak E,\allowbreak F,\allowbreak G,\allowbreak H,\allowbreak I,\allowbreak J$.
     \begin{enumerate}[label=\alph*)]
         \item How many length-5 lists can be made if repetition is not allowed and the list is in alphabetical order? (Example: \textit{BDEFI} or \textit{ABCGH}, but not \textit{BADGH}.)
         \item How many length-5 lists can be made if repetition is not allowed and the list is \textbf{not} in alphabetical order?
     \end{enumerate}
+    \answer
+    \begin{parts}
+    \item There are ${10 \choose 5} = 252$ ways to choose 5 letters from 10.
+    \item Since repetition is not allowed, there are $\frac{10!}{5!} = 30,240$ such lists, from the previous question we know there are 252 lists in alphabetical order, therefore, there are $30,240 - 252 = 29,988$ such lists.
+    \end{parts}
 
     \problem A department consists of 5 men and 7 women. From this department you select a committee with 3 men and 2 women. In how many ways can you do this?
+    \answer There are ${5 \choose 3} \cdot {7 \choose 2} = 210$ different ways to create the committee.
 
     \problem Twenty-one people are to be divided into two teams, the Red Team and the Blue Team. There will be 10 people on Red Team and 11 people on Blue Team. In how many ways can this be done?
+    \answer This can be done ${21 \choose 10} = 352,716$ different ways.
 
     \problem Suppose $n,k \in \mathbb{Z}$, and $0 \leq k \leq n$. Use Definition 3.2 alone (without using Fact 3.3) to show that ${n \choose k}  = {n \choose n-k}$.
+    \answer Let $S$ be a set with $|S| = n$. By Definition 3.2, ${n \choose k}$ is the number of $k$-element subsets of $S$, and ${n \choose n-k}$ is the number of $(n-k)$-element subsets of $S$.
+
+    Consider pairing each subset $A \subseteq S$ with its complement $S - A$. If $|A| = k$, then $|S - A| = n - k$, so this pairs every $k$-element subset with an $(n-k)$-element subset. Furthermore, taking the complement twice returns the original set, since $S - (S - A) = A$; hence each $(n-k)$-element subset is paired back with exactly one $k$-element subset, with none left out or counted twice.
+
+    So the $k$-element subsets and the $(n-k)$-element subsets are in exact one-to-one correspondence, and therefore equal in number. By Definition 3.2, $\binom{n}{k} = \binom{n}{n-k}$.
 \end{problems}
 
 \end{document}
