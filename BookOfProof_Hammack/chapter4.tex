@@ -1,0 +1,64 @@
+\documentclass[DIN, pagenumber=false, fontsize=11pt, parskip=half]{scrartcl}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{booktabs} % for \midrule
+\usepackage{template}
+
+\titlehead{\centering\small
+    Worked solutions to selected exercises from\\
+    Richard Hammack, \emph{Book of Proof, edition 2.2}\\
+\rule{0.4\linewidth}{0.4pt}}
+
+\title{}
+\author{} % Oscar A. Carrera
+\date{}
+
+\begin{document}
+\maketitle
+
+\setcounter{section}{3}
+
+\section{Direct Proof}
+
+\textbf{Use the method of direct proof to prove the following statements.}
+
+\begin{problems}
+    \problem If $x$ is an odd integer, then $x^3$ is odd.
+    \begin{proof}
+        Suppose $x$ is an odd integer. Thus $x = 2a+1$ for some $a \in \mathbb{Z}$.
+        Consequently $x^3 = (2a+1)^3 = 8a^3+12a^2+6a+1 = 2(4a^3+6a^2+3a)+1$.
+        Thus $x^3 = 2b+1$, where $b$ is the integer $4a^3+6a^2+3a$.
+        Therefore $x^3$ is odd by definition of an odd number.
+    \end{proof}
+
+    \problem Suppose $x,y \in \mathbb{Z}$. If $x$ and $y$ are odd, then $xy$ is odd.
+    \begin{proof}
+        Suppose $x$ and $y$ are odd.
+        Then $x = 2a+1$ for some $a \in \mathbb{Z}$, and $y = 2b+1$ for some $b \in \mathbb{Z}$.
+        Consequently $xy = (2a+1)(2b+1) = 4ab+2a+2b+1 = 2(2ab+a+b) + 1$.
+        Thus $xy = 2c+1$, where $c$ is the integer $2ab+a+b$.
+        Therefore $xy$ is odd by definition of an odd number.
+    \end{proof}
+
+    \problem Suppose $a,b,c \in \mathbb{Z}$. If $a \mid b$ and $a \mid c$, then $a\mid (b+c)$.
+    \begin{proof}
+        Suppose $a \mid b$ and $a \mid c$.
+        Then $b = ak$ for some $k \in \mathbb{Z}$ and $c = ah$ for some $h \in \mathbb{Z}$.
+        Consequently $b + c = ak + ah = a(k+h)$.
+        Thus $b + c = am$, where $m$ is the integer $k+h$.
+        Therefore $a \mid (b + c)$ by definition of divisibility.
+    \end{proof}
+
+    \problem Suppose $a$ is an integer. If $5 \mid 2a$, then $5 \mid a$.
+    \begin{proof}
+        Suppose $5 \mid 2a$. Then $2a = 5k$ for some $k \in \mathbb{Z}$.
+        Observe that $a = 6a - 5a = 3(2a) - 5a$.
+        Substituting $2a = 5k$ gives $a = 3(5k) - 5a = 15k - 5a = 5(3k - a)$.
+        Thus $a = 5n$, where $n$ is the integer $3k - a$.
+        Therefore $5 \mid a$ by definition of divisibility.
+    \end{proof}
+
+\end{problems}
+
+\end{document}
