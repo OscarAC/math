@@ -59,6 +59,39 @@
         Therefore $5 \mid a$ by definition of divisibility.
     \end{proof}
 
+    \problem Suppose $a$ and $b$ are integers. If $a \mid b$, then $a \mid (3b^3-b^2+5b)$.
+    \begin{proof}
+        Suppose $a \mid b$.
+        Then $b = ak$ for some $k \in \mathbb{Z}$.
+        Consequently $3b^3-b^2+5b = 3(ak)^3-(ak)^2+5(ak) = a(3k(ak)^2-ak^2+5k)$.
+        Thus $3b^3-b^2+5b = am$, where $m$ is the integer $3k(ak)^2-ak^2+5k$.
+        Therefore $a \mid (3b^3-b^2+5b)$ by definition of divisibility.
+    \end{proof}
+
+    \problem If $x \in \mathbb{R}$ and $0 < x < 4$, then $\frac{4}{x(4-x)} \geq 1$.
+    \begin{proof}
+        Suppose $0 < x < 4$. Then $x > 0$ and $4-x > 0$. 
+        This means that $x(4-x) > 0$, so we can multiply both sides of the inequality 
+        by $x(4-x)$, then it is enough to show that $4 \geq x(4-x)$.
+        
+        Now, $x(4-x) = 4x-x^2$, hence $4 - (4x - x^2) = x^2 - 4x + 4 = (x-2)^2$. Because the square of any real number is positive, $(x-2)^2 \geq 0$, therefore $4 - (4x - x^2) \geq 0$ which implies $4 \geq x(4-x)$.
+        Because $x(4-x) > 0$, dividing both sides by $x(4-x)$ gives $\frac{4}{x(4-x)} \geq 1$.
+    \end{proof}
+
+    \problem If $n \in \mathbb{Z}$, then $5n^2 + 3n + 7$ is odd. (Try cases.)
+    \begin{proof}
+        Suppose $n \in \mathbb{Z}$. Every integer is either even or odd, since dividing
+        an integer by $2$ leaves a remainder of either $0$ or $1$. The following two
+        cases are therefore exhaustive.
+
+        \textbf{Case 1.} Suppose $n$ is even. Then $n = 2a$ for some $a \in \mathbb{Z}$. Consequently $5n^2 + 3n + 7 = 5(2a)^2 + 3(2a) + 7 = 20a^2 + 6a + 7 = 2(10a^2+3a+3) + 1$. Thus $5n^2 + 3n + 7 = 2m + 1$, where $m$ is the integer $10a^2+3a+3$. Hence, in this case, $5n^2 + 3n + 7$ is odd by definition of an odd number.
+
+        \textbf{Case 2.} Suppose $n$ is odd. Then $n = 2b + 1$ for some $b \in \mathbb{Z}$. Consequently $5n^2 + 3n + 7 = 5(2b+1)^2 + 3(2b+1) + 7 = 5(4b^2+4b+1) + 6b + 10 = 20b^2 + 26b + 15 = 2(10b^2+13b+7) + 1$. Thus $5n^2 + 3n + 7 = 2m + 1$, where $m$ is the integer $10b^2+13b+7$. Hence, in this case, $5n^2+3n+7$ is odd by definition of an odd number.
+
+        The two cases are exhaustive and $5n^2 + 3n + 7$ is odd in each, so
+        $5n^2 + 3n + 7$ is odd for every $n \in \mathbb{Z}$.
+    \end{proof}
+
 \end{problems}
 
 \end{document}
