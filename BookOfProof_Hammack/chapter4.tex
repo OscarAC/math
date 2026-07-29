@@ -117,7 +117,8 @@
         The two cases are exhaustive and they show that if two integers have the same parity then their sum is even.
     \end{proof}
 
-    \problem Suppose $x$ and $y$ are positive real numbers. If $x < y$, then $x^2 < y^2$.
+    \problem Suppose $x$ and $y$ are positive real numbers. 
+    If $x < y$, then $x^2 < y^2$.
     \begin{proof}
         Suppose $x$ and $y$ are positive real numbers with $x < y$. 
         Subtracting $y$ from both sides gives $x-y < 0$. 
@@ -141,6 +142,40 @@
 
         The two cases are exhaustive and $a \in \set{-1,0,1}$ in each. Therefore $a \in \set{-1,0,1}$.
     \end{proof}
+
+    \problem If $n \in \mathbb{N}$, then $n^2 = 2{n \choose 2} + {n \choose 1}$. 
+    (You may need a separate case for $n = 1$)
+    \begin{proof}
+        Suppose $n \in \mathbb{N}$. Then $n = 1$ or $n > 1$. We consider both cases.
+
+        \textbf{Case 1.} Suppose $n = 1$. 
+        Then $2{n \choose 2} + {n \choose 1} = 2{1 \choose 2} + {1 \choose 1} = 0 + 1 = 1 = 1^2 = n^2$.
+        We see the condition holds for $n = 1$.
+
+        \textbf{Case 2.} Suppose $n > 1$.
+        Then $2{n \choose 2} + {n \choose 1} = 2\left(\frac{n!}{2!(n-2)!}\right) + \left(\frac{n!}{1!(n-1)!}\right) = \frac{2n!}{2!(n-2)!} + \frac{n!}{(n-1)!} = \frac{n!}{(n-2)!} + \frac{n!}{(n-1)!} = n(n-1) + n = n^2$.
+        Thus the condition holds for $n > 1$.
+
+        The two cases are exhaustive and show that $n^2 = 2{n \choose 2} + {n \choose 1}$.
+    \end{proof}
+
+    \problem If $n \in \mathbb{N}$ and $n \geq 2$, then the numbers $n! + 2, n! +3, n! + 4, n! + 5, ... , n! + n$ are all composite. 
+    (Thus for any $n \geq 2$, one can find $n$ consecutive composite numbers. 
+    This means there are arbitrarily large "gaps" between prime numbers.)
+    \begin{proof}
+        Suppose $n \in \mathbb{N}$ and $n \geq 2$.
+        Now consider the numbers $n! + 2$, $n! + 3$, ..., $n! + n$. 
+        Now take any $k \in \mathbb{N}$ with $2 \leq k \leq n$.
+        Because $n! = 1 \cdot 2 \cdot ... \cdot n$ and $2 \leq k \leq n$, the number $k$ occurs as one of the factors of $n!$.
+        Hence $n! = km$, where $m$ is the product of the remaining factors.
+        Each of those factors is a positive integer, so $m$ is a positive integer, and therefore $m \geq 1$.
+        Then $n! + k = km + k = k(m+1)$.
+        Now $k \geq 2 > 1$, and $m + 1 \geq 2 > 1$.
+        Thus $n! + k$ is a product of two natural numbers, each greater than $1$, so $n! + k$ is composite by definition of a composite number.
+
+        Since $k$ was an arbitrary natural number with $2 \leq k \leq n$, every number in the list $n! + 2, n! + 3, ..., n! + n$ is composite.
+    \end{proof}
+
 \end{problems}
 
 \end{document}
