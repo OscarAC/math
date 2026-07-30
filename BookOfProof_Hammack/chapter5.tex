@@ -1,0 +1,49 @@
+\documentclass[DIN, pagenumber=false, fontsize=11pt, parskip=half]{scrartcl}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{template}
+
+\titlehead{\centering\small
+    Worked solutions to selected exercises from\\
+    Richard Hammack, \emph{Book of Proof, edition 2.2}\\
+\rule{0.4\linewidth}{0.4pt}}
+
+\title{}
+\author{} % Oscar A. Carrera
+\date{}
+
+\begin{document}
+\maketitle
+
+\setcounter{section}{4}
+
+\section{Contrapositive Proof}
+
+\textbf{A. Use the method of contrapositive proof to prove the following statements.}
+
+\begin{problems}
+    \problem Suppose $n \in \mathbb{Z}$. If $n^2$ is odd, then $n$ is odd.
+    \begin{proof}
+        We prove the contrapositive: if $n$ is not odd, then $n^2$ is not odd.
+        Suppose that $n$ is not odd.
+        Thus $n$ is even, so $n = 2a$ for some integer $a$.
+        Consequently $n^2 = (2a)^2 = 4a^2 = 2(2a^2).$
+        Therefore $n^2 = 2b$, where the integer $b = 2a^2$.
+        Consequently, $n^2$ is even by definition of an even number.
+        Therefore $n^2$ is not odd.
+    \end{proof}
+
+    \problem Suppose $a,b,c \in \mathbb{Z}$. If $a$ does not divide $bc$, then $a$ does not divide $b$.
+    \begin{proof}
+        We prove the contrapositive: if $a \mid b$, then $a \mid bc$.
+        Suppose $a \mid b$.
+        Then $b = ak$ for some $k \in \mathbb{Z}$.
+        Multiplying both sides by $c$ gives $bc = a(kc)$.
+        Since $kc \in \mathbb{Z}$, it follows that $a \mid bc$.
+    \end{proof}
+
+
+\end{problems}
+
+\end{document}

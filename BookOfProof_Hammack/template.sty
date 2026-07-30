@@ -11,6 +11,7 @@
 \RequirePackage{enumitem}
 \RequirePackage{textcomp}
 \RequirePackage{keyval}
+\RequirePackage{etoolbox}
 
 % --- Theorem / definition styles -------------------------------------
 \declaretheoremstyle[
@@ -93,6 +94,11 @@
   \normalfont\unboldmath
   \noindent\ignorespaces
 }
+
+%  A \begin{proof} used in place of \answer must also cancel the \boldmath
+%  set by \problem.  amsthm's proof issues \normalfont, which clears
+%  \bfseries but leaves the math version bold, so undo it explicitly.
+\AtBeginEnvironment{proof}{\unboldmath}
 
 % --- Lettered sub-parts:  a) b) c) -----------------------------------
 %  \begin{parts} \item ... \item ... \end{parts}
