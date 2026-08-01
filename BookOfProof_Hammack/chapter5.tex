@@ -25,7 +25,7 @@
 \begin{problems}
     \problem Suppose $n \in \mathbb{Z}$. If $n^2$ is odd, then $n$ is odd.
     \begin{proof}
-        We prove the contrapositive: if $n$ is not odd, then $n^2$ is not odd.
+        We prove the contrapositive: if $n$ is not odd, then $n^2$ is not odd.\\
         Suppose that $n$ is not odd.
         Thus $n$ is even, so $n = 2a$ for some integer $a$.
         Consequently $n^2 = (2a)^2 = 4a^2 = 2(2a^2).$
@@ -36,14 +36,20 @@
 
     \problem Suppose $a,b,c \in \mathbb{Z}$. If $a$ does not divide $bc$, then $a$ does not divide $b$.
     \begin{proof}
-        We prove the contrapositive: if $a \mid b$, then $a \mid bc$.
+        We prove the contrapositive: if $a \mid b$, then $a \mid bc$.\\
         Suppose $a \mid b$.
         Then $b = ak$ for some $k \in \mathbb{Z}$.
         Multiplying both sides by $c$ gives $bc = a(kc)$.
         Since $kc \in \mathbb{Z}$, it follows that $a \mid bc$.
     \end{proof}
 
-
+    \problem Suppose $x \in \mathbb{R}$. If $x^3-x > 0$ then $x > -1$.
+    \begin{proof}
+        We prove the contrapositive: if $x \leq -1$ then $x^3-x \leq 0$.\\
+        Suppose $x \leq -1$. Then $x < 0$, $x - 1 < 0$, and $x + 1 \leq 0$.
+        Notice that $x^3 - x = x(x-1)(x+1)$, a product of two negative factors and one nonpositive factor.
+        Since the product of two negative numbers and a nonpositive number is nonpositive, we have $x(x-1)(x+1) \leq 0$, that is, $x^3 - x \leq 0$.
+    \end{proof}
 \end{problems}
 
 \end{document}
