@@ -1,0 +1,37 @@
+\documentclass[DIN, pagenumber=false, fontsize=11pt, parskip=half]{scrartcl}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{template}
+
+\titlehead{\centering\small
+    Worked solutions to selected exercises from\\
+    Richard Hammack, \emph{Book of Proof, edition 2.2}\\
+\rule{0.4\linewidth}{0.4pt}}
+
+\title{}
+\author{} % Oscar A. Carrera
+\date{}
+
+\begin{document}
+\maketitle
+
+\setcounter{section}{5}
+
+\section{Proof by Contradiction}
+
+\textbf{Use the method of proof by contradiction to prove the following statements. (In each case, you should also think about how a direct or contrapositive proof would work. You will find in most cases that proof by contradiction is easier.)}
+
+\begin{problems}
+    \problem Suppose $n \in \mathbb{Z}$. If $n^2$ is odd, then $n$ is odd.
+    \begin{proof}
+        For sake of contradiction, suppose $n^2$ is odd and $n$ is not odd.
+        Then $n^2$ is odd and $n$ is even.
+        Since $n$ is even, then $n = 2c$ for some $c \in \mathbb{Z}$.
+        Then $n^2 = (2c)^2 = 4c^2 = 2(2c^2)$. Then $n^2$ is even.
+        Thus $n^2$ is odd and $n^2$ is even, a contradiction.
+    \end{proof}
+
+\end{problems}
+
+\end{document}
