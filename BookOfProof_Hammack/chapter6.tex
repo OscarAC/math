@@ -25,13 +25,28 @@
 \begin{problems}
     \problem Suppose $n \in \mathbb{Z}$. If $n^2$ is odd, then $n$ is odd.
     \begin{proof}
-        For sake of contradiction, suppose $n^2$ is odd and $n$ is not odd.
+        For the sake of contradiction, suppose $n^2$ is odd and $n$ is not odd.
         Then $n^2$ is odd and $n$ is even.
-        Since $n$ is even, then $n = 2c$ for some $c \in \mathbb{Z}$.
-        Then $n^2 = (2c)^2 = 4c^2 = 2(2c^2)$. Then $n^2$ is even.
+        Since $n$ is even, $n = 2c$ for some $c \in \mathbb{Z}$.
+        Then $n^2 = (2c)^2 = 4c^2 = 2(2c^2)$, so $n^2$ is even.
         Thus $n^2$ is odd and $n^2$ is even, a contradiction.
     \end{proof}
 
+    \problem Prove that $\sqrt{6}$ is irrational.
+    \begin{proof}
+        For the sake of contradiction, suppose $\sqrt{6}$ is not irrational.
+        Then $\sqrt{6}$ is rational.
+        Then $\sqrt{6} = \frac{a}{b}$ for some $a,b \in \mathbb{Z}$ with $b \neq 0$, where $\frac{a}{b}$ is fully reduced; in particular, $a$ and $b$ are not both even.
+        Squaring both sides gives $6 = \frac{a^2}{b^2}$, thus $a^2 = 6b^2 = 2(3b^2)$.
+        Then $a^2$ is even, which implies $a$ is even.
+        Since $a$ and $b$ are not both even, it follows that $b$ is odd, and hence $b^2$ is odd.
+        Since $a$ is even, $a = 2k$ for some $k \in \mathbb{Z}$.
+        Substituting this value for $a$ in the equation we get $(2k)^2 = 2(3b^2)$, so
+        $4k^2 = 2(3b^2)$, and dividing both sides by 2 gives $2k^2 = 3b^2$.
+        Thus $3b^2$ is even.
+        But $b^2$ is odd and 3 is odd, and the product of two odd numbers is odd, so $3b^2$ is odd.
+        Thus $3b^2$ is both even and odd, a contradiction.
+    \end{proof}
 \end{problems}
 
 \end{document}
