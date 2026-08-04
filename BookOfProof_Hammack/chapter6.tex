@@ -47,6 +47,36 @@
         But $b^2$ is odd and 3 is odd, and the product of two odd numbers is odd, so $3b^2$ is odd.
         Thus $3b^2$ is both even and odd, a contradiction.
     \end{proof}
+
+    \problem If $a,b \in \mathbb{Z}$, then $a^2-4b-2 \neq 0$.
+    \begin{proof}
+        For the sake of contradiction, suppose $a,b \in \mathbb{Z}$ but $a^2-4b-2 = 0$.
+        Then we have $a^2 = 4b + 2 = 2(2b + 1)$, which means $a^2$ is even. Therefore $a$ is even, so $a = 2c$ for some $c \in \mathbb{Z}$.
+        Substituting this value for $a$ back in the equation we get
+        \begin{align*}
+            (2c)^2 - 4b - 2 & = 0\\
+            4c^2 - 4b - 2 & = 0\\ 
+            4(c^2-b) & = 2\\ 
+            2(c^2-b) & = 1
+        \end{align*}
+        Since $c^2 - b \in \mathbb{Z}$, the last equation says that 1 is an even number, a contradiction.
+    \end{proof}
+
+    \problem Suppose $a,b,c \in \mathbb{Z}$. If $a^2 + b^2 = c^2$, then $a$ or $b$ is even.
+    \begin{proof}
+        For the sake of contradiction, suppose that $a^2 + b^2 = c^2$, and that $a$ and $b$ are odd.
+        Then there exist integers $m$ and $n$ for which $a = 2m + 1$ and $b = 2n + 1$.
+        Hence, $a^2 = (2m + 1)^2 = 4(m^2 + m) + 1$, so $a^2 \equiv 1 \pmod{4}$. Similarly $b^2 \equiv 1 \pmod{4}$.
+        Since $a^2 + b^2 = c^2$, it follows that $c^2 \equiv 1 + 1 \equiv 2 \pmod{4}$.
+        But every square is congruent to either 0 or 1 (mod 4), so $c^2 \not\equiv 2 \pmod{4}$, a contradiction.
+    \end{proof}
+
+    \problem There exist no integers $a$ and $b$ for which $21a + 30b = 1$.
+    \begin{proof}
+        For the sake of contradiction, assume there exist integers $a$ and $b$ for which $21a + 30b = 1$. 
+        Then $1 = 3(7a + 10b)$. Since $7a + 10b \in \mathbb{Z}$, this implies $3 \mid 1$, a contradiction.
+    \end{proof}
+
 \end{problems}
 
 \end{document}
