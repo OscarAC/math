@@ -1,0 +1,63 @@
+\documentclass[DIN, pagenumber=false, fontsize=11pt, parskip=half]{scrartcl}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{template}
+\usepackage{amsmath}
+
+\DeclareMathOperator{\lcm}{lcm}
+
+\titlehead{\centering\small
+    Worked solutions to selected exercises from\\
+    Richard Hammack, \emph{Book of Proof, edition 2.2}\\
+\rule{0.4\linewidth}{0.4pt}}
+
+\title{}
+\author{} % Oscar A. Carrera
+\date{}
+
+\begin{document}
+\maketitle
+
+\setcounter{section}{6}
+
+\section{Proving Non-Conditional Statements}
+
+\textbf{Prove the following statements.}
+
+\begin{problems}
+    \problem Suppose $x \in \mathbb{Z}$. Then $x$ is odd if and only if $3x+6$ is odd.
+    \begin{proof}
+        First we prove that $x$ being odd implies $3x+6$ is odd.
+        Suppose $x$ is odd. 
+        Then, by definition of an odd number, $x = 2k+1$ for some integer $k$.
+        Thus $3x+6 = 3(2k+1)+6 = 6k+9 = 2(3k+4) + 1$. 
+        Therefore $3x+6$ is odd by definition of an odd number.
+
+        Conversely, we need to prove that $3x+6$ being odd implies $x$ is odd.
+        We use contrapositive proof. 
+        Suppose $x$ is not odd. Then $x$ is even, so $x = 2k$ for some integer $k$.
+        Thus $3x+6 = 3(2k)+6 = 6k+6 = 2(3k+3)$. Therefore $3x+6$ is even by definition of an even number. Thus $3x+6$ is not odd.
+        Therefore by contrapositive we have proved that $3x+6$ being odd implies $x$ is odd.
+    \end{proof}
+
+    \problem Given an integer $a$, then $a^3+a^2+a$ is even if and only if $a$ is even.
+    \begin{proof}
+        First we prove that $a^3+a^2+a$ being even implies that $a$ is even.
+        We use contrapositive proof.
+        Suppose $a$ is not even, then $a$ is odd.
+        Thus $a = 2k + 1$ for some integer $k$.
+        Hence, $a^3 + a^2 + a = (2k+1)^3 + (2k+1)^2 + 2k + 1$.
+        After expanding we get $16k^3 + 24k^2 + 14k + 2 + 1 = 2(8k^3+12k^2+7k+1) + 1$.
+        Therefore, $a^3+a^2+a$ is odd by definition of an odd number.
+
+        Conversely, we need to prove that $a$ being even implies that $a^3+a^2+a$ is even.
+        Suppose $a$ is even.
+        Then $a = 2k$ for some integer $k$.
+        Then $a^3+a^2+a = (2k)^3+(2k)^2+(2k) = 8k^3+4k^2+2k = 2(4k^3+2k^2+k)$.
+        Therefore, $a^3+a^2+a$ is even by definition of an even number,
+    \end{proof}
+
+\end{problems}
+
+\end{document}
