@@ -58,6 +58,38 @@
         Therefore, $a^3+a^2+a$ is even by definition of an even number,
     \end{proof}
 
+    \problem Suppose $x,y \in \mathbb{R}$. Then $x^3+x^2y=y^2+xy$ if and only if $y = x^2$ or $y = -x$.
+    \begin{proof}
+        First we prove that if $x^3+x^2y=y^2+xy$ then $y = x^2$ or $y = -x$.\\
+        Assume $x^3+x^2y=y^2+xy$.
+        From this we get $x^2(x+y) = y(x+y)$.
+        Dividing both sides by $(x+y)$ we see that $y = x^2$.
+
+        Conversely, we need to prove that if $y = x^2$ or $y = -x$ then $x^3+x^2y=y^2+xy$, we look at both cases.
+
+        \textbf{Case 1.} Assume $y = x^2$.
+        By substituting this value for $y$ in the equation we get $x^3+x^4=x^4+x^3$.
+
+        \textbf{Case 2.} Assume $y = -x$.
+        By substituting this value for $y$ in the equation we get $x^3-x^2=x^2-x^2$.
+
+        Therefore $x^3+x^2y=y^2+xy$ both when $y = x^2$ and $y = -x$.
+    \end{proof}
+
+    \problem Suppose $a,b \in \mathbb{Z}$. Prove that $a \equiv b \pmod{10}$ if and only if $a \equiv b \pmod{2}$ and $a \equiv b \pmod{5}$.
+    \begin{proof}
+        First we prove that if $a \equiv b \pmod{10}$ then $a \equiv b \pmod{2}$ and $a \equiv b \pmod{5}$.
+        Assume $a \equiv b \pmod{10}$.
+        Then $(a-b) = 10k$ for some integer $k$.
+        Hence $(a-b) = 2(5k)$ and $(a-b) = 5(2k)$.
+        In other words, $a \equiv b \pmod{2}$ and $a \equiv b \pmod{5}$.
+
+        Conversely, we prove that if $a \equiv b \pmod{2}$ and $a \equiv b \pmod{5}$ then $a \equiv b \pmod{10}$. We prove this by contrapositive.
+        Suppose $a \not\equiv b \pmod{10}$.
+        Then $(a-b) \neq 10k$ for some integer $k$.
+        Hence $(a-b) \neq 2(5k)$ and $(a-b) \neq 5(2k)$.
+        In other words, $a \not\equiv b \pmod{2}$ and $a \not\equiv b \pmod{5}$.
+    \end{proof}
 \end{problems}
 
 \end{document}
