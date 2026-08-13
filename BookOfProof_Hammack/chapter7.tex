@@ -143,6 +143,32 @@
         The three cases above show that if $a \in \set{-1,0,1}$ then $a^2 \mid a$.
     \end{proof}
 
+    \problem Suppose $a,b \in \mathbb{Z}$. If $ab$ is odd, then $a^2+b^2$ is even.
+    \begin{proof}
+        We prove the contrapositive.
+        Suppose $a^2 + b^2$ is not even.
+        Then $a^2 + b^2$ is odd.
+        Since exactly one of $a^2$,$b^2$ is odd, without loss of generality suppose
+        $a^2$ is odd and $b^2$ is even.
+        Hence $a$ is odd and $b$ is even.
+        Thus $a=2k+1$ and $b=2l$ for integers $k$ and $l$.
+        So it follows that $ab = (2k+1)(2l) = 4kl+2l = 2(2kl+l)$.
+        Therefore $ab$ is even by definition of an even number.
+    \end{proof}
+
+    \problem There is a set $X$ for for which $\mathbb{N}$ and $\mathbb{N} \subseteq X$. 
+    \begin{proof}
+        Take $X = \mathbb{N} \cup \set{\mathbb{N}}$.
+        Since $X$ contains every element of $\mathbb{N}$, we have $\mathbb{N} \subseteq X$.
+        Since $X$ explicitly includes $\set{\mathbb{N}}$, we have $\mathbb{N} \in X$. 
+    \end{proof}
+
+    \problem There exists an $n \in \mathbb{N}$ for which $11 \mid (2^n-1)$.
+    \begin{proof}
+        Take $n=10$. Then $2^n-1 = 1023 = 11\cdot93$.
+        Therefore $11 \mid (2^n-1)$ by definition of divisibility.
+    \end{proof}
+
 \end{problems}
 
 \end{document}
