@@ -1,0 +1,60 @@
+\documentclass[DIN, pagenumber=false, fontsize=11pt, parskip=half]{scrartcl}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{template}
+\usepackage{amsmath}
+
+\DeclareMathOperator{\lcm}{lcm}
+
+\titlehead{\centering\small
+    Worked solutions to selected exercises from\\
+    Richard Hammack, \emph{Book of Proof, edition 2.2}\\
+\rule{0.4\linewidth}{0.4pt}}
+
+\title{}
+\author{} % Oscar A. Carrera
+\date{}
+
+\begin{document}
+\maketitle
+
+\setcounter{section}{7}
+
+\section{Proofs Involving Sets}
+
+\textbf{Use the methods introduced in this chapter to prove the following statements.}
+
+\begin{problems}
+    \problem Prove that $\set{6n : n \in \mathbb{Z}} = \set{2n : n \in \mathbb{Z}} \cap \set{3n : n \in \mathbb{Z}}$.
+    \begin{proof}
+        First we show $\set{6n : n \in \mathbb{Z}} \subseteq \set{2n : n \in \mathbb{Z}} \cap \set{3n : n \in \mathbb{Z}}$.\\ 
+        Suppose $n \in \set{6n : n \in \mathhbb{Z}}$.
+        This means $a = 6n$ for some integer $n$.
+        Therefore $a = 2(3n)$ and $a = 3(2n)$.
+        From $a = 2(3n)$, it follows that $a$ is a multiple of 2,
+        so $a \in \set{2n : n \in \mathbb{Z}}$.
+        From $a = 3(2n)$, it follows that $a$ is a multiple of 3,
+        so $a \in \set{3n : n \in \mathbb{Z}}$.
+        Thus by definition of intersection of two sets,
+        we have $a \in \set{2n : n \in \mathbb{Z}} \cup \set{3n : n \in \mathbb{Z}}$.
+        Therefore $\set{6n : n \in \mathbb{Z}} \subseteq \set{2n : n \in \mathbb{Z}} \cap \set{3n : n \in \mathbb{Z}}$.
+
+        Next we show $\set{2n : n \in \mathbb{Z}} \cap \set{3n : n \in \mathbb{Z}} \subseteq \set{6n : n \in \mathbb{Z}}$.\\ 
+        Suppose $a \in \set{2n : n \in \mathbb{Z}} \cap \set{3n : n \in \mathbb{Z}}$.
+        By definition of intersection, this means $a \in \set{2n : n \in \mathbb{Z}}$ and $a \in \set{3n : n \in \mathbb{Z}}$. 
+        Since $a \in \set{2n : n \in \mathbb{Z}}$, we know $a = 2k$ for some $k \in \mathbb{Z}$.
+        Thus $a$ is even.
+        Since $a \in \set{3n : n \in \mathbb{Z}}$, we know $a = 3l$ for some $l \in \mathbb{Z}$.
+        As $a$ is even, $a = 3l$ implies $l$ is even.
+        Then $l = 2j$ for some $j \in \mathbb{Z}$.
+        So we have $a = 3l = 3(2j) = 6j$.
+        Since $j \in \mathbb{Z}$, it follows that $a \in \set{6n : n \in \mathbb{Z}}$.
+        Thus $\set{2n : n \in \mathbb{Z}} \cap \set{3n : n \in \mathbb{Z}} \subseteq \set{6n : n \in \mathbb{Z}}$.
+
+        Therefore, since  $\set{6n : n \in \mathbb{Z}} \subseteq \set{2n : n \in \mathbb{Z}} \cap \set{3n : n \in \mathbb{Z}}$ and $\set{2n : n \in \mathbb{Z}} \cap \set{3n : n \in \mathbb{Z}} \subseteq \set{6n : n \in \mathbb{Z}}$, it follows that $\set{6n : n \in \mathbb{Z}} = \set{2n : n \in \mathbb{Z}} \cap \set{3n : n \in \mathbb{Z}}$.
+    \end{proof}
+
+\end{problems}
+
+\end{document}
