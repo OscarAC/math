@@ -28,7 +28,7 @@
 \begin{problems}
     \problem Prove that $\set{6n : n \in \mathbb{Z}} = \set{2n : n \in \mathbb{Z}} \cap \set{3n : n \in \mathbb{Z}}$.
     \begin{proof}
-        First we show $\set{6n : n \in \mathbb{Z}} \subseteq \set{2n : n \in \mathbb{Z}} \cap \set{3n : n \in \mathbb{Z}}$.\\ 
+        First we show $\set{6n : n \in \mathbb{Z}} \subseteq \set{2n : n \in \mathbb{Z}} \cap \set{3n : n \in \mathbb{Z}}$.
         Suppose $n \in \set{6n : n \in \mathhbb{Z}}$.
         This means $a = 6n$ for some integer $n$.
         Therefore $a = 2(3n)$ and $a = 3(2n)$.
@@ -42,7 +42,7 @@
 
         Next we show $\set{2n : n \in \mathbb{Z}} \cap \set{3n : n \in \mathbb{Z}} \subseteq \set{6n : n \in \mathbb{Z}}$.\\ 
         Suppose $a \in \set{2n : n \in \mathbb{Z}} \cap \set{3n : n \in \mathbb{Z}}$.
-        By definition of intersection, this means $a \in \set{2n : n \in \mathbb{Z}}$ and $a \in \set{3n : n \in \mathbb{Z}}$. 
+        By definition of intersection of two sets, this means $a \in \set{2n : n \in \mathbb{Z}}$ and $a \in \set{3n : n \in \mathbb{Z}}$. 
         Since $a \in \set{2n : n \in \mathbb{Z}}$, we know $a = 2k$ for some $k \in \mathbb{Z}$.
         Thus $a$ is even.
         Since $a \in \set{3n : n \in \mathbb{Z}}$, we know $a = 3l$ for some $l \in \mathbb{Z}$.
@@ -53,6 +53,17 @@
         Thus $\set{2n : n \in \mathbb{Z}} \cap \set{3n : n \in \mathbb{Z}} \subseteq \set{6n : n \in \mathbb{Z}}$.
 
         Therefore, since  $\set{6n : n \in \mathbb{Z}} \subseteq \set{2n : n \in \mathbb{Z}} \cap \set{3n : n \in \mathbb{Z}}$ and $\set{2n : n \in \mathbb{Z}} \cap \set{3n : n \in \mathbb{Z}} \subseteq \set{6n : n \in \mathbb{Z}}$, it follows that $\set{6n : n \in \mathbb{Z}} = \set{2n : n \in \mathbb{Z}} \cap \set{3n : n \in \mathbb{Z}}$.
+    \end{proof}
+
+    \problem If $m,n \in \mathbb{Z}$, then $\set{x \in \mathbb{Z} : mn \mid x} \subseteq \set{x \in \mathbb{Z} : m \mid x} \cap \set{x \in \mathbb{Z} : n \mid x}$.
+    \begin{proof}
+        Suppose $a \in \set{x \in \mathbb{Z} : mn \mid x}$.
+        Then $a = mnk$ for some $k \in \mathbb{Z}$.
+        So we have $a = m(nk)$ and $a = n(mk)$.
+        By definition of divisibility, $m \mid a$ and $n \mid a$.
+        Thus $a \in \set{x \in \mathbb{Z} : m \mid x}$ and $a \in \set{x \in \mathbb{Z} : n \mid x}$.
+        By definition of intersection of two sets, we have $a \in \set{x \in \mathbb{Z} : m \mid x} \cap \set{x \in \mathbb{Z} : n \mid x}$.
+        Therefore $\set{x \in \mathbb{Z} : mn \mid x} \subseteq \set{x \in \mathbb{Z} : m \mid x} \cap \set{x \in \mathbb{Z} : n \mid x}$.
     \end{proof}
 
 \end{problems}
