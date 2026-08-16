@@ -77,6 +77,20 @@
         Since $x \in A$ and $x \not\in B$, by definition of a subset, we have $A \not\subseteq B$.
     \end{proof}
 
+    \problem If $A,B$ and $C$ are sets, then $A \cup (B \cap C) = (A \cup B) \cap (A \cup C)$.
+    \begin{proof}
+        Observe the following sequence of equalities.
+
+        \begin{align*}
+            A \cup (B \cap C) & = \set{x : x \in A \lor x \in B \cap C} && \text{(definition of $\cup$)}\\
+                        & = \set{x : x \in A \lor (x \in B \land x \in C)} && \text{(definition of $\cap$)}\\
+                        & = \set{x : (x \in A \lor x \in B) \land (x \in A \lor x \in C)} && \text{(distributive law)}\\
+                        & = \set{x : x \in A \cup B \land x \in A \cup C} && \text{(definition of $\cup$)}\\
+                        & = \set{x : x \in (A \cup B) \cap (A \cup C)} && \text{(definition of $\cap$)}\\
+                        & = (A \cup B) \cap (A \cup C) && \text{(definition of set-builder)}
+        \end{align*}
+    \end{proof}
+
 \end{problems}
 
 \end{document}
