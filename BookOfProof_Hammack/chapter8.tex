@@ -97,10 +97,27 @@
         \begin{align*}
             \overline{A \cap B} & = \set{x \in U : x \notin A \cap B} && \text{(definition of complement)}\\
                                 & = \set{x \in U : \neg(x \in A \land x \in B)} && \text{(definition of $\cap$)}\\
-                                & = \set{x \in U : x \notin A \lor x \notin B} && \text{(De Morgan's law)}\\
+                                & = \set{x \in U : x \notin A \lor x \notin B} && \text{(DeMorgan's law)}\\
                                 & = \set{x \in U : x \in \overline{A} \lor x \in \overline{B}} && \text{(definition of complement)}\\
                                 & = \set{x \in U : x \in \overline{A} \cup \overline{B}} && \text{(definition of $\cup$)}\\
                                 & = \overline{A} \cup \overline{B} && \text{(definition of set-builder)}
+        \end{align*}
+    \end{proof}
+
+    \problem If $A,B$ and $C$ are sets, then $A - (B \cap C) = (A - B) \cup (A - C)$.
+    \begin{proof}
+        Observe the following sequence of equalities.
+
+        \begin{align*}
+            A - (B \cap C) & = \set{x : (x \in A) \land (x \notin B \cap C)} && \text{(definition of difference)}\\
+                           & = \set{x : (x \in A) \land \lnot(x \in B \cap C)} && \text{(notation)}\\
+                           & = \set{x : (x \in A) \land \lnot (x \in B \land x \in C)} && \text{(definition of $\cap$)}\\
+                           & = \set{x : (x \in A) \land (\lnot(x \in B) \lor \lnot(x \in C))} && \text{(DeMorgan's law)}\\
+                           & = \set{x : (x \in A) \land (x \notin B \lor x \notin C)} && \text{(notation)}\\
+                           & = \set{x : (x \in A \land x \notin B) \lor (x \in A \land x \notin C)} && \text{(distributive law)}\\
+                           & = \set{x : x \in A - B \lor x \in A - C} && \text{(definition of difference)}\\
+                           & = \set{x : x \in (A - B) \cup (A - C)} && \text{(definition of $\cup$)}\\
+                           & = (A - B) \cup (A - C) && \text{(definition of set-builder)}
         \end{align*}
     \end{proof}
 
