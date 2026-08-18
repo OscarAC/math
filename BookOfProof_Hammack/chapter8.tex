@@ -91,6 +91,20 @@
         \end{align*}
     \end{proof}
 
+    \problem If $A$ and $B$ are sets in a universal set $U$, then $\overline{A \cap B} = \overline{A} \cup \overline{B}$.
+    \begin{proof}
+        Observe the following sequence of equalities.
+        \begin{align*}
+            \overline{A \cap B} & = \set{x \in U : x \notin A \cap B} && \text{(definition of complement)}\\
+                                & = \set{x \in U : \neg(x \in A \land x \in B)} && \text{(definition of $\cap$)}\\
+                                & = \set{x \in U : x \notin A \lor x \notin B} && \text{(De Morgan's law)}\\
+                                & = \set{x \in U : x \in \overline{A} \lor x \in \overline{B}} && \text{(definition of complement)}\\
+                                & = \set{x \in U : x \in \overline{A} \cup \overline{B}} && \text{(definition of $\cup$)}\\
+                                & = \overline{A} \cup \overline{B} && \text{(definition of set-builder)}
+        \end{align*}
+    \end{proof}
+
+
 \end{problems}
 
 \end{document}
