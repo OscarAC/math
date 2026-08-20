@@ -149,14 +149,14 @@
     \begin{proof}
         Observe the following sequence of equalities.
         \begin{align*}
-            A \times (B - C) & = \set{(x,y) : x \in A \land y \in B-C} && \text{(definition of $\times$)}\\ 
-                             & = \set{(x,y) : x \in A \land (y \in B \land y \notin C)} && \text{(definition of difference)}\\
+            A \times (B - C) & = \set{(x,y) : x \in A \land y \in B-C} && \text{($\times$ def.)}\\ 
+                             & = \set{(x,y) : x \in A \land (y \in B \land y \notin C)} && \text{($-$ def.)}\\
                              & = \{(x,y) : (x \in A \land y \in B \land x \notin A) \lor (x \in A \land y \in B \land y \notin C)\}\\ 
                              & = \set{(x,y) : (x \in A \land y \in B) \land (x \notin A \lor y \notin C)} && \text{(distributive law)}\\
                              & = \set{(x,y) : x \in A \land y \in B \land \lnot(x \in A \land y \in C)} && \text{(DeMorgan's law)}\\
-                             & = \set{(x,y) : (x,y) \in A \times B \land (x,y) \notin A \times C} && \text{(definition of $\times$)}\\
-                             & = \set{(x,y) : (x,y) \in (A \times B) - (A \times C)} && \text{(definition of difference)}\\
-                             & = (A \times B) - (A \times C) && \text{(definition of set-builder)}
+                             & = \set{(x,y) : (x,y) \in A \times B \land (x,y) \notin A \times C} && \text{($\times$ def.)}\\
+                             & = \set{(x,y) : (x,y) \in (A \times B) - (A \times C)} && \text{($-$ def.)}\\
+                             & = (A \times B) - (A \times C) && \text{(set-builder def.)}
         \end{align*}
     \end{proof}
 
