@@ -149,15 +149,35 @@
     \begin{proof}
         Observe the following sequence of equalities.
         \begin{align*}
-            A \times (B - C) & = \set{(x,y) : x \in A \land y \in B-C} && \text{($\times$ def.)}\\ 
-                             & = \set{(x,y) : x \in A \land (y \in B \land y \notin C)} && \text{($-$ def.)}\\
-                             & = \{(x,y) : (x \in A \land y \in B \land x \notin A) \lor (x \in A \land y \in B \land y \notin C)\}\\ 
+            A \times (B - C) & = \set{(x,y) : x \in A \land y \in B-C} && \text{(definition of $\times$)}\\ 
+                             & = \set{(x,y) : x \in A \land (y \in B \land y \notin C)} && \text{(definition of difference)}\\
+                             & = \{(x,y) : (x \in A \land y \in B \land x \notin A) && \text{(first disjunct is false)}\\
+                             & \hphantom{{}= \{(x,y) :{}} \lor (x \in A \land y \in B \land y \notin C)\}\\
                              & = \set{(x,y) : (x \in A \land y \in B) \land (x \notin A \lor y \notin C)} && \text{(distributive law)}\\
                              & = \set{(x,y) : x \in A \land y \in B \land \lnot(x \in A \land y \in C)} && \text{(DeMorgan's law)}\\
-                             & = \set{(x,y) : (x,y) \in A \times B \land (x,y) \notin A \times C} && \text{($\times$ def.)}\\
-                             & = \set{(x,y) : (x,y) \in (A \times B) - (A \times C)} && \text{($-$ def.)}\\
-                             & = (A \times B) - (A \times C) && \text{(set-builder def.)}
+                             & = \set{(x,y) : (x,y) \in A \times B \land (x,y) \notin A \times C} && \text{(definition of $\times$)}\\
+                             & = \set{(x,y) : (x,y) \in (A \times B) - (A \times C)} && \text{(definition of difference)}\\
+                             & = (A \times B) - (A \times C) && \text{(definition of set-builder)}
         \end{align*}
+    \end{proof}
+
+    \problem Prove that $\set{9^n : n \in \mathbb{Q}} = \set{3^n : n \in \mathbb{Q}}$. 
+    \begin{proof}
+        First we prove $\set{9^n : n \in \mathbb{Q}} \subseteq \set{3^n : n \in \mathbb{Q}}$.
+        Assume $a \in \set{9^n : n \in \mathbb{Q}}$.
+        This means $a = 9^n$ for some $n \in \mathbb{Q}$.
+        Thus $a = 9^n = (3^2)^n = 3^{2n}$.
+        Since $2n \in \mathbb{Q}$, we have $a \in \set{3^n : n \in \mathbb{Q}}$.
+        Therefore $\set{9^n : n \in \mathbb{Q}} \subseteq \set{3^n : n \in \mathbb{Q}}$.
+
+        Now we prove $\set{3^n : n \in \mathbb{Q}} \subseteq \set{9^n : n \in \mathbb{Q}}$.
+        Assume $a \in \set{3^n : n \in \mathbb{Q}}$.
+        This means $a = 3^n$ for some $n \in \mathbb{Q}$.
+        Thus $a = 3^n = (9^{1/2})^n = 9^{n/2}$.
+        Since $n/2 \in \mathbb{Q}$, we have $a \in \set{9^n : n \in \mathbb{Q}}$.
+        Therefore $\set{3^n : n \in \mathbb{Q}} \subseteq \set{9^n : n \in \mathbb{Q}}$.
+
+        Therefore, since $\set{9^n : n \in \mathbb{Q}} \subseteq \set{3^n : n \in \mathbb{Q}}$ and $\set{3^n : n \in \mathbb{Q}} \subseteq \set{9^n : n \in \mathbb{Q}}$, it follows that $\set{9^n : n \in \mathbb{Q}} = \set{3^n : n \in \mathbb{Q}}$.
     \end{proof}
 
 \end{problems}
