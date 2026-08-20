@@ -145,6 +145,21 @@
         \end{align*}
     \end{proof}
 
+    \problem If $A,B$ and $C$ are sets, then $A \times (B - C) = (A \times B) - (A \times C)$.
+    \begin{proof}
+        Observe the following sequence of equalities.
+        \begin{align*}
+            A \times (B - C) & = \set{(x,y) : x \in A \land y \in B-C} && \text{(definition of $\times$)}\\ 
+                             & = \set{(x,y) : x \in A \land (y \in B \land y \notin C)} && \text{(definition of difference)}\\
+                             & = \{(x,y) : (x \in A \land y \in B \land x \notin A) \lor (x \in A \land y \in B \land y \notin C)\}\\ 
+                             & = \set{(x,y) : (x \in A \land y \in B) \land (x \notin A \lor y \notin C)} && \text{(distributive law)}\\
+                             & = \set{(x,y) : x \in A \land y \in B \land \lnot(x \in A \land y \in C)} && \text{(DeMorgan's law)}\\
+                             & = \set{(x,y) : (x,y) \in A \times B \land (x,y) \notin A \times C} && \text{(definition of $\times$)}\\
+                             & = \set{(x,y) : (x,y) \in (A \times B) - (A \times C)} && \text{(definition of difference)}\\
+                             & = (A \times B) - (A \times C) && \text{(definition of set-builder)}
+        \end{align*}
+    \end{proof}
+
 \end{problems}
 
 \end{document}
