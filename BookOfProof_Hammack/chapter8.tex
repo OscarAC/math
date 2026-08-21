@@ -193,6 +193,18 @@
         Therefore $A \subseteq B$.
     \end{proof} 
 
+    \problem Prove that $\bigcap\limits_{x\in\mathbb{R}} [3-x^2, 5+x^2] = [3,5]$.
+    \begin{proof}
+        First we prove that $[3,5] \subseteq \bigcap\limits_{x\in\mathbb{R}}[3-x^2,5+x^2]$.\\ 
+        Take any $a \in [3,5]$.
+        Since $x^2 \geq 0$ for every $x \in \mathbb{R}$, it follows that $3-x^2 \leq 3 \leq a$ and $a \leq 5 \leq 5+x^2$.
+        Thus $3-x^2 \leq a \leq 5+x^2$, so $a \in [3-x^2, 5+x^2]$ for every $x \in \mathbb{R}$.
+        Therefore $[3,5] \subseteq \bigcap\limits_{x\in\mathbb{R}}[3-x^2,5+x^2]$.
+
+        Conversely, we prove $\bigcap\limits_{x\in\mathbb{R}}[3-x^2,5+x^2] \subseteq [3,5]$.\\ 
+        Since $0 \in \mathbb{R}$, one of the intervals in the intersection is $[3-0^2, 5+0^2] = [3,5]$.
+    Because an intersection must be contained in each set being intersection, we have $\bigcap\limits_{x\in\mathbb{R}}[3-x^2,5+x^2] \subseteq [3,5]$.
+    \end{proof}
 
 \end{problems}
 

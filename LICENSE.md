@@ -26,5 +26,5 @@ reserved.
 
 | Directory                               | Source material                                          | My solutions        |
 | --------------------------------------- | -------------------------------------------------------- | ------------------- |
-| `BookOfProof_Hammack/`                  | CC BY-NC-ND 4.0 (© 2018 Richard Hammack)                 | CC BY-NC 4.0        |
+| `BookOfProof_Hammack/`                  | CC BY-ND 3.0 (© Richard Hammack, ed. 2.2)                | CC BY-NC 4.0        |
 | `FundamentalConceptsOfAlgebra_Meserve/` | © Bruce E. Meserve; no license, statements paraphrased   | All rights reserved |

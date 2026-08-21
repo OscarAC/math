@@ -11,7 +11,7 @@ unofficial and may contain errors, corrections are welcome.
 
 | Book                                                                                                       | Source license             | Source files                    |
 | ---------------------------------------------------------------------------------------------------------- | -------------------------- | ------------------------------- |
-| [_Book of Proof_, Richard Hammack (ed. 2.2)](BookOfProof_Hammack/)                                         | CC BY-NC-ND 4.0            | `chapterN.tex` / `chapterN.pdf` |
+| [_Book of Proof_, Richard Hammack (ed. 2.2)](BookOfProof_Hammack/)                                         | CC BY-ND 3.0               | `chapterN.tex` / `chapterN.pdf` |
 | [_Fundamental Concepts of Algebra_, Bruce E. Meserve (Dover, 1982)](FundamentalConceptsOfAlgebra_Meserve/) | none (all rights reserved) | `chapterN.tex` / `chapterN.pdf` |
 
 ## Building
