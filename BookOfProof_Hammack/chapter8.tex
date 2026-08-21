@@ -180,6 +180,20 @@
         Therefore, since $\set{9^n : n \in \mathbb{Q}} \subseteq \set{3^n : n \in \mathbb{Q}}$ and $\set{3^n : n \in \mathbb{Q}} \subseteq \set{9^n : n \in \mathbb{Q}}$, it follows that $\set{9^n : n \in \mathbb{Q}} = \set{3^n : n \in \mathbb{Q}}$.
     \end{proof}
 
+    \problem Let $A$ and $B$ be sets. Prove that $A \subseteq B$ if and only if $A \cap B = A$.
+    \begin{proof}
+        First we prove if $A \subseteq B$, then $A \cap B = A$.\\ 
+        Suppose $A \subseteq B$. Then every element of $A$ is also an element of $B$. Thus an element is in both $A$ and $B$ exactly when is in $A$.
+        Therefore $A \cap B = A$.
+
+        Conversely, we prove if $A \cap B = A$, then $A \subseteq B$.\\ 
+        Suppose $A \cap B = A$ and let $x \in A$.
+        Since $A = A \cap B$, it follows that $x \in B$.
+        Thus every element of $A$ is also an element of $B$.
+        Therefore $A \subseteq B$.
+    \end{proof} 
+
+
 \end{problems}
 
 \end{document}
