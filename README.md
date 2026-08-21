@@ -5,13 +5,13 @@ Each chapter is a standalone LaTeX document compiled to a PDF, so the solutions
 can be read without building anything.
 
 These are my own solutions, written as part of learning the material. They are
-unofficial and may contain errors — corrections are welcome.
+unofficial and may contain errors, corrections are welcome.
 
 ## Books
 
-| Book                                                               | Source license  | Source files                    |
-| ------------------------------------------------------------------ | --------------- | ------------------------------- |
-| [_Book of Proof_, Richard Hammack (ed. 2.2)](BookOfProof_Hammack/) | CC BY-NC-ND 4.0 | `chapterN.tex` / `chapterN.pdf` |
+| Book                                                                                                       | Source license             | Source files                    |
+| ---------------------------------------------------------------------------------------------------------- | -------------------------- | ------------------------------- |
+| [_Book of Proof_, Richard Hammack (ed. 2.2)](BookOfProof_Hammack/)                                         | CC BY-NC-ND 4.0            | `chapterN.tex` / `chapterN.pdf` |
 | [_Fundamental Concepts of Algebra_, Bruce E. Meserve (Dover, 1982)](FundamentalConceptsOfAlgebra_Meserve/) | none (all rights reserved) | `chapterN.tex` / `chapterN.pdf` |
 
 ## Building
@@ -29,6 +29,6 @@ juggling.
 ## Attribution
 
 Exercise statements are quoted from the respective books; see each book's
-README for its attribution and license details. The solutions themselves —
-the answers, derivations, and surrounding prose — are my own work. Licensing
+README for its attribution and license details. The solutions themselves,
+the answers, derivations, and surrounding prose are my own work. Licensing
 is per book; [LICENSE.md](LICENSE.md) explains the scheme.

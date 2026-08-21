@@ -20,11 +20,10 @@ Exercise statements quoted here are reproduced from the book unmodified, with at
 for non-commercial use. All rights in that material remain with Richard Hammack. This
 repository is not endorsed by or affiliated with the author.
 
-The solutions themselves — the answers, derivations, and surrounding prose — are my own
+The solutions themselves, the answers, derivations, and surrounding prose, are my own
 work, © 2026 Oscar A. Carrera, and are licensed under a
 [Creative Commons Attribution-NonCommercial 4.0 International License][cc-by-nc]
 (CC BY-NC 4.0).
 
 [cc-by-nc]: https://creativecommons.org/licenses/by-nc/4.0/
-
 [cc-by-nc-nd]: https://creativecommons.org/licenses/by-nc-nd/4.0/
