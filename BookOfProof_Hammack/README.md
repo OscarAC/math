@@ -1,4 +1,4 @@
-# Book of Proof — Worked Solutions
+# Book of Proof - Worked Solutions
 
 Worked solutions to selected exercises from Richard Hammack, _Book of Proof_, edition 2.2.
 

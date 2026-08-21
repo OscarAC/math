@@ -206,6 +206,24 @@
     Because an intersection must be contained in each set being intersection, we have $\bigcap\limits_{x\in\mathbb{R}}[3-x^2,5+x^2] \subseteq [3,5]$.
     \end{proof}
 
+    \problem Prove $\set{4k + 5 : k \in \mathbb{Z}} = \set{4k+1 : k \in \mathbb{Z}}$.
+    \begin{proof}
+        First we show $\set{4k+5 : k \in \mathbb{Z}} \subseteq \set{4k+1 : k \in \mathbb{Z}}$.\\ 
+        Assume $a \in \set{4k+5 : k \in \mathbb{Z}}$.
+        This means $a = 4k + 5$ for some $k \in \mathbb{Z}$.
+        Thus $a = 4(k+1) + 1$.
+        Since $(k+1) \in \mathbb{Z}$, we have $a \in \set{4k+1 : k \in \mathbb{Z}}$.
+        Therefore, ${4k+5 : k \in \mathbb{Z}} \subseteq \set{4k+1 : k \in \mathbb{Z}}$.
+
+        Now we prove $\set{4k+1 : k \in \mathbb{Z}} \subseteq \set{4k+5 : k \in \mathbb{Z}}$.\\ 
+        Assume $a \in \set{4k+1 : k \in \mathbb{Z}}$.
+        This means $a = 4k+1$ for some $k \in \mathbb{Z}$.
+        Thus $a = 4(k-1)+5$.
+        Since $(k-1) \in \mathbb{Z}$, we have $a \in \set{4k+5 : k \in \mathbb{Z}}$.
+        Therefore, $\set{4k+1 : k \in \mathbb{Z}} \subseteq \set{4k+5 : k \in \mathbb{Z}}$.
+
+    \end{proof}
+
 \end{problems}
 
 \end{document}
