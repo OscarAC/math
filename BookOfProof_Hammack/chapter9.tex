@@ -1,0 +1,40 @@
+\documentclass[DIN, pagenumber=false, fontsize=11pt, parskip=half]{scrartcl}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{template}
+\usepackage{amsmath}
+
+\DeclareMathOperator{\lcm}{lcm}
+
+\titlehead{\centering\small
+    Worked solutions to selected exercises from\\
+    Richard Hammack, \emph{Book of Proof, edition 2.2}\\
+\rule{0.4\linewidth}{0.4pt}}
+
+\title{}
+\author{} % Oscar A. Carrera
+\date{}
+
+\begin{document}
+\maketitle
+
+\setcounter{section}{8}
+
+\section{Disproof}
+
+\textbf{Each of the following statements is either true or false.
+If a statement is true, prove it. If a statement is false, disprove it.
+These exercises are cumulative, covering all topics addressed in Chapters 1-9.}
+
+\begin{problems}
+    \problem For every natural number $n$, the integer $2n^2-4n+31$ is prime.
+    \begin{disproof}
+        The statement is false. 
+        For a counterexample let $n = 31$.
+        Then $2n^2-4n+31 = 2(31^2)-4(31)+31 = 1829 = 31 \cdot 59$,
+        which is not prime.
+    \end{disproof}
+\end{problems}
+
+\end{document}

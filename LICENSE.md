@@ -27,4 +27,4 @@ reserved.
 | Directory                               | Source material                                        | My solutions        |
 | --------------------------------------- | ------------------------------------------------------ | ------------------- |
 | `BookOfProof_Hammack/`                  | CC BY-ND 3.0 (© Richard Hammack, ed. 2.2)              | CC BY-NC 4.0        |
-| `FundamentalConceptsOfAlgebra_Meserve/` | © Bruce E. Meserve; no license, statements paraphrased | All rights reserved |
+| `Algebra_Chrystal/`                     | Public domain (G. Chrystal, 1886)                      | CC BY 4.0           |

@@ -99,6 +99,14 @@
 %  set by \problem.  amsthm's proof issues \normalfont, which clears
 %  \bfseries but leaves the math version bold, so undo it explicitly.
 \AtBeginEnvironment{proof}{\unboldmath}
+\AtBeginEnvironment{disproof}{\unboldmath}
+
+%  \begin{disproof} ... \end{disproof}
+%  amsthm's proof with the heading "Disproof." -- for exercises that ask
+%  to show a statement is false.  Accepts the same optional argument as
+%  proof, e.g. \begin{disproof}[Disproof of the claim].
+\newcommand{\disproofname}{Disproof}
+\newenvironment{disproof}[1][\disproofname]{\proof[#1]}{\endproof}
 
 % --- Lettered sub-parts:  a) b) c) -----------------------------------
 %  \begin{parts} \item ... \item ... \end{parts}
