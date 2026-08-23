@@ -24,7 +24,7 @@
 \section{Disproof}
 
 \textbf{Each of the following statements is either true or false.
-If a statement is true, prove it. If a statement is false, disprove it.
+    If a statement is true, prove it. If a statement is false, disprove it.
 These exercises are cumulative, covering all topics addressed in Chapters 1-9.}
 
 \begin{problems}
@@ -48,14 +48,26 @@ These exercises are cumulative, covering all topics addressed in Chapters 1-9.}
     \begin{proof}
         Observe the following sequence of equalities.
         \begin{align*}
-            (A \times B) \cap (C \times D)  & = \set{(x,y) : (x,y) \in (A \times B) \land (x,y) \in (C \times D)}\\ 
-                                            & = \set{(x,y) : (x \in A \land y \in B) \land (x \in C \land y \in D)}\\ 
-                                            & = \set{(x,y) : (x \in A \land x \in C) \land (y \in B \land y \in D)}\\ 
-                                            & = \set{(x,y) : (x \in A \cap B) \land (y \in B \cap D)}\\ 
-                                            & = \set{(x,y) : (x,y) \in (A \cap B) \times (B \cap D)}\\ 
-                                            & = (A \cap C) \times (B \cap D)
+            \MoveEqLeft (A \times B) \cap (C \times D)\\
+            & = \set{(x,y) : (x,y) \in A \times B \land (x,y) \in C \times D} && \text{(definition of $\cap$)}\\
+            & = \set{(x,y) : (x \in A \land y \in B) \land (x \in C \land y \in D)} && \text{(definition of $\times$)}\\
+            & = \set{(x,y) : (x \in A \land x \in C) \land (y \in B \land y \in D)} && \text{(regrouping)}\\
+            & = \set{(x,y) : x \in A \cap C \land y \in B \cap D} && \text{(definition of $\cap$)}\\
+            & = \set{(x,y) : (x,y) \in (A \cap C) \times (B \cap D)} && \text{(definition of $\times$)}\\
+            & = (A \cap C) \times (B \cap D) && \text{(definition of set-builder)}
         \end{align*}
     \end{proof}
+
+    \problem If $A,B$ and $C$ are sets, then $A - (B \cup C) = (A - B) \cup (A - C)$.
+    \begin{disproof}
+        The statement is false.
+        For a counterexample, let $A = \set{1,2}$, $B = \set{1}$ and $C = \set{2}$.
+        Then $A - (B \cup C) = \set{1,2} - \set{1,2} = \emptyset$,
+        but $(A - B) \cup (A - C) = \set{2} \cup \set{1} = \set{1,2}$.
+        Since $\emptyset \ne \set{1,2}$, the two sides are not equal.
+    \end{disproof}
+
+
 \end{problems}
 
 \end{document}
