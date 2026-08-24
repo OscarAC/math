@@ -67,6 +67,24 @@ These exercises are cumulative, covering all topics addressed in Chapters 1-9.}
         Since $\emptyset \ne \set{1,2}$, the two sides are not equal.
     \end{disproof}
 
+    \problem If $A$ and $B$ are sets and $A \cap B = \emptyset$, then $\mathcal{P}(A) -\mathcal{P}(B) \subseteq \mathcal{P}(A - B)$.
+    \begin{proof}
+        Suppose $A \cap B = \emptyset$.
+        Let $X \in \mathcal{P}(A) - \mathcal{P}(B)$.
+        Then $X \in \mathcal{P}(A)$ and $X \notin \mathcal{P}(B)$, so $X \subseteq A$.
+        Now we claim $A - B = A$. 
+        Let $a \in A - B$.
+        Then $a \in A$ and $a \notin B$.
+        Thus every element of $A - B$ is an element of $A$, so $A - B \subseteq A$.
+        Conversely, let $a \in A$.
+        If $a \in B$, then $a \in A$ and $a \in B$, so $a \in A \cap B = \emptyset$, which is impossible.
+        Thus $a \notin B$.
+        So we have $a \in A$ and $a \notin B$, which means $a \in A - B$.
+        Hence $A \subseteq A - B$.
+        Therefore $A - B = A$.
+        So we have $X \subseteq A = A - B$, thus $X \in \mathcal{P}(A-B)$.
+        Since $X$ was arbitrary, $\mathcal{P}(A) - \mathcal{P}(B) \subseteq \mathcal{P}(A-B)$.
+    \end{proof}
 
 \end{problems}
 
