@@ -86,12 +86,34 @@ These exercises are cumulative, covering all topics addressed in Chapters 1-9.}
         Since $X$ was arbitrary, $\mathcal{P}(A) - \mathcal{P}(B) \subseteq \mathcal{P}(A-B)$.
     \end{proof}
 
-    \problem If $a,b,c \in \mathbb{N}$ and $ab, bc$ and $ac$ all have the same parity, the $a,b$ and $c$ all have the same parity.
+    \problem If $a,b,c \in \mathbb{N}$ and $ab, bc$ and $ac$ all have the same parity, then $a,b$ and $c$ all have the same parity.
     \begin{disproof}
         The statement is false.
-        For a counterexample, consider $a = 2n$, $b = 2m+1$, and $c = 2l$ for some $n,m,l \in \mathbb{N}$. Then $ab = 2(2mn+n)$, $bc = 2(2lm+l)$ and $ac = 2(2nl)$, this means $ab,bc$ and $ac$ are even, so they all have the same parity.
-        But $a$ is even, $b$ is odd, and $c$ is even. That is $a$, $b$, and $c$ all do not have the same parity. 
+        For a counterexample, let $a = 2$, $b = 1$ and $c = 2$.
+        Then $ab = 2$, $bc = 2$ and $ac = 4$ are all even, so $ab$, $bc$ and $ac$ have the same parity.
+        But $a$ and $c$ are even while $b$ is odd, so $a$, $b$ and $c$ do not all have the same parity.
     \end{disproof}
+
+    \problem If $A$ and $B$ are sets, then $\mathcal{P}(A) \cap \mathcal{P}(B) = \mathcal{P}(A \cap B)$.
+    \begin{proof}
+        First we prove $\mathcal{P}(A) \cap \mathcal{P}(B) \subseteq \mathcal{P}(A \cap B)$.
+        Suppose $X \in \mathcal{P}(A) \cap \mathcal{P}(B)$.
+        By definition of intersection, this means $X \in \mathcal{P}(A)$ and $X \in \mathcal{P}(B)$.
+        By definition of power set, $X \subseteq A$ and $X \subseteq B$.
+        Since $X \subseteq A$ and $X \subseteq B$, every element of $X$ lies in both $A$ and $B$, hence in $A \cap B$; therefore $X \subseteq A \cap B$.
+        By definition of power set, this means $X \in \mathcal{P}(A \cap B)$.
+        Since $X$ was arbitrary, $\mathcal{P}(A) \cap \mathcal{P}(B) \subseteq \mathcal{P}(A \cap B)$.
+
+        Now we show $\mathcal{P}(A \cap B) \subseteq \mathcal{P}(A) \cap \mathcal{P}(B)$.
+        Suppose $X \in \mathcal{P}(A \cap B)$.
+        By definition of power set, this means $X \subseteq A \cap B$; in other words, every element of $X$ lies in both $A$ and $B$.
+        Thus $X \subseteq A$ and $X \subseteq B$.
+        Hence, by definition of power set, $X \in \mathcal{P}(A)$ and $X \in \mathcal{P}(B)$.
+        Thus, by definition of intersection, $X \in \mathcal{P}(A) \cap \mathcal{P}(B)$.
+        Since $X$ was arbitrary, $\mathcal{P}(A \cap B) \subseteq \mathcal{P}(A) \cap \mathcal{P}(B)$.
+
+        Therefore, since $\mathcal{P}(A) \cap \mathcal{P}(B) \subseteq \mathcal{P}(A \cap B)$ and $\mathcal{P}(A \cap B) \subseteq \mathcal{P}(A) \cap \mathcal{P}(B)$, it follows that $\mathcal{P}(A) \cap \mathcal{P}(B) = \mathcal{P}(A \cap B)$.
+    \end{proof}
 
 \end{problems}
 
