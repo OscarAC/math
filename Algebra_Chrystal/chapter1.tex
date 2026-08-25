@@ -26,7 +26,44 @@
 \begin{problems}[from=1,step=1]
     \problem Point out in what sense the usual arrangement of the multiplication of 365 by 492 is an instance of the law of distribution.
 
+    \answer The usual arrangement is
+    \[
+        \begin{array}{r@{\quad}r@{\qquad}l}
+                   &  365 \\
+            \times &  492 \\ \cline{1-2}
+                   &  730              & \leftarrow 365 \times 2 \\
+                   &  3285\phantom{0}  & \leftarrow 365 \times 90 \\
+                 +  &  1460\phantom{00} & \leftarrow 365 \times 400 \\ \cline{1-2}
+                   &  179580
+        \end{array}
+    \]
+    Decimal notation already gives the multiplier as a sum, one term per digit: $492 = 400 + 90 + 2$. The arrangement therefore computes
+    \[
+        365 \times 492 = 365 \times (2 + 90 + 400) = 365 \times 2 + 365 \times 90 + 365 \times 400.
+    \]
+    This is the \emph{law of distribution}, $a(b + c + d) = ab + ac + ad$, with $a = 365$, $b = 2$, $c = 90$, $d = 400$. 
+
+    The shifting of the second and third rows comes from writing $365 \times 90 = (365 \times 9) \times 10$, an instance of association, together with the decimal place-shift. 
+    
+
     \problem I have a multiplying machine, but the most it can do at one time is to multiply a number of 10 digits by another number of 10 digits. Explain how I can use my machine to multiply 13693456783231 by 46381239245932.
+
+    \answer First we cut the multiplier and multiplicand into digits we can enter into the machine. For decimal notation, we can do this preparation by splitting them into a sum of two units.
+    \begin{align*}
+        13693456783231 & = 1368345 \times 10^{7} + 6783231\\ 
+        46381239245932 & = 4638123 \times 10^{7} + 9245932
+    \end{align*}
+    Now each number is of the form $x_2 \times 10^{7} + x_1$, with the two variables consisting of 7 digits each. 
+
+    Now, giving the multiplicand and multiplier the assignments $a = 1368345$, $b = 6783231$, $c = 4638123$ and $d = 9245932$ and by application of the \textit{law of distribution}
+    \begin{align*}
+        \MoveEqLeft 13693456783231 \times 46381239245932 \\ 
+            & = (a \times 10^7 + b) \times (c \times 10^7 + d)\\ 
+            & = a \times 10^7 \times c \times 10^7 + ad \times 10^7 + bc \times 10^7 + bd\\
+            & = ac \times 10^{14} + (ad + bc) \times 10^7 + bd
+    \end{align*}
+    Here we see we are left to do four multiplications, namely $ac, ad, bc$ and $bd$, each which consist of a pair of seven digits thus it can be done by our multiplying machine, some multiplications by a power of 10 (easily done by hand) and some rather simply addition.
+
 
     \problem To divide 5004 by 12 is the same as to divide 5004 by 3, and then divide the quotient thus obtained by 4. Of what law of algebra is this an instance?
 
