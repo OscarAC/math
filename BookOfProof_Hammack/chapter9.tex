@@ -86,6 +86,13 @@ These exercises are cumulative, covering all topics addressed in Chapters 1-9.}
         Since $X$ was arbitrary, $\mathcal{P}(A) - \mathcal{P}(B) \subseteq \mathcal{P}(A-B)$.
     \end{proof}
 
+    \problem If $a,b,c \in \mathbb{N}$ and $ab, bc$ and $ac$ all have the same parity, the $a,b$ and $c$ all have the same parity.
+    \begin{disproof}
+        The statement is false.
+        For a counterexample, consider $a = 2n$, $b = 2m+1$, and $c = 2l$ for some $n,m,l \in \mathbb{N}$. Then $ab = 2(2mn+n)$, $bc = 2(2lm+l)$ and $ac = 2(2nl)$, this means $ab,bc$ and $ac$ are even, so they all have the same parity.
+        But $a$ is even, $b$ is odd, and $c$ is even. That is $a$, $b$, and $c$ all do not have the same parity. 
+    \end{disproof}
+
 \end{problems}
 
 \end{document}
