@@ -122,6 +122,16 @@ These exercises are cumulative, covering all topics addressed in Chapters 1-9.}
         Then $|A \cup B| = |\set{1,2}| = 2$, and $|A| + |B| = 2 + 1 = 3$.
         Since $2 \neq 3$, we have $|A \cup B| \neq |A| + |B|$.
     \end{disproof}
+
+    \problem If $a,b,c \in \mathbb{N}$, then at least one of $a-b$, $a+c$, and $b-c$ is even.
+    \begin{proof}
+        Assume $a,b,c \in \mathbb{N}$. Then each is either even or odd.
+        By the pigeonhole principle, at least two must have the same parity.
+        If $a$ and $b$ have the same parity, then $a-b$ is even.
+        If $a$ and $c$ have the same parity, then $a+c$ is even.
+        If $b$ and $c$ have the same parity, then $b-c$ is even.
+        Therefore at least one of $a-b$,$a+c$ and $b-c$ is even.
+    \end{proof}
 \end{problems}
 
 \end{document}
