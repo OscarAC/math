@@ -50,30 +50,59 @@
 
     \answer First we cut the multiplier and multiplicand into digits we can enter into the machine. For decimal notation, we can do this preparation by splitting them into a sum of two units.
     \begin{align*}
-        13693456783231 & = 1368345 \times 10^{7} + 6783231\\ 
+        13693456783231 & = 1369345 \times 10^{7} + 6783231\\ 
         46381239245932 & = 4638123 \times 10^{7} + 9245932
     \end{align*}
     Now each number is of the form $x_2 \times 10^{7} + x_1$, with the two variables consisting of 7 digits each. 
 
-    Now, giving the multiplicand and multiplier the assignments $a = 1368345$, $b = 6783231$, $c = 4638123$ and $d = 9245932$ and by application of the \textit{law of distribution}
+    Now, giving the multiplicand and multiplier the assignments $a = 1369345$, $b = 6783231$, $c = 4638123$ and $d = 9245932$ and by application of the \emph{law of distribution}
     \begin{align*}
         \MoveEqLeft 13693456783231 \times 46381239245932 \\ 
             & = (a \times 10^7 + b) \times (c \times 10^7 + d)\\ 
             & = a \times 10^7 \times c \times 10^7 + ad \times 10^7 + bc \times 10^7 + bd\\
             & = ac \times 10^{14} + (ad + bc) \times 10^7 + bd
     \end{align*}
-    Here we see we are left to do four multiplications, namely $ac, ad, bc$ and $bd$, each which consist of a pair of seven digits thus it can be done by our multiplying machine, some multiplications by a power of 10 (easily done by hand) and some rather simply addition.
+    Now we can use our multiplying machine to perform the four multiplications, namely $ac, ad, bc$ and $bd$. The remaining operations, multiplications by a power of 10 and simple addition, can be done by hand.
 
 
     \problem To divide 5004 by 12 is the same as to divide 5004 by 3, and then divide the quotient thus obtained by 4. Of what law of algebra is this an instance?
 
+    \answer This is an instance of the \textit{law of association}. 
+    Since $12 = 3 \times 4$, we have the statement $5004 \div (3 \times 4) = 5004 \div 3 \div 4$.
+    Notice the removal of the bracket, and since $\div$ precedes the bracket, every sign within has been reversed.
+
     \problem If the remainder on dividing $N$ by $a$ be $R$, and the quotient $P$, and if we divide $P$ by $b$ and find a remainder $S$, show that the remainder on dividing $N$ by $ab$ will be $aS + R$. Illustrate with $5015 \div 12$.
+
+    \answer Let $Q$ be the quotient on dividing $P$ by $b$.
+    Then the two divisions are the identities
+    \[
+        \begin{array}{lcr}
+            N = aP + R, & P = bQ + S, & (R < a \text{ and } S < b)
+        \end{array}
+    \]
+    Substituting the second in the first, and applying the laws of distribution and association.
+    \[ 
+        N = a(bQ+S)+R = abQ+aS+ R = ab \times Q + (aS+R)
+    \]
+    Thus $N$ is a multiple of $ab$ together with $aS+R$.
+    Note that since $R \leq a-1$ and $S \leq b-1$,
+    \[
+        aS+R \leq a(b-1) + (a-1) = ab-1 < ab.
+    \]
+    Therefore on dividing $N$ by $ab$ the remainder is $aS+R$.
+
+    For illustration, take $N=5015$, $a=3$ and $b=4$.
+    Dividing 5015 by 3 gives $P=1671$, $R=2$.
+    Dividing 1671 by 4 gives $Q=417$, $S=3$.
+    The remainder on dividing 5015 by 12 is $aS + R = 3 \times 3 + 2 = 11$.
+    And we see $5015 = 12 \times 417 + 11$.
 
     \problem Show how to multiply two numbers of 10 digits each so as to obtain merely the number of digits in the product, and the first three digits on the left of the product. Illustrate by finding the number of digits, and the first three left-hand digits in the following:
     \begin{parts}
         \item $3659893456789325678 \times 342973489379265$;
         \item $2^{64}$.
     \end{parts}
+
 
     \problem Express in the simplest form---
     \[
