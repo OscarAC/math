@@ -1,0 +1,52 @@
+\documentclass[DIN, pagenumber=false, fontsize=11pt, parskip=half]{scrartcl}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{template}
+\usepackage{amsmath}
+
+\DeclareMathOperator{\lcm}{lcm}
+
+\titlehead{\centering\small
+    Worked solutions to selected exercises from\\
+    Richard Hammack, \emph{Book of Proof, edition 2.2}\\
+\rule{0.4\linewidth}{0.4pt}}
+
+\title{}
+\author{} % Oscar A. Carrera
+\date{}
+
+\begin{document}
+\maketitle
+
+\setcounter{section}{9}
+
+\section{Mathematical Induction}
+
+\textbf{Prove the following statements with either induction, strong induction or proof by smallest counterexample}.
+
+\begin{problems}
+    \problem For every integer $n \in \mathbb{N}$, it follows that
+    $1^2 + 2^2 + 3^2 + 4^2 + \mathellipsis + n^2 = \dfrac{n(n+1)(2n+1)}{6}$.
+    \begin{proof}
+        We prove the statement by mathematical induction.
+
+        \begin{enumerate}
+            \item Observe that if $n = 1$, this statement is $ 1^2 = \dfrac{(1)(2)(3)}{6} = \dfrac{6}{6}$, which is true.
+
+            \item Assume $1^2 + 2^2 + 3^2 + 4^2 + \mathellipsis k^2 = \dfrac{k(k+1)(2k+1)}{6}$ for some integer $n = k \geq 1$. Observe that this implies the statement is true for $n = k + 1$.
+                \begin{align*}
+                    1^2 + 2^2 + 3^2 + \mathellipsis + k^2 + (k+1)^2 & = \\ 
+                    (1^2 + 2^2 +3^2 + \mathellipsis + k^2) + (k+1)^2 & = \\ 
+                    \dfrac{k(k+1)(2k+1)}{6} + (k+1)^2 & = \dfrac{k(k+1)(2k+1)}{6} + \dfrac{6(k+1)^2}{6} \\ 
+                                                      & = \dfrac{k(k+1)(2k+1)+6(k+1)(k+1)}{6} \\ 
+                                                      & = \dfrac{2k^3+9k^2+13k+6}{6}\\ 
+                                                      & = \dfrac{(k+1)(k+2)(2k+3)}{6}\\ 
+                                                      & = \dfrac{(k+1)([k+1] + 1)(2[k+1]+1)}{6}
+                \end{align*}
+        \end{enumerate}
+        Therefore, $1^2 + 2^2 +3^3 + \mathellipsis + k^2 + (k+1)^2 = \dfrac{(k+1)([k+1] + 1)(2[k+1]+1)}{6}$, which means the statement is true for $n = k + 1$.
+    \end{proof}
+\end{problems}
+
+\end{document}
