@@ -47,6 +47,28 @@
         \end{enumerate}
         Therefore, $1^2 + 2^2 +3^3 + \mathellipsis + k^2 + (k+1)^2 = \dfrac{(k+1)([k+1] + 1)(2[k+1]+1)}{6}$, which means the statement is true for $n = k + 1$.
     \end{proof}
+
+    \problem If $n \in \mathbb{N}$, then $1\cdot2 + 2\cdot3 + 3\cdot4 + 4\cdot5 + \mathellipsis + n(n+1) = \dfrac{n(n+1)(n+2)}{3}$.
+    \begin{proof}
+        We prove the statement by mathematical induction.
+
+        \begin{enumerate}
+            \item Observe that if $n=1$, this statement is $1(1+1) = \dfrac{1(1+1)(1+2)}{3} = 2$, which is true.
+                
+            \item Assume $1\cdot2 + 2\cdot3 + 3\cdot4 + \mathellipsis + k(k+1) = \dfrac{k(k+1)(k+2)}{3}$ for some integer $n = k \geq 1$. Observe that this implies the statement is true for $n = k + 1$.
+                \begin{align*}
+                    1\cdot2 + 2\cdot3 + \mathellipsis + k(k+1) + (k+1)(k+2) & = \\ 
+                    (1\cdot2 + 2\cdot3  \mathellipsis + k(k+1)) + (k+1)(k+2) & = \\ 
+                    \dfrac{k(k+1)(k+2)}{3} + (k+1)(k+2) & = \dfrac{k(k+1)(k+2)}{3} + \dfrac{3(k+1)(k+2)}{3}\\ 
+                                                        & = \dfrac{k(k^2+3k+2) + 3(k^2+3k+2)}{3}\\ 
+                                                        & = \dfrac{k^3+6k^2+11k+6}{3}\\ 
+                                                        & = \dfrac{(k+1)(k^2+5k+6)}{3}\\ 
+                                                        & = \dfrac{(k+1)(k+2)(k+3)}{3}\\ 
+                                                        & = \dfrac{(k+1)([k+1]+1)([k+1]+2)}{3}
+                \end{align*}
+        \end{enumerate}
+        Therefore $1\cdot2+2\cdot3+3\cdot4+4\cdot5+\mathellipsis+k(k+1) + (k+1)(k+2) = \dfrac{(k+1)([k+1]+1)([k+1]+2)}{3}$, which means the statement is true for $n = k + 1$.
+    \end{proof}
 \end{problems}
 
 \end{document}
