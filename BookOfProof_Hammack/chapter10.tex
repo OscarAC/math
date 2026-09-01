@@ -164,6 +164,29 @@
 
         It follows by induction that $9 \mid (4^{3n}+8)$ for every integer $n \geq 0$.
     \end{proof}
+
+    \problem Suppose $a \in \mathbb{Z}$. Prove that $5 \mid 2^{n}a$ implies $5 \mid a$ for any $n \in \mathbb{N}$.
+    \begin{proof}
+        The proof is induction on $n$.
+        \begin{enumerate}
+            \item Let $n=1$. Suppose $5 \mid 2^{1}a$.
+                Since 5 is prime, we have $5 \mid 2$ or $5 \mid a$.
+                But $5 \nmid 2$, therefore $5 \mid a$.
+            
+            \item Assume this statement is true for some integer $n = k \geq 1$.
+                That is, assume $5 \mid 2^{k}a$ implies $5 \mid a$.
+                We must show that $5 \mid 2^{k+1}a$ implies $5 \mid a$.
+                Suppose $5 \mid 2^{k+1}a$.
+                We can write $2^{k+1}a = 2^{k}(2a)$.
+                Therefore $5 \mid 2^{k}(2a)$.
+                By the induction hypothesis, we have $5 \mid 2a$.
+                By the base case, we have $5 \mid a$.
+                Therefore, the statement holds for $k + 1$.
+        \end{enumerate}
+
+        It follows by induction that $5 \mid 2^{n}a$ implies $5 \mid a$ for every $n \in \mathbb{N}$.
+    \end{proof}
+
 \end{problems}
 
 \end{document}
