@@ -119,12 +119,12 @@
 
     \problem For any integer $n \geq 0$, it follows that $3 \mid (5^{2n} - 1)$.
     \begin{proof}
-        We prove the statement by mathematical Induction.
+        We prove the statement by mathematical induction.
         \begin{enumerate}
-            \item Observe that if $n=0$, then the statement is $3 | 0$, which is true.
+            \item Observe that if $n=0$, then the statement is $3 \mid 0$, which is true.
 
-            \item Assume this statement is true for some integer $n = k \geq 1$.
-            That is assume $3 \mid (5^{2k}-1)$.
+            \item Assume this statement is true for some integer $n = k \geq 0$.
+            That is, assume $3 \mid (5^{2k}-1)$.
             This means $5^{2k}-1 = 3a$ for some integer $a$, and from this we get $5^{2k} = 3a + 1$.
             Now observe that
             \begin{align*}
@@ -135,10 +135,34 @@
                                &= 25\cdot3a+25-1\\ 
                                &= 3(25a+8)
             \end{align*}
-            This shows $5^{2(k+1)}-1 = 3(25a+8)$, which means $3 \mid (5^{2(k+1)-1})$.
+            This shows $5^{2(k+1)}-1 = 3(25a+8)$. Since $25a+8 \in \mathbb{Z}$, it follows that $3 \mid (5^{2(k+1)}-1)$.
         \end{enumerate}
         
         It follows by induction that $3 \mid (5^{2n}-1)$ for every integer $n \geq 0$.
+    \end{proof}
+
+    \problem For any integer $n \geq 0$, it follows that $9 \mid (4^{3n}+8)$.
+    \begin{proof}
+        We prove the statement by mathematical induction.
+        \begin{enumerate}
+            \item Observe that if $n=0$, then the statement is $9 \mid 9$, which is true.
+
+            \item Assume this statement is true for some integer $n = k \geq 0$.
+                That is, assume $9 \mid (4^{3k}+8)$.
+                This means $4^{3k} + 8 = 9a$ for some integer $a$, and from this we get $4^{3k} = 9a-8$.
+                Now observe that
+                \begin{align*}
+                    4^{3(k+1)}+8 &= 4^{3k+3}+8\\ 
+                                  &= 4^3\cdot4^{3k}+8\\ 
+                                  &= 4^3(9a-8)+8\\ 
+                                  &= 64(9a-8)+8\\ 
+                                  &= 64(9a)-512+8\\ 
+                                  &= 9(64a-56)
+                \end{align*}
+                This shows $4^{3(k+1)}+8 = 9(64a-56)$. Since $64a-56 \in \mathbb{Z}$, it follows that $9 \mid (4^{3(k+1)}+8)$.
+        \end{enumerate}
+
+        It follows by induction that $9 \mid (4^{3n}+8)$ for every integer $n \geq 0$.
     \end{proof}
 \end{problems}
 
