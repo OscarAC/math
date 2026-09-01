@@ -94,6 +94,28 @@
         \end{enumerate}
         It follows by induction that $\sum\limits^{n}_{i=1}(8i-5) = 4n^2-n$ for every natural number $n$.
     \end{proof}
+
+    \problem If $n \in \mathbb{N}$, then $\frac{1}{2!}+\frac{2}{3!}+\frac{3}{4!}+\mathellipsis+\frac{n}{(n+1)!} = 1 - \frac{1}{(n+1)!}$.
+    \begin{proof}
+        We prove the statement by mathematical induction.
+        \begin{enumerate}
+            \item Observe that if $n=1$, then the statement is $\frac{1}{2!} = 1 - \frac{1}{2!} = \frac{1}{2}$, which is true.
+
+            \item Assume $\frac{1}{2!}+\frac{2}{3!}+\frac{3}{4!}+\mathellipsis+\frac{k}{(k+1)!} = 1 - \frac{1}{(k+1)!}$ for some $k \geq 1$. Then
+                \begin{align*}
+                    \MoveEqLeft \frac{1}{2!}+\frac{2}{3!}+\frac{3}{4!}+\mathellipsis+\frac{k}{(k+1)!} + \frac{k+1}{(k+2)!}\\
+                    & = \bigg[\frac{1}{2!}+\frac{2}{3!}+\frac{3}{4!}+\mathellipsis+\frac{k}{(k+1)!}\bigg] + \frac{k+1}{(k+2)!}\\
+                    & = 1 - \frac{1}{(k+1)!} + \frac{k+1}{(k+2)!}\\
+                    & = 1 - \frac{k+2}{(k+2)(k+1)!} + \frac{k+1}{(k+2)!}\\
+                    & = 1 - \frac{k+2}{(k+2)!} + \frac{k+1}{(k+2)!}\\
+                    & = 1 - \frac{(k+2)-(k+1)}{(k+2)!}\\
+                    & = 1 - \frac{1}{(k+2)!}\\
+                    & = 1 - \frac{1}{([k+1]+1)!}
+                \end{align*}
+                This means the statement is true for $n = k+1$.
+        \end{enumerate}
+        It follows by induction that $\frac{1}{2!}+\frac{2}{3!}+\frac{3}{4!}+\mathellipsis+\frac{n}{(n+1)!} = 1 - \frac{1}{(n+1)!}$ for every $n \in \mathbb{N}$.
+    \end{proof}
 \end{problems}
 
 \end{document}
