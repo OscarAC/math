@@ -187,6 +187,26 @@
         It follows by induction that $5 \mid 2^{n}a$ implies $5 \mid a$ for every $n \in \mathbb{N}$.
     \end{proof}
 
+    \problem For every natural number $n$, it follows that $2^{n} + 1 \leq 3^n$.
+    \begin{proof}
+        We prove the statement by induction.
+        \begin{enumerate}
+            \item Observe that if $n=1$, then the statement is $2^1+1 \leq 3^1$, that is, $3 \leq 3$, which is true.
+
+            \item Assume this statement is true for some natural number $k \geq 1$.
+                That is, assume $2^k+1 \leq 3^k$.
+                We need to show that $2^{k+1}+1 \leq 3^{k+1}$.
+                By the induction hypothesis, $2^k \leq 3^k - 1$. Observe that
+                \begin{align*}
+                    2^{k+1} + 1 = 2(2^k) + 1 & \leq 2(3^k - 1) + 1 = 2(3^k) - 1 && \text{(induction hypothesis)}\\
+                                             & \leq 3(3^k) = 3^{k+1} && \text{(since $-1 < 3^k$)}
+                \end{align*}
+                This shows the statement is true for $n = k + 1$.
+        \end{enumerate}
+
+        It follows by induction that $2^n+1 \leq 3^n$ for every natural number $n$.
+    \end{proof}
+
 \end{problems}
 
 \end{document}
