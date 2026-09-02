@@ -207,6 +207,25 @@
         It follows by induction that $2^n+1 \leq 3^n$ for every natural number $n$.
     \end{proof}
 
+    \problem Suppose $A_1, A_2, \mathellipsis, A_n$ are sets in some universal set $U$, and $n \geq 2$. Prove that $\overline{A_1 \cup A_2 \cup \mathellipsis \cup A_n} = \overline{A_1} \cap \overline{A_2} \cap \mathellipsis \cap \overline{A_n}$.
+    \begin{proof}
+        The proof is by strong induction.
+        \begin{enumerate}
+            \item When $n=2$ the statement is $\overline{A_1 \cup A_2} = \overline{A_1} \cap \overline{A_2}$, which is true (see Chapter 8, Exercise 11).
+
+            \item Let $k \geq 2$. Assume the statement is true if it involves $k$ or fewer sets. Then
+                \begin{align*}
+                    \MoveEqLeft \overline{A_1 \cup A_2 \cup \mathellipsis \cup A_{k-1} \cup A_{k} \cup A_{k+1}}\\
+                    & = \overline{A_1 \cup A_2 \cup \mathellipsis \cup A_{k-1} \cup (A_{k} \cup A_{k+1})} && \text{(regrouping)}\\
+                    & = \overline{A_1} \cap \overline{A_2} \cap \mathellipsis \cap \overline{A_{k-1}} \cap \overline{A_k \cup A_{k+1}} && \text{(inductive hypothesis, $k$ sets)}\\
+                    & = \overline{A_1} \cap \overline{A_2} \cap \mathellipsis \cap \overline{A_{k-1}} \cap \overline{A_{k}} \cap \overline{A_{k+1}} && \text{(two-set case)}
+                \end{align*}
+            Thus the statement is true when it involves $k+1$ sets.
+        \end{enumerate}
+        This completes the proof by strong induction.
+    \end{proof}
+
+
 \end{problems}
 
 \end{document}
