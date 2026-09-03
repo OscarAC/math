@@ -225,6 +225,32 @@
         This completes the proof by strong induction.
     \end{proof}
 
+    \problem Prove that $(1+2+3+\mathellipsis+n)^2 = 1^3+2^3+3^3+\mathellipsis+n^3$ for every $n \in \mathbb{N}$.
+
+
+    \problem Prove that $(1+2+3+\mathellipsis+n)^2 = 1^3+2^3+3^3+\mathellipsis+n^3$ for every $n \in \mathbb{N}$.
+    \begin{proof}
+        We prove the statement by induction.
+        \begin{enumerate}
+            \item Observe that if $n=1$, then the statement is $1^2 = 1^3$, that is, $1 = 1$, which is true.
+
+            \item Assume $(1+2+3+\mathellipsis+k)^2 = 1^3+2^3+3^3+\mathellipsis+k^3$ for some natural number $k \geq 1$.
+                We need to show that $(1+2+3+\mathellipsis+k+(k+1))^2 = 1^3+2^3+3^3+\mathellipsis+k^3+(k+1)^3$.
+                Let $T = 1+2+3+\mathellipsis+k$; then $T = \frac{k(k+1)}{2}$ (see Exercise 1), so $2T = k(k+1)$.
+                Observe that
+                \begin{align*}
+                    \MoveEqLeft (1+2+3+\mathellipsis+k+(k+1))^2\\
+                    & = (T + (k+1))^2\\
+                    & = T^2 + 2T(k+1) + (k+1)^2\\
+                    & = 1^3+2^3+\mathellipsis+k^3 + 2T(k+1) + (k+1)^2 && \text{(induction hypothesis)}\\
+                    & = 1^3+2^3+\mathellipsis+k^3 + k(k+1)(k+1) + (k+1)^2 && \text{(since $2T = k(k+1)$)}\\
+                    & = 1^3+2^3+\mathellipsis+k^3 + (k+1)^2(k+1)\\
+                    & = 1^3+2^3+\mathellipsis+k^3 + (k+1)^3
+                \end{align*}
+                This shows the statement is true for $n = k+1$.
+        \end{enumerate}
+        It follows by induction that $(1+2+3+\mathellipsis+n)^2 = 1^3+2^3+3^3+\mathellipsis+n^3$ for every $n \in \mathbb{N}$.
+    \end{proof}
 
 \end{problems}
 
