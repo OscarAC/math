@@ -270,6 +270,31 @@
         It follows by induction that the statement is true for every $n \in \mathbb{N}$.
     \end{proof}
 
+
+    \problem Prove that $\sum\limits_{k=1}^{n} k\binom{n}{k} = n2^{n-1}$ for each natural number $n$.
+    \begin{proof}
+        We prove the statement by induction.
+        \begin{enumerate}
+            \item Observe that if $n=1$, then the statement is $\sum\limits_{k=1}^{1} k\binom{1}{k} = 1\binom{1}{1} = 1 = 1 \cdot 2^0$, which is true.
+
+            \item Assume $\sum\limits_{k=1}^{m} k\binom{m}{k} = m2^{m-1}$ for some natural number $m \geq 1$.
+                We need to show that $\sum\limits_{k=1}^{m+1} k\binom{m+1}{k} = (m+1)2^m$.
+                By Pascal's rule $\binom{m+1}{k} = \binom{m}{k} + \binom{m}{k-1}$, and $\binom{m}{m+1} = 0$.
+                Observe that
+                \begin{align*}
+                    \sum_{k=1}^{m+1} k\binom{m+1}{k}
+                    & = \sum_{k=1}^{m+1} k\binom{m}{k} + \sum_{k=1}^{m+1} k\binom{m}{k-1}\\
+                    & = \sum_{k=1}^{m} k\binom{m}{k} + \sum_{j=0}^{m} (j+1)\binom{m}{j}\\
+                    & = \sum_{k=1}^{m} k\binom{m}{k} + \sum_{j=1}^{m} j\binom{m}{j} + \sum_{j=0}^{m} \binom{m}{j}\\ 
+                    & = m2^{m-1} + m2^{m-1} + 2^m\\
+                    & = m2^m + 2^m\\
+                    & = (m+1)2^m
+                \end{align*}
+                This shows the statement is true for $n = m+1$.
+        \end{enumerate}
+        It follows by induction that $\sum\limits_{k=1}^{n} k\binom{n}{k} = n2^{n-1}$ for each natural number $n$.
+    \end{proof}
+
 \end{problems}
 
 \end{document}
