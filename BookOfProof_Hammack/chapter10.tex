@@ -124,20 +124,20 @@
             \item Observe that if $n=0$, then the statement is $3 \mid 0$, which is true.
 
             \item Assume this statement is true for some integer $n = k \geq 0$.
-            That is, assume $3 \mid (5^{2k}-1)$.
-            This means $5^{2k}-1 = 3a$ for some integer $a$, and from this we get $5^{2k} = 3a + 1$.
-            Now observe that
-            \begin{align*}
-                5^{2(k+1)} - 1 &= 5^{2k+2}-1\\ 
-                               &= 5^2\cdot5^{2k}-1\\ 
-                               &= 5^2(3a+1)-1\\ 
-                               &= 25(3a+1)-1\\ 
-                               &= 25\cdot3a+25-1\\ 
-                               &= 3(25a+8)
-            \end{align*}
-            This shows $5^{2(k+1)}-1 = 3(25a+8)$. Since $25a+8 \in \mathbb{Z}$, it follows that $3 \mid (5^{2(k+1)}-1)$.
+                That is, assume $3 \mid (5^{2k}-1)$.
+                This means $5^{2k}-1 = 3a$ for some integer $a$, and from this we get $5^{2k} = 3a + 1$.
+                Now observe that
+                \begin{align*}
+                    5^{2(k+1)} - 1 &= 5^{2k+2}-1\\ 
+                                   &= 5^2\cdot5^{2k}-1\\ 
+                                   &= 5^2(3a+1)-1\\ 
+                                   &= 25(3a+1)-1\\ 
+                                   &= 25\cdot3a+25-1\\ 
+                                   &= 3(25a+8)
+                \end{align*}
+                This shows $5^{2(k+1)}-1 = 3(25a+8)$. Since $25a+8 \in \mathbb{Z}$, it follows that $3 \mid (5^{2(k+1)}-1)$.
         \end{enumerate}
-        
+
         It follows by induction that $3 \mid (5^{2n}-1)$ for every integer $n \geq 0$.
     \end{proof}
 
@@ -153,11 +153,11 @@
                 Now observe that
                 \begin{align*}
                     4^{3(k+1)}+8 &= 4^{3k+3}+8\\ 
-                                  &= 4^3\cdot4^{3k}+8\\ 
-                                  &= 4^3(9a-8)+8\\ 
-                                  &= 64(9a-8)+8\\ 
-                                  &= 64(9a)-512+8\\ 
-                                  &= 9(64a-56)
+                                 &= 4^3\cdot4^{3k}+8\\ 
+                                 &= 4^3(9a-8)+8\\ 
+                                 &= 64(9a-8)+8\\ 
+                                 &= 64(9a)-512+8\\ 
+                                 &= 9(64a-56)
                 \end{align*}
                 This shows $4^{3(k+1)}+8 = 9(64a-56)$. Since $64a-56 \in \mathbb{Z}$, it follows that $9 \mid (4^{3(k+1)}+8)$.
         \end{enumerate}
@@ -172,7 +172,7 @@
             \item Let $n=1$. Suppose $5 \mid 2^{1}a$.
                 Since 5 is prime, we have $5 \mid 2$ or $5 \mid a$.
                 But $5 \nmid 2$, therefore $5 \mid a$.
-            
+
             \item Assume this statement is true for some integer $n = k \geq 1$.
                 That is, assume $5 \mid 2^{k}a$ implies $5 \mid a$.
                 We must show that $5 \mid 2^{k+1}a$ implies $5 \mid a$.
@@ -220,13 +220,10 @@
                     & = \overline{A_1} \cap \overline{A_2} \cap \mathellipsis \cap \overline{A_{k-1}} \cap \overline{A_k \cup A_{k+1}} && \text{(inductive hypothesis, $k$ sets)}\\
                     & = \overline{A_1} \cap \overline{A_2} \cap \mathellipsis \cap \overline{A_{k-1}} \cap \overline{A_{k}} \cap \overline{A_{k+1}} && \text{(two-set case)}
                 \end{align*}
-            Thus the statement is true when it involves $k+1$ sets.
+                Thus the statement is true when it involves $k+1$ sets.
         \end{enumerate}
         This completes the proof by strong induction.
     \end{proof}
-
-    \problem Prove that $(1+2+3+\mathellipsis+n)^2 = 1^3+2^3+3^3+\mathellipsis+n^3$ for every $n \in \mathbb{N}$.
-
 
     \problem Prove that $(1+2+3+\mathellipsis+n)^2 = 1^3+2^3+3^3+\mathellipsis+n^3$ for every $n \in \mathbb{N}$.
     \begin{proof}
@@ -250,6 +247,27 @@
                 This shows the statement is true for $n = k+1$.
         \end{enumerate}
         It follows by induction that $(1+2+3+\mathellipsis+n)^2 = 1^3+2^3+3^3+\mathellipsis+n^3$ for every $n \in \mathbb{N}$.
+    \end{proof}
+
+    \problem If $n \in \mathbb{N}$, then $(1-\frac{1}{2})(1-\frac{1}{4})(1-\frac{1}{8})(1-\frac{1}{16}) \mathellipsis (1-\frac{1}{2^n}) \geq \frac{1}{4} + \frac{1}{2^{n+1}}$.
+    \begin{proof}
+        We prove the statement by induction.
+        \begin{enumerate}
+            \item Observe that if $n=1$, then the statement is $1-\frac{1}{2} \geq \frac{1}{4}+\frac{1}{2^{2}}$, that is, $\frac{1}{2} \geq \frac{1}{2}$, which is true.
+
+            \item Assume $\left(1-\frac{1}{2}\right)\left(1-\frac{1}{4}\right)\mathellipsis\left(1-\frac{1}{2^k}\right) \geq \frac{1}{4}+\frac{1}{2^{k+1}}$ for some natural number $k \geq 1$.
+                We need to show that $\left(1-\frac{1}{2}\right)\left(1-\frac{1}{4}\right)\mathellipsis\left(1-\frac{1}{2^{k+1}}\right) \geq \frac{1}{4}+\frac{1}{2^{k+2}}$.
+                Let $x = \frac{1}{2^{k+1}}$.
+                Since $k \geq 1$, we have $2^{k+1} \geq 4$, hence $0 < x \leq \frac{1}{4}$; in particular $1-x > 0$ and $x\left(\frac{1}{4}-x\right) \geq 0$.
+                Observe that
+                \begin{align*}
+                    \MoveEqLeft \left(1-\tfrac{1}{2}\right)\left(1-\tfrac{1}{4}\right)\mathellipsis\left(1-\tfrac{1}{2^{k}}\right)\left(1-\tfrac{1}{2^{k+1}}\right)\\
+                    & \geq \left(\tfrac{1}{4}+x\right)(1-x) = \tfrac{1}{4} + \tfrac{x}{2} + x\left(\tfrac{1}{4}-x\right) && \text{(induction hypothesis, $1-x > 0$)}\\
+                    & \geq \tfrac{1}{4} + \tfrac{x}{2} = \tfrac{1}{4} + \tfrac{1}{2^{k+2}} && \text{(since $x\left(\tfrac{1}{4}-x\right) \geq 0$)}
+                \end{align*}
+                This shows the statement is true for $n = k+1$.
+        \end{enumerate}
+        It follows by induction that the statement is true for every $n \in \mathbb{N}$.
     \end{proof}
 
 \end{problems}
