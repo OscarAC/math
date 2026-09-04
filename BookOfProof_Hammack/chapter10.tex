@@ -295,6 +295,24 @@
         It follows by induction that $\sum\limits_{k=1}^{n} k\binom{n}{k} = n2^{n-1}$ for each natural number $n$.
     \end{proof}
 
+    \problem Concerning the Fibonacci sequence, prove that $\sum\limits_{k=1}^{n}F_k^2 = F_nF_{n+1}$.
+    \begin{proof}
+        We prove the statement by induction.
+        \begin{enumerate}
+            \item Observe that if $n=1$, then the statement is $\sum\limits_{k=1}^{1}F_1^2 = F_1F_{2}$, this means $1^2 = 1 \cdot 1$, which is true.
+
+            \item Assume $\sum\limits_{k=1}^{m}F_k^2 = F_mF_{m+1}$ for some natural number $m \geq 1$. We need to show that $\sum\limits_{k=1}^{m+1}F_k^2 = F_{m+1}F_{m+2}$. Observe that
+                \begin{align*}
+                    \sum\limits_{k=1}^{m+1}F_k^2 &= \sum\limits_{k=1}^{m}F_k^2 + F_{m+1}^2\\ 
+                                                 &= F_mF_{m+1} + F_{m+1}F_{m+1} && \text{(inductive hypothesis)}\\ 
+                                                 &= F_{m+1}(F_{m}+F_{m+1})\\ 
+                                                 &= F_{m+1}F_{m+2} && \text{(definition of Fibonacci Sequence)}
+                \end{align*}
+                This shows the statement is true for $n = m + 1$.
+        \end{enumerate}
+        It follows by induction that $\sum\limits_{k=1}^{n}F_k^2 = F_nF_{n+1}$ for each natural number $n$.
+    \end{proof}
+
 \end{problems}
 
 \end{document}
