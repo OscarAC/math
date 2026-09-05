@@ -146,6 +146,28 @@
         \item where there are $2n$ brackets;
         \item where there are $2n+1$ brackets; $n$ being any whole number whatever.
     \end{parts}
+    
+    \answer 
+    Let $N$ be the number of brackets. 
+    Each of the N brackets is preceded by a $-$ sign, and by the law of association, removing such a bracket reverses the sign of its content. Since the innermost bracket contains -1, the value is $(-1)^N \times (-1) = -(-1)^N$.
+    \begin{parts}
+    \item If $N = 2n$, then 
+        \begin{align*}
+            -(-1)^N &= -(-1)^{2n}\\ 
+                    &= -((-1)^2)^n\\ 
+                    &= -(1^n)\\ 
+                    &= -1
+        \end{align*}
+    \item If $N = 2n+1$, then 
+        \begin{align*}
+            -(-1)^N &= -(-1)^{2n+1}\\ 
+                    &= -[(-1)^{2n}\times(-1)]\\ 
+                    &= -[(+1) \times (-1)]\\ 
+                    &= -(-1)\\ 
+                    &= +1
+        \end{align*}
+    \end{parts}
+
 
     \problem Simplify and condense as much as possible---
     \[
