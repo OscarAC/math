@@ -313,6 +313,25 @@
         It follows by induction that $\sum\limits_{k=1}^{n}F_k^2 = F_nF_{n+1}$ for each natural number $n$.
     \end{proof}
 
+    \problem Concerning the Fibonacci sequence, prove that $F_2 + F_4 + F_6 + F_8 + \mathellipsis + F_{2n} = F_{2n+1}-1$.
+    \begin{proof}
+        We prove the statement by induction.
+        \begin{enumerate}
+            \item Observe that if $n=1$, then the statement is $F_2 = F_{3}-1$, this means $1 = 2-1$, which is true.
+
+            \item Assume $F_2 + F_4 + F_6 + F_8 + \mathellipsis + F_{2k} = F_{2k+1}-1$ for some natural number $k$. We need to show that $F_2 + F_4 + F_6 + F_8 + \mathellipsis + F_{2(k+1)} = F_{2(k+1)+1} - 1$. Observe that 
+                \begin{align*}
+                    \MoveEqLeft F_2+F_4+F_6+\mathellipsis + F_{2k} + F_{2(k+1)}\\
+                    & = F_{2k+1} - 1 + F_{2(k+1)} && \text{(inductive hypothesis)}\\
+                    & = F_{2k+1} + F_{2k+2} - 1\\
+                    & = F_{2k+3} - 1 && \text{(definition of Fibonacci Sequence)}\\
+                    & = F_{2(k+1)+1} - 1
+                \end{align*}
+                This shows the statement is true for $n = k + 1$.
+        \end{enumerate}
+        It follows by induction that $F_2+F_4+F_6+F_8+\mathellipsis + F_{2n} = F_{2n+1} - 1$ for each natural number $n$.
+    \end{proof}
+
 \end{problems}
 
 \end{document}
