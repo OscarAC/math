@@ -103,6 +103,40 @@
         \item $2^{64}$.
     \end{parts}
 
+    \answer Cut each number after its first $k$ digits, so that
+    \[
+        x = a \times 10^{m} + r, \qquad y = c \times 10^{n} + s,
+    \]
+    where $a$ and $c$ have $k$ digits each and the tails satisfy $r < 10^{m}$, $s < 10^{n}$. By the law of distribution,
+    \[
+        xy = ac \times 10^{m+n} + (as \times 10^{m} + cr \times 10^{n} + rs).
+    \]
+    The bracketed part is the whole error made by neglecting the tails, and it is small: since $s < 10^{n}$, $r < 10^{m}$, and $rs < 10^{m+n}$,
+    \[
+        as \times 10^{m} + cr \times 10^{n} + rs < (a + c + 1) \times 10^{m+n}.
+    \]
+    Hence $xy$ lies between $ac \times 10^{m+n}$ and $(ac + a + c + 1) \times 10^{m+n}$. Now $ac$ has $2k - 1$ or $2k$ digits, whereas $a + c + 1$ has at most $k + 1$; so the correction $a + c + 1$ can disturb only the last $k + 1$ digits of $ac$, and the leading $k - 2$ or so digits, together with the number of digits, are left untouched. Thus the number of digits in $xy$ is the number of digits in $ac$ plus $m + n$, and the first digits of $xy$ are the first digits of $ac$ as long as the addition of $a + c + 1$ does not carry into the desired digits, if it does we can take $k$ to be larger.
+
+    \textit{Illustration (a).} Take $k = 5$:
+    \begin{align*}
+        3659893456789325678 &= 36598 \times 10^{14} + 93456789325678, \\
+        342973489379265 &= 34297 \times 10^{10} + 3489379265.
+    \end{align*}
+    Then $ac = 36598 \times 34297 = 1255201606$, and $a + c + 1 = 70896$, so
+    \[
+        1255201606 \times 10^{24} < xy < 1255272502 \times 10^{24}.
+    \]
+    Both bounds have $10 + 24 = 34$ digits and begin with $1255$. The product has therefore $34$ digits, and its first three digits are $125$.
+
+    \textit{Illustration (b).} Since $2^{64} = (2^{32})^{2}$ and $2^{32} = 4294967296$ has exactly ten digits, this is a product of two numbers of ten digits each. With $k = 5$,
+    \[
+        4294967296 = 42949 \times 10^{5} + 67296,
+    \]
+    so $ac = 42949^{2} = 1844616601$ and $a + c + 1 = 85899$, giving
+    \[
+        1844616601 \times 10^{10} < 2^{64} < 1844702500 \times 10^{10}.
+    \]
+    Both bounds have $10 + 10 = 20$ digits and begin with $1844$. Hence $2^{64}$ has $20$ digits, the first three being $184$.
 
     \problem Express in the simplest form---
     \[
