@@ -118,21 +118,54 @@
     \[
         (3xyz)^2 \times \frac{x^6 y^9}{x^9 y^6} \div \left(\frac{3 x^2 z^2}{y^2 z^2}\right)^{2}.
     \]
+    \answer
+    \begin{align*}
+        (3xyz)^2 \times \frac{x^6y^9}{x^9y^6} \div \left(\frac{3x^2z^2}{y^2z^2}\right)^2 \\ 
+        = 9x^2y^2z^2 \times \frac{y^3}{x^3} \div \frac{9x^4}{y^4} \\ 
+        = \frac{9y^5z^2}{x} \div \frac{9x^4}{y^4} \\ 
+        = \frac{y^9z^2}{x^5}
+    \end{align*}
 
     \problem Simplify---
     \[
         \frac{(x^3 y^2 z^2)^7 \times (y^3 z^2 x^2)^7 \times (z^3 x^2 y^2)^7}{\left(\dfrac{x^2}{yz}\right)^{7} \times \left(\dfrac{y^2}{zx}\right)^{7} \times \left(\dfrac{z^2}{xy}\right)^{7}}.
     \]
+    \answer
+    \begin{align*}
+        \frac{(x^3 y^2 z^2)^7 \times (y^3 z^2 x^2)^7 \times (z^3 x^2 y^2)^7}{\left(\dfrac{x^2}{yz}\right)^{7} \times \left(\dfrac{y^2}{zx}\right)^{7} \times \left(\dfrac{z^2}{xy}\right)^{7}} &\\ 
+        = \left(\frac{x^3 y^2 z^2 y^3 z^2 x^2 z^3 x^2 y^2}{\frac{x^2}{yz} \times \frac{y^2}{zx} \times \frac{z^2}{xy}} \right)^7 && \text{($(ab)^m = a^mb^m; (\tfrac{a}{b})^m = \tfrac{a^m}{b^m}$)} \\ 
+        = \left(\frac{x^7y^7z^7}{\frac{x^2}{yz} \times \frac{y^2}{zx} \times \frac{z^2}{xy}}\right)^7 && \text{($a^ma^n = a^{m+n}$)}\\ 
+        = \left(\frac{x^7y^7z^7}{\frac{x^2y^2z^2}{yzzxxy}}\right)^7 \\ 
+        = \left(\frac{x^7y^7z^7}{\frac{x^2y^2z^2}{y^2z^2x^2}}\right)^7 && \text{(definition of exponent)} \\ 
+        = \left(x^7y^7z^7\right) ^7 \\ 
+        = (xyz)^{49} && \text{($(a^m)^n = a^{mn}$)}
+    \end{align*}
 
     \problem Simplify---
     \[
         \left(\frac{x^m}{x^n}\right)^{m+n} \times \left(\frac{x^n}{x^l}\right)^{n+l} \times \left(\frac{x^l}{x^m}\right)^{l+m}.
     \]
+    \answer 
+    \begin{align*}
+        \left(\frac{x^m}{x^n}\right)^{m+n} \times \left(\frac{x^n}{x^l}\right)^{n+l} \times \left(\frac{x^l}{x^m}\right)^{l+m}. & \\ 
+        \frac{x^{m^2+mn}}{x^{n^2+mn}} \times \frac{x^{n^2+nl}}{x^{l^2+nl}} \times \frac{x^{l^2+lm}}{x^{m^2+lm}} && \text{($(a^m)^n = a^{mn}; (\tfrac{a}{b})^m = \tfrac{a^m}{b^m}$)}\\ 
+        = \frac{x^{m^2}x^{mn}}{x^{n^2}x^{mn}} \times \frac{x^{n^2}x^{nl}}{x^{l^2}x^{nl}} \times \frac{x^{l^2}x^{lm}}{x^{m^2}x^{lm}}  && \text{($a^ma^n = a^{m+n}$)} \\ 
+        = 1 && \text{($\tfrac{a}{a} = 1$)} 
+    \end{align*}
 
     \problem Simplify---
     \[
         \left\{ \frac{(a^{p-q})^{q} \times (a^{q-r})^{r-p}}{(a^{r+q})^{r-q}} \right\}^{1/r}.
     \]
+    \answer 
+    \begin{align*}
+        \left\{ \frac{(a^{p-q})^{q} \times (a^{q-r})^{r-p}}{(a^{r+q})^{r-q}} \right\}^{1/r} & 
+        = \left\{ \frac{a^{pq-q^2} \times a^{qr-qp-r^2+rp}}{a^{r^2-q^2}} \right\}^{1/r}\\ 
+        = \left\{\frac{a^{pq-q^2+qr-qp-r^2+rp}}{a^{r^2-q^2}}\right\}^{1/r} &
+        = \left\{\frac{a^{r(q+p)}a^{-r^2}a^{-q^2}}{a^{r^2}a^{-q^2}}\right\}^{1/r}\\ 
+        = \frac{a^{q+p}a^{-r}}{a^r} &
+        = a^{q+p-2r}
+    \end{align*}
 
     \problem Simplify---
     \[
