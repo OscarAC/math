@@ -171,16 +171,56 @@
     \[
         \frac{(x^{a-b} \times x^{b-c})^{a} \times \left(\dfrac{x^a}{x^c}\right)}{(x^a \times x^c)^{a} \div (x^{a+c})^{c}}.
     \]
+    \answer 
+    First, the numerator,
+    \begin{align*}
+        &(x^{a-b}\times x^{b-c})^a \times \left(\frac{x^a}{x^c}\right) \\ 
+        &= (x^{a-c})^a \times x^{a-c} && \text{($a^ma^n = a^{m+n}$; $\tfrac{a^m}{a^n} = a^{m-n}$)}\\ 
+        &= x^{a(a-c)} \times x^{a-c} && \text{($(a^m)^n = a^{mn}$)}\\ 
+        &= x^{(a-c)(a+1)} && \text{($a^ma^n = a^{m+n}$)}
+    \end{align*}
+    Next, the denominator,
+    \begin{align*}
+        &(x^a \times x^c)^a \div (x^{a+c})^c \\ 
+        &= (x^{a+c})^a \div (x^{a+c})^c && \text{($a^ma^n = a^{m+n}$)}\\ 
+        &= x^{a(a+c)} \div x^{c(a+c)} && \text{($(a^m)^n = a^{mn}$)}\\ 
+        &= x^{(a+c)(a-c)} && \text{($a^m \div a^n = a^{m-n}$)}
+    \end{align*}
+    Finally,
+    \begin{align*}
+        \frac{x^{(a-c)(a+1)}}{x^{(a-c)(a+c)}} = x^{(a-c)(a+1) - (a-c)(a+c)} = x^{(a-c)(a+1-a-c)} = x^{(a-c)(1-c)}.
+    \end{align*}
 
     \problem Simplify---
     \[
         \left(\frac{x^p}{x^q}\right)^{p+q} \div \left(\frac{x^{p+q}}{x^{p-q}}\right)^{p^2/q}.
     \]
+    \answer 
+    \begin{align*}
+        &\left(\frac{x^p}{x^q}\right)^{p+q} \div \left(\frac{x^{p+q}}{x^{p-q}}\right)^{p^2/q} \\ 
+        &= (x^{p-q})^{p+q} \div (x^{2q})^{p^2/q} && \text{($\tfrac{a^m}{a^n} = a^{m-n}$)}\\ 
+        &= x^{p^2-q^2} \div x^{2p^2} && \text{($(a^m)^n = a^{mn}$)}\\ 
+        &= \frac{1}{x^{p^2+q^2}} && \text{($a^m \div a^n = \tfrac{1}{a^{n-m}}; n>m$)}
+    \end{align*}
 
     \problem Simplify---
     \[
         \left\{ \left(\frac{x^l}{x^m}\right)^{l} \times \left(\frac{x^m}{x^l}\right)^{m} \right\} \div \{(x^l)^l \times (x^m)^m\} \times \{(x^m)^l \times (x^l)^m\}.
     \]
+    \answer 
+    First, we simplify each term inside brackets,
+    \begin{align*}
+        \left(\frac{x^l}{x^m}\right)^{l} \times \left(\frac{x^m}{x^l}\right)^{m} &= x^{l(l-m)} \times x^{m(m-l)} = x^{l^2+m^2-2lm}, \\
+        (x^l)^l \times (x^m)^m &= x^{l^2+m^2}, \\
+        (x^m)^l \times (x^l)^m &= x^{2lm}.
+    \end{align*}
+    Then, we perform the division and multiplication chain,
+    \begin{align*}
+        x^{l^2+m^2-2lm} \div x^{l^2+m^2} \times x^{2lm} 
+        &= x^{l^2+m^2-2lm} \times x^{2lm} \div x^{l^2+m^2} \\
+        &= x^{l^2+m^2} \div x^{l^2+m^2} && \text{($a^ma^n = a^{m+n}$)}\\
+        &= 1. && \text{($\tfrac{a}{a} = 1$)}
+    \end{align*}
 
     \problem Prove that---
     \[
