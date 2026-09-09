@@ -1,0 +1,203 @@
+\documentclass[DIN, pagenumber=false, fontsize=11pt, parskip=half]{scrartcl}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{template}
+\usepackage{amsmath}
+
+\setcounter{secnumdepth}{1} % number sections only; subsections (Exercises) unnumbered
+
+\titlehead{\centering\small
+    Worked solutions to selected exercises from\\
+    G. Chrystal, \emph{Algebra: An Elementary Text-Book}, Part I (1886)\\
+\rule{0.4\linewidth}{0.4pt}}
+
+\title{}
+\author{} % Oscar A. Carrera
+\date{}
+
+\begin{document}
+\maketitle
+
+\setcounter{section}{1}
+\section{Monomials---Laws of Indices---Degree}
+
+\subsection{Exercises II}
+
+\begin{problems}[from=1,step=1]
+    \problem Simplify---
+    \[
+        \frac{5^7 \times 12^4 \times 32^2 \times (3^2 \times 4^2 \times 5)^2}{(3 \times 15 \times 2^3)^{10}}.
+    \]
+    \answer
+    First, we simplify the numerator,
+    \begin{align*}
+        &5^7 \times 12^4 \times 32^2 \times (3^2 \times 4^2 \times 5)^2 \\ 
+        &= 5^7 \times (2\times2\times3)^4 \times (2^5)^2 \times (3^2 \times (2\times2)^2 \times 5)^2 && \text{(arithmetical factorization)}\\ 
+        &= 5^7 \times 2^4 \times 2^4 \times 3^4 \times 2^{10} \times 3^4 \times 2^4 \times 2^4 \times 5^2 && \text{($(ab)^n = a^nb^n$; $(a^m)^n = a^{mn}$)}\\ 
+        &= 5^9 \times 3^8 \times 2^{26} && \text{(commutation; $a^ma^n = a^{m+n}$)}
+    \end{align*}
+
+    Next, we simplify the denominator,
+    \begin{align*}
+        &(3 \times 15 \times 2^3)^{10} \\ 
+        &= 3^{10} \times 15^{10} \times 2^{30} && \text{($(ab)^n = a^nb^n$; $(a^m)^n = a^{mn}$)}\\ 
+        &= 3^{10} \times (3\times5)^{10} \times 2^{30} && \text{(arithmetical factorization)}\\ 
+        &= 3^{10} \times 3^{10} \times 5^{10} \times 2^{30} && \text{($(ab)^n = a^nb^n$)}\\ 
+        &= 3^{20} \times 5^{10} \times 2^{30} && \text{($a^ma^n = a^{m+n}$)}
+    \end{align*}
+
+    Finally, we simplify the fraction,
+    \begin{align*}
+        &\frac{5^9 \times 3^8 \times 2^{26}}{3^{20} \times 5^{10} \times 2^{30}} \\ 
+        &= \frac{1}{3^{12} \times 2^4 \times 5} && \text{($\tfrac{a^m}{a^n} = \tfrac{1}{a^{n-m}}; n>m$)}\\ 
+        &= \frac{1}{42515280}
+    \end{align*}
+
+    \problem Which is greater, $(2^2)^{2^2}$ or $2^{2^{2^2}}$? Find the difference between them.
+
+    \answer Observe that $2^{2^{2^2}} = 2^{2^{4}} = 2^{16} = 65536$, whereas $(2^2)^{2^{2}} = (2^2)^4 = 2^8 = 256$. Therefore $2^{2^{2^2}}$ is larger.
+
+    \problem Simplify---
+    \[
+        \frac{2^{2^2}}{2(2^2)^2}.
+    \]
+    \answer
+    \[
+        \frac{2^{2^2}}{2(2^2)^2} = \frac{(2 \times 2)^2}{2\times (2 \times 2)^2} = \frac{1}{2}
+    \]
+    \problem Simplify---
+    \[
+        \frac{36^2 a^7 b^5 c^3 d^2}{81 a^4 b^3 c^3}.
+    \]
+    \answer
+    \begin{align*}
+        \dfrac{36^2 a^7 b^5 c^3 d^2}{81 a^4 b^3 c^3} =
+        \dfrac{(9 \times 4)^2 a^7 b^5 c^3 d^2}{(9 \times 9) a^4 b^3 c^3} =
+        \dfrac{9^2 \times 4^2 \times a^7 b^5 c^3 d^2}{9^2 a^4 b^3 c^3} = 
+        4^2a^3b^2d^2 = 16a^3b^2d^2
+    \end{align*}
+
+
+    \problem Express in its simplest form---
+    \[
+        \left(\frac{a^4 c^3 y^2}{a^3 b^2 c^3 x^2 y^2}\right)^{2} \times \left(\frac{a^3 b^3 x^3}{a^3 b^2 c^3 x^3 y^2}\right)^{3} \times \left(\frac{b^2 c^4 x^2 y}{a^4 b^3 x^3 y^3}\right)^{4}.
+    \]
+    \answer 
+    \begin{align*}
+        &\left(\frac{a^4c^3y^2}{a^3b^2c^3x^2y^2}\right)^2 \times
+        \left(\frac{a^3b^3x^3}{a^3b^2c^3x^3y^2}\right)^3 \times 
+        \left(\frac{b^2c^4x^2y}{a^4b^3x^3y^3}\right)^4 \\ 
+        &= \left(\frac{a}{b^2x^2}\right)^2 \times \left(\frac{b}{c^3y^2}\right)^3 \times \left(\frac{b^2c^4x^2y}{a^4b^3x^3y^3}\right)^4 && \text{($\tfrac{a^m}{a^n} = a^{m-n}; m>n$)}\\ 
+        &= \left(\frac{a}{b^2x^2}\right)^2 \times \left(\frac{b}{c^3y^2}\right)^3 \times \left(\frac{c^4}{a^4bxy^2}\right)^4  && \text{($\tfrac{a^m}{a^n} = \tfrac{1}{a^{n-m}}; n>m $)}\\ 
+        &= \frac{(a)^2}{(b^2x^2)^2} \times \frac{(b)^3}{(c^3y^2)^3} \times \frac{(c^4)^4}{(a^4bxy^2)^4} && \text{($(\tfrac{a}{b})^m = \tfrac{a^m}{b^m}$)}\\ 
+        &= \frac{a^2}{(b^2)^2(x^2)^2} \times \frac{b^3}{(c^3)^3(y^2)^3} \times \frac{(c^4)^4}{(a^4)^4(y^2)^4b^4x^4} && \text{($(ab)^m = a^mb^m$)}\\ 
+        &= \frac{a^2}{b^4x^4} \times \frac{b^3}{c^9y^6} \times \frac{c^{16}}{a^{16}y^8b^4x^4} && \text{($(a^m)^n = a^{mn}$)}\\ 
+        &= \frac{a^2b^3c^{16}}{b^4x^4c^9y^6a^{16}y^8b^4x^4}\\ 
+        &= \frac{a^2b^3c^{16}}{b^8x^8c^9y^{14}a^{16}} && \text{($a^ma^n = a^{m+n}$)}\\ 
+        &= \frac{c^{16}}{b^5x^8c^9y^{14}a^{14}} && \text{($\tfrac{a^m}{a^n} = \tfrac{1}{a^{n-m}}; n>m$)}\\ 
+        &= \frac{c^7}{b^5x^8y^{14}a^{14}} && \text{($\tfrac{a^m}{a^n} = a^{m-n}; m>n$)}
+    \end{align*}
+
+
+    \problem Simplify---
+    \[
+        \left(\frac{45 a^3 b^2 c^4}{27 a^2 b^2 c}\right)^{2} \times \left(\frac{243 a^4 b^4 c^4 x}{180 a^2 b c}\right)^{2}.
+    \]
+    \answer 
+    \begin{align*}
+        \left(\frac{45a^3b^2c^4}{27a^2b^2c}\right)^2 \times \left(\frac{243a^4b^4c^4x}{180a^2bc}\right)^2 &\\ 
+        = \left(\frac{(9\times5)a^3b^2c^4}{(9\times3)a^2b^2c}\right)^2 \times \left(\frac{3^5a^4b^4c^4x}{(2^2\times3^2\times5)a^2bc}\right)^2 \\ 
+        = \left(\frac{5ac^3}{3}\right)^2 \times \left(\frac{3^3a^2b^3c^3x}{2^2\times5}\right)^2 \\ 
+        = \frac{5^2a^2c^6}{3^2} \times \frac{3^6a^4b^6c^6x^2}{2^4\times5^2} \\ 
+        = \frac{3^4a^6b^6c^{12}x^2}{2^4} \\ 
+        = \frac{81a^6b^6c^{12}x^2}{16}
+    \end{align*}
+
+    \problem Simplify---
+    \[
+        (3xyz)^2 \times \frac{x^6 y^9}{x^9 y^6} \div \left(\frac{3 x^2 z^2}{y^2 z^2}\right)^{2}.
+    \]
+    \answer
+    \begin{align*}
+        (3xyz)^2 \times \frac{x^6y^9}{x^9y^6} \div \left(\frac{3x^2z^2}{y^2z^2}\right)^2 \\ 
+        = 9x^2y^2z^2 \times \frac{y^3}{x^3} \div \frac{9x^4}{y^4} \\ 
+        = \frac{9y^5z^2}{x} \div \frac{9x^4}{y^4} \\ 
+        = \frac{y^9z^2}{x^5}
+    \end{align*}
+
+    \problem Simplify---
+    \[
+        \frac{(x^3 y^2 z^2)^7 \times (y^3 z^2 x^2)^7 \times (z^3 x^2 y^2)^7}{\left(\dfrac{x^2}{yz}\right)^{7} \times \left(\dfrac{y^2}{zx}\right)^{7} \times \left(\dfrac{z^2}{xy}\right)^{7}}.
+    \]
+    \answer
+    \begin{align*}
+        \frac{(x^3 y^2 z^2)^7 \times (y^3 z^2 x^2)^7 \times (z^3 x^2 y^2)^7}{\left(\dfrac{x^2}{yz}\right)^{7} \times \left(\dfrac{y^2}{zx}\right)^{7} \times \left(\dfrac{z^2}{xy}\right)^{7}} &\\ 
+        = \left(\frac{x^3 y^2 z^2 y^3 z^2 x^2 z^3 x^2 y^2}{\frac{x^2}{yz} \times \frac{y^2}{zx} \times \frac{z^2}{xy}} \right)^7 && \text{($(ab)^m = a^mb^m; (\tfrac{a}{b})^m = \tfrac{a^m}{b^m}$)} \\ 
+        = \left(\frac{x^7y^7z^7}{\frac{x^2}{yz} \times \frac{y^2}{zx} \times \frac{z^2}{xy}}\right)^7 && \text{($a^ma^n = a^{m+n}$)}\\ 
+        = \left(\frac{x^7y^7z^7}{\frac{x^2y^2z^2}{yzzxxy}}\right)^7 \\ 
+        = \left(\frac{x^7y^7z^7}{\frac{x^2y^2z^2}{y^2z^2x^2}}\right)^7 && \text{(definition of exponent)} \\ 
+        = \left(x^7y^7z^7\right) ^7 \\ 
+        = (xyz)^{49} && \text{($(a^m)^n = a^{mn}$)}
+    \end{align*}
+
+    \problem Simplify---
+    \[
+        \left(\frac{x^m}{x^n}\right)^{m+n} \times \left(\frac{x^n}{x^l}\right)^{n+l} \times \left(\frac{x^l}{x^m}\right)^{l+m}.
+    \]
+    \answer 
+    \begin{align*}
+        \left(\frac{x^m}{x^n}\right)^{m+n} \times \left(\frac{x^n}{x^l}\right)^{n+l} \times \left(\frac{x^l}{x^m}\right)^{l+m}. & \\ 
+        \frac{x^{m^2+mn}}{x^{n^2+mn}} \times \frac{x^{n^2+nl}}{x^{l^2+nl}} \times \frac{x^{l^2+lm}}{x^{m^2+lm}} && \text{($(a^m)^n = a^{mn}; (\tfrac{a}{b})^m = \tfrac{a^m}{b^m}$)}\\ 
+        = \frac{x^{m^2}x^{mn}}{x^{n^2}x^{mn}} \times \frac{x^{n^2}x^{nl}}{x^{l^2}x^{nl}} \times \frac{x^{l^2}x^{lm}}{x^{m^2}x^{lm}}  && \text{($a^ma^n = a^{m+n}$)} \\ 
+        = 1 && \text{($\tfrac{a}{a} = 1$)} 
+    \end{align*}
+
+    \problem Simplify---
+    \[
+        \left\{ \frac{(a^{p-q})^{q} \times (a^{q-r})^{r-p}}{(a^{r+q})^{r-q}} \right\}^{1/r}.
+    \]
+    \answer 
+    \begin{align*}
+        \left\{ \frac{(a^{p-q})^{q} \times (a^{q-r})^{r-p}}{(a^{r+q})^{r-q}} \right\}^{1/r} & 
+        = \left\{ \frac{a^{pq-q^2} \times a^{qr-qp-r^2+rp}}{a^{r^2-q^2}} \right\}^{1/r}\\ 
+        = \left\{\frac{a^{pq-q^2+qr-qp-r^2+rp}}{a^{r^2-q^2}}\right\}^{1/r} &
+        = \left\{\frac{a^{r(q+p)}a^{-r^2}a^{-q^2}}{a^{r^2}a^{-q^2}}\right\}^{1/r}\\ 
+        = \frac{a^{q+p}a^{-r}}{a^r} &
+        = a^{q+p-2r}
+    \end{align*}
+
+    \problem Simplify---
+    \[
+        \frac{(x^{a-b} \times x^{b-c})^{a} \times \left(\dfrac{x^a}{x^c}\right)}{(x^a \times x^c)^{a} \div (x^{a+c})^{c}}.
+    \]
+
+    \problem Simplify---
+    \[
+        \left(\frac{x^p}{x^q}\right)^{p+q} \div \left(\frac{x^{p+q}}{x^{p-q}}\right)^{p^2/q}.
+    \]
+
+    \problem Simplify---
+    \[
+        \left\{ \left(\frac{x^l}{x^m}\right)^{l} \times \left(\frac{x^m}{x^l}\right)^{m} \right\} \div \{(x^l)^l \times (x^m)^m\} \times \{(x^m)^l \times (x^l)^m\}.
+    \]
+
+    \problem Prove that---
+    \[
+        \frac{(yz)^{qr} (zx)^{rp} (xy)^{pq}}{(y^{q-1} z^{r-1})^{p} (z^{r-1} x^{p-1})^{q} (x^{p-1} y^{q-1})^{r}} = \frac{(xyz)^{p+q+r}}{x^p y^q z^r}.
+    \]
+
+    \problem Distribute the product---
+    \[
+        (x^{b-c} - x^{c-a} + x^{a-b}) \left( \frac{1}{x^{b-c}} + \frac{1}{x^{c-a}} + \frac{1}{x^{a-b}} \right).
+    \]
+
+    \problem Distribute---
+    \[
+        \left(a^p + \frac{1}{b^q}\right) \left(a^q + \frac{1}{b^p}\right)^{2}.
+    \]
+
+    \problem If $m = a^x$, $n = a^y$, $a^2 = (m^y n^x)^z$; show that $xyz = 1$.
+\end{problems}
+
+\end{document}
