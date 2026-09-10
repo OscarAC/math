@@ -332,6 +332,32 @@
         It follows by induction that $F_2+F_4+F_6+F_8+\mathellipsis + F_{2n} = F_{2n+1} - 1$ for each natural number $n$.
     \end{proof}
 
+    \problem Here $F_n$ is the $n$th Fibonacci number. Prove that 
+    \[
+        F_n = \dfrac{\left(\frac{1+\sqrt{5}}{2}\right)^n - \left(\frac{1-\sqrt{5}}{2}\right)^n}{\sqrt{5}}
+    \]
+    \answer \textit{Note: This is Binet's formula and many proofs can be found online.}
+    \begin{proof}
+        Let $\varphi = \frac{1+\sqrt{5}}{2}$ and $\psi = \frac{1-\sqrt{5}}{2}$, so the statement reads $F_n = \dfrac{\varphi^n - \psi^n}{\sqrt{5}}$.
+        First observe that $\varphi$ and $\psi$ are precisely the two roots of $x^2 - x - 1 = 0$, therefore $\varphi^2 = \varphi + 1$ and $\psi^2 = \psi + 1$.
+        We now prove the statement by strong induction.
+        \begin{enumerate}
+            \item Observe that if $n=1$, then the statement is $F_1 = \dfrac{\varphi - \psi}{\sqrt{5}}$. Since $\varphi - \psi = \frac{1+\sqrt{5}}{2} - \frac{1-\sqrt{5}}{2} = \sqrt{5}$, the right-hand side equals $1 = F_1$, so the statement is true.
+
+            If $n=2$, then the statement is $F_2 = \dfrac{\varphi^2 - \psi^2}{\sqrt{5}}$. Since $\varphi^2 - \psi^2 = (\varphi + 1) - (\psi + 1) = \varphi - \psi = \sqrt{5}$, the right-hand side equals $1 = F_2$, and the statement is true.
+
+            \item Let $k \geq 2$ and assume $F_m = \dfrac{\varphi^m - \psi^m}{\sqrt{5}}$ for every natural number $m$ with $1 \leq m \leq k$. We need to show that $F_{k+1} = \dfrac{\varphi^{k+1} - \psi^{k+1}}{\sqrt{5}}$. Since $k \geq 2$, both $k$ and $k-1$ lie in the range covered by the inductive hypothesis, so
+                \begin{align*}
+                    F_{k+1} &= F_k + F_{k-1} && \text{(definition of Fibonacci Sequence)}\\
+                            &= \dfrac{\varphi^k - \psi^k}{\sqrt{5}} + \dfrac{\varphi^{k-1} - \psi^{k-1}}{\sqrt{5}} && \text{(inductive hypothesis)}\\
+                            &= \dfrac{\varphi^{k-1}(\varphi + 1) - \psi^{k-1}(\psi + 1)}{\sqrt{5}}\\
+                            &= \dfrac{\varphi^{k-1}\varphi^2 - \psi^{k-1}\psi^2}{\sqrt{5}}\\
+                            &= \dfrac{\varphi^{k+1} - \psi^{k+1}}{\sqrt{5}}.
+                \end{align*}
+                This shows the statement is true for $n = k + 1$.
+        \end{enumerate}
+        It follows by strong induction that $F_n = \dfrac{\varphi^n - \psi^n}{\sqrt{5}} = \dfrac{\left(\frac{1+\sqrt{5}}{2}\right)^n - \left(\frac{1-\sqrt{5}}{2}\right)^n}{\sqrt{5}}$ for each natural number $n$.
+    \end{proof}
 \end{problems}
 
 \end{document}
