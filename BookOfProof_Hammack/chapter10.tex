@@ -358,6 +358,30 @@
         \end{enumerate}
         It follows by strong induction that $F_n = \dfrac{\varphi^n - \psi^n}{\sqrt{5}} = \dfrac{\left(\frac{1+\sqrt{5}}{2}\right)^n - \left(\frac{1-\sqrt{5}}{2}\right)^n}{\sqrt{5}}$ for each natural number $n$.
     \end{proof}
+
+    \problem Prove that the number of $n$-digit binary numbers that have no consecutive 1's is the Fibonacci number $F_{n+2}$. For example, for $n=2$ there are three such numbers (00,01, and 10), and $3 = F_{2+2} = F_{4}$. Also, for $n = 3$ there are five such numbers (000, 001, 010, 100, 101), and $5 = F_{3+2} = F_5$.
+    \begin{proof}
+        Let $A_n$ be the number of $n$-digit binary strings containing no consecutive 1's. Then $A_n = F_{n+2}$ for every natural number $n \geq 1$. We will prove that $A_n = F_{n+2}$ for all $n \geq 1$ by strong induction.
+       \begin{enumerate}
+           \item Observe that if $n=1$ then the valid strings are 0 and 1, so $A_1 = F_3 = 2$ which is true.
+
+           Observe that if $n=2$ then the valid strings are 00, 01, and 10, so $A_2 = F_4 = 3$ which is true.
+
+           Thus the statement holds for $n=1$ and $n=2$.
+
+       \item Assume $A_k = F_{k+2}$ for some integer $k$ such as $1 \leq k \leq n$. We need to show that $A_{k+1} = F_{k+3}$.
+
+           Consider any valid binary string of length $k+1$, this string can begin with either a 1 or a 0.
+           If it begins with a 0, then the remaining $k$ digits can be any valid $k$-digit binary string, thus there are $A_k$ such strings.
+           If it begins with a 1, then the second digit must be 0, thus the string begins with 10 and the remaining $k-1$ digits can be any valid $(k-1)$-digit binary string, thus there are $A_{n-1}$ such strings.
+           Therefore $A_{k+1} = A_{k} + A_{k-1}$.
+           By the induction hypothesis $A_k = F_{n+2}$ and $A_{k-1} = F_{k+1}$.
+           Therefore $A_{k+1} = F_{k+2} + F_{k+1}$ and by the Fibonacci recurrence, $A_{k+1} = F_{k+3}$.
+           This shows that statement holds for $k+1$.
+       \end{enumerate}
+
+       It follows by strong induction that $A_n = F_{n+2}$ for every natural number $n$.
+    \end{proof}
 \end{problems}
 
 \end{document}
