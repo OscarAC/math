@@ -226,6 +226,21 @@
     \[
         \frac{(yz)^{qr} (zx)^{rp} (xy)^{pq}}{(y^{q-1} z^{r-1})^{p} (z^{r-1} x^{p-1})^{q} (x^{p-1} y^{q-1})^{r}} = \frac{(xyz)^{p+q+r}}{x^p y^q z^r}.
     \]
+    \answer 
+    Observe that,
+    \begin{align*}
+        \MoveEqLeft\frac{(yz)^{qr}(zx)^{rp}(xy)^{pq}}{(y^{q-1}z^{r-1})^p(z^{r-1}x^{p-1})^q(x^{p-1}y^{q-1})^r}\\ 
+        & = \frac{y^{qr}z^{qr}z^{rp}x^{rp}x^{pq}y^{pq}}{y^{pq-p}z^{pr-p}z^{qr-q}x^{pq-q}x^{pr-r}y^{qr-r}} && \text{($(ab)^n = a^nb^n$; $(a^m)^n = a^{mn}$)}\\ 
+        & = \frac{y^{qr}z^{qr}z^{rp}x^{rp}x^{pq}y^{pq}}{y^{pq}y^{-p}z^{pr}z^{-p}z^{qr}z^{-q}x^{pq}x^{-q}x^{pr}x^{-r}y^{qr}y^{-r}} && \text{($a^{m+n} = a^ma^n$, writing $a^{-m}$ for $\tfrac{1}{a^m}$)}\\ 
+        &= \frac{1}{y^{-p}z^{-p}z^{-q}x^{-q}x^{-r}y^{-r}} && \text{($\tfrac{a^m}{a^m} = 1$)}\\ 
+        &= \frac{1}{y^{-p}z^{-p}z^{-q}x^{-q}x^{-r}y^{-r}} \times 1\\ 
+        &= \frac{1}{y^{-p}z^{-p}z^{-q}x^{-q}x^{-r}y^{-r}} \times \frac{x^px^qx^ry^py^qy^rz^pz^qz^r}{x^px^qx^ry^py^qy^rz^pz^qz^r} && \text{($\tfrac{a}{a} = 1$)}\\ 
+        &= \frac{x^px^qx^ry^py^qy^rz^pz^qz^r}{(y^{-p}z^{-p}z^{-q}x^{-q}x^{-r}y^{-r})(x^px^qx^ry^py^qy^rz^pz^qz^r)}\\ 
+        &= \frac{x^px^qx^ry^py^qy^rz^pz^qz^r}{(y^{-p+p}z^{-p+p}z^{-q+q}x^{-q+q}x^{-r+r}y^{-r+r})(x^py^qz^r)} && \text{(commutation; $a^ma^n = a^{m+n}$)}\\ 
+        &= \frac{x^px^qx^ry^py^qy^rz^pz^qz^r}{x^py^qz^r} && \text{($a^{-m}a^{m} = 1$)}\\ 
+        &= \frac{x^{p+q+r}\,y^{p+q+r}\,z^{p+q+r}}{x^py^qz^r} && \text{(commutation; $a^ma^n = a^{m+n}$)}\\ 
+        &= \frac{(xyz)^{p+q+r}}{x^py^qz^r} && \text{($a^nb^nc^n = (abc)^n$)}
+    \end{align*}
 
     \problem Distribute the product---
     \[
