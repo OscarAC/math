@@ -117,12 +117,31 @@
 
     \problem Define a relation on $\mathbb{Z}$ as $xRy$ if $\abs{x-y} < 1$. Is $R$ reflexive? Symmetric? Transitive? If a property does not hold, say why. What familiar relation is this?
 
+    \answer Since $x-y$ is an integer and the only integer with absolute value less than 1 is 0, we have $xRy$ if and only if $x-y = 0$, that is, $x = y$. So $R$ is the equality relation $=$ on $\mathbb{Z}$.\\ 
+    This is reflexive because $x = x$ for every $x \in \mathbb{Z}$.\\ 
+    This is symmetric because $x = y$ implies $y = x$.\\ 
+    This is transitive because $x = y$ and $y = z$ imply $x = z$.
+
     \problem Suppose $A \neq \emptyset$. Since $\emptyset \subseteq A \times A$, the set $R = \emptyset$ is a relation on $A$. Is $R$ reflexive? Symmetric? Transitive? If a property does not hold, say why.
+
+    \answer This is not reflexive. Pick any $x \in A$, then $(x,x) \notin R$ because $R = \emptyset$.\\ 
+    This is symmetric because it is impossible to find a $(x,y) \in R$ for which $(y,x) \notin R$.\\ 
+    This is transitive because $xRy \land yRz$ implies $xRz$ for every $x,y,z \in A$.
 
     \problem Prove that the relation $|$ (divides) on the set $\mathbb{Z}$ is reflexive and transitive. (Use Example 11.8 as a guide if you are unsure of how to proceed.)
 
+    \begin{proof}
+        First we will show that $\mid$ (divides) is reflexive. Take any integer $x \in \mathbb{Z}$. Since $x = x \cdot 1$ and $1 \in \mathbb{Z}$, the definition of divisibility gives $x \mid x$. Thus $\mid$ is reflexive.
+
+        Next, we will show that $\mid$ is transitive. For this, we must show that if $x \mid y$ and $y \mid z$ then $x \mid z$.
+        Suppose $x \mid y$ and $y \mid z$. This means $y = xm$ and $z = yn$ for some integers $m$ and $n$. Substituting $xm$ for $y$ we get $z = (xm)n = x(mn)$, and by definition of divisibility, we see $x \mid z$.
+
+        The past two paragraphs show that $\mid$ is reflexive and transitive on $\mathbb{Z}$.
+    \end{proof}
+
     \problem Suppose $R$ is a symmetric and transitive relation on a set $A$, and there is an element $a \in A$ for which $aRx$ for every $x \in A$. Prove that $R$ is reflexive.
 
+    
     \problem Define a relation $R$ on $\mathbb{Z}$ by declaring that $xRy$ if and only if $x^2 \equiv y^2 \pmod{4}$. Prove that $R$ is reflexive, symmetric and transitive.
 
     \problem The table on page 179 shows that relations on $\mathbb{Z}$ may obey various combinations of the reflexive, symmetric and transitive properties. In all, there are $2^3 = 8$ possible combinations, and the table shows 5 of them. (There is some redundancy, as $\leq$ and $|$ have the same type.) Complete the table by finding examples of relations on $\mathbb{Z}$ for the three missing combinations.
