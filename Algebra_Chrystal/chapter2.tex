@@ -231,14 +231,14 @@
     \begin{align*}
         \MoveEqLeft\frac{(yz)^{qr}(zx)^{rp}(xy)^{pq}}{(y^{q-1}z^{r-1})^p(z^{r-1}x^{p-1})^q(x^{p-1}y^{q-1})^r}\\ 
         & = \frac{y^{qr}z^{qr}z^{rp}x^{rp}x^{pq}y^{pq}}{y^{pq-p}z^{pr-p}z^{qr-q}x^{pq-q}x^{pr-r}y^{qr-r}} && \text{($(ab)^n = a^nb^n$; $(a^m)^n = a^{mn}$)}\\ 
-        & = \frac{y^{qr}z^{qr}z^{rp}x^{rp}x^{pq}y^{pq}}{y^{pq}y^{-p}z^{pr}z^{-p}z^{qr}z^{-q}x^{pq}x^{-q}x^{pr}x^{-r}y^{qr}y^{-r}} && \text{($a^{m+n} = a^ma^n$, writing $a^{-m}$ for $\tfrac{1}{a^m}$)}\\ 
+        & = \frac{y^{qr}z^{qr}z^{rp}x^{rp}x^{pq}y^{pq}}{y^{pq}y^{-p}z^{pr}z^{-p}z^{qr}z^{-q}x^{pq}x^{-q}x^{pr}x^{-r}y^{qr}y^{-r}} && \text{($a^{m+n} = a^ma^n$)}\\ 
         &= \frac{1}{y^{-p}z^{-p}z^{-q}x^{-q}x^{-r}y^{-r}} && \text{($\tfrac{a^m}{a^m} = 1$)}\\ 
         &= \frac{1}{y^{-p}z^{-p}z^{-q}x^{-q}x^{-r}y^{-r}} \times 1\\ 
         &= \frac{1}{y^{-p}z^{-p}z^{-q}x^{-q}x^{-r}y^{-r}} \times \frac{x^px^qx^ry^py^qy^rz^pz^qz^r}{x^px^qx^ry^py^qy^rz^pz^qz^r} && \text{($\tfrac{a}{a} = 1$)}\\ 
         &= \frac{x^px^qx^ry^py^qy^rz^pz^qz^r}{(y^{-p}z^{-p}z^{-q}x^{-q}x^{-r}y^{-r})(x^px^qx^ry^py^qy^rz^pz^qz^r)}\\ 
-        &= \frac{x^px^qx^ry^py^qy^rz^pz^qz^r}{(y^{-p+p}z^{-p+p}z^{-q+q}x^{-q+q}x^{-r+r}y^{-r+r})(x^py^qz^r)} && \text{(commutation; $a^ma^n = a^{m+n}$)}\\ 
+        &= \frac{x^px^qx^ry^py^qy^rz^pz^qz^r}{(y^{-p+p}z^{-p+p}z^{-q+q}x^{-q+q}x^{-r+r}y^{-r+r})(x^py^qz^r)} && \text{($a^ma^n = a^{m+n}$)}\\ 
         &= \frac{x^px^qx^ry^py^qy^rz^pz^qz^r}{x^py^qz^r} && \text{($a^{-m}a^{m} = 1$)}\\ 
-        &= \frac{x^{p+q+r}\,y^{p+q+r}\,z^{p+q+r}}{x^py^qz^r} && \text{(commutation; $a^ma^n = a^{m+n}$)}\\ 
+        &= \frac{x^{p+q+r}\,y^{p+q+r}\,z^{p+q+r}}{x^py^qz^r} && \text{($a^ma^n = a^{m+n}$)}\\ 
         &= \frac{(xyz)^{p+q+r}}{x^py^qz^r} && \text{($a^nb^nc^n = (abc)^n$)}
     \end{align*}
 
@@ -246,13 +246,39 @@
     \[
         (x^{b-c} - x^{c-a} + x^{a-b}) \left( \frac{1}{x^{b-c}} + \frac{1}{x^{c-a}} + \frac{1}{x^{a-b}} \right).
     \]
+    \answer 
+    \begin{align*}
+        &\frac{x^{b-c}}{x^{b-c}} + \frac{x^{b-c}}{x^{c-a}} + \frac{x^{b-c}}{x^{a-b}}
+        - \frac{x^{c-a}}{x^{b-c}} - \frac{x^{c-a}}{x^{c-a}} - \frac{x^{c-a}}{x^{a-b}}
+        + \frac{x^{a-b}}{x^{b-c}} + \frac{x^{a-b}}{x^{c-a}} + \frac{x^{a-b}}{x^{a-b}}\\ 
+        &= 1 + x^{(b-c)-(c-a)} + x^{(b-c)-(a-b)} - x^{(c-a)-(b-c)} - 1 - x^{(c-a)-(a-b)} \\
+        &\qquad + x^{(a-b)-(b-c)} + x^{(a-b)-(c-a)} + 1\\  
+        &= 1 + x^{a+b-2c} + x^{-a+2b-c} - x^{-a-b+2c} - x^{-2a+b+c} + x^{a-2b+c} + x^{2a-b-c} \\
+        &= 1 + x^{2a-b-c} - x^{-2a+b+c} + x^{-a+2b-c} + x^{a-2b+c} - x^{-a-b+2c} + x^{a+b-2c} 
+    \end{align*}
 
     \problem Distribute---
     \[
         \left(a^p + \frac{1}{b^q}\right) \left(a^q + \frac{1}{b^p}\right)^{2}.
     \]
+    \answer 
+    \begin{align*}
+        \left(a^p + \frac{1}{b^q}\right)\left(a^q+\frac{1}{b^p}\right)^2 &= \left(a^p+\frac{1}{b^q}\right)\left(a^q+\frac{1}{b^p}\right)\left(a^q+\frac{1}{b^p}\right)\\ 
+                                              &= \left(a^{p+q}+\frac{a^p}{b^p}+\frac{a^q}{b^q}+\frac{1}{b^{q+p}}\right)\left(a^q+\frac{1}{b^p}\right)\\ 
+                                              &= a^{p+2q}+\frac{a^{p+q}}{b^p}+\frac{a^{p+q}}{b^p}+\frac{a^p}{b^{2p}}+\frac{a^{2q}}{b^q}+\frac{a^q}{b^{q+p}}+\frac{a^q}{b^{q+p}}+\frac{1}{b^{q+2p}}\\ 
+                                              &= a^{p+2q}+\frac{2a^{p+q}}{b^p}+\frac{a^p}{b^{2p}}+\frac{a^{2q}}{b^q}+\frac{2a^q}{b^{q+p}}+\frac{1}{b^{q+2p}}
+    \end{align*}
 
     \problem If $m = a^x$, $n = a^y$, $a^2 = (m^y n^x)^z$; show that $xyz = 1$.
+
+    \answer Substituting $m = a^x$ and $n = a^y$ in the third relation,
+    \begin{align*}
+        a^2 &= \{(a^x)^y (a^y)^x\}^z \\
+            &= \{a^{xy} \times a^{xy}\}^z && \text{($(a^m)^n = a^{mn}$)}\\
+            &= (a^{2xy})^z && \text{($a^ma^n = a^{m+n}$)}\\
+            &= a^{2xyz}. && \text{($(a^m)^n = a^{mn}$)}
+    \end{align*}
+    Since the two powers of $a$ are equal, their indices are equal, therefore $xyz = 1$.
 \end{problems}
 
 \end{document}
