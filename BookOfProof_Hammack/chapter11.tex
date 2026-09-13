@@ -141,10 +141,33 @@
 
     \problem Suppose $R$ is a symmetric and transitive relation on a set $A$, and there is an element $a \in A$ for which $aRx$ for every $x \in A$. Prove that $R$ is reflexive.
 
-    
+    \answer
+    \begin{proof}
+        Let $R$ be a transitive and symmetric relation in $A$. And assume there is an element $a \in A$ such that $aRx$ for every $x \in A$. We want to prove that $xRx$ for every $x \in A$.
+
+        Take any $x \in A$.
+        Since $aRx$ for every $x \in A$, we have $aRx$.
+        Because $R$ is symmetric, we have $xRa$.
+        So we have both $xRa$ and $aRx$.
+        Because $R$ is transitive, $xRa$ and $aRx$ imply $xRx$.
+        Therefore, $R$ is transitive, symmetric, and reflexive.
+    \end{proof}
+
     \problem Define a relation $R$ on $\mathbb{Z}$ by declaring that $xRy$ if and only if $x^2 \equiv y^2 \pmod{4}$. Prove that $R$ is reflexive, symmetric and transitive.
 
-    \problem The table on page 179 shows that relations on $\mathbb{Z}$ may obey various combinations of the reflexive, symmetric and transitive properties. In all, there are $2^3 = 8$ possible combinations, and the table shows 5 of them. (There is some redundancy, as $\leq$ and $|$ have the same type.) Complete the table by finding examples of relations on $\mathbb{Z}$ for the three missing combinations.
+    \answer 
+    \begin{proof}
+        Assume $R$ is a relation on $\mathbb{Z}$ such as $xRy$ if and only if $x^2 \equiv y^2 \pmod{4}$. We want to prove that $R$ is reflexive, symmetric, and transitive.
+
+        First, we will show that $R$ is reflexive. Take any integer $x \in Z$, and observe that $4 \mid 0$, so $4 \mid x^2 - x^2$. Thus, by definition, $x^2 \equiv x^2 \pmod{4}$. This shows $R$ is reflexive.
+
+        Second, we will show that $R$ is symmetric. Suppose $xRy$ for some $x,y \in \mathbb{Z}$. So $4 \mid (x^2 - y^2)$. This means $(x^2 - y^2) = 4m$ for some $m \in \mathbb{Z}$. Then $y^2 - x^2 = 4(-k)$, so $4 \mid (y^2-x^2)$. Thus by definition, $y^2 \equiv x^2 \pmod{4}$. Therefore $R$ is symmetric.
+
+        Finally, we will show that $R$ is transitive. Suppose $xRy$ and $yRz$ for $x,y,z \in \mathbb{Z}$. So $x^2-y^2 = 4k$ for some integer $k$ and $y^2-z^2 = 4l$ for some integer $l$. Adding these two equations, we obtain $x^2-z^2 = 4(k+l)$, so $4 \mid (x^2-z^2)$. Hence $x^2 \equiv z^2 \pmod{4}$. Therefore $R$ is transitive.
+
+        The past three paragraphs have shown that $R$ is reflexive, symmetric and transitive.
+    \end{proof}
+
 \end{problems}
 
 \subsection{Equivalence Relations}
