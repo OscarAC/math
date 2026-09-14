@@ -175,7 +175,15 @@
 \begin{problems}
     \problem Let $A = \set{a,b,c,d,e}$. Suppose $R$ is an equivalence relation on $A$. Suppose $R$ has two equivalence classes. Also $aRd$, $bRc$ and $eRd$. Write out $R$ as a set.
 
+    \answer Since $aRd$ and $eRd$, the elements $a$, $d$ and $e$ lie in one equivalence class, and since $bRc$, the elements $b$ and $c$ lie in another. These are the two classes: $[a] = [d] = [e] = \set{a,d,e}$ and $[b] = [c] = \set{b,c}$. Each class $X$ contributes the pairs $X \times X$ to $R$, so
+    \begin{align*}
+        R = \{ & (a,a),(d,d),(e,e),(a,d),(d,a),(a,e),(e,a),(d,e),(e,d),\\
+               & (b,b),(c,c),(b,c),(c,b) \}.
+    \end{align*}
+
     \problem Let $A = \set{a,b,c,d,e}$. Suppose $R$ is an equivalence relation on $A$. Suppose also that $aRd$ and $bRc$, $eRa$ and $cRe$. How many equivalence classes does $R$ have?
+
+    \answer $R$ has one equivalence class. Since $aRd$ and $eRa$, the elements $a$, $d$ and $e$ lie in one class, and since $bRc$ and $cRe$, the elements $b$, $c$ and $e$ lie in one class. As $e$ belongs to both, all five elements share a single class: $[a] = [b] = [c] = [d] = [e] = A$.
 
     \problem There are five different equivalence relations on the set $A = \set{a,b,c}$. Describe them all. Diagrams will suffice.
 
