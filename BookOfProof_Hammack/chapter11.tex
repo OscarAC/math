@@ -220,6 +220,31 @@
 
     \problem Suppose $R$ and $S$ are two equivalence relations on a set $A$. Prove that $R \cap S$ is also an equivalence relation. (For an example of this, look at Figure 11.2. Observe that for the equivalence relations $R_2, R_3$ and $R_4$, we have $R_2 \cap R_3 = R_4$.)
 
+    \begin{proof}
+        Assume $R$ and $S$ are equivalence relations on set $A$. We want to prove $R \cap S$ is also an equivalence relation.
+
+        First, we show $R \cap S$ is reflexive. Take any element $a$ in $A$.
+        Since $R$ is an equivalence, then $aRa$.
+        Since $S$ is an equivalence relation, then $aSa$.
+        Thus $a$ is related to itself by both $R$ and $S$, Hence $a (R \cap S) a$. Therefore $R \cap S$ is reflexive.
+
+        Second, we show $R \cap S$ is symmetric. Take any $a,b \in A$ such that $a(R \cap S)b$. This means that both $aRb$ and $aSb$.
+        Since $R$ is symmetric $bRa$.
+        Since $S$ is symmetric $bSa$.
+        Thus $b$ is related to $a$ by both $R$ and $S$, hence $b (R \cap S) a$.
+        Therefore $R \cap S$ is symmetric.
+
+        Last, we show $R \cap S$ is transitive. Take any $a,b,c \in A$ and suppose $a(R \cap S)b$ and $b(R \cap S)c$.
+        By definition of intersection it follows $aRb$, $bRc$ and $aSb$, $bSc$.
+        Since $R$ is transitive $aRc$.
+        Since $S$ is transitive $aSc$.
+        Thus $a$ is related to $c$ by both $R$ and $S$, hence $a(R \cap S)c$.
+        Therefore $R \cap S$ is transitive.
+        
+        We have shown that if $R$ and $S$ are equivalence relations on a set $A$, then the intersection of $R$ and $S$ is also an equivalence relation.
+        
+    \end{proof}
+
     \problem Prove or disprove: If $R$ and $S$ are two equivalence relations on a set $A$, then $R \cup S$ is also an equivalence relation on $A$.
 
     \problem Suppose $R$ is a reflexive and symmetric relation on a finite set $A$. Define a relation $S$ on $A$ by declaring $xSy$ if and only if for some $n \in \mathbb{N}$ there are elements $x_1, x_2, \dots, x_n \in A$ satisfying $xRx_1$, $x_1Rx_2$, $x_2Rx_3$, $x_3Rx_4, \dots, x_{n-1}Rx_n$, and $x_nRy$. Show that $S$ is an equivalence relation and $R \subseteq S$. Prove that $S$ is the unique smallest equivalence relation on $A$ containing $R$.
