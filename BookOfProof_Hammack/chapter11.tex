@@ -242,13 +242,25 @@
         Therefore $R \cap S$ is transitive.
         
         We have shown that if $R$ and $S$ are equivalence relations on a set $A$, then the intersection of $R$ and $S$ is also an equivalence relation.
-        
     \end{proof}
 
     \problem Prove or disprove: If $R$ and $S$ are two equivalence relations on a set $A$, then $R \cup S$ is also an equivalence relation on $A$.
+    
+    \answer
+    \begin{disproof}
+        The statement is false.
+        For a counterexample, let $A = \set{a,b,c}$ and take the equivalence relations $R_2$ and $R_4$ from Exercise 6,
+        \[
+            R = \set{(a,a),(b,b),(c,c),(a,b),(b,a)} \qquad \text{and} \qquad S = \set{(a,a),(b,b),(c,c),(b,c),(c,b)}.
+        \]
+        Then,
+        \[
+            R \cup S = \set{(a,a),(b,b),(c,c),(a,b),(b,a),(b,c),(c,b)}.
+        \]
+        We have $(a,b) \in R \cup S$ and $(b,c) \in R \cup S$, but $(a,c) \notin R \cup S$. So $R \cup S$ is not transitive, and hence is not an equivalence relation.
+    \end{disproof}
 
-    \problem Suppose $R$ is a reflexive and symmetric relation on a finite set $A$. Define a relation $S$ on $A$ by declaring $xSy$ if and only if for some $n \in \mathbb{N}$ there are elements $x_1, x_2, \dots, x_n \in A$ satisfying $xRx_1$, $x_1Rx_2$, $x_2Rx_3$, $x_3Rx_4, \dots, x_{n-1}Rx_n$, and $x_nRy$. Show that $S$ is an equivalence relation and $R \subseteq S$. Prove that $S$ is the unique smallest equivalence relation on $A$ containing $R$.
-\end{problems}
+    \end{problems}
 
 \subsection{Equivalence Classes and Partitions}
 
