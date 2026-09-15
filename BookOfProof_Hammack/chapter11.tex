@@ -194,6 +194,29 @@
     $R_5 = \set{(a,a),(b,b),(c,c),(a,b),(b,a),(a,c),(c,a),(b,c),(c,b)}$.
 
     \problem Define a relation $R$ on $\mathbb{Z}$ as $xRy$ if and only if $x^2 + y^2$ is even. Prove $R$ is an equivalence relation. Describe its equivalence classes.
+    
+    \begin{proof}
+        By definition, $xRy$ means $x^2 + y^2$ is even. We want to prove $R$ is an equivalence relation, that is, $R$ is reflexive, symmetric, and transitive.
+
+        First, we will show $R$ is reflexive. 
+        Take any $x \in \mathbb{Z}$.
+        Then $x^2 + x^2 = 2(x^2)$ is even, so $xRx$. Thus $R$ is reflexive. 
+
+        Second, we will show $R$ is symmetric. Assume $xRy$ for some $x,y \in \mathbb{Z}$. Since $xRy$, we know $x^2+y^2$ is even, so $x^2+y^2 = 2k$ for some integer $k$. From the commutative property of addition $x^2+y^2 = y^2+x^2$. So $y^2+x^2 = 2k$. From this it follows that $y^2+x^2$ is even, so $yRx$.
+        Thus $R$ is symmetric.
+
+        Last, we will show $R$ is transitive. Assume that $xRy$ and $yRz$ for some $x,y,z \in \mathbb{Z}$. Since $xRy$ and $yRz$, it follows $x^2+y^2$ is even and $y^2+z^2$ is even, so $x^2+y^2 = 2m$ and $y^2+z^2 = 2n$ for some $m,n \in \mathbb{Z}$. Adding these equations we get,
+        \begin{align*}
+            (x^2+y^2) + (y^2+z^2) &= 2m + 2n\\ 
+            x^2+y^2+y^2+z^2 &= 2m + 2n\\ 
+            x^2+2y^2+z^2 &= 2m + 2n\\ 
+            x^2+z^2 &= 2m + 2n - 2y^2\\ 
+            x^2+z^2 &= 2(m+n-y^2)
+        \end{align*}
+        So $x^2+z^2$ is even, so $xRz$. Thus $R$ is transitive.
+        
+        The three paragraphs have shown that $R$ is reflexive, symmetric, and transitive. Therefore $R$ is an equivalence relation.
+    \end{proof}
 
     \problem Suppose $R$ and $S$ are two equivalence relations on a set $A$. Prove that $R \cap S$ is also an equivalence relation. (For an example of this, look at Figure 11.2. Observe that for the equivalence relations $R_2, R_3$ and $R_4$, we have $R_2 \cap R_3 = R_4$.)
 
