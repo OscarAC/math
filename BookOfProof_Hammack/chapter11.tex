@@ -267,19 +267,118 @@
 \begin{problems}
     \problem List all the partitions of the set $A = \set{a,b,c}$. Compare your answer to the answer to Exercise 6 of Section 11.2.
 
+    \answer $\set{\{a\},\{b\},\{c\}}$, $\set{\{a,b\},\{c\}}$, $\set{\{a\},\{b,c\}}$, $\set{\{a,c\},\{b\}}$, $\set{\{a,b,c\}}$.
+
     \problem Suppose $P$ is a partition of a set $A$. Define a relation $R$ on $A$ by declaring $xRy$ if and only if $x,y \in X$ for some $X \in P$. Prove $R$ is an equivalence relation on $A$. Then prove that $P$ is the set of equivalence classes of $R$.
+
+    \answer To prove the statement above we will use the following consequence: if $X, Y \in P$ and $X \cap Y \neq \emptyset$, then $X = Y$.
+
+    \begin{proof}
+        First we show that $R$ is an equivalence relation on $A$.
+
+        Take any $x \in A$.
+        Since the union of the sets in $P$ is $A$, there is some $X \in P$ with $x \in X$.
+        Then $x, x \in X$, so $xRx$.
+        Therefore $R$ is reflexive.
+
+        Suppose $xRy$. Then $x, y \in X$ for some $X \in P$. But then $y, x \in X$, so $yRx$. Therefore $R$ is symmetric.
+
+        Suppose $xRy$ and $yRz$.
+        Then $x, y \in X$ and $y, z \in Y$ for some $X, Y \in P$.
+        Since $y \in X \cap Y$, we have $X \cap Y \neq \emptyset$, so $X = Y$. 
+        Thus $x, z \in X$, which means $xRz$. Therefore $R$ is transitive.
+
+        These last three paragraph shows $R$ is an equivalence relation on $A$.
+    \end{proof}
+
+    \begin{proof}
+        Next we show that $P$ is the set of equivalence classes of $R$.
+
+        First we need to show that if $x \in A$ and $X \in P$ with $x \in X$, then $[x] = X$.
+
+        Suppose $y \in [x]$, so $xRy$.
+        Then $x, y \in Y$ for some $Y \in P$.
+        Since $x \in X \cap Y$, we get $X = Y$, so $y \in X$.
+        This shows $[x] \subseteq X$.
+        Conversely, suppose $y \in X$.
+        Then $x, y \in X$ with $X \in P$, so $xRy$, which means $y \in [x]$.
+        This shows $X \subseteq [x]$. Hence $[x] = X$.
+
+        Now we show that every equivalence class of $R$ belongs to $P$. 
+
+        Let $[x]$ be an equivalence class, where $x \in A$. 
+        As in the reflexive case, there is some $X \in P$ with $x \in X$, and by the claim $[x] = X \in P$.
+
+        Finally, we show that every set in $P$ is an equivalence class of $R$. 
+
+        Let $X \in P$. Since $X$ is nonempty, we can choose some $x \in X$. 
+        By the claim, $X = [x]$, so $X$ is an equivalence class of $R$.
+
+        Therefore the set of equivalence classes of $R$ is exactly $P$.
+    \end{proof}
 \end{problems}
 
 \subsection{The Integers Modulo $n$}
 
 \begin{problems}
     \problem Write the addition and multiplication tables for $\mathbb{Z}_3$.
+    \answer
+    \begin{center}
+        \begin{tabular}{c|ccc}
+            $+$ & $[0]$ & $[1]$ & $[2]$ \\
+            \hline
+            $[0]$ & $[0]$ & $[1]$ & $[2]$ \\
+            $[1]$ & $[1]$ & $[2]$ & $[0]$ \\
+            $[2]$ & $[2]$ & $[0]$ & $[1]$ \\
+        \end{tabular}
+        \qquad
+        \begin{tabular}{c|ccc}
+            $\cdot$ & $[0]$ & $[1]$ & $[2]$ \\
+            \hline
+            $[0]$ & $[0]$ & $[0]$ & $[0]$ \\
+            $[1]$ & $[0]$ & $[1]$ & $[2]$ \\
+            $[2]$ & $[0]$ & $[2]$ & $[1]$ \\
+        \end{tabular}
+    \end{center}
 
     \problem Write the addition and multiplication tables for $\mathbb{Z}_6$.
+    \answer
+    \begin{center}
+        \begin{tabular}{c|cccccc}
+            $+$ & $[0]$ & $[1]$ & $[2]$ & $[3]$ & $[4]$ & $[5]$ \\
+            \hline
+            $[0]$ & $[0]$ & $[1]$ & $[2]$ & $[3]$ & $[4]$ & $[5]$ \\
+            $[1]$ & $[1]$ & $[2]$ & $[3]$ & $[4]$ & $[5]$ & $[0]$ \\
+            $[2]$ & $[2]$ & $[3]$ & $[4]$ & $[5]$ & $[0]$ & $[1]$ \\
+            $[3]$ & $[3]$ & $[4]$ & $[5]$ & $[0]$ & $[1]$ & $[2]$ \\
+            $[4]$ & $[4]$ & $[5]$ & $[0]$ & $[1]$ & $[2]$ & $[3]$ \\
+            $[5]$ & $[5]$ & $[0]$ & $[1]$ & $[2]$ & $[3]$ & $[4]$ \\
+        \end{tabular}
+        \qquad
+        \begin{tabular}{c|cccccc}
+            $\cdot$ & $[0]$ & $[1]$ & $[2]$ & $[3]$ & $[4]$ & $[5]$ \\
+            \hline
+            $[0]$ & $[0]$ & $[0]$ & $[0]$ & $[0]$ & $[0]$ & $[0]$ \\
+            $[1]$ & $[0]$ & $[1]$ & $[2]$ & $[3]$ & $[4]$ & $[5]$ \\
+            $[2]$ & $[0]$ & $[2]$ & $[4]$ & $[0]$ & $[2]$ & $[4]$ \\
+            $[3]$ & $[0]$ & $[3]$ & $[0]$ & $[3]$ & $[0]$ & $[3]$ \\
+            $[4]$ & $[0]$ & $[4]$ & $[2]$ & $[0]$ & $[4]$ & $[2]$ \\
+            $[5]$ & $[0]$ & $[5]$ & $[4]$ & $[3]$ & $[2]$ & $[1]$ \\
+        \end{tabular}
+    \end{center}
 
     \problem Suppose $[a],[b] \in \mathbb{Z}_6$ and $[a] \cdot [b] = [0]$. Is it necessarily true that either $[a] = [0]$ or $[b] = [0]$?
 
+    \answer No. For example, $[2],[3] \in \mathbb{Z}_6$ and $[2] \cdot [3] = [6] = [0]$, yet $[2] \neq [0]$ and $[3] \neq [0]$. 
+
     \problem Suppose $[a],[b] \in \mathbb{Z}_n$, and $[a] = [a']$ and $[b] = [b']$. Alice adds $[a]$ and $[b]$ as $[a]+[b] = [a+b]$. Bob adds them as $[a']+[b'] = [a'+b']$. Show that their answers $[a+b]$ and $[a'+b']$ are the same.
+    \begin{proof}
+        Since $[a] = [a']$, we have $a \equiv a' \pmod{n}$, so $n \mid (a - a')$ and $a - a' = nk$ for some integer $k$. Likewise $[b] = [b']$ gives $b - b' = nl$ for some integer $l$. Adding these equations,
+        \[
+            (a+b) - (a'+b') = (a - a') + (b - b') = nk + nl = n(k+l).
+        \]
+        Thus $n \mid \big((a+b) - (a'+b')\big)$, so $a + b \equiv a' + b' \pmod{n}$. By Theorem 11.1 this means $[a+b] = [a'+b']$, so Alice and Bob get the same answer.
+    \end{proof}
 \end{problems}
 
 \end{document}
