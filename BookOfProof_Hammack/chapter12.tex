@@ -1,0 +1,188 @@
+\documentclass[DIN, pagenumber=false, fontsize=11pt, parskip=half]{scrartcl}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{template}
+\usepackage{amsmath}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+
+\DeclareMathOperator{\lcm}{lcm}
+
+\tikzset{
+    relation/.style={
+        dot/.style={circle, fill=black, inner sep=1.6pt},
+        every path/.style={-{Stealth[length=2mm]}, semithick},
+    },
+}
+
+\titlehead{\centering\small
+    Worked solutions to selected exercises from\\
+    Richard Hammack, \emph{Book of Proof, edition 2.2}\\
+\rule{0.4\linewidth}{0.4pt}}
+
+\title{}
+\author{} % Oscar A. Carrera
+\date{}
+
+\begin{document}
+\maketitle
+
+\setcounter{section}{11}
+
+\section{Functions}
+
+\subsection{Functions}
+
+\begin{problems}
+    \problem Suppose $A = \set{a,b,c,d}$, $B = \set{2,3,4,5,6}$ and
+    \[
+        f = \set{(a,2),(b,3),(c,4),(d,5)}.
+    \]
+    State the domain and range of $f$. Find $f(b)$ and $f(d)$.
+
+    \answer The domain of $f$ is $A$ and the range of $f$ is $\set{2,3,4,5}$.\\ 
+    $f(b) = 3$ and $f(d) = 5$.
+
+    \problem There are eight different functions $f : \set{a,b,c} \to \set{0,1}$. List them all. Diagrams will suffice.
+
+    \answer $f_1 = \set{(a,0),(b,0),(c,0)}$\\ 
+            $f_2 = \set{(a,0),(b,0),(c,1)}$\\ 
+            $f_3 = \set{(a,0),(b,1),(c,0)}$\\ 
+            $f_4 = \set{(a,0),(b,1),(c,1)}$\\ 
+            $f_5 = \set{(a,1),(b,0),(c,0)}$\\ 
+            $f_6 = \set{(a,1),(b,0),(c,1)}$\\ 
+            $f_7 = \set{(a,1),(b,1),(c,0)}$\\ 
+            $f_8 = \set{(a,1),(b,1),(c,1)}$
+
+    \problem Suppose $f : \mathbb{Z} \to \mathbb{Z}$ is defined as $f = \set{(x, 4x+5) : x \in \mathbb{Z}}$. State the domain, codomain and range of $f$. Find $f(10)$.
+
+    \answer The domain and codomain of $f$ are both $\mathbb{Z}$. The range is the set of values $4x+5$ for $x \in \mathbb{Z}$, that is, the integers that are one more than a multiple of 4:
+    \[
+        \set{4x+5 : x \in \mathbb{Z}} = \set{\dots,-7,-3,1,5,9,13,\dots}.
+    \]
+
+    \problem Consider the set $f = \set{(x,y) \in \mathbb{Z} \times \mathbb{Z} : x + 3y = 4}$. Is this a function from $\mathbb{Z}$ to $\mathbb{Z}$? Explain.
+
+    \answer No. For $f$ to be a function from $\mathbb{Z}$ to $\mathbb{Z}$, every integer must occur as the first coordinate of some pair in $f$. But $x = 0$ does not: that would require $3y = 4$, which has no integer solution $y$. So $0$ is not the first coordinate of any element of $f$, and $f$ is not a function from $\mathbb{Z}$ to $\mathbb{Z}$.
+
+    \problem Consider the set $f = \set{(x^3, x) : x \in \mathbb{R}}$. Is this a function from $\mathbb{R}$ to $\mathbb{R}$? Explain.
+
+    \answer Yes, this is a function $f : \mathbb{R} \to \mathbb{R}$. Every real number $k$ is the cube of exactly one real number, namely $x = \sqrt[3]{k}$, so each $k \in \mathbb{R}$ occurs exactly once as the first coordinate of an ordered pair in $f$.
+
+    \problem Is the set $\theta = \set{\big((x,y),(3y,2x,x+y)\big) : x,y \in \mathbb{R}}$ a function? If so, what is its domain, codomain and range?
+
+    \answer Yes. Every first coordinate is a pair $(x,y) \in \mathbb{R}^2$, and each such pair occurs exactly once, so $\theta$ is a function $\theta : \mathbb{R}^2 \to \mathbb{R}^3$ given by $\theta(x,y) = (3y,2x,x+y)$.
+    Its domain is $\mathbb{R}^2$ and its codomain is $\mathbb{R}^3$.
+
+    For the range, a triple $(a,b,c) \in \mathbb{R}^3$ equals $\theta(x,y)$ exactly when $a = 3y$, $b = 2x$ and $c = x+y$, that is, when $y = \frac{a}{3}$, $x = \frac{b}{2}$ and $c = \frac{b}{2} + \frac{a}{3}$. Conversely, given any $(a,b,c)$ with $c = \frac{a}{3} + \frac{b}{2}$, taking $x = \frac{b}{2}$ and $y = \frac{a}{3}$ gives $\theta(x,y) = (a,b,c)$. Therefore the range is
+    \[
+        \set{(a,b,c) \in \mathbb{R}^3 : 2a + 3b = 6c},
+    \]
+    a plane through the origin in $\mathbb{R}^3$.
+
+\end{problems}
+
+\subsection{Injective and Surjective Functions}
+
+\begin{problems}
+    \problem Consider the logarithm function $\ln : (0,\infty) \to \mathbb{R}$. Decide whether this function is injective and whether it is surjective.
+
+    \answer Observe that, by properties of the function, $lne^x = x$ and $e^{lnx} = x$ for all $x \in (0,\infty)$. 
+    Now, suppose $ln(m) = ln(n)$ for some $m,n \in (0,\infty)$.
+    This means $e^{ln{m}} = e^{ln{n}}$, that is $m=n$.
+
+
+    \problem A function $f : \mathbb{Z} \to \mathbb{Z} \times \mathbb{Z}$ is defined as $f(n) = (2n, n+3)$. Verify whether this function is injective and whether it is surjective.
+
+    \problem A function $f : \mathbb{Z} \times \mathbb{Z} \to \mathbb{Z}$ is defined as $f(m,n) = 3n - 4m$. Verify whether this function is injective and whether it is surjective.
+
+    \problem A function $f : \mathbb{Z} \times \mathbb{Z} \to \mathbb{Z} \times \mathbb{Z}$ is defined as $f(m,n) = (m+n, 2m+n)$. Verify whether this function is injective and whether it is surjective.
+
+    \problem Prove the function $f : \mathbb{R} - \set{1} \to \mathbb{R} - \set{1}$ defined by $f(x) = \left(\dfrac{x+1}{x-1}\right)^3$ is bijective.
+
+    \problem Consider the function $\theta : \set{0,1} \times \mathbb{N} \to \mathbb{Z}$ defined as $\theta(a,b) = a - 2ab + b$. Is $\theta$ injective? Is it surjective? Bijective? Explain.
+
+    \problem Consider the function $\theta : \mathcal{P}(\mathbb{Z}) \to \mathcal{P}(\mathbb{Z})$ defined as $\theta(X) = \overline{X}$. Is $\theta$ injective? Is it surjective? Bijective? Explain.
+
+    \problem This question concerns functions $f : \set{A,B,C,D,E} \to \set{1,2,3,4,5,6,7}$. How many such functions are there? How many of these functions are injective? How many are surjective? How many are bijective?
+
+    \problem Prove that the function $f : \mathbb{N} \to \mathbb{Z}$ defined as $f(n) = \dfrac{(-1)^n(2n-1)+1}{4}$ is bijective.
+\end{problems}
+
+\subsection{The Pigeonhole Principle}
+
+\begin{problems}
+    \problem Prove that if $a$ is a natural number, then there exist two unequal natural numbers $k$ and $\ell$ for which $a^k - a^\ell$ is divisible by 10.
+
+    \problem Consider a square whose side-length is one unit. Select any five points from inside this square. Prove that at least two of these points are within $\frac{\sqrt{2}}{2}$ units of each other.
+
+    \problem Given a sphere $S$, a \emph{great circle} of $S$ is the intersection of $S$ with a plane through its center. Every great circle divides $S$ into two parts. A \emph{hemisphere} is the union of the great circle and one of these two parts. Prove that if five points are placed arbitrarily on $S$, then there is a hemisphere that contains four of them.
+\end{problems}
+
+\subsection{Composition}
+
+\begin{problems}
+    \problem Suppose $A = \set{1,2,3,4}$, $B = \set{0,1,2}$, $C = \set{1,2,3}$. Let $f : A \to B$ be
+    \[
+        f = \set{(1,0),(2,1),(3,2),(4,0)},
+    \]
+    and $g : B \to C$ be $g = \set{(0,1),(1,1),(2,3)}$. Find $g \circ f$.
+
+    \problem Suppose $A = \set{a,b,c}$. Let $f : A \to A$ be the function
+    \[
+        f = \set{(a,c),(b,c),(c,c)},
+    \]
+    and let $g : A \to A$ be the function $g = \set{(a,a),(b,b),(c,a)}$. Find $g \circ f$ and $f \circ g$.
+
+    \problem Consider the functions $f,g : \mathbb{R} \to \mathbb{R}$ defined as $f(x) = \dfrac{1}{x^2+1}$ and $g(x) = 3x+2$. Find the formulas for $g \circ f$ and $f \circ g$.
+
+    \problem Consider the functions $f,g : \mathbb{Z} \times \mathbb{Z} \to \mathbb{Z} \times \mathbb{Z}$ defined as $f(m,n) = (3m-4n, 2m+n)$ and $g(m,n) = (5m+n, m)$. Find the formulas for $g \circ f$ and $f \circ g$.
+
+    \problem Consider the function $f : \mathbb{R}^2 \to \mathbb{R}^2$ defined by the formula $f(x,y) = (xy, x^3)$. Find a formula for $f \circ f$.
+\end{problems}
+
+\subsection{Inverse Functions}
+
+\begin{problems}
+    \problem In Exercise 9 of Section 12.2 you proved that $f : \mathbb{R} - \set{2} \to \mathbb{R} - \set{5}$ defined by $f(x) = \dfrac{5x+1}{x-2}$ is bijective. Now find its inverse.
+
+    \problem The function $f : \mathbb{R} \to (0,\infty)$ defined as $f(x) = e^{x^3+1}$ is bijective. Find its inverse.
+
+    \problem The function $f : \mathbb{Z} \times \mathbb{Z} \to \mathbb{Z} \times \mathbb{Z}$ defined by the formula $f(m,n) = (5m+4n, 4m+3n)$ is bijective. Find its inverse.
+
+    \problem Is the function $\theta : \mathcal{P}(\mathbb{Z}) \to \mathcal{P}(\mathbb{Z})$ defined as $\theta(X) = \overline{X}$ bijective? If so, what is its inverse?
+
+    \problem Consider $f : \mathbb{N} \to \mathbb{Z}$ defined as $f(n) = \dfrac{(-1)^n(2n-1)+1}{4}$. This function is bijective by Exercise 18 in Section 12.2. Find its inverse.
+\end{problems}
+
+\subsection{Image and Preimage}
+
+\begin{problems}
+    \problem Consider the function $f : \set{1,2,3,4,5,6,7} \to \set{0,1,2,3,4,5,6,7,8,9}$ given as
+    \[
+        f = \set{(1,3),(2,8),(3,3),(4,1),(5,2),(6,4),(7,6)}.
+    \]
+    Find:
+    \[
+        f(\set{1,2,3}), \quad f(\set{4,5,6,7}), \quad f(\emptyset), \quad f^{-1}(\set{0,5,9}) \quad \text{and} \quad f^{-1}(\set{0,3,5,9}).
+    \]
+
+    \problem This problem concerns functions
+    \[
+        f : \set{1,2,3,4,5,6,7,8} \to \set{0,1,2,3,4,5,6}.
+    \]
+    How many such functions have the property that $\abs{f^{-1}(\set{2})} = 4$?
+
+    \problem Given a function $f : A \to B$ and a subset $Y \subseteq B$, is $f(f^{-1}(Y)) = Y$ always true? Prove or give a counterexample.
+
+    \problem Given a function $f : A \to B$ and subsets $W, X \subseteq A$, then $f(W \cap X) = f(W) \cap f(X)$ is false in general. Produce a counterexample.
+
+    \problem Given $f : A \to B$ and subsets $Y, Z \subseteq B$, prove $f^{-1}(Y \cap Z) = f^{-1}(Y) \cap f^{-1}(Z)$.
+
+    \problem Consider $f : A \to B$. Prove that $f$ is injective if and only if $X = f^{-1}(f(X))$ for all $X \subseteq A$. Prove that $f$ is surjective if and only if $f(f^{-1}(Y)) = Y$ for all $Y \subseteq B$.
+
+    \problem Let $f : A \to B$ be a function, and $Y \subseteq B$. Prove or disprove: $f^{-1}\big(f(f^{-1}(Y))\big) = f^{-1}(Y)$.
+\end{problems}
+
+\end{document}
