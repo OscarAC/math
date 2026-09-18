@@ -99,6 +99,12 @@
 
     \problem A function $f : \mathbb{Z} \to \mathbb{Z} \times \mathbb{Z}$ is defined as $f(n) = (2n, n+3)$. Verify whether this function is injective and whether it is surjective.
 
+    \answer This function is injective but not surjective.
+
+    First we show $f$ is injective. Suppose $f(m) = f(n)$ for some $m,n \in \mathbb{Z}$. This means $(2m, m+3) = (2n, n+3)$, thus $2m = 2n$. Dividing this equation by two gives $m = n$. Thus $f$ is injective.
+
+    Next we show $f$ is not surjective. Consider $(1,0) \in \mathbb{Z} \times \mathbb{Z}$. If $f(n) = (1,0)$ for some $n \in \mathbb{Z}$, then equating the first coordinates gives $2n = 1$, which has no solution $n \in \mathbb{Z}$. So no integer maps to $(1,0)$, and $f$ is not surjective.
+
     \problem A function $f : \mathbb{Z} \times \mathbb{Z} \to \mathbb{Z}$ is defined as $f(m,n) = 3n - 4m$. Verify whether this function is injective and whether it is surjective.
 
     \problem A function $f : \mathbb{Z} \times \mathbb{Z} \to \mathbb{Z} \times \mathbb{Z}$ is defined as $f(m,n) = (m+n, 2m+n)$. Verify whether this function is injective and whether it is surjective.
