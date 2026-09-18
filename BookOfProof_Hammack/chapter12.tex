@@ -168,9 +168,18 @@
 
     \problem Consider the function $\theta : \mathcal{P}(\mathbb{Z}) \to \mathcal{P}(\mathbb{Z})$ defined as $\theta(X) = \overline{X}$. Is $\theta$ injective? Is it surjective? Bijective? Explain.
 
+    \answer This function is a bijection, to show this, note that $\overline{\overline{X}} = X$ for every $X \subseteq \mathbb{Z}$.
+
+    To see that $\theta$ is injective, suppose $\theta(X) = \theta(Y)$ for some $X,Y \in \mathcal{P}(\mathbb{Z})$, that is, $\overline{X} = \overline{Y}$. Taking complements of both sides gives $\overline{\overline{X}} = \overline{\overline{Y}}$, that is, $X = Y$. Thus $\theta$ is bijective.
+
+    To see that $\theta$ is surjective, take any $Y \in \mathcal{P}(\mathbb{Z})$. 
+    Then $\overline{Y}$ is also a subset of $\mathbb{Z}$, so $\overline{Y} \in \mathcal{P}(\mathbb{Z})$, and $\theta(\overline{Y}) = \overline{\overline{Y}} = Y$.
+
+    Being both injective and surjective, $\theta$ is bijective.
+
     \problem This question concerns functions $f : \set{A,B,C,D,E} \to \set{1,2,3,4,5,6,7}$. How many such functions are there? How many of these functions are injective? How many are surjective? How many are bijective?
 
-\end{problems}
+    \end{problems}
 
 \subsection{The Pigeonhole Principle}
 
