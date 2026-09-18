@@ -116,8 +116,17 @@
 
     \problem A function $f : \mathbb{Z} \times \mathbb{Z} \to \mathbb{Z} \times \mathbb{Z}$ is defined as $f(m,n) = (m+n, 2m+n)$. Verify whether this function is injective and whether it is surjective.
 
-    \problem Prove the function $f : \mathbb{R} - \set{1} \to \mathbb{R} - \set{1}$ defined by $f(x) = \left(\dfrac{x+1}{x-1}\right)^3$ is bijective.
+    \answer This function is both injective and surjective, hence bijective.
 
+    First we show $f$ is injective. Suppose $f(m,n) = f(k,\ell)$ for some $(m,n),(k,\ell) \in \mathbb{Z} \times \mathbb{Z}$. This means $(m+n,\; 2m+n) = (k+\ell,\; 2k+\ell)$. Equating corresponding coordinates gives the two equations $m+n = k+\ell$ and $2m+n = 2k+\ell$. Subtracting the first from the second yields $m = k$, and substituting this back into the first gives $n = \ell$. Therefore $(m,n) = (k,\ell)$, so $f$ is injective.
+
+    Next we show $f$ is surjective. Take any $(a,b) \in \mathbb{Z} \times \mathbb{Z}$, and let $m = b-a$ and $n = 2a-b$. So $(m,n) \in \mathbb{Z} \times \mathbb{Z}$, and $f(m,n) = \big((b-a) + (2a-b), 2(b-a) + (2a-b)\big) = \big(a,\; b\big)$.
+    So every $(a,b) \in \mathbb{Z} \times \mathbb{Z}$ equals $f(m,n)$ for some $(m,n)$ in the domain, and $f$ is surjective.
+
+    Being both injective and surjective, $f$ is bijective.
+
+    \problem Prove the function $f : \mathbb{R} - \set{1} \to \mathbb{R} - \set{1}$ defined by $f(x) = \left(\dfrac{x+1}{x-1}\right)^3$ is bijective.
+    
     \problem Consider the function $\theta : \set{0,1} \times \mathbb{N} \to \mathbb{Z}$ defined as $\theta(a,b) = a - 2ab + b$. Is $\theta$ injective? Is it surjective? Bijective? Explain.
 
     \problem Consider the function $\theta : \mathcal{P}(\mathbb{Z}) \to \mathcal{P}(\mathbb{Z})$ defined as $\theta(X) = \overline{X}$. Is $\theta$ injective? Is it surjective? Bijective? Explain.
@@ -125,7 +134,7 @@
     \problem This question concerns functions $f : \set{A,B,C,D,E} \to \set{1,2,3,4,5,6,7}$. How many such functions are there? How many of these functions are injective? How many are surjective? How many are bijective?
 
     \problem Prove that the function $f : \mathbb{N} \to \mathbb{Z}$ defined as $f(n) = \dfrac{(-1)^n(2n-1)+1}{4}$ is bijective.
-
+    
 \end{problems}
 
 \subsection{The Pigeonhole Principle}
