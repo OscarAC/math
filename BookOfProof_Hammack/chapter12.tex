@@ -88,10 +88,14 @@
 \begin{problems}
     \problem Consider the logarithm function $\ln : (0,\infty) \to \mathbb{R}$. Decide whether this function is injective and whether it is surjective.
 
-    \answer Observe that, by properties of the function, $lne^x = x$ and $e^{lnx} = x$ for all $x \in (0,\infty)$. 
-    Now, suppose $ln(m) = ln(n)$ for some $m,n \in (0,\infty)$.
-    This means $e^{ln{m}} = e^{ln{n}}$, that is $m=n$.
+    \answer This function is bijective. Observe that, by properties of the exponential function, $e^{\ln{x}} = x$ for every $x \in (0,\infty)$, and $\ln{e^{b}} = b$ for every $b \in \mathbb{R}$.
 
+    First we show $\ln$ is injective. Suppose $\ln{m} = \ln{n}$ for some $m,n \in (0,\infty)$. Applying the exponential function to both sides gives $e^{\ln{m}} = e^{\ln{n}}$, that is, $m = n$. Thus $\ln$ is injective.
+
+    Next we show $\ln$ is surjective. Take any $b \in \mathbb{R}$, and let $a = e^{b}$. Then $a \in (0,\infty)$, since $e^{b} > 0$ for every real $b$, and $\ln{a} = \ln{e^{b}} = b$.
+    So every $b \in \mathbb{R}$ equals $\ln{a}$ for some $a$ in the domain, and $\ln$ is surjective.
+
+    Therefore $\ln$ is  bijective since it is both injective and surjective on this domain.
 
     \problem A function $f : \mathbb{Z} \to \mathbb{Z} \times \mathbb{Z}$ is defined as $f(n) = (2n, n+3)$. Verify whether this function is injective and whether it is surjective.
 
