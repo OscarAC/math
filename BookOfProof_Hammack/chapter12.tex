@@ -126,14 +126,45 @@
     Being both injective and surjective, $f$ is bijective.
 
     \problem Prove the function $f : \mathbb{R} - \set{1} \to \mathbb{R} - \set{1}$ defined by $f(x) = \left(\dfrac{x+1}{x-1}\right)^3$ is bijective.
-    
+    \begin{proof}
+        First we show $f$ is injective. Suppose $f(x) = f(y)$ for some $x,y \in \mathbb{R} - \set{1}$, that is,
+        \[
+            \left(\dfrac{x+1}{x-1}\right)^3 = \left(\dfrac{y+1}{y-1}\right)^3.
+        \]
+        Every real number has exactly one real cube root, so taking cube roots of both sides gives
+        \[
+            \dfrac{x+1}{x-1} = \dfrac{y+1}{y-1}.
+        \]
+        Since $x \neq 1$ and $y \neq 1$, both denominators are nonzero, so we may cross-multiply to get $(x+1)(y-1) = (y+1)(x-1)$. Expanding both sides,
+        \[
+            xy - x + y - 1 = xy - y + x - 1.
+        \]
+        Cancelling $xy$ and $-1$ leaves $-x + y = -y + x$, that is, $2y = 2x$, so $x = y$. Thus $f$ is injective.
+
+        Next we show $f$ is surjective. Take any $b \in \mathbb{R} - \set{1}$ and let $c = \sqrt[3]{b}$. Note that $c \neq 1$, for otherwise $b = c^3 = 1$. Now let
+        \[
+            x = \dfrac{c+1}{c-1},
+        \]
+        which is defined because $c \neq 1$. Also $x \neq 1$, since $x = 1$ would give $c+1 = c-1$, which is impossible. Hence $x \in \mathbb{R} - \set{1}$. Observe that
+        \[
+            x + 1 = \dfrac{c+1}{c-1} + 1 = \dfrac{2c}{c-1}
+            \qquad \text{and} \qquad
+            x - 1 = \dfrac{c+1}{c-1} - 1 = \dfrac{2}{c-1},
+        \]
+        so $\dfrac{x+1}{x-1} = \dfrac{2c}{2} = c$, and therefore
+        \[
+            f(x) = \left(\dfrac{x+1}{x-1}\right)^3 = c^3 = b.
+        \]
+        So every $b \in \mathbb{R} - \set{1}$ equals $f(x)$ for some $x$ in the domain, and $f$ is surjective.
+
+        Being both injective and surjective, $f$ is bijective.
+    \end{proof}
+
     \problem Consider the function $\theta : \set{0,1} \times \mathbb{N} \to \mathbb{Z}$ defined as $\theta(a,b) = a - 2ab + b$. Is $\theta$ injective? Is it surjective? Bijective? Explain.
 
     \problem Consider the function $\theta : \mathcal{P}(\mathbb{Z}) \to \mathcal{P}(\mathbb{Z})$ defined as $\theta(X) = \overline{X}$. Is $\theta$ injective? Is it surjective? Bijective? Explain.
 
     \problem This question concerns functions $f : \set{A,B,C,D,E} \to \set{1,2,3,4,5,6,7}$. How many such functions are there? How many of these functions are injective? How many are surjective? How many are bijective?
-
-    \problem Prove that the function $f : \mathbb{N} \to \mathbb{Z}$ defined as $f(n) = \dfrac{(-1)^n(2n-1)+1}{4}$ is bijective.
     
 \end{problems}
 
