@@ -47,13 +47,13 @@
     \problem There are eight different functions $f : \set{a,b,c} \to \set{0,1}$. List them all. Diagrams will suffice.
 
     \answer $f_1 = \set{(a,0),(b,0),(c,0)}$\\ 
-            $f_2 = \set{(a,0),(b,0),(c,1)}$\\ 
-            $f_3 = \set{(a,0),(b,1),(c,0)}$\\ 
-            $f_4 = \set{(a,0),(b,1),(c,1)}$\\ 
-            $f_5 = \set{(a,1),(b,0),(c,0)}$\\ 
-            $f_6 = \set{(a,1),(b,0),(c,1)}$\\ 
-            $f_7 = \set{(a,1),(b,1),(c,0)}$\\ 
-            $f_8 = \set{(a,1),(b,1),(c,1)}$
+    $f_2 = \set{(a,0),(b,0),(c,1)}$\\ 
+    $f_3 = \set{(a,0),(b,1),(c,0)}$\\ 
+    $f_4 = \set{(a,0),(b,1),(c,1)}$\\ 
+    $f_5 = \set{(a,1),(b,0),(c,0)}$\\ 
+    $f_6 = \set{(a,1),(b,0),(c,1)}$\\ 
+    $f_7 = \set{(a,1),(b,1),(c,0)}$\\ 
+    $f_8 = \set{(a,1),(b,1),(c,1)}$
 
     \problem Suppose $f : \mathbb{Z} \to \mathbb{Z}$ is defined as $f = \set{(x, 4x+5) : x \in \mathbb{Z}}$. State the domain, codomain and range of $f$. Find $f(10)$.
 
@@ -107,6 +107,13 @@
 
     \problem A function $f : \mathbb{Z} \times \mathbb{Z} \to \mathbb{Z}$ is defined as $f(m,n) = 3n - 4m$. Verify whether this function is injective and whether it is surjective.
 
+    \answer This function is surjective but not injective.
+
+    First we show $f$ is not injective. Observe that $f(0,0) = 3(0) - 4(0) = 0$ and $f(3,4) = 3(4) - 4(3) = 12 - 12 = 0$. Thus $f(0,0) = f(3,4)$ even though $(0,0) \neq (3,4)$, so $f$ is not injective.
+
+    Next we show $f$ is surjective. Take any $b \in \mathbb{Z}$. Then $(-b,-b) \in \mathbb{Z} \times \mathbb{Z}$, and $f(-b,-b) = 3(-b) - 4(-b) = -3b + 4b = b$.
+    So every $b \in \mathbb{Z}$ equals $f(m,n)$ for some $(m,n)$ in the domain, and $f$ is surjective.
+
     \problem A function $f : \mathbb{Z} \times \mathbb{Z} \to \mathbb{Z} \times \mathbb{Z}$ is defined as $f(m,n) = (m+n, 2m+n)$. Verify whether this function is injective and whether it is surjective.
 
     \problem Prove the function $f : \mathbb{R} - \set{1} \to \mathbb{R} - \set{1}$ defined by $f(x) = \left(\dfrac{x+1}{x-1}\right)^3$ is bijective.
@@ -118,6 +125,7 @@
     \problem This question concerns functions $f : \set{A,B,C,D,E} \to \set{1,2,3,4,5,6,7}$. How many such functions are there? How many of these functions are injective? How many are surjective? How many are bijective?
 
     \problem Prove that the function $f : \mathbb{N} \to \mathbb{Z}$ defined as $f(n) = \dfrac{(-1)^n(2n-1)+1}{4}$ is bijective.
+
 \end{problems}
 
 \subsection{The Pigeonhole Principle}
