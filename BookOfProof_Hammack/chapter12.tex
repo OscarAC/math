@@ -179,7 +179,17 @@
 
     \problem This question concerns functions $f : \set{A,B,C,D,E} \to \set{1,2,3,4,5,6,7}$. How many such functions are there? How many of these functions are injective? How many are surjective? How many are bijective?
 
-    \end{problems}
+    \answer The domain has 5 elements and the codomain has 7.
+
+    A function can be determined by choosing a value in $\set{1,2,\dots,7}$ for each of the 5 elements of the domain, so by the multiplication principle there are $7^5 = 168074$ such functions.
+
+    Now, the 5 values must be distinct, so there are 7 choices for the image of $A$, then 6 for $B$, then 5, 4 and 3. This gives $7 \cdot 6 \cdot 5 \cdot 4 \cdot 3 = 2520$  injective functions.
+
+    There are no surjective functions as this would require every element in the codomain to be $f(x)$ for some $x$ in the domain, but the domain supplies only 5 values.
+    
+    Because none of the functions are surjective, none of the functions are bijective.
+    
+\end{problems}
 
 \subsection{The Pigeonhole Principle}
 
