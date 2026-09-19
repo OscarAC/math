@@ -163,8 +163,8 @@
     \problem Consider the function $\theta : \set{0,1} \times \mathbb{N} \to \mathbb{Z}$ defined as $\theta(a,b) = a - 2ab + b$. Is $\theta$ injective? Is it surjective? Bijective? Explain.
 
     \answer This function is bijective. Since the first coordinate $a$ can only be 0 or 1, we compute the two cases separately:
-    $\theta(0,b) &= 0 - 2(0)b + b = b$ and $\theta(1,b) &= 1 - 2b + b = 1 - b$.
-    As $b$ ranges over $\mathbb{N}$, the first line produces exactly the integers $1,2,3,\dots$, and the second produces exactly $0,-1,-2,\dots$, that is, the integers less than or equal to 0.
+    $\theta(0,b) = 0 - 2(0)b + b = b$ and $\theta(1,b) = 1 - 2b + b = 1 - b$.
+    As $b$ ranges over $\mathbb{N} = \set{1,2,3,\dots}$, the first case produces exactly the integers $1,2,3,\dots$, and the second produces exactly $0,-1,-2,\dots$, that is, the integers less than or equal to 0.
 
     \problem Consider the function $\theta : \mathcal{P}(\mathbb{Z}) \to \mathcal{P}(\mathbb{Z})$ defined as $\theta(X) = \overline{X}$. Is $\theta$ injective? Is it surjective? Bijective? Explain.
 
@@ -195,10 +195,17 @@
 
 \begin{problems}
     \problem Prove that if $a$ is a natural number, then there exist two unequal natural numbers $k$ and $\ell$ for which $a^k - a^\ell$ is divisible by 10.
+    \begin{proof}
+        Let $a \in \mathbb{N}$ and consider the eleven powers $a^1,\; a^2,\; a^3,\; \dots,\; a^{11}$.
+        Dividing any integer by 10 leaves a remainder in $\set{0,1,2,\dots,9}$, so there are only ten possible remainders.
+        Because the number of powers is greater than the number of remainders, the pigeonhole principle guarantees that at least two of the powers would have the same remainder.
+        That is, there are natural numbers $k$ and $\ell$ with $1 \leq k < \ell \leq 11$ such that $a^k$ and $a^\ell$ leave the same remainder when divided by 10. Writing $a^k = 10q + r$ and $a^\ell = 10q' + r$ for integers $q, q'$ and a common remainder $r$, we get
+        \[
+            a^k - a^\ell = (10q + r) - (10q' + r) = 10(q - q').
+        \]
+        Since $q - q'$ is an integer, $10 \mid (a^k - a^\ell)$. As $k < \ell$, the numbers $k$ and $\ell$ are unequal.
+    \end{proof}
 
-    \problem Consider a square whose side-length is one unit. Select any five points from inside this square. Prove that at least two of these points are within $\frac{\sqrt{2}}{2}$ units of each other.
-
-    \problem Given a sphere $S$, a \emph{great circle} of $S$ is the intersection of $S$ with a plane through its center. Every great circle divides $S$ into two parts. A \emph{hemisphere} is the union of the great circle and one of these two parts. Prove that if five points are placed arbitrarily on $S$, then there is a hemisphere that contains four of them.
 \end{problems}
 
 \subsection{Composition}
