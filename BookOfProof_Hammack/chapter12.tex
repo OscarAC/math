@@ -264,13 +264,39 @@
 \begin{problems}
     \problem In Exercise 9 of Section 12.2 you proved that $f : \mathbb{R} - \set{2} \to \mathbb{R} - \set{5}$ defined by $f(x) = \dfrac{5x+1}{x-2}$ is bijective. Now find its inverse.
 
+    \answer Solving $y = \dfrac{5x+1}{x-2}$ for $x$ gives $x = \dfrac{2y+1}{y-5}$, so
+    \[
+        f^{-1} : \mathbb{R} - \set{5} \to \mathbb{R} - \set{2}, \qquad f^{-1}(x) = \dfrac{2x+1}{x-5}.
+    \]
+
     \problem The function $f : \mathbb{R} \to (0,\infty)$ defined as $f(x) = e^{x^3+1}$ is bijective. Find its inverse.
+
+    \answer Solving $y = e^{x^3+1}$ for $x$ gives $x = \sqrt[3]{\ln{y}-1}$, so
+    \[
+        f^{-1} : (0,\infty) \to \mathbb{R}, \qquad f^{-1}(x) = \sqrt[3]{\ln{x}-1}.
+    \]
 
     \problem The function $f : \mathbb{Z} \times \mathbb{Z} \to \mathbb{Z} \times \mathbb{Z}$ defined by the formula $f(m,n) = (5m+4n, 4m+3n)$ is bijective. Find its inverse.
 
+    \answer Solving $5m+4n = a$ and $4m+3n = b$ for $m$ and $n$ gives $m = -3a+4b$ and $n = 4a-5b$, so
+    \[
+        f^{-1}(a,b) = (-3a+4b,\; 4a-5b).
+    \]
+
     \problem Is the function $\theta : \mathcal{P}(\mathbb{Z}) \to \mathcal{P}(\mathbb{Z})$ defined as $\theta(X) = \overline{X}$ bijective? If so, what is its inverse?
 
+    \answer Yes. Since $\overline{\overline{X}} = X$, the function $\theta$ is its own inverse: $\theta^{-1}(X) = \overline{X}$.
+
     \problem Consider $f : \mathbb{N} \to \mathbb{Z}$ defined as $f(n) = \dfrac{(-1)^n(2n-1)+1}{4}$. This function is bijective by Exercise 18 in Section 12.2. Find its inverse.
+
+    \answer By Exercise 18 of Section 12.2, $f(2k) = k$ for $k \geq 1$ and $f(2k+1) = -k$ for $k \geq 0$. Inverting each case,
+    \[
+        f^{-1} : \mathbb{Z} \to \mathbb{N}, \qquad
+        f^{-1}(c) = \begin{cases}
+            2c      & \text{if } c \geq 1,\\
+            1 - 2c  & \text{if } c \leq 0.
+        \end{cases}
+    \]
 \end{problems}
 
 \subsection{Image and Preimage}
