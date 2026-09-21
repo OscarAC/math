@@ -87,17 +87,42 @@
 \begin{problems}
     \problem Prove that the set $A = \set{(m,n) \in \mathbb{N} \times \mathbb{N} : m \leq n}$ is countably infinite.
 
+    \answer Since $\mathbb{N}$ is countably infinite, Theorem 13.5 gives that $\mathbb{N} \times \mathbb{N}$ is countably infinite. By Exercise 14 of Section 13.1 the map $f(m,n) = (m,\; m+n-1)$ is a bijection $\mathbb{N} \times \mathbb{N} \to A$, so $\abs{\mathbb{N} \times \mathbb{N}} = \abs{A}$. Therefore $\abs{\mathbb{N}} = \abs{A}$ and $A$ is countably infinite.
+
     \problem Prove that the set of all irrational numbers is uncountable. (Suggestion: Consider proof by contradiction using Theorems 13.4 and 13.6.)
+    \begin{proof}
+        Let $I = \mathbb{R} - \mathbb{Q}$ be the set of irrational numbers. First note that $I$ is infinite, since the numbers $\sqrt{2} + k$ for $k \in \mathbb{N}$ are distinct and all irrational.
+
+        Suppose for the sake of contradiction that $I$ is not uncountable. Being infinite, $I$ must then be countably infinite. By Theorem 13.4 the set $\mathbb{Q}$ is countably infinite, so Theorem 13.6 gives that $\mathbb{Q} \cup I$ is countably infinite. But $\mathbb{Q} \cup I = \mathbb{R}$, so $\abs{\mathbb{N}} = \abs{\mathbb{R}}$, contradicting Theorem 13.2.
+
+        Therefore $I$ is uncountable.
+    \end{proof}
 
     \problem Prove or disprove: There exists a bijective function $f : \mathbb{Q} \to \mathbb{R}$.
 
+    \answer This is false. By Theorem 13.4 the set $\mathbb{Q}$ is countably infinite, so $\abs{\mathbb{N}} = \abs{\mathbb{Q}}$. If a bijection $f : \mathbb{Q} \to \mathbb{R}$ existed we would have $\abs{\mathbb{Q}} = \abs{\mathbb{R}}$, and hence $\abs{\mathbb{N}} = \abs{\mathbb{R}}$, contradicting Theorem 13.2. So no such bijection exists.
+
     \problem Prove or disprove: The set $\mathbb{Z} \times \mathbb{Q}$ is countably infinite.
+
+    \answer This is true. By Exercise 12 of Section 13.1 the set $\mathbb{Z}$ is countably infinite, and by Theorem 13.4 so is $\mathbb{Q}$. Theorem 13.5 then gives that $\mathbb{Z} \times \mathbb{Q}$ is countably infinite.
 
     \problem Prove or disprove: The set $A = \set{\frac{\sqrt{2}}{n} : n \in \mathbb{N}}$ is countably infinite.
 
+    \answer This is true. By Exercise 6 of Section 13.1 the map $f(n) = \frac{\sqrt{2}}{n}$ is a bijection $\mathbb{N} \to A$, so $\abs{\mathbb{N}} = \abs{A}$ and $A$ is countably infinite.
+
     \problem Describe a partition of $\mathbb{N}$ that divides $\mathbb{N}$ into $\aleph_0$ countably infinite subsets.
 
+    \answer For each $k \in \mathbb{N}$ let $X_k = \set{2^{k-1}(2m-1) : m \in \mathbb{N}}$ the set of naturals divisible by exactly $k-1$ factors of 2. The first few are
+    \begin{align*}
+        X_1 &= \set{1,3,5,7,9,\dots},\\
+        X_2 &= \set{2,6,10,14,18,\dots},\\
+        X_3 &= \set{4,12,20,28,36,\dots}.
+    \end{align*}
+    Then $P = \set{X_k : k \in \mathbb{N}}$ is the required partition. Every $n \in \mathbb{N}$ can be written as $n = 2^a(2m-1)$ for a unique pair of integers $a \geq 0$ and $m \geq 1$, obtained by dividing out every factor of 2, so $n$ lies in exactly one $X_k$, namely $k = a+1$. Each $X_k$ is countably infinite, since $m \mapsto 2^{k-1}(2m-1)$ is a bijection $\mathbb{N} \to X_k$. Finally there is one such set for each $k \in \mathbb{N}$, and these are distinct, so $P$ has $\aleph_0$ elements.
+
     \problem Suppose $A = \set{(m,n) \in \mathbb{N} \times \mathbb{R} : n = \pi m}$. Is it true that $\abs{\mathbb{N}} = \abs{A}$?
+
+    \answer Yes. The condition $n = \pi m$ determines $n$ from $m$, so $A = \set{(m, \pi m) : m \in \mathbb{N}}$. The map $f : \mathbb{N} \to A$ given by $f(m) = (m, \pi m)$ is surjective by this description, and injective because $f(m) = f(m')$ forces $m = m'$ in the first coordinate. Hence $\abs{\mathbb{N}} = \abs{A}$.
 \end{problems}
 
 \subsection{Comparing Cardinalities}
