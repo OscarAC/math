@@ -1,0 +1,127 @@
+\documentclass[DIN, pagenumber=false, fontsize=11pt, parskip=half]{scrartcl}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{template}
+\usepackage{amsmath}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+
+\DeclareMathOperator{\lcm}{lcm}
+
+\tikzset{
+    relation/.style={
+        dot/.style={circle, fill=black, inner sep=1.6pt},
+        every path/.style={-{Stealth[length=2mm]}, semithick},
+    },
+}
+
+\titlehead{\centering\small
+    Worked solutions to selected exercises from\\
+    Richard Hammack, \emph{Book of Proof, edition 2.2}\\
+\rule{0.4\linewidth}{0.4pt}}
+
+\title{}
+\author{} % Oscar A. Carrera
+\date{}
+
+\begin{document}
+\maketitle
+
+\setcounter{section}{12}
+
+\section{Cardinality of Sets}
+
+\subsection{Sets with Equal Cardinalities}
+
+\begin{exercise}{A.}
+    Show that the two given sets have equal cardinality by describing a bijection from one to the other. Describe your bijection with a formula (not as a table).
+\end{exercise}
+
+\begin{problems}
+    \problem $\mathbb{R}$ and $(\sqrt{2},\infty)$
+
+    \answer $f(x) = e^x + \sqrt{2}$, with inverse $f^{-1}(y) = \ln(y - \sqrt{2})$.
+
+    \problem The set of even integers and the set of odd integers
+
+    \answer $f(n) = n+1$, with inverse $f^{-1}(m) = m-1$.
+
+    \problem $\mathbb{N}$ and $S = \set{\frac{\sqrt{2}}{n} : n \in \mathbb{N}}$
+
+    \answer $f(n) = \dfrac{\sqrt{2}}{n}$. It is surjective by the definition of $S$, and injective since $\frac{\sqrt{2}}{n} = \frac{\sqrt{2}}{m}$ gives $n = m$.
+
+    \problem $\mathbb{Z}$ and $S = \set{x \in \mathbb{R} : \sin{x} = 1}$
+
+    \answer Since $\sin{x} = 1$ exactly when $x = \frac{\pi}{2} + 2\pi k$ for some $k \in \mathbb{Z}$, take $f(k) = \frac{\pi}{2} + 2\pi k$, with inverse $f^{-1}(x) = \dfrac{x - \frac{\pi}{2}}{2\pi}$.
+
+    \problem $\set{0,1} \times \mathbb{N}$ and $\mathbb{Z}$
+
+    \answer $f(a,b) = a - 2ab + b$, shown bijective in Exercise 12 of Section 12.2.
+
+    \problem $\mathbb{N}$ and $\mathbb{Z}$ (Suggestion: use Exercise 18 of Section 12.2.)
+
+    \answer $f(n) = \dfrac{(-1)^n(2n-1)+1}{4}$, shown bijective in Exercise 18 of Section 12.2.
+
+    \problem $\mathbb{N} \times \mathbb{N}$ and $\set{(n,m) \in \mathbb{N} \times \mathbb{N} : n \leq m}$
+
+    \answer $f(n,m) = (n,\; n+m-1)$, with inverse $f^{-1}(a,b) = (a,\; b-a+1)$.
+\end{problems}
+
+\begin{exercise}{B.}
+    Answer the following questions concerning bijections from this section.
+\end{exercise}
+
+\begin{problems}[from=16]
+    \problem Verify that the function $f$ in Example 13.3 is a bijection.
+
+    \answer Here $f : (0,\infty) \to (0,1)$ is given by $f(x) = \dfrac{x}{x+1}$.
+
+    It is injective: $\dfrac{x}{x+1} = \dfrac{y}{y+1}$ gives $x(y+1) = y(x+1)$, that is, $xy + x = xy + y$, so $x = y$.
+
+    It is surjective: given $y \in (0,1)$, the number $x = \dfrac{y}{1-y}$ lies in $(0,\infty)$ and satisfies $f(x) = y$.
+\end{problems}
+
+\subsection{Countable and Uncountable Sets}
+
+\begin{problems}
+    \problem Prove that the set $A = \set{(m,n) \in \mathbb{N} \times \mathbb{N} : m \leq n}$ is countably infinite.
+
+    \problem Prove that the set of all irrational numbers is uncountable. (Suggestion: Consider proof by contradiction using Theorems 13.4 and 13.6.)
+
+    \problem Prove or disprove: There exists a bijective function $f : \mathbb{Q} \to \mathbb{R}$.
+
+    \problem Prove or disprove: The set $\mathbb{Z} \times \mathbb{Q}$ is countably infinite.
+
+    \problem Prove or disprove: The set $A = \set{\frac{\sqrt{2}}{n} : n \in \mathbb{N}}$ is countably infinite.
+
+    \problem Describe a partition of $\mathbb{N}$ that divides $\mathbb{N}$ into $\aleph_0$ countably infinite subsets.
+
+    \problem Suppose $A = \set{(m,n) \in \mathbb{N} \times \mathbb{R} : n = \pi m}$. Is it true that $\abs{\mathbb{N}} = \abs{A}$?
+\end{problems}
+
+\subsection{Comparing Cardinalities}
+
+\begin{problems}
+    \problem Prove that the set $\mathbb{C}$ of complex numbers is uncountable.
+
+    \problem Prove or disprove: If $A \subseteq B \subseteq C$ and $A$ and $C$ are countably infinite, then $B$ is countably infinite.
+
+    \problem Prove or disprove: Every infinite set is a subset of a countably infinite set.
+
+    \problem Prove or disprove: The set $\set{(a_1,a_2,a_3,\dots) : a_i \in \mathbb{Z}}$ of infinite sequences of integers is countably infinite.
+
+    \problem Prove that if $A$ and $B$ are finite sets with $\abs{A} = \abs{B}$, then any surjection $f : A \to B$ is also an injection. Show this is not necessarily true if $A$ and $B$ are not finite.
+\end{problems}
+
+\subsection{The Cantor-Bernstein-Schröeder Theorem}
+
+\begin{problems}
+    \problem Show that $\abs{\mathbb{R}^2} = \abs{\mathbb{R}}$. Suggestion: Begin by showing $\abs{(0,1) \times (0,1)} = \abs{(0,1)}$.
+
+    \problem Let $F$ be the set of all functions $\mathbb{R} \to \set{0,1}$. Show that $\abs{\mathbb{R}} < \abs{F}$.
+
+    \problem Show that $\abs{\mathcal{P}(\mathbb{N} \times \mathbb{N})} = \abs{\mathcal{P}(\mathbb{N})}$.
+\end{problems}
+
+\end{document}
