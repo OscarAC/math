@@ -129,14 +129,44 @@
 
 \begin{problems}
     \problem Prove that the set $\mathbb{C}$ of complex numbers is uncountable.
+    
+    \begin{proof}
+        Every real number $x$ is the complex number $x + 0i$, so $\mathbb{R} \subseteq \mathbb{C}$. The set $\mathbb{R}$ is infinite, and $\abs{\mathbb{N}} \neq \abs{\mathbb{R}}$ by Theorem 13.2, so $\mathbb{R}$ is uncountable. By Theorem 13.9, any set containing an uncountable subset is uncountable, so $\mathbb{C}$ is uncountable.
+    \end{proof}
 
     \problem Prove or disprove: If $A \subseteq B \subseteq C$ and $A$ and $C$ are countably infinite, then $B$ is countably infinite.
 
+    \answer This is true. Since $A$ is countably infinite it is infinite, and $A \subseteq B$, so $B$ is infinite. Thus $B$ is an infinite subset of the countably infinite set $C$, and Theorem 13.8 gives that $B$ is countably infinite.
+
     \problem Prove or disprove: Every infinite set is a subset of a countably infinite set.
+
+    \answer This is false. For a counterexample take $\mathbb{R}$, which is infinite. Suppose $\mathbb{R} \subseteq S$ for some countably infinite set $S$. Then $\mathbb{R}$ is an infinite subset of $S$, so Theorem 13.8 would make $\mathbb{R}$ countably infinite, contradicting Theorem 13.2. So $\mathbb{R}$ is not a subset of any countably infinite set.
 
     \problem Prove or disprove: The set $\set{(a_1,a_2,a_3,\dots) : a_i \in \mathbb{Z}}$ of infinite sequences of integers is countably infinite.
 
+    \answer This is false; the set is uncountable. Write $S$ for this set, and note $S$ is infinite, as it contains the constant sequence $(k,k,k,\dots)$ for every $k \in \mathbb{Z}$.
+
+    Suppose for the sake of contradiction that $S$ is countably infinite. By Theorem 13.3 its elements can be arranged in an infinite list $s_1, s_2, s_3, \dots$, where we write
+    \[
+        s_k = (a_{k1},\; a_{k2},\; a_{k3},\; \dots).
+    \]
+    Now define a new sequence $b = (b_1, b_2, b_3, \dots)$ by setting $b_i = a_{ii} + 1$. Each $b_i$ is an integer, so $b \in S$. But for every $k$ the sequences $b$ and $s_k$ differ in their $k$th entry, since $b_k = a_{kk} + 1 \neq a_{kk}$. So $b$ does not appear in the list, contradicting the assumption that the list contains every element of $S$.
+
+    Therefore $S$ is not countably infinite, and being infinite it is uncountable.
+
     \problem Prove that if $A$ and $B$ are finite sets with $\abs{A} = \abs{B}$, then any surjection $f : A \to B$ is also an injection. Show this is not necessarily true if $A$ and $B$ are not finite.
+    \begin{proof}
+        Let $\abs{A} = \abs{B} = n$ and suppose $f : A \to B$ is surjective. Suppose for the sake of contradiction that $f$ is not injective, so there are elements $a \neq a'$ in $A$ with $f(a) = f(a')$. The set $f(A)$ has one element for each distinct value of $f$, and since $a$ and $a'$ contribute the same value, the $n$ elements of $A$ produce at most $n-1$ distinct values. Hence $\abs{f(A)} \leq n-1$. But $f$ is surjective, so $f(A) = B$ and $\abs{f(A)} = n$. This gives $n \leq n-1$, a contradiction. Therefore $f$ is injective.
+    \end{proof}
+
+    \answer This can fail when the sets are infinite. Take $A = B = \mathbb{N}$ and define $f : \mathbb{N} \to \mathbb{N}$ by
+    \[
+        f(n) = \begin{cases}
+            1   & \text{if } n = 1,\\
+            n-1 & \text{if } n \geq 2.
+        \end{cases}
+    \]
+    Then $f$ is surjective, since any $m \in \mathbb{N}$ equals $f(m+1)$. But $f$ is not injective, because $f(1) = f(2) = 1$.
 \end{problems}
 
 \subsection{The Cantor-Bernstein-Schröeder Theorem}
