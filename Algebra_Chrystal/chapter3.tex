@@ -1,0 +1,187 @@
+\documentclass[DIN, pagenumber=false, fontsize=11pt, parskip=half]{scrartcl}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{template}
+\usepackage{amsmath}
+
+\setcounter{secnumdepth}{1} % number sections only; subsections (Exercises) unnumbered
+
+\titlehead{\centering\small
+    Worked solutions to selected exercises from\\
+    G. Chrystal, \emph{Algebra: An Elementary Text-Book}, Part I (1886)\\
+\rule{0.4\linewidth}{0.4pt}}
+
+\title{}
+\author{} % Oscar A. Carrera
+\date{}
+
+\begin{document}
+\maketitle
+
+\setcounter{section}{2}
+\section{Theory of Quotients---First Principles of Theory of Numbers}
+
+\subsection{Exercises III}
+
+\begin{problems}[from=1,step=1]
+    \problem Express in its simplest form---
+    \[
+        \frac{x^2}{x-y} + \frac{y^2}{y-x}.
+    \]
+    \answer
+    \begin{align*}
+        \frac{x^2}{x-y} + \frac{y^2}{y-x} &= \frac{x^2(y-x)}{(x-y)(y-x)} + \frac{y^2(x-y)}{(x-y)(y-x)} && \text{($\frac{a}{b} + \frac{p}{q} = \frac{qa}{qb} + \frac{pb}{qb}$)}\\ 
+                                          &= \frac{x^2(y-x) + y^2(x-y)}{(x-y)(y-x)} && \text{($\frac{a}{b} + \frac{c}{b} = \frac{a+c}{b}$)}\\ 
+                                          &= \frac{x^2(y-x) + y^2(x-y)}{xy-x^2-y^2+xy} && \text{(expand denominator)}\\ 
+                                          &= \frac{x^2(y-x) + y^2(x-y)}{x(y-x) + y(x-y)} && \text{(factor denominator)}\\ 
+                                          &= \frac{x^2(y-x) - y^2(y-x)}{x(y-x) - y(y-x)} && \text{($x-y = -(y-x)$)}\\ 
+                                          &= \frac{(x^2-y^2)(y-x)}{(x-y)(y-x)} && \text{(extract common factor $y-x$)}\\ 
+                                          &= \frac{(x^2-y^2)}{(x-y)} && \text{($\frac{ac}{bc} = \frac{a}{b}$)}\\ 
+                                          &= \frac{(x-y)(x+y)}{(x-y)} && \text{($a^2-b^2 = (a-b)(a+b)$)}\\ 
+                                          &= x+y && \text{($\frac{ac}{bc} = \frac{a}{b}$)}
+    \end{align*}
+
+    \problem Express in its simplest form---
+    \[
+        \frac{a}{a-b} + \frac{b}{b-a}.
+    \]
+    \answer 
+    \begin{align*}
+        \frac{a}{a-b} + \frac{b}{b-a} &= \frac{a(b-a) + b(a-b)}{(a-b)(b-a)} && \text{($\frac{a}{b} + \frac{p}{q} = \frac{aq}{bq} + \frac{bp}{bq}$)} \\ 
+                                      &= \frac{a(b-a) + b(a-b)}{ab-a^2-b^2+ab} && \text{(expand denominator)}\\ 
+                                      &= \frac{a(b-a) + b(a-b)}{a(b-a) + b(a-b)} && \text{(factor denominator)} \\ 
+                                      &= 1 && \text{($\frac{a}{a} = 1$)}
+    \end{align*}
+
+
+    \problem Simplify---
+    \[
+        \frac{P+Q}{P-Q} - \frac{P-Q}{P+Q}, \quad\text{where}\quad P = x+y, \quad Q = x-y.
+    \]
+    \answer
+    \begin{align*}
+        \frac{P + Q}{P - Q} - \frac{P - Q}{P + Q} &= \frac{x+y+x-y}{x+y-x+y} - \frac{x+y-x+y}{x+y+x-y} && \text{(replace variables)}\\ 
+                                                  &= \frac{2x}{2y} - \frac{2y}{2x} && \text{(simplify)}\\ 
+                                                  &= \frac{x}{y} - \frac{y}{x} && \text{($\frac{ab}{bc} = \frac{a}{c}$)}\\ 
+                                                  &= \frac{x^2 - y^2}{xy} && \text{($\frac{a}{b} - \frac{p}{q} = \frac{aq}{bq} - \frac{pb}{bq}$)}
+    \end{align*}
+   
+    \problem Simplify---
+    \[
+        \frac{1 - \dfrac{x(1-y)}{x+y}}{1 + \dfrac{1-y}{x+y}}.
+    \]
+    \answer 
+    \begin{align*}
+        1-\frac{x(1-y)}{x+y} \div 1+\frac{1-y}{x+y} &= \frac{x+y}{x+y}-\frac{x(1-y)}{x+y} \div \frac{x+y}{x+y} + \frac{1-y}{x+y}\\ 
+                                                    &= \frac{x+y-x+xy}{x+y} \div \frac{x+y+1-y}{x+y}\\ 
+                                                    &= \frac{xy+y}{x+y} \div \frac{x+1}{x+y}\\ 
+                                                    &= \frac{xy+y}{x+y} \times \frac{x+y}{x+1}\\ 
+                                                    &= \frac{xy+y}{x+1} \\ 
+                                                    &= \frac{y(x+1)}{x+1}\\ 
+                                                    &= y
+    \end{align*}
+
+    \problem Simplify---
+    \[
+        \frac{\dfrac{1}{ab} - \dfrac{1}{ac} - \dfrac{1}{bc}}{\dfrac{a^2 - (b-c)^2}{a}}.
+    \]
+
+    \problem Simplify---
+    \[
+        \left(a - \frac{b^2}{a+b}\right) \times \left(a + \frac{b^2}{a-b}\right).
+    \]
+
+    \problem Simplify---
+    \[
+        \frac{1}{x+y} + \frac{1}{x-y} - \frac{2x}{x^2+y^2}.
+    \]
+
+    \problem Simplify---
+    \[
+        \left(\frac{x}{y} + \frac{y}{x}\right)\left(\frac{a}{b} + \frac{b}{a}\right) - \left(\frac{x}{y} - \frac{y}{x}\right)\left(\frac{a}{b} - \frac{b}{a}\right).
+    \]
+
+    \problem Simplify---
+    \[
+        \left(\frac{a}{b} - \frac{b}{a}\right) \div \left(\frac{a^2}{b^2} - \frac{b^2}{a^2}\right).
+    \]
+
+    \problem Simplify---
+    \[
+        \frac{a(a-b) - b(a+b)}{\dfrac{a}{a+b} - \dfrac{b}{a-b}}.
+    \]
+
+    \problem Simplify---
+    \[
+        \frac{1-x}{1+x+x^2} - \frac{1+x}{1-x+x^2}.
+    \]
+
+    \problem Simplify---
+    \[
+        \frac{1 + \dfrac{x}{1+x}}{x + \dfrac{1}{1+x}} \div \frac{(x+1)^2 - x^2}{x^2+x+1}.
+    \]
+
+    \problem Simplify---
+    \[
+        \frac{a^2+b^2}{(a+b)^2} + \frac{\dfrac{2}{ab}\left(\dfrac{1}{a} + \dfrac{1}{b}\right)}{\left(\dfrac{1}{a} + \dfrac{1}{b}\right)^{3}}.
+    \]
+
+    \problem Show that---
+    \[
+        \frac{x^4}{a^2b^2} + \frac{(x^2-a^2)^2}{a^2(a^2-b^2)} - \frac{(x^2-b^2)^2}{b^2(a^2-b^2)}
+    \]
+    is independent of $x$.
+
+    \problem Simplify---
+    \[
+        \frac{a}{b - \dfrac{c}{d - \dfrac{e}{f}}}.
+    \]
+
+    \problem Simplify---
+    \[
+        \frac{1}{a - 2b - \dfrac{1}{a - 2b - \dfrac{1}{a-2b}}}.
+    \]
+
+    \problem Simplify---
+    \[
+        \frac{a+b}{a + b + \dfrac{1}{a - b + \dfrac{1}{a+b}}}.
+    \]
+\end{problems}
+
+\subsection{Exercises IV}
+
+\begin{problems}[from=1,step=1]
+    \problem If the two fractions $\mathrm{A}/\mathrm{B}$, $a/b$ be equal, and the latter be at its lowest terms, prove that $\mathrm{A} = \mu a$, $\mathrm{B} = \mu b$, where $\mu$ is an integer.
+
+    \problem Prove that the sum or difference of two odd numbers is always even; the sum or difference of an odd and an even number always odd; the product of any number of odd numbers always odd; the quotient of one odd number by another always odd, if it be integral.
+
+    \problem If $a$ be prime to $b$, then---
+    \begin{parts}
+        \item $(a+b)^m$ and $(a-b)^m$ have at most the G.C.M. $2^m$;
+        \item $a^m + b^m$ and $a^m - b^m$ have at most the G.C.M. 2;
+        \item $a+b$ and $a^2 + b^2 - ab$ have at most the G.C.M. 3.
+    \end{parts}
+
+    \problem The difference of the squares of any two odd numbers is exactly divisible by 8.
+
+    \problem The sum of the squares of three consecutive odd numbers increased by 1 is a multiple of 12.
+
+    \problem If each of two fractions be at its lowest terms, neither their sum nor their difference can be an integer unless the denominators be equal.
+
+    \problem Resolve 45738 and 297675 into their prime factors.
+
+    \problem Find the G.C.M. of 54643 and 91319, using negative remainders whenever it is of advantage to do so.
+
+    \problem Prove that the L.C.M. of two integers is the quotient of their product by the G.C.M.
+
+    \problem If $g_1$, $g_2$, $g_3$ be the G.C.M.'s, $l_1$, $l_2$, $l_3$ the L.C.M.'s, of $b$ and $c$, $c$ and $a$, $a$ and $b$ respectively, $\mathrm{G}$ the G.C.M., and $\mathrm{L}$ the L.C.M., of the three $a$, $b$, $c$, show that
+    \begin{parts}
+        \item $\mathrm{L} = \dfrac{abc\mathrm{G}}{g_1 g_2 g_3}$;
+        \item $\dfrac{\mathrm{L}}{\mathrm{G}} = \sqrt{\dfrac{l_1 l_2 l_3}{g_1 g_2 g_3}}$.
+    \end{parts}
+
+    \problem When $x$ is divided by $y$, the quotient is $u$ and the remainder $v$; show that, when $x$ and $uy$ are divided by $v$, the remainders are the same, and the quotients differ by unity.
+\end{problems}
+
+\end{document}
