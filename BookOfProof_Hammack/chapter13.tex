@@ -174,9 +174,42 @@
 \begin{problems}
     \problem Show that $\abs{\mathbb{R}^2} = \abs{\mathbb{R}}$. Suggestion: Begin by showing $\abs{(0,1) \times (0,1)} = \abs{(0,1)}$.
 
+    \begin{proof}
+        By the Cantor-Bernstein-Schr\"oeder theorem it is enough to give an injection each way between $(0,1) \times (0,1)$ and $(0,1)$.
+
+        One way, $x \mapsto \left(x, \frac{1}{2}\right)$ is clearly injective.
+
+        The other way, give each $x \in (0,1)$ its unique decimal expansion $0.a_1a_2a_3\ldots$ that does not end in all 9's, and interleave digits:
+        \[
+            (x,y) \longmapsto 0.a_1b_1a_2b_2a_3b_3\ldots
+        \]
+        This expansion does not end in all 9's either, since that would force both $x$ and $y$ to, so its digits can be read off and separated back into those of $x$ and $y$. Hence the map is injective, and $\abs{(0,1) \times (0,1)} = \abs{(0,1)}$.
+
+        By Example 13.4 there is a bijection $h : \mathbb{R} \to (0,1)$, so $(x,y) \mapsto \big(h(x),h(y)\big)$ is a bijection $\mathbb{R}^2 \to (0,1) \times (0,1)$. Therefore
+        \[
+            \abs{\mathbb{R}^2} = \abs{(0,1) \times (0,1)} = \abs{(0,1)} = \abs{\mathbb{R}}. \qedhere
+        \]
+    \end{proof}
+
     \problem Let $F$ be the set of all functions $\mathbb{R} \to \set{0,1}$. Show that $\abs{\mathbb{R}} < \abs{F}$.
 
+    \begin{proof}
+        The map $\Phi : F \to \mathcal{P}(\mathbb{R})$ given by $\Phi(f) = \set{x \in \mathbb{R} : f(x) = 1}$ is a bijection: it is injective because a function into $\set{0,1}$ is determined by where it takes the value 1, and surjective because any $X \subseteq \mathbb{R}$ is $\Phi(f)$ for the function $f$ that is 1 on $X$ and 0 elsewhere. So $\abs{F} = \abs{\mathcal{P}(\mathbb{R})}$.
+
+        By Theorem 13.7, $\abs{\mathbb{R}} < \abs{\mathcal{P}(\mathbb{R})}$, and transporting this across $\Phi$ gives $\abs{\mathbb{R}} < \abs{F}$.
+    \end{proof}
+
     \problem Show that $\abs{\mathcal{P}(\mathbb{N} \times \mathbb{N})} = \abs{\mathcal{P}(\mathbb{N})}$.
+
+    \begin{proof}
+        By Theorem 13.5 the set $\mathbb{N} \times \mathbb{N}$ is countably infinite, so there is a bijection $g : \mathbb{N} \times \mathbb{N} \to \mathbb{N}$. Then
+        \[
+            \Phi : \mathcal{P}(\mathbb{N} \times \mathbb{N}) \to \mathcal{P}(\mathbb{N}), \qquad \Phi(X) = g(X)
+        \]
+        is a bijection. It is injective because $g$ is, so $g(X) = g(Y)$ gives $X = g^{-1}(g(X)) = g^{-1}(g(Y)) = Y$. It is surjective because $g$ is, so any $Z \subseteq \mathbb{N}$ equals $g(g^{-1}(Z)) = \Phi(g^{-1}(Z))$. (Both steps use Exercise 12 of Section 12.6.)
+
+        Therefore $\abs{\mathcal{P}(\mathbb{N} \times \mathbb{N})} = \abs{\mathcal{P}(\mathbb{N})}$.
+    \end{proof}
 \end{problems}
 
 \end{document}
