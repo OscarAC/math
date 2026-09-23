@@ -86,31 +86,96 @@
     \[
         \frac{\dfrac{1}{ab} - \dfrac{1}{ac} - \dfrac{1}{bc}}{\dfrac{a^2 - (b-c)^2}{a}}.
     \]
+    \answer
+    \begin{align*}
+        \frac{\dfrac{1}{ab} - \dfrac{1}{ac} - \dfrac{1}{bc}}{\dfrac{a^2 - (b-c)^2}{a}}
+            &= \left(\frac{1}{ab} - \frac{1}{ac} - \frac{1}{bc}\right) \div \frac{a^2 - (b-c)^2}{a} && \text{($\frac{a}{b} = a \div b$)}\\ 
+            &= \left(\frac{c}{abc} - \frac{b}{abc} - \frac{a}{abc}\right) \div \frac{a^2 - (b-c)^2}{a} && \text{(common denominator $abc$)}\\ 
+            &= \frac{c-b-a}{abc} \div \frac{a^2 - (b-c)^2}{a} && \text{($\frac{a}{b} - \frac{c}{b} = \frac{a-c}{b}$)}\\ 
+            &= \frac{c-b-a}{abc} \div \frac{\big(a-(b-c)\big)\big(a+(b-c)\big)}{a} && \text{($a^2-b^2 = (a-b)(a+b)$)}\\ 
+            &= \frac{c-b-a}{abc} \div \frac{(a-b+c)(a+b-c)}{a} && \text{(remove brackets)}\\ 
+            &= \frac{c-b-a}{abc} \times \frac{a}{(a-b+c)(a+b-c)} && \text{($\frac{a}{b} \div \frac{p}{q} = \frac{a}{b} \times \frac{q}{p}$)}\\ 
+            &= \frac{-(a+b-c)}{abc} \times \frac{a}{(a-b+c)(a+b-c)} && \text{($c-b-a = -(a+b-c)$)}\\ 
+            &= \frac{-a(a+b-c)}{abc(a-b+c)(a+b-c)} && \text{($\frac{a}{b} \times \frac{p}{q} = \frac{ap}{bq}$)}\\ 
+            &= -\frac{1}{bc(a-b+c)} && \text{($\frac{ac}{bc} = \frac{a}{b}$)}
+    \end{align*}
 
     \problem Simplify---
     \[
         \left(a - \frac{b^2}{a+b}\right) \times \left(a + \frac{b^2}{a-b}\right).
     \]
+    \answer 
+    \begin{align*}
+        \MoveEqLeft
+        \left(a - \frac{b^2}{a+b}\right) \times \left(a + \frac{b^2}{a-b}\right) \\
+        &= \left(\frac{a(a+b)}{a+b} - \frac{b^2}{a+b}\right) \times \left(\frac{a(a-b)}{a-b}+\frac{b^2}{a-b}\right) && \text{($\frac{a}{b} - \frac{p}{q} = \frac{aq}{bq} - \frac{pb}{bq}$)}\\ 
+        &= \left(\frac{a^2+ab-b^2}{a+b}\right) \times \left(\frac{a^2-ab+b^2}{a-b}\right) && \text{($\frac{a}{c} - \frac{b}{c} = \frac{a-b}{c}$)}\\ 
+        &= \frac{(a^2+ab-b^2)(a^2-ab+b^2)}{(a+b)(a-b)} && \text{($\frac{a}{b} \times \frac{p}{q} = \frac{ap}{bq}$)}\\ 
+        &= \frac{a^4-a^2b^2+2ab^3-b^4}{(a+b)(a-b)} && \text{(expand numerator)}\\ 
+        &= \frac{a^4-a^2b^2+2ab^3-b^4}{a^2-b^2} && \text{(distribute denominator)}
+    \end{align*}
 
     \problem Simplify---
     \[
         \frac{1}{x+y} + \frac{1}{x-y} - \frac{2x}{x^2+y^2}.
     \]
+    \answer 
+    \begin{align*}
+        \MoveEqLeft
+        \frac{1}{x+y} + \frac{1}{x-y} - \frac{2x}{x^2+y^2}\\ 
+        &= \frac{x-y+x+y}{(x+y)(x-y)} - \frac{2x}{x^2+y^2} && \text{($\frac{a}{b} - \frac{p}{q} = \frac{aq}{bq} - \frac{pb}{bq}$)}\\ 
+        &= \frac{2x}{x^2-y^2} - \frac{2x}{x^2+y^2} && \text{(collect like terms; $(a+b)(a-b) = a^2-b^2$)}\\ 
+        &= \frac{2x(x^2+y^2)-2x(x^2-y^2)}{(x^2-y^2)(x^2+y^2)} && \text{($\frac{a}{b} - \frac{p}{q} = \frac{aq-pb}{bq}$)}\\ 
+        &= \frac{2x^3+2xy^2-2x^3+2xy^2}{(x^2-y^2)(x^2+y^2)} && \text{(expand numerator)}\\ 
+        &= \frac{4xy^2}{x^4+x^2y^2-y^2x^2-y^4} && \text{(collect like terms; expand denominator)}\\ 
+        &= \frac{4xy^2}{x^4-y^4} && \text{(collect like terms)}
+    \end{align*}
 
     \problem Simplify---
     \[
         \left(\frac{x}{y} + \frac{y}{x}\right)\left(\frac{a}{b} + \frac{b}{a}\right) - \left(\frac{x}{y} - \frac{y}{x}\right)\left(\frac{a}{b} - \frac{b}{a}\right).
     \]
+    \answer
+    \begin{align*}
+        \left(\frac{x}{y} + \frac{y}{x}\right)\left(\frac{a}{b} + \frac{b}{a}\right) - \left(\frac{x}{y} - \frac{y}{x}\right)\left(\frac{a}{b} - \frac{b}{a}\right) &\\ 
+        = \frac{x^2+y^2}{xy} \times \frac{a^2+b^2}{ab} - \frac{x^2-y^2}{xy} \times \frac{a^2-b^2}{ab} && \text{($\frac{a}{b} \pm \frac{p}{q} = \frac{aq \pm bp}{bq}$)}\\ 
+        = \frac{(x^2+y^2)(a^2+b^2)}{abxy} - \frac{(x^2-y^2)(a^2-b^2)}{abxy} && \text{($\frac{a}{b} \times \frac{p}{q} = \frac{ap}{bq}$)}\\ 
+        = \frac{(x^2+y^2)(a^2+b^2) - (x^2-y^2)(a^2-b^2)}{abxy} && \text{($\frac{a}{b} - \frac{c}{b} = \frac{a-c}{b}$)}\\ 
+        = \frac{a^2x^2 + b^2x^2 + a^2y^2 + b^2y^2 - (a^2x^2 - b^2x^2 - a^2y^2 + b^2y^2)}{abxy} && \text{(expand numerator)}\\ 
+        = \frac{a^2x^2 + b^2x^2 + a^2y^2 + b^2y^2 - a^2x^2 + b^2x^2 + a^2y^2 - b^2y^2}{abxy} && \text{(remove brackets)}\\ 
+        = \frac{2b^2x^2 + 2a^2y^2}{abxy} && \text{(collect like terms)}\\ 
+        = \frac{2(b^2x^2 + a^2y^2)}{abxy} && \text{(extract common factor $2$)}
+    \end{align*}
 
     \problem Simplify---
     \[
         \left(\frac{a}{b} - \frac{b}{a}\right) \div \left(\frac{a^2}{b^2} - \frac{b^2}{a^2}\right).
     \]
+    \answer 
+    \begin{align*}
+        \MoveEqLeft
+        \left(\frac{a}{b} - \frac{b}{a}\right) \div \left(\frac{a^2}{b^2} - \frac{b^2}{a^2}\right)\\ 
+        &= \frac{a^2-b^2}{ab} \div \frac{a^4-b^4}{a^2b^2} && \text{($\frac{a}{b} - \frac{p}{q} = \frac{aq-pb}{bq}$)}\\ 
+        &= \frac{a^2-b^2}{ab} \times \frac{a^2b^2}{a^4-b^4} && \text{($\frac{a}{b} \div \frac{p}{q} = \frac{a}{b} \times \frac{q}{p}$)}\\ 
+        &= \frac{a^2-b^2}{ab} \times \frac{a^2b^2}{(a^2-b^2)(a^2+b^2)} && \text{($a^2-b^2 = (a-b)(a+b)$)}\\ 
+        &= \frac{a^2b^2(a^2-b^2)}{ab(a^2-b^2)(a^2+b^2)} && \text{($\frac{a}{b} \times \frac{p}{q} = \frac{ap}{bq}$)}\\ 
+        &= \frac{ab}{a^2+b^2} && \text{($\frac{ac}{bc} = \frac{a}{b}$)}
+    \end{align*}
 
     \problem Simplify---
     \[
         \frac{a(a-b) - b(a+b)}{\dfrac{a}{a+b} - \dfrac{b}{a-b}}.
     \]
+    \answer 
+    \begin{align*}
+        \MoveEqLeft
+        \frac{a(a-b) - b(a+b)}{\dfrac{a}{a+b} - \dfrac{b}{a-b}}\\ 
+        &= \big(a(a-b) - b(a+b)\big) \div \left(\frac{a}{a+b} - \frac{b}{a-b}\right) && \text{($\frac{a}{b} = a \div b$)}\\ 
+        &= \big(a(a-b) - b(a+b)\big) \div \frac{a(a-b) - b(a+b)}{(a+b)(a-b)} && \text{($\frac{a}{b} - \frac{p}{q} = \frac{aq-pb}{bq}$)}\\ 
+        &= \big(a(a-b) - b(a+b)\big) \times \frac{(a+b)(a-b)}{a(a-b) - b(a+b)} && \text{($a \div \frac{p}{q} = a \times \frac{q}{p}$)}\\ 
+        &= (a+b)(a-b) && \text{($\frac{ac}{bc} = \frac{a}{b}$)}\\ 
+        &= a^2-b^2 && \text{($(a+b)(a-b) = a^2-b^2$)}
+    \end{align*}
 
     \problem Simplify---
     \[
