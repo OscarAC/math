@@ -182,36 +182,123 @@
         \frac{1-x}{1+x+x^2} - \frac{1+x}{1-x+x^2}.
     \]
 
+    \answer 
+    \begin{align*}
+        \MoveEqLeft
+        \frac{1-x}{1+x+x^2} - \frac{1+x}{1-x+x^2}\\ 
+        &= \frac{(1-x)(1-x+x^2) - (1+x)(1+x+x^2)}{(1+x+x^2)(1-x+x^2)} && \text{($\frac{a}{b} - \frac{p}{q} = \frac{aq-pb}{bq}$)}\\ 
+        &= \frac{1-2x+2x^2-x^3 - (1+2x+2x^2+x^3)}{(1+x+x^2)(1-x+x^2)} && \text{(expand numerator)}\\ 
+        &= \frac{-4x-2x^3}{(1+x^2)^2-x^2} && \text{($(p+q)(p-q) = p^2-q^2$)}\\ 
+        &= \frac{-4x-2x^3}{1+x^2+x^4} && \text{(expand denominator)}
+    \end{align*}
+
     \problem Simplify---
     \[
         \frac{1 + \dfrac{x}{1+x}}{x + \dfrac{1}{1+x}} \div \frac{(x+1)^2 - x^2}{x^2+x+1}.
     \]
+    \answer 
+    \begin{align*}
+        \MoveEqLeft
+        \frac{1 + \dfrac{x}{1+x}}{x + \dfrac{1}{1+x}} \div \frac{(x+1)^2 - x^2}{x^2+x+1}\\ 
+        &= \frac{\dfrac{1+2x}{1+x}}{\dfrac{x^2+x+1}{1+x}} \div \frac{2x+1}{x^2+x+1} && \text{(common denominator $1+x$; expand)}\\ 
+        &= \frac{1+2x}{1+x} \times \frac{1+x}{x^2+x+1} \div \frac{2x+1}{x^2+x+1} && \text{($\frac{a}{b} \div \frac{p}{q} = \frac{a}{b} \times \frac{q}{p}$)}\\ 
+        &= \frac{1+2x}{x^2+x+1} \times \frac{x^2+x+1}{2x+1} && \text{($\frac{ac}{bc} = \frac{a}{b}$)}\\ 
+        &= 1 && \text{($\frac{a}{a} = 1$)}
+    \end{align*}
 
     \problem Simplify---
     \[
         \frac{a^2+b^2}{(a+b)^2} + \frac{\dfrac{2}{ab}\left(\dfrac{1}{a} + \dfrac{1}{b}\right)}{\left(\dfrac{1}{a} + \dfrac{1}{b}\right)^{3}}.
     \]
+    \answer 
+    \begin{align*}
+        \MoveEqLeft
+        \frac{a^2+b^2}{(a+b)^2} + \frac{\dfrac{2}{ab}\left(\dfrac{1}{a} + \dfrac{1}{b}\right)}{\left(\dfrac{1}{a} + \dfrac{1}{b}\right)^{3}}\\ 
+        &= \frac{a^2+b^2}{(a+b)^2} + \frac{2}{ab} \times \frac{1}{\left(\dfrac{1}{a} + \dfrac{1}{b}\right)^{2}} && \text{($\frac{ac}{bc} = \frac{a}{b}$, cancelling $\tfrac{1}{a}+\tfrac{1}{b}$)}\\ 
+        &= \frac{a^2+b^2}{(a+b)^2} + \frac{2}{ab} \times \frac{1}{\left(\dfrac{a+b}{ab}\right)^{2}} && \text{($\frac{1}{a} + \frac{1}{b} = \frac{a+b}{ab}$)}\\ 
+        &= \frac{a^2+b^2}{(a+b)^2} + \frac{2}{ab} \times \frac{a^2b^2}{(a+b)^2} && \text{($\left(\frac{a}{b}\right)^m = \frac{a^m}{b^m}$)}\\ 
+        &= \frac{a^2+b^2}{(a+b)^2} + \frac{2ab}{(a+b)^2} && \text{($\frac{ac}{bc} = \frac{a}{b}$)}\\ 
+        &= \frac{a^2+2ab+b^2}{(a+b)^2} && \text{($\frac{a}{b} + \frac{c}{b} = \frac{a+c}{b}$)}\\ 
+        &= \frac{(a+b)^2}{(a+b)^2} && \text{($a^2+2ab+b^2 = (a+b)^2$)}\\ 
+        &= 1 && \text{($\frac{a}{a} = 1$)}
+    \end{align*}
 
     \problem Show that---
     \[
         \frac{x^4}{a^2b^2} + \frac{(x^2-a^2)^2}{a^2(a^2-b^2)} - \frac{(x^2-b^2)^2}{b^2(a^2-b^2)}
     \]
     is independent of $x$.
+    \begin{proof}
+        Taking $a^2b^2(a^2-b^2)$ as a common denominator,
+        \[
+            \frac{x^4}{a^2b^2} + \frac{(x^2-a^2)^2}{a^2(a^2-b^2)} - \frac{(x^2-b^2)^2}{b^2(a^2-b^2)}
+                = \frac{\mathrm{N}}{a^2b^2(a^2-b^2)},
+        \]
+        where
+        \begin{align*}
+            \mathrm{N} &= x^4(a^2-b^2) + b^2(x^2-a^2)^2 - a^2(x^2-b^2)^2\\ 
+                       &= x^4(a^2-b^2) + b^2(x^4-2a^2x^2+a^4)\\ 
+                       &\qquad {}- a^2(x^4-2b^2x^2+b^4) && \text{($(p-q)^2 = p^2-2pq+q^2$)}\\ 
+                       &= a^2x^4-b^2x^4 + b^2x^4-2a^2b^2x^2+a^4b^2\\ 
+                       &\qquad {}- a^2x^4+2a^2b^2x^2-a^2b^4 && \text{(remove brackets)}\\ 
+                       &= a^4b^2-a^2b^4 && \text{(collect like terms)}\\ 
+                       &= a^2b^2(a^2-b^2) && \text{(extract common factor $a^2b^2$)}
+        \end{align*}
+        Then the expression is
+        \[
+            \frac{a^2b^2(a^2-b^2)}{a^2b^2(a^2-b^2)} = 1.
+        \]
+        From this we see that all terms of $x$ cancel, so its value is always 1, thus the expression is independent of $x$.
+    \end{proof}
 
     \problem Simplify---
     \[
         \frac{a}{b - \dfrac{c}{d - \dfrac{e}{f}}}.
     \]
+    \answer 
+    \begin{align*}
+        \MoveEqLeft
+        \frac{a}{b-\dfrac{c}{d-\dfrac{e}{f}}}\\ 
+        &= a \div \left[b - \left(c \div \left(d - \dfrac{e}{f}\right)\right)\right] && \text{($\frac{a}{b} = a \div b$)}\\ 
+        &= a \div \left[b - \left(c \div \dfrac{df-e}{f}\right)\right] && \text{($a - \frac{p}{q} = \frac{aq-p}{q}$)}\\ 
+        &= a \div \left[b - \dfrac{cf}{df-e}\right] && \text{($a \div \frac{p}{q} = \frac{aq}{p}$)}\\ 
+        &= a \div \left[\dfrac{b(df-e)-cf}{df-e}\right] && \text{($a - \frac{p}{q} = \frac{aq-p}{q}$)}\\ 
+        &= \frac{a(df-e)}{b(df-e)-cf} && \text{($a \div \frac{p}{q} = \frac{aq}{p}$)}\\ 
+        &= \frac{adf-ae}{bdf-be-cf} && \text{(expand)}
+    \end{align*}
 
     \problem Simplify---
     \[
         \frac{1}{a - 2b - \dfrac{1}{a - 2b - \dfrac{1}{a-2b}}}.
     \]
+    \answer 
+    Writing $t = a-2b$,
+    \begin{align*}
+        \MoveEqLeft
+        \frac{1}{a - 2b - \dfrac{1}{a - 2b - \dfrac{1}{a-2b}}}\\ 
+        &= \frac{1}{t - \dfrac{1}{t - \dfrac{1}{t}}} && \text{(replace variables)}\\ 
+        &= \frac{1}{t - \dfrac{1}{\dfrac{t^2-1}{t}}} && \text{($\frac{a}{b} - \frac{p}{q} = \frac{aq-pb}{bq}$)}\\ 
+        &= \frac{1}{t - \dfrac{t}{t^2-1}} && \text{($a \div \frac{p}{q} = \frac{aq}{p}$)}\\ 
+        &= \frac{1}{\dfrac{t(t^2-1)-t}{t^2-1}} && \text{($\frac{a}{b} - \frac{p}{q} = \frac{aq-pb}{bq}$)}\\ 
+        &= \frac{t^2-1}{t^3-2t} && \text{(expand; $a \div \frac{p}{q} = \frac{aq}{p}$)}\\ 
+        &= \frac{(a-2b)^2-1}{(a-2b)^3-2(a-2b)} && \text{(restore variables)}
+    \end{align*}
 
     \problem Simplify---
     \[
         \frac{a+b}{a + b + \dfrac{1}{a - b + \dfrac{1}{a+b}}}.
     \]
+    \answer 
+    \begin{align*}
+        \MoveEqLeft
+        \frac{a+b}{a + b + \dfrac{1}{a - b + \dfrac{1}{a+b}}}\\ 
+        &= \frac{a+b}{a + b + \dfrac{1}{\dfrac{(a-b)(a+b)+1}{a+b}}} && \text{($\frac{a}{b} + \frac{p}{q} = \frac{aq+pb}{bq}$)}\\ 
+        &= \frac{a+b}{a + b + \dfrac{a+b}{a^2-b^2+1}} && \text{($(a+b)(a-b) = a^2-b^2$; $a \div \frac{p}{q} = \frac{aq}{p}$)}\\ 
+        &= \frac{a+b}{\dfrac{(a+b)(a^2-b^2+1)+(a+b)}{a^2-b^2+1}} && \text{($\frac{a}{b} + \frac{p}{q} = \frac{aq+pb}{bq}$)}\\ 
+        &= \frac{a+b}{\dfrac{(a+b)(a^2-b^2+2)}{a^2-b^2+1}} && \text{(extract common factor $a+b$)}\\ 
+        &= \frac{(a+b)(a^2-b^2+1)}{(a+b)(a^2-b^2+2)} && \text{($a \div \frac{p}{q} = \frac{aq}{p}$)}\\ 
+        &= \frac{a^2-b^2+1}{a^2-b^2+2} && \text{($\frac{ac}{bc} = \frac{a}{b}$)}
+    \end{align*}
 \end{problems}
 
 \subsection{Exercises IV}
