@@ -390,6 +390,21 @@
 
     \problem The difference of the squares of any two odd numbers is exactly divisible by 8.
 
+    \begin{proof}
+        Let $a$ and $b$ be odd, so that $a = 2k+1$ and $b = 2l+1$ for some integers $k$, $l$. 
+        Then
+        \[
+            a^2 - b^2 = (4k^2 + 4k + 1) - (4l^2 + 4l + 1) = 4\left[(k^2 + k) - (l^2 + l)\right].
+        \]
+        Now, $k$ is either even or odd; if $k$ is odd then $k^2$ is odd (Exercise 2, part 3) thus $k^2 + k$ is even (Exercise 2, part 1); if $k$ is even, then $k^2$ and $k$ are both divisible by 2, and so is their sum (\S 8), hence $k^2+k$ is even. So we have in either case $k^2+k$ is even.
+        In likely manner $l^2 + l$ is even.
+        That is, $k^2 + k = 2m$ and $l^2 + l = 2n$ for some integers $m$, $n$; whence
+        \[
+            a^2 - b^2 = 4(2m - 2n) = 8(m-n).
+        \]
+        Therefore $a^2 - b^2$ is exactly divisible by $8$.
+    \end{proof}
+
     \problem The sum of the squares of three consecutive odd numbers increased by 1 is a multiple of 12.
 
     \problem If each of two fractions be at its lowest terms, neither their sum nor their difference can be an integer unless the denominators be equal.
