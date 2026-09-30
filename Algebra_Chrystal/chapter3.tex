@@ -306,7 +306,7 @@
 \begin{problems}[from=1,step=1]
     \problem If the two fractions $\mathrm{A}/\mathrm{B}$, $a/b$ be equal, and the latter be at its lowest terms, prove that $\mathrm{A} = \mu a$, $\mathrm{B} = \mu b$, where $\mu$ is an integer.
 
-    \begin{proof} 
+    \begin{proof}
         Suppose $\mathrm{A}$, $\mathrm{B}$, $a$, $b$ integers with $\mathrm{A}/\mathrm{B} = a/b$, and $a/b$ at its lowest terms; that is, $a$ and $b$ have no common measure save unity, so that $a$ is prime to $b$ (\S 6).
         Multiplying across by $b\mathrm{B}$,
         \[
@@ -318,8 +318,7 @@
     \end{proof}
 
     \problem Prove that the sum or difference of two odd numbers is always even; the sum or difference of an odd and an even number always odd; the product of any number of odd numbers always odd; the quotient of one odd number by another always odd, if it be integral.
-    
-    \answer 
+
     \begin{proof}
         Let $a,b,c$ be integers where $a$ is even and $b$ and $c$ are odd.
         Then $a = 2m$, $b = 2n + 1$, and $c = 2l + 1$ for some integers $m,n,l$ (Cor., \S 12).
@@ -343,6 +342,51 @@
         \item $a^m + b^m$ and $a^m - b^m$ have at most the G.C.M. 2;
         \item $a+b$ and $a^2 + b^2 - ab$ have at most the G.C.M. 3.
     \end{parts}
+
+    \begin{lemma*}[A]
+        If $x$ be prime to $y$, and $g$ divide $x+y$, then $g$ is prime to $x$ and to $y$.
+    \end{lemma*}
+    \begin{proof}
+        Let $e$ be a common measure of $g$ and $x$.
+        Then $e$ divides $x+y$ and $x$. 
+        Therefore $e$ divides $(x+y) - x = y$ (\S 8).
+        Thus  $e$ is a common measure of $x$ and $y$.
+        Because $x$ and $y$ are prime to each other, it follows $e$ is unity.
+        Hence $g$ is prime to $x$, and in like manner $g$ is prime to $y$.
+    \end{proof}
+
+    \begin{lemma*}[B]
+        If $x$ be prime to $y$, the G.C.M. of $x+y$ and $x-y$ divides $2$.
+    \end{lemma*}
+    \begin{proof}
+        Let $g$ be the G.C.M. of $x+y$ and $x-y$.
+        Then $g$ divides $(x+y) + (x-y) = 2x$ (\S 8).
+        Since $g$ is prime to $x$ (Lemma A), it follows $g$ divides 2 (\S 10, Cor.1).
+    \end{proof}
+
+    \begin{proof}[Proof of (a)]
+        Let $g$ be the G.C.M. of $a+b$ and $a-b$.
+        Then $g$ divides 2 (Lemma B).
+        Next, write $a+b = gp$ and $a-b = gq$ for integers $p,q$.
+        Then $p$ is prime to $q$; for if they had a common factor $e$ greater than unity, $ge$ would be a common factor of $a+b$ and $a-b$ greater than their G.C.M.
+        Hence $p^m$ is prime to $q^m$ (\S 10, Cor. 4), and integers $\mathrm{A}$, $\mathrm{B}$ can be found such that $\mathrm{A}p^m - \mathrm{B}q^m = \pm 1$ (\S 14, Cor.\ 2).
+        Thus $\mathrm{A}g^mp^m - \mathrm{B}g^mq^m = \pm g^m$.
+        Now $(a+b)^m = g^mp^m$ and $(a-b)^m = g^mq^m$, so that every common factor of $(a+b)^m$ and $(a-b)^m$ divides this algebraic sum of their multiples (\S 8), that is, divides $g^m$.
+        But $g$ divides $2$, and therefore $g^m$ divides $2^m$; hence the G.C.M. of $(a+b)^m$ and $(a-b)^m$ is at most $2^m$.
+    \end{proof}
+
+    \begin{proof}[Proof of (b)]
+        Since $a$ is prime to $b$, $a^m$ is prime to $b^m$ (\S 10, Cor. 4).
+        Hence, by Lemma B applied to $a^m$ and $b^m$, the G.C.M. of $a^m + b^m$ and $a^m - b^m$ divides $2$, that is, is at most $2$.
+    \end{proof}
+
+    \begin{proof}[Proof of (c)]
+        Let $g$ be the G.C.M. of $a+b$ and $a^2 + b^2 - ab$.
+        Since $g$ divides $a+b$ it divides $(a+b)^2$, and therefore divides $(a+b)^2 - (a^2 + b^2 - ab) = 3ab$ (\S 8).
+        Since $g$ divides $a+b$, it follows $g$ is prime to $a$ and $b$ (Lemma A).
+        Hence $g$ is prime to their product $ab$ (\S 10, Cor. 2).
+        But $g$ divides $3ab$ and is prime to $ab$, so $g$ divides $3$ (\S 10, Cor. 1), that is, the G.C.M. of $a+b$ and $a^2 + b^2 - ab$ is at most $3$.
+    \end{proof}
 
     \problem The difference of the squares of any two odd numbers is exactly divisible by 8.
 

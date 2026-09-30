@@ -108,6 +108,16 @@
 \newcommand{\disproofname}{Disproof}
 \newenvironment{disproof}[1][\disproofname]{\proof[#1]}{\endproof}
 
+%  \begin{lemma*} ... \end{lemma*}
+%  A lemma stated in passing inside a solution: run-in heading to match
+%  \begin{proof}, unnumbered, and without the rule of \begin{lemma}.
+%  Like proof, it must cancel the \boldmath set by \problem.
+%  An optional argument tags the lemma, e.g. \begin{lemma*}[A] -> "Lemma A."
+\newenvironment{lemma*}[1][]
+  {\par\smallskip\noindent\normalfont\unboldmath
+   \textit{Lemma\ifblank{#1}{}{ #1}.}\enspace\ignorespaces}
+  {\par\smallskip}
+
 % --- Lettered sub-parts:  a) b) c) -----------------------------------
 %  \begin{parts} \item ... \item ... \end{parts}
 \newlist{parts}{enumerate}{1}
