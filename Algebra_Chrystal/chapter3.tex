@@ -407,6 +407,18 @@
 
     \problem The sum of the squares of three consecutive odd numbers increased by 1 is a multiple of 12.
 
+    \begin{proof}
+        Let $a,b,c$ be three consecutive odd numbers, so that $a=2k-1$, $b=2k+1$ and $c=2k+3$ for some integer $k$.
+        Then
+        \begin{align*}
+            a^2 + b^2 + c^2 + 1 &= (2k-1)^2 + (2k+1)^2 + (2k+3)^2 + 1\\ 
+                                &= (4k^2-4k+1) + (4k^2+4k+1) + (4k^2+12k+9) + 1\\ 
+                                &= 12k^2 + 12k + 12\\ 
+                                &= 12(k^2+k+1)
+        \end{align*}
+        Therefore $a^2 + b^2 + c^2 + 1$ is multiply of 12.
+    \end{proof}
+
     \problem If each of two fractions be at its lowest terms, neither their sum nor their difference can be an integer unless the denominators be equal.
 
     \problem Resolve 45738 and 297675 into their prime factors.
