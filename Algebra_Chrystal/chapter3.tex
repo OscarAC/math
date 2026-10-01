@@ -416,12 +416,30 @@
                                 &= 12k^2 + 12k + 12\\ 
                                 &= 12(k^2+k+1)
         \end{align*}
-        Therefore $a^2 + b^2 + c^2 + 1$ is multiply of 12.
+        Therefore $a^2 + b^2 + c^2 + 1$ is a multiple of 12.
     \end{proof}
 
     \problem If each of two fractions be at its lowest terms, neither their sum nor their difference can be an integer unless the denominators be equal.
 
+    \begin{proof}
+        Let $a/b$ and $c/d$ be the fractions both at its lowest terms; that is, $a$ is prime to $b$ and $c$ is prime to $d$. Suppose their sum to be an integer $n$ so that 
+        \[
+            \frac{a}{b} \pm \frac{c}{d} = \frac{ad \pm cb}{bd} = n
+        \]
+        Hence $ad \pm cb = nbd$.
+        Then $ad = nbd \mp cb = b(nd \mp c)$, so $b$ divides $ad$, since $a$ and $b$ are prime to each other, we have that $b$ divides $d$.
+        Similarly $cb = nbd \mp ad = d(nb \mp a)$ so $d$ divides $cb$, since $d$ is prime to $c$, we have that $d$ divides $b$.
+        Because $d$ divides $b$ and $b$ divides $d$ they must be equal, that is $b = d$.
+    \end{proof}
+
     \problem Resolve 45738 and 297675 into their prime factors.
+    \answer 
+    \[ 
+        45738 = 2 \times 3^3 \times 7 \times 11^2
+    \]
+    \[
+        297675 = 3^5 \times 5^2 \times 7^2
+    \]
 
     \problem Find the G.C.M. of 54643 and 91319, using negative remainders whenever it is of advantage to do so.
 
