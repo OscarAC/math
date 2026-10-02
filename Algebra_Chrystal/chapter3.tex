@@ -442,8 +442,27 @@
     \]
 
     \problem Find the G.C.M. of 54643 and 91319, using negative remainders whenever it is of advantage to do so.
+    
+    \answer 
+    \begin{align*}
+        91319 &= 54643 \times 2 - 17967\\ 
+        54643 &= 17967 \times 3 + 742\\ 
+        17967 &= 742 \times 24 + 159\\ 
+        742 &= 159 \times 5 - 53\\ 
+        159 &= 53 \times 3 
+    \end{align*}
+    The G.C.M is 53.
 
     \problem Prove that the L.C.M. of two integers is the quotient of their product by the G.C.M.
+
+    \begin{proof}
+        Let $g$ be the G.C.M.\ of $a$ and $b$, and write $a = g\alpha$, $b = g\beta$.
+        Now $ab/g = g\alpha\beta$, and $g\alpha\beta = (g\alpha)\beta = a\beta$, $g\alpha\beta = (g\beta)\alpha = b\alpha$, so that $g\alpha\beta$ is a common multiple of $a$ and $b$.
+        Let $\mathrm{M}$ be any common multiple of $a$ and $b$, say $\mathrm{M} = ak = g\alpha k$.
+        Since $b$ divides $\mathrm{M}$, $g\beta$ divides $g\alpha k$, that is, $\beta$ divides $\alpha k$; and $\beta$, being prime to $\alpha$, divides $k$ (\S 10, Cor.\ 1).
+        Write $k = \beta t$; then $\mathrm{M} = g\alpha\beta t$.
+        Hence every common multiple of $a$ and $b$ is a multiple of $g\alpha\beta$, which is therefore the least of them, that is, the L.C.M. of $a$ and $b$ is $ab/g$.
+    \end{proof}
 
     \problem If $g_1$, $g_2$, $g_3$ be the G.C.M.'s, $l_1$, $l_2$, $l_3$ the L.C.M.'s, of $b$ and $c$, $c$ and $a$, $a$ and $b$ respectively, $\mathrm{G}$ the G.C.M., and $\mathrm{L}$ the L.C.M., of the three $a$, $b$, $c$, show that
     \begin{parts}
