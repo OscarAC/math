@@ -1,0 +1,127 @@
+\documentclass[DIN, pagenumber=false, fontsize=11pt, parskip=half]{scrartcl}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{template}
+\usepackage{amsmath}
+
+\setcounter{secnumdepth}{1} % number sections only; subsections (Exercises) unnumbered
+
+\titlehead{\centering\small
+    Worked solutions to selected exercises from\\
+    G. Chrystal, \emph{Algebra: An Elementary Text-Book}, Part I (1886)\\
+\rule{0.4\linewidth}{0.4pt}}
+
+\title{}
+\author{} % Oscar A. Carrera
+\date{}
+
+\begin{document}
+\maketitle
+
+\setcounter{section}{3}
+\section{Distribution of Products---Elements of the Theory of Rational Integral Functions}
+
+
+\subsection{Exercises V}
+
+\begin{problems}[from=1,step=1]
+    \problem[1] How many terms are there in the distributed product
+    \[
+        (a_1+a_2)(b_1+b_2+b_3)(c_1+c_2+c_3+c_4)(d_1+d_2+d_3+d_4+d_5)?
+    \]
+
+    \problem[6] Distribute, condense, and arrange---
+    \[
+        (b+c)(c+a)(a+b)(b-c)(c-a)(a-b).
+    \]
+
+    \problem[11] Write down all the quaternary products of the three letters $x$, $y$, $z$; point out how many different types they fall into, and how many products there are of each type.
+
+    \problem[13] Find the sum of the coefficients in the expansion of $(2a+3b+4c)^3$.
+
+    \problem[17] Distribute and condense, arranging terms of the same type together---
+    \[
+        (b+c)(y+z) + (c+a)(z+x) + (a+b)(x+y) - (a+b+c)(x+y+z).
+    \]
+\end{problems}
+
+\subsection{Exercises VI}
+
+\begin{problems}[from=1,step=1]
+    \problem[1] The variables being $x$, $y$, $z$, point out the integral functions among the following, and state their degree---
+    \begin{parts}
+        \item $3x^2 + 2xy + 3y^2$;
+        \item $\dfrac{3}{x^2} + \dfrac{2}{xy} + \dfrac{3}{y^2}$;
+        \item $x^2yz + y^2zx + z^2xy + x^3 + y^3 + z^3$;
+        \item $\dfrac{x^2y^3z^2}{x^2yz} + \dfrac{x^2y^3z^2}{xy^2z} + \dfrac{x^2y^3z^2}{xyz^2}$.
+    \end{parts}
+
+    \problem[8] Distribute, and arrange according to powers of $x$---
+    \[
+        \{ax+(b-c)y\}\{bx+(c-a)y\}\{cx+(a-b)y\};
+    \]
+    and show that the sum of the coefficients of $x^2y$ and $y^3$ is zero.
+
+    \problem[10] Show that
+    \begin{multline*}
+        \left(x+\frac{q}{r}y\right)\left(x+\frac{r}{p}y\right)\left(x+\frac{p}{q}y\right)
+        - \left(x+\frac{r}{q}y\right)\left(x+\frac{p}{r}y\right)\left(x+\frac{q}{p}y\right)\\
+        = \frac{xy(x-y)(q-r)(r-p)(p-q)}{pqr}.
+    \end{multline*}
+
+    \problem[26] Calculate the coefficient of $x^4$ in the expansion of $(1+x+x^2)^8$.
+
+    \problem[29] Show that
+    \begin{align*}
+        {}_n\mathrm{C}_1 + {}_n\mathrm{C}_2 + {}_n\mathrm{C}_3 + \dotsb + {}_n\mathrm{C}_n &= 2^n - 1;\\
+        1 + {}_n\mathrm{C}_2 + {}_n\mathrm{C}_4 + \dotsb &= {}_n\mathrm{C}_1 + {}_n\mathrm{C}_3 + {}_n\mathrm{C}_5 + \dotsb;\\
+        {}_n\mathrm{C}_r &= {}_{n-2}\mathrm{C}_r + 2\,{}_{n-2}\mathrm{C}_{r-1} + {}_{n-2}\mathrm{C}_{r-2}.
+    \end{align*}
+
+    \problem[30] There are five boxes each containing five counters marked with the numbers 0, 1, 2, 3, 4; a counter is drawn from each of the boxes and the numbers drawn are added together. In how many different ways can the drawing be made so that the sum of the numbers shall be 8?
+\end{problems}
+
+\subsection{Exercises VII}
+
+\begin{problems}[from=1,step=1]
+    \problem[3] Distribute, and arrange according to descending powers of $x$---
+    \[
+        (x-a)(x-2a)(x-3a)(x-4a)(x+a)(x+2a)(x+3a)(x+4a).
+    \]
+
+    \problem[8] Distribute, and arrange according to descending powers of $x$---
+    \[
+        (2x-3)^{11}.
+    \]
+
+    \problem[10] Distribute, and arrange according to descending powers of $x$---
+    \[
+        (x^2-1)^4(x+1)^{10}.
+    \]
+\end{problems}
+
+\subsection{Exercises VIII}
+
+\begin{problems}[from=1,step=1]
+    \problem[1] Write down the most general rational integral symmetrical function of $x$, $y$, $z$, $u$ of the 3rd degree.
+
+    \problem[3] Construct a homogeneous integral function of $x$ and $y$ of the 1st degree which shall vanish when $x=y$, and become 1 when $x=5$ and $y=2$.
+
+    \problem[6] If $\mathrm{A}(x-3)(x-5) + \mathrm{B}(x-5)(x-7) + \mathrm{C}(x-7)(x-3) = 8x-120$ for all values of $x$, determine the coefficients $\mathrm{A}$, $\mathrm{B}$, $\mathrm{C}$.
+
+    \problem[9] Find a rational integral function of $x$ of the 3rd degree which shall have the values $\mathrm{P}$, $\mathrm{Q}$, $\mathrm{R}$, $\mathrm{S}$ when $x=a$, $x=b$, $x=c$, $x=d$ respectively.
+
+    \problem[19] Prove the identity---
+    \[
+        \Sigma(x+y-z)\left\{(y-z)^2 - (z-x)(x-y)\right\} = \Sigma x^3 - 3xyz.
+    \]
+
+    \problem[21] Show that
+    \[
+        (x^3+y^3+z^3-3xyz)^2 = \mathrm{X}^3 + \mathrm{Y}^3 + \mathrm{Z}^3 - 3\mathrm{XYZ},
+        \quad\text{where}\quad \mathrm{X} = x^2+2yz, \text{ \&c.}
+    \]
+\end{problems}
+
+\end{document}
