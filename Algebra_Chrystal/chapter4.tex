@@ -30,20 +30,45 @@
     \[
         (a_1+a_2)(b_1+b_2+b_3)(c_1+c_2+c_3+c_4)(d_1+d_2+d_3+d_4+d_5)?
     \]
+    \answer $2 \times 3 \times 4 \times 5 = 120$ terms
 
     \problem[6] Distribute, condense, and arrange---
     \[
         (b+c)(c+a)(a+b)(b-c)(c-a)(a-b).
     \]
+    \answer 
+    \begin{align*}
+        \MoveEqLeft
+        (b+c)(c+a)(a+b)(b-c)(c-a)(a-b) \\ 
+        &= (b+c)(b-c)(c+a)(c-a)(a+b)(a-b) && \text{(commutation)}\\ 
+        &= (b^2-c^2)(c^2-a^2)(a^2-b^2) && \text{(by 3.)}\\ 
+        &= b^2c^4-b^4c^2+c^2a^4-c^4a^2+a^2b^2-a^4b^2 && \text{(by 11.)}
+    \end{align*}
 
     \problem[11] Write down all the quaternary products of the three letters $x$, $y$, $z$; point out how many different types they fall into, and how many products there are of each type.
+    \answer $x^4, x^3y, x^3z, x^2y^2, x^2yz, x^2z^2, xy^3, xy^2z, xyz^2, xz^3, y^4, y^3z, y^2z^2, yz^3, z^4$
+
+    These terms fall into four types;
+    of the type $x^4$ there are three products, $x^4$, $y^4$, $z^4$; of the type $x^3y$ six, $x^3y$, $x^3z$, $xy^3$, $xz^3$, $y^3z$, $yz^3$; of the type $x^2y^2$ three, $x^2y^2$, $x^2z^2$, $y^2z^2$; and of the type $x^2yz$ three, $x^2yz$, $xy^2z$, $xyz^2$.
 
     \problem[13] Find the sum of the coefficients in the expansion of $(2a+3b+4c)^3$.
+    \answer $(2+3+4)^3 = 9^3 = 729$
 
     \problem[17] Distribute and condense, arranging terms of the same type together---
     \[
         (b+c)(y+z) + (c+a)(z+x) + (a+b)(x+y) - (a+b+c)(x+y+z).
     \]
+    \answer 
+    \begin{align*}
+        \MoveEqLeft
+        (b+c)(y+z) + (c+a)(z+x) + (a+b)(x+y) - (a+b+c)(x+y+z) \\ 
+        &=\left[(b+c)(y+z) + (c+a)(z+x) + (a+b)(x+y)\right] - \left[(a+b+c)(x+y+z)\right] \\ 
+        &= \left[2by+2cz+2ax+bz+cy+cx+az+ay+bx\right] \\ 
+        & \quad - \left[ ax+ay+az+bx+by+bz+cx+cy+cz \right]\\ 
+        &= 2by+2cz+2ax+bz+cy+cx+az+ay+bx\\ 
+        & \quad -ax-ay-az-bx-by-bz-cx-cy-cz\\ 
+        &= by+cz+ax
+    \end{align*}
 \end{problems}
 
 \subsection{Exercises VI}
