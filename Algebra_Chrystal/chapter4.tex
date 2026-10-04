@@ -5,7 +5,7 @@
 \usepackage{template}
 \usepackage{amsmath}
 
-\setcounter{secnumdepth}{1} % number sections only; subsections (Exercises) unnumbered
+\setcounter{secnumdepth}{1}
 
 \titlehead{\centering\small
     Worked solutions to selected exercises from\\
@@ -81,12 +81,38 @@
         \item $x^2yz + y^2zx + z^2xy + x^3 + y^3 + z^3$;
         \item $\dfrac{x^2y^3z^2}{x^2yz} + \dfrac{x^2y^3z^2}{xy^2z} + \dfrac{x^2y^3z^2}{xyz^2}$.
     \end{parts}
+    
+    \answer 
+    \begin{parts}
+        \item Integral function of degree 2;
+        \item Not an integral function;
+        \item Integral function of degree 3;
+        \item Integral function of degree 2.
+    \end{parts}
+
 
     \problem[8] Distribute, and arrange according to powers of $x$---
     \[
         \{ax+(b-c)y\}\{bx+(c-a)y\}\{cx+(a-b)y\};
     \]
     and show that the sum of the coefficients of $x^2y$ and $y^3$ is zero.
+    \answer
+    Taking first the terms in which $y$ does not occur, then those in which it occurs once, twice, and thrice,
+    \begin{align*}
+        \{ax+(b-c)y\}&\{bx+(c-a)y\}\{cx+(a-b)y\}\\
+        &= abc\,x^3 + \{ab(a-b) + bc(b-c) + ca(c-a)\}x^2y\\
+        &\quad + \{a(c-a)(a-b) + b(b-c)(a-b) + c(b-c)(c-a)\}xy^2\\
+        &\quad + (b-c)(c-a)(a-b)\,y^3 .
+    \end{align*}
+
+    Write this result $\mathrm{A}_3x^3 + \mathrm{A}_2x^2y + \mathrm{A}_1xy^2 + \mathrm{A}_0y^3$.
+    The terms in $x^2y$ and $y^3$ are those in which $y$ occurs an odd number of times, and may therefore be separated from the rest by giving $y$ the values $1$ and $-1$ in turn.
+    Putting $x=1$, $y=1$, and again $x=1$, $y=-1$, we have
+    \begin{align*}
+        \mathrm{A}_3 + \mathrm{A}_2 + \mathrm{A}_1 + \mathrm{A}_0 &= (a+b-c)(b+c-a)(c+a-b),\\
+        \mathrm{A}_3 - \mathrm{A}_2 + \mathrm{A}_1 - \mathrm{A}_0 &= (a-b+c)(a+b-c)(b+c-a).
+    \end{align*}
+    Subtracting, $2(\mathrm{A}_2 + \mathrm{A}_0) = 0$; that is, the sum of the coefficients of $x^2y$ and $y^3$ is zero.
 
     \problem[10] Show that
     \begin{multline*}
@@ -94,6 +120,32 @@
         - \left(x+\frac{r}{q}y\right)\left(x+\frac{p}{r}y\right)\left(x+\frac{q}{p}y\right)\\
         = \frac{xy(x-y)(q-r)(r-p)(p-q)}{pqr}.
     \end{multline*}
+
+    \answer 
+    Let $\mathrm{A} = \dfrac{q}{r} + \dfrac{r}{p} + \dfrac{p}{q}$ and $\mathrm{B} = \dfrac{q}{p} + \dfrac{r}{q} + \dfrac{p}{r}$. 
+   
+    Then,
+    \begin{align*}
+        \MoveEqLeft
+        \left(x+\frac{q}{r}y\right)\left(x+\frac{r}{p}y\right)\left(x+\frac{p}{q}y\right)
+        - \left(x+\frac{r}{q}y\right)\left(x+\frac{p}{r}y\right)\left(x+\frac{q}{p}y\right)\\ 
+        &= x^3 + \mathrm{A}x^2y + \mathrm{B}xy^2 + y^3 - \left(x^3 + \mathrm{B}x^2y + \mathrm{A}xy^2 + y^3\right)\\ 
+        &= x^3 + \mathrm{A}x^2y + \mathrm{B}xy^2 + y^3 - x^3 - \mathrm{B}x^2y - \mathrm{A}xy^2 - y^3\\ 
+        &= Ax^2y + \mathrm{B}xy^2 - \mathrm{B}x^2y - \mathrm{A}xy^2\\
+        &= (A-B)x^2y - (A-B)xy^2\\ 
+        &= (A-B)xy(x-y)
+    \end{align*}
+
+    It remains to evaluate $\mathrm{A}-\mathrm{B}$,
+    \begin{align*}
+        \mathrm{A}-\mathrm{B} &= \frac{pq^2 + qr^2 + p^2r}{pqr} - \frac{p^2q + q^2r + pr^2}{pqr}\\  
+        &= \frac{pq^2 + qr^2 + p^2r - p^2q - q^2r - pr^2}{pqr}\\ 
+        &= \frac{(q-r)(r-p)(p-q)}{pqr}
+    \end{align*}
+    Therefore the difference of the two products is
+    \[
+        \frac{xy(x-y)(q-r)(r-p)(p-q)}{pqr}.
+    \]
 
     \problem[26] Calculate the coefficient of $x^4$ in the expansion of $(1+x+x^2)^8$.
 
