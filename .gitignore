@@ -24,3 +24,4 @@
 
 # ignore worktrees content, these are git worktrees
 worktree/
+notes/
