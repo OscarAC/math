@@ -118,6 +118,15 @@
    \textit{Lemma\ifblank{#1}{}{ #1}.}\enspace\ignorespaces}
   {\par\smallskip}
 
+% --- Angle units ----------------------------------------------------
+%  Math mode. Sexagesimal measure is built in: 47^\circ\,25'\,36''
+%  45\gr\,35\cmin\,24\csec   -> centesimal: grades, minutes, seconds
+%  \frac{\pi\rad}{3}          -> circular measure: radians
+\newcommand{\gr}{^{\mathrm{g}}}
+\newcommand{\cmin}{^{\backprime}}
+\newcommand{\csec}{^{\backprime\backprime}}
+\newcommand{\rad}{^{\mathrm{c}}}
+
 % --- Lettered sub-parts:  a) b) c) -----------------------------------
 %  \begin{parts} \item ... \item ... \end{parts}
 \newlist{parts}{enumerate}{1}
