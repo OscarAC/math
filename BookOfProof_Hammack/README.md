@@ -9,21 +9,21 @@ and may contain errors.
 
 Chapter titles
 
-| Chapter                                               | Source                           |
-| ----------------------------------------------------- | -------------------------------- |
-| [1. Sets](chapter1.pdf)                               | [`chapter1.tex`](chapter1.tex)   |
-| [2. Logic](chapter2.pdf)                              | [`chapter2.tex`](chapter2.tex)   |
-| [3. Counting](chapter3.pdf)                           | [`chapter3.tex`](chapter3.tex)   |
-| [4. Direct Proof](chapter4.pdf)                       | [`chapter4.tex`](chapter4.tex)   |
-| [5. Contrapositive Proof](chapter5.pdf)               | [`chapter5.tex`](chapter5.tex)   |
-| [6. Proof by Contradiction](chapter6.pdf)             | [`chapter6.tex`](chapter6.tex)   |
-| [7. Proving Non-Conditional Statements](chapter7.pdf) | [`chapter7.tex`](chapter7.tex)   |
-| [8. Proofs Involving Sets](chapter8.pdf)              | [`chapter8.tex`](chapter8.tex)   |
-| [9. Disproof](chapter9.pdf)                           | [`chapter9.tex`](chapter9.tex)   |
-| [10. Mathematical Induction](chapter10.pdf)           | [`chapter10.tex`](chapter10.tex) |
-| [11. Relations](chapter11.pdf)                        | [`chapter11.tex`](chapter11.tex) |
-| [12. Functions](chapter12.pdf)                        | [`chapter12.tex`](chapter12.tex) |
-| [13. Cardinality of Sets](chapter13.pdf)              | [`chapter13.tex`](chapter13.tex) |
+| Chapter                                                                                                   | Source                             |
+| --------------------------------------------------------------------------------------------------------- | ---------------------------------- |
+| [1. Sets](https://oscarac.github.io/math/BookOfProof_Hammack/chapter1.html)                               | [`chapter1.html`](chapter1.html)   |
+| [2. Logic](https://oscarac.github.io/math/BookOfProof_Hammack/chapter2.html)                              | [`chapter2.html`](chapter2.html)   |
+| [3. Counting](https://oscarac.github.io/math/BookOfProof_Hammack/chapter3.html)                           | [`chapter3.html`](chapter3.html)   |
+| [4. Direct Proof](https://oscarac.github.io/math/BookOfProof_Hammack/chapter4.html)                       | [`chapter4.html`](chapter4.html)   |
+| [5. Contrapositive Proof](https://oscarac.github.io/math/BookOfProof_Hammack/chapter5.html)               | [`chapter5.html`](chapter5.html)   |
+| [6. Proof by Contradiction](https://oscarac.github.io/math/BookOfProof_Hammack/chapter6.html)             | [`chapter6.html`](chapter6.html)   |
+| [7. Proving Non-Conditional Statements](https://oscarac.github.io/math/BookOfProof_Hammack/chapter7.html) | [`chapter7.html`](chapter7.html)   |
+| [8. Proofs Involving Sets](https://oscarac.github.io/math/BookOfProof_Hammack/chapter8.html)              | [`chapter8.html`](chapter8.html)   |
+| [9. Disproof](https://oscarac.github.io/math/BookOfProof_Hammack/chapter9.html)                           | [`chapter9.html`](chapter9.html)   |
+| [10. Mathematical Induction](https://oscarac.github.io/math/BookOfProof_Hammack/chapter10.html)           | [`chapter10.html`](chapter10.html) |
+| [11. Relations](https://oscarac.github.io/math/BookOfProof_Hammack/chapter11.html)                        | [`chapter11.html`](chapter11.html) |
+| [12. Functions](https://oscarac.github.io/math/BookOfProof_Hammack/chapter12.html)                        | [`chapter12.html`](chapter12.html) |
+| [13. Cardinality of Sets](https://oscarac.github.io/math/BookOfProof_Hammack/chapter13.html)              | [`chapter13.html`](chapter13.html) |
 
 ## Attribution and License
 

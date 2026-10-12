@@ -1,0 +1,533 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><title>Hammack, Book of Proof, Chapter 10: Mathematical Induction</title><meta name="description" content="Worked solutions to selected exercises from chapter 10 of Richard Hammack, Book of Proof, edition 2.2."><script src="https://cdn.jsdelivr.net/gh/OscarAC/tern@v0.3.0/tern.js" data-use="../tern/math.js https://cdn.jsdelivr.net/gh/OscarAC/tern@v0.3.0/addons/katex.js ../tern/math.css"></script>
+
+{.kicker}
+Worked solutions to selected exercises from\
+Richard Hammack, *Book of Proof*, edition 2.2
+
+# Mathematical Induction {#chapter-10}
+
+## Exercises {#exercises}
+
+**Prove the following statements with either induction, strong induction or proof by smallest counterexample**.
+
+:::exercise[10.2]{#ex-10-2}
+For every integer $n \in \mathbb{N}$, it follows that
+$1^2 + 2^2 + 3^2 + 4^2 + \mathellipsis + n^2 = \dfrac{n(n+1)(2n+1)}{6}$.
+:::
+
+:::answer
+:::proof
+We prove the statement by mathematical induction.
+
+1. Observe that if $n = 1$, this statement is $1^2 = \dfrac{(1)(2)(3)}{6} = 1$, which is true.
+
+2. Assume $1^2 + 2^2 + 3^2 + 4^2 + \mathellipsis + k^2 = \dfrac{k(k+1)(2k+1)}{6}$ for some integer $k \geq 1$. Observe that this implies the statement is true for $n = k + 1$.
+
+   $$
+   \begin{align*}
+   \MoveEqLeft 1^2 + 2^2 + 3^2 + \mathellipsis + k^2 + (k+1)^2\\
+   & = (1^2 + 2^2 + 3^2 + \mathellipsis + k^2) + (k+1)^2\\
+   & = \dfrac{k(k+1)(2k+1)}{6} + (k+1)^2\\
+   & = \dfrac{k(k+1)(2k+1)}{6} + \dfrac{6(k+1)^2}{6}\\
+   & = \dfrac{k(k+1)(2k+1)+6(k+1)(k+1)}{6}\\
+   & = \dfrac{2k^3+9k^2+13k+6}{6}\\
+   & = \dfrac{(k+1)(k+2)(2k+3)}{6}\\
+   & = \dfrac{(k+1)([k+1] + 1)(2[k+1]+1)}{6}
+   \end{align*}
+   $$
+
+   Therefore $1^2 + 2^2 + 3^2 + \mathellipsis + k^2 + (k+1)^2 = \dfrac{(k+1)([k+1] + 1)(2[k+1]+1)}{6}$, which means the statement is true for $n = k + 1$.
+
+It follows by induction that the statement is true for every $n \in \mathbb{N}$.
+:::
+:::/answer
+
+:::exercise[10.4]{#ex-10-4}
+If $n \in \mathbb{N}$, then $1\cdot2 + 2\cdot3 + 3\cdot4 + 4\cdot5 + \mathellipsis + n(n+1) = \dfrac{n(n+1)(n+2)}{3}$.
+:::
+
+:::answer
+:::proof
+We prove the statement by mathematical induction.
+
+1. Observe that if $n=1$, this statement is $1(1+1) = \dfrac{1(1+1)(1+2)}{3} = 2$, which is true.
+
+2. Assume $1\cdot2 + 2\cdot3 + 3\cdot4 + \mathellipsis + k(k+1) = \dfrac{k(k+1)(k+2)}{3}$ for some integer $k \geq 1$. Observe that this implies the statement is true for $n = k + 1$.
+
+   $$
+   \begin{align*}
+   \MoveEqLeft 1\cdot2 + 2\cdot3 + \mathellipsis + k(k+1) + (k+1)(k+2)\\
+   & = (1\cdot2 + 2\cdot3 + \mathellipsis + k(k+1)) + (k+1)(k+2)\\
+   & = \dfrac{k(k+1)(k+2)}{3} + (k+1)(k+2)\\
+   & = \dfrac{k(k+1)(k+2)}{3} + \dfrac{3(k+1)(k+2)}{3}\\
+   & = \dfrac{k(k^2+3k+2) + 3(k^2+3k+2)}{3}\\
+   & = \dfrac{k^3+6k^2+11k+6}{3}\\
+   & = \dfrac{(k+1)(k^2+5k+6)}{3}\\
+   & = \dfrac{(k+1)(k+2)(k+3)}{3}\\
+   & = \dfrac{(k+1)([k+1]+1)([k+1]+2)}{3}
+   \end{align*}
+   $$
+
+   Therefore $1\cdot2+2\cdot3+\mathellipsis+k(k+1) + (k+1)(k+2) = \dfrac{(k+1)([k+1]+1)([k+1]+2)}{3}$, which means the statement is true for $n = k + 1$.
+
+It follows by induction that the statement is true for every $n \in \mathbb{N}$.
+:::
+:::/answer
+
+:::exercise[10.6]{#ex-10-6}
+For every natural number $n$, it follows that $\sum\limits^{n}_{i=1}(8i-5) = 4n^2-n$.
+:::
+
+:::answer
+:::proof
+We prove the statement by mathematical induction.
+
+1. Observe that if $n=1$, then the statement is $\sum\limits^{1}_{i=1}(8i-5) = 4(1^2)-1 = 3$, which is true.
+
+2. Assume $\sum\limits^{k}_{i=1}(8i-5) = 4k^2-k$ for some $k \geq 1$. Then
+
+   $$
+   \begin{align*}
+   \sum\limits^{k+1}_{i=1}(8i-5) &= \bigg[\sum\limits^{k}_{i=1}(8i-5)\bigg] + \bigg[8(k+1)-5\bigg]\\
+                                 &= [4k^2-k] + [8(k+1)-5]\\
+                                 &= 4k^2-k+8k+3\\
+                                 &= 4k^2+8k+4-k-1\\
+                                 &= 4(k^2+2k+1)-(k+1)\\
+                                 &= 4(k+1)(k+1)-(k+1)\\
+                                 &= 4(k+1)^2-(k+1)
+   \end{align*}
+   $$
+
+   This means the statement is true for $n = k + 1$.
+
+It follows by induction that $\sum\limits^{n}_{i=1}(8i-5) = 4n^2-n$ for every natural number $n$.
+:::
+:::/answer
+
+:::exercise[10.8]{#ex-10-8}
+If $n \in \mathbb{N}$, then $\frac{1}{2!}+\frac{2}{3!}+\frac{3}{4!}+\mathellipsis+\frac{n}{(n+1)!} = 1 - \frac{1}{(n+1)!}$.
+:::
+
+:::answer
+:::proof
+We prove the statement by mathematical induction.
+
+1. Observe that if $n=1$, then the statement is $\frac{1}{2!} = 1 - \frac{1}{2!} = \frac{1}{2}$, which is true.
+
+2. Assume $\frac{1}{2!}+\frac{2}{3!}+\frac{3}{4!}+\mathellipsis+\frac{k}{(k+1)!} = 1 - \frac{1}{(k+1)!}$ for some $k \geq 1$. Then
+
+   $$
+   \begin{align*}
+   \MoveEqLeft \frac{1}{2!}+\frac{2}{3!}+\frac{3}{4!}+\mathellipsis+\frac{k}{(k+1)!} + \frac{k+1}{(k+2)!}\\
+   & = \bigg[\frac{1}{2!}+\frac{2}{3!}+\frac{3}{4!}+\mathellipsis+\frac{k}{(k+1)!}\bigg] + \frac{k+1}{(k+2)!}\\
+   & = 1 - \frac{1}{(k+1)!} + \frac{k+1}{(k+2)!}\\
+   & = 1 - \frac{k+2}{(k+2)(k+1)!} + \frac{k+1}{(k+2)!}\\
+   & = 1 - \frac{k+2}{(k+2)!} + \frac{k+1}{(k+2)!}\\
+   & = 1 - \frac{(k+2)-(k+1)}{(k+2)!}\\
+   & = 1 - \frac{1}{(k+2)!}\\
+   & = 1 - \frac{1}{([k+1]+1)!}
+   \end{align*}
+   $$
+
+   This means the statement is true for $n = k+1$.
+
+It follows by induction that $\frac{1}{2!}+\frac{2}{3!}+\frac{3}{4!}+\mathellipsis+\frac{n}{(n+1)!} = 1 - \frac{1}{(n+1)!}$ for every $n \in \mathbb{N}$.
+:::
+:::/answer
+
+:::exercise[10.10]{#ex-10-10}
+For any integer $n \geq 0$, it follows that $3 \mid (5^{2n} - 1)$.
+:::
+
+:::answer
+:::proof
+We prove the statement by mathematical induction.
+
+1. Observe that if $n=0$, then the statement is $3 \mid 0$, which is true.
+
+2. Assume this statement is true for some integer $n = k \geq 0$.
+   That is, assume $3 \mid (5^{2k}-1)$.
+   This means $5^{2k}-1 = 3a$ for some integer $a$, and from this we get $5^{2k} = 3a + 1$.
+   Now observe that
+
+   $$
+   \begin{align*}
+   5^{2(k+1)} - 1 &= 5^{2k+2}-1\\
+                  &= 5^2\cdot5^{2k}-1\\
+                  &= 5^2(3a+1)-1\\
+                  &= 25(3a+1)-1\\
+                  &= 25\cdot3a+25-1\\
+                  &= 3(25a+8)
+   \end{align*}
+   $$
+
+   This shows $5^{2(k+1)}-1 = 3(25a+8)$. Since $25a+8 \in \mathbb{Z}$, it follows that $3 \mid (5^{2(k+1)}-1)$.
+
+It follows by induction that $3 \mid (5^{2n}-1)$ for every integer $n \geq 0$.
+:::
+:::/answer
+
+:::exercise[10.12]{#ex-10-12}
+For any integer $n \geq 0$, it follows that $9 \mid (4^{3n}+8)$.
+:::
+
+:::answer
+:::proof
+We prove the statement by mathematical induction.
+
+1. Observe that if $n=0$, then the statement is $9 \mid 9$, which is true.
+
+2. Assume this statement is true for some integer $n = k \geq 0$.
+   That is, assume $9 \mid (4^{3k}+8)$.
+   This means $4^{3k} + 8 = 9a$ for some integer $a$, and from this we get $4^{3k} = 9a-8$.
+   Now observe that
+
+   $$
+   \begin{align*}
+   4^{3(k+1)}+8 &= 4^{3k+3}+8\\
+                &= 4^3\cdot4^{3k}+8\\
+                &= 4^3(9a-8)+8\\
+                &= 64(9a-8)+8\\
+                &= 64(9a)-512+8\\
+                &= 9(64a-56)
+   \end{align*}
+   $$
+
+   This shows $4^{3(k+1)}+8 = 9(64a-56)$. Since $64a-56 \in \mathbb{Z}$, it follows that $9 \mid (4^{3(k+1)}+8)$.
+
+It follows by induction that $9 \mid (4^{3n}+8)$ for every integer $n \geq 0$.
+:::
+:::/answer
+
+:::exercise[10.14]{#ex-10-14}
+Suppose $a \in \mathbb{Z}$. Prove that $5 \mid 2^{n}a$ implies $5 \mid a$ for any $n \in \mathbb{N}$.
+:::
+
+:::answer
+:::proof
+The proof is induction on $n$.
+
+1. Let $n=1$. Suppose $5 \mid 2^{1}a$.
+   Since 5 is prime, we have $5 \mid 2$ or $5 \mid a$.
+   But $5 \nmid 2$, therefore $5 \mid a$.
+
+2. Assume this statement is true for some integer $n = k \geq 1$.
+   That is, assume $5 \mid 2^{k}a$ implies $5 \mid a$.
+   We must show that $5 \mid 2^{k+1}a$ implies $5 \mid a$.
+   Suppose $5 \mid 2^{k+1}a$.
+   We can write $2^{k+1}a = 2^{k}(2a)$.
+   Therefore $5 \mid 2^{k}(2a)$.
+   By the induction hypothesis, we have $5 \mid 2a$.
+   By the base case, we have $5 \mid a$.
+   Therefore, the statement holds for $k + 1$.
+
+It follows by induction that $5 \mid 2^{n}a$ implies $5 \mid a$ for every $n \in \mathbb{N}$.
+:::
+:::/answer
+
+:::exercise[10.16]{#ex-10-16}
+For every natural number $n$, it follows that $2^{n} + 1 \leq 3^n$.
+:::
+
+:::answer
+:::proof
+We prove the statement by induction.
+
+1. Observe that if $n=1$, then the statement is $2^1+1 \leq 3^1$, that is, $3 \leq 3$, which is true.
+
+2. Assume this statement is true for some natural number $k \geq 1$.
+   That is, assume $2^k+1 \leq 3^k$.
+   We need to show that $2^{k+1}+1 \leq 3^{k+1}$.
+   By the induction hypothesis, $2^k \leq 3^k - 1$. Observe that
+
+   $$
+   \begin{align*}
+   2^{k+1} + 1 = 2(2^k) + 1 & \leq 2(3^k - 1) + 1 = 2(3^k) - 1 && \text{(induction hypothesis)}\\
+                            & \leq 3(3^k) = 3^{k+1} && \text{(since $-1 < 3^k$)}
+   \end{align*}
+   $$
+
+   This shows the statement is true for $n = k + 1$.
+
+It follows by induction that $2^n+1 \leq 3^n$ for every natural number $n$.
+:::
+:::/answer
+
+:::exercise[10.18]{#ex-10-18}
+Suppose $A_1, A_2, \mathellipsis, A_n$ are sets in some universal set $U$, and $n \geq 2$. Prove that $\overline{A_1 \cup A_2 \cup \mathellipsis \cup A_n} = \overline{A_1} \cap \overline{A_2} \cap \mathellipsis \cap \overline{A_n}$.
+:::
+
+:::answer
+:::proof
+The proof is by strong induction.
+
+1. When $n=2$ the statement is $\overline{A_1 \cup A_2} = \overline{A_1} \cap \overline{A_2}$, which is true (see Chapter 8, Exercise 11).
+
+2. Let $k \geq 2$. Assume the statement is true if it involves $k$ or fewer sets. Then
+
+   $$
+   \begin{align*}
+   \MoveEqLeft \overline{A_1 \cup A_2 \cup \mathellipsis \cup A_{k-1} \cup A_{k} \cup A_{k+1}}\\
+   & = \overline{A_1 \cup A_2 \cup \mathellipsis \cup A_{k-1} \cup (A_{k} \cup A_{k+1})} && \text{(regrouping)}\\
+   & = \overline{A_1} \cap \overline{A_2} \cap \mathellipsis \cap \overline{A_{k-1}} \cap \overline{A_k \cup A_{k+1}} && \text{(inductive hypothesis, $k$ sets)}\\
+   & = \overline{A_1} \cap \overline{A_2} \cap \mathellipsis \cap \overline{A_{k-1}} \cap \overline{A_{k}} \cap \overline{A_{k+1}} && \text{(two-set case)}
+   \end{align*}
+   $$
+
+   Thus the statement is true when it involves $k+1$ sets.
+
+This completes the proof by strong induction.
+:::
+:::/answer
+
+:::exercise[10.20]{#ex-10-20}
+Prove that $(1+2+3+\mathellipsis+n)^2 = 1^3+2^3+3^3+\mathellipsis+n^3$ for every $n \in \mathbb{N}$.
+:::
+
+:::answer
+:::proof
+We prove the statement by induction.
+
+1. Observe that if $n=1$, then the statement is $1^2 = 1^3$, that is, $1 = 1$, which is true.
+
+2. Assume $(1+2+3+\mathellipsis+k)^2 = 1^3+2^3+3^3+\mathellipsis+k^3$ for some natural number $k \geq 1$.
+   We need to show that $(1+2+3+\mathellipsis+k+(k+1))^2 = 1^3+2^3+3^3+\mathellipsis+k^3+(k+1)^3$.
+   Let $T = 1+2+3+\mathellipsis+k$; then $T = \frac{k(k+1)}{2}$ (see Exercise 1), so $2T = k(k+1)$.
+   Observe that
+
+   $$
+   \begin{align*}
+   \MoveEqLeft (1+2+3+\mathellipsis+k+(k+1))^2\\
+   & = (T + (k+1))^2\\
+   & = T^2 + 2T(k+1) + (k+1)^2\\
+   & = 1^3+2^3+\mathellipsis+k^3 + 2T(k+1) + (k+1)^2 && \text{(induction hypothesis)}\\
+   & = 1^3+2^3+\mathellipsis+k^3 + k(k+1)(k+1) + (k+1)^2 && \text{(since $2T = k(k+1)$)}\\
+   & = 1^3+2^3+\mathellipsis+k^3 + (k+1)^2(k+1)\\
+   & = 1^3+2^3+\mathellipsis+k^3 + (k+1)^3
+   \end{align*}
+   $$
+
+   This shows the statement is true for $n = k+1$.
+
+It follows by induction that $(1+2+3+\mathellipsis+n)^2 = 1^3+2^3+3^3+\mathellipsis+n^3$ for every $n \in \mathbb{N}$.
+:::
+:::/answer
+
+:::exercise[10.22]{#ex-10-22}
+If $n \in \mathbb{N}$, then $(1-\frac{1}{2})(1-\frac{1}{4})(1-\frac{1}{8})(1-\frac{1}{16}) \mathellipsis (1-\frac{1}{2^n}) \geq \frac{1}{4} + \frac{1}{2^{n+1}}$.
+:::
+
+:::answer
+:::proof
+We prove the statement by induction.
+
+1. Observe that if $n=1$, then the statement is $1-\frac{1}{2} \geq \frac{1}{4}+\frac{1}{2^{2}}$, that is, $\frac{1}{2} \geq \frac{1}{2}$, which is true.
+
+2. Assume $\left(1-\frac{1}{2}\right)\left(1-\frac{1}{4}\right)\mathellipsis\left(1-\frac{1}{2^k}\right) \geq \frac{1}{4}+\frac{1}{2^{k+1}}$ for some natural number $k \geq 1$.
+   We need to show that $\left(1-\frac{1}{2}\right)\left(1-\frac{1}{4}\right)\mathellipsis\left(1-\frac{1}{2^{k+1}}\right) \geq \frac{1}{4}+\frac{1}{2^{k+2}}$.
+   Let $x = \frac{1}{2^{k+1}}$.
+   Since $k \geq 1$, we have $2^{k+1} \geq 4$, hence $0 < x \leq \frac{1}{4}$; in particular $1-x > 0$ and $x\left(\frac{1}{4}-x\right) \geq 0$.
+   Observe that
+
+   $$
+   \begin{align*}
+   \MoveEqLeft \left(1-\tfrac{1}{2}\right)\left(1-\tfrac{1}{4}\right)\mathellipsis\left(1-\tfrac{1}{2^{k}}\right)\left(1-\tfrac{1}{2^{k+1}}\right)\\
+   & \geq \left(\tfrac{1}{4}+x\right)(1-x) = \tfrac{1}{4} + \tfrac{x}{2} + x\left(\tfrac{1}{4}-x\right) && \text{(induction hypothesis, $1-x > 0$)}\\
+   & \geq \tfrac{1}{4} + \tfrac{x}{2} = \tfrac{1}{4} + \tfrac{1}{2^{k+2}} && \text{(since $x\left(\tfrac{1}{4}-x\right) \geq 0$)}
+   \end{align*}
+   $$
+
+   This shows the statement is true for $n = k+1$.
+
+It follows by induction that the statement is true for every $n \in \mathbb{N}$.
+:::
+:::/answer
+
+:::exercise[10.24]{#ex-10-24}
+Prove that $\sum\limits_{k=1}^{n} k\binom{n}{k} = n2^{n-1}$ for each natural number $n$.
+:::
+
+:::answer
+:::proof
+We prove the statement by induction.
+
+1. Observe that if $n=1$, then the statement is $\sum\limits_{k=1}^{1} k\binom{1}{k} = 1\binom{1}{1} = 1 = 1 \cdot 2^0$, which is true.
+
+2. Assume $\sum\limits_{k=1}^{m} k\binom{m}{k} = m2^{m-1}$ for some natural number $m \geq 1$.
+   We need to show that $\sum\limits_{k=1}^{m+1} k\binom{m+1}{k} = (m+1)2^m$.
+   By Pascal's rule $\binom{m+1}{k} = \binom{m}{k} + \binom{m}{k-1}$, and $\binom{m}{m+1} = 0$.
+   Observe that
+
+   $$
+   \begin{align*}
+   \sum_{k=1}^{m+1} k\binom{m+1}{k}
+   & = \sum_{k=1}^{m+1} k\binom{m}{k} + \sum_{k=1}^{m+1} k\binom{m}{k-1}\\
+   & = \sum_{k=1}^{m} k\binom{m}{k} + \sum_{j=0}^{m} (j+1)\binom{m}{j}\\
+   & = \sum_{k=1}^{m} k\binom{m}{k} + \sum_{j=1}^{m} j\binom{m}{j} + \sum_{j=0}^{m} \binom{m}{j}\\
+   & = m2^{m-1} + m2^{m-1} + 2^m\\
+   & = m2^m + 2^m\\
+   & = (m+1)2^m
+   \end{align*}
+   $$
+
+   This shows the statement is true for $n = m+1$.
+
+It follows by induction that $\sum\limits_{k=1}^{n} k\binom{n}{k} = n2^{n-1}$ for each natural number $n$.
+:::
+:::/answer
+
+:::exercise[10.26]{#ex-10-26}
+Concerning the Fibonacci sequence, prove that $\sum\limits_{k=1}^{n}F_k^2 = F_nF_{n+1}$.
+:::
+
+:::answer
+:::proof
+We prove the statement by induction.
+
+1. Observe that if $n=1$, then the statement is $\sum\limits_{k=1}^{1}F_1^2 = F_1F_{2}$, this means $1^2 = 1 \cdot 1$, which is true.
+
+2. Assume $\sum\limits_{k=1}^{m}F_k^2 = F_mF_{m+1}$ for some natural number $m \geq 1$. We need to show that $\sum\limits_{k=1}^{m+1}F_k^2 = F_{m+1}F_{m+2}$. Observe that
+
+   $$
+   \begin{align*}
+   \sum\limits_{k=1}^{m+1}F_k^2 &= \sum\limits_{k=1}^{m}F_k^2 + F_{m+1}^2\\
+                                &= F_mF_{m+1} + F_{m+1}F_{m+1} && \text{(inductive hypothesis)}\\
+                                &= F_{m+1}(F_{m}+F_{m+1})\\
+                                &= F_{m+1}F_{m+2} && \text{(definition of Fibonacci Sequence)}
+   \end{align*}
+   $$
+
+   This shows the statement is true for $n = m + 1$.
+
+It follows by induction that $\sum\limits_{k=1}^{n}F_k^2 = F_nF_{n+1}$ for each natural number $n$.
+:::
+:::/answer
+
+:::exercise[10.28]{#ex-10-28}
+Concerning the Fibonacci sequence, prove that $F_2 + F_4 + F_6 + F_8 + \mathellipsis + F_{2n} = F_{2n+1}-1$.
+:::
+
+:::answer
+:::proof
+We prove the statement by induction.
+
+1. Observe that if $n=1$, then the statement is $F_2 = F_{3}-1$, this means $1 = 2-1$, which is true.
+
+2. Assume $F_2 + F_4 + F_6 + F_8 + \mathellipsis + F_{2k} = F_{2k+1}-1$ for some natural number $k$. We need to show that $F_2 + F_4 + F_6 + F_8 + \mathellipsis + F_{2(k+1)} = F_{2(k+1)+1} - 1$. Observe that
+
+   $$
+   \begin{align*}
+   \MoveEqLeft F_2+F_4+F_6+\mathellipsis + F_{2k} + F_{2(k+1)}\\
+   & = F_{2k+1} - 1 + F_{2(k+1)} && \text{(inductive hypothesis)}\\
+   & = F_{2k+1} + F_{2k+2} - 1\\
+   & = F_{2k+3} - 1 && \text{(definition of Fibonacci Sequence)}\\
+   & = F_{2(k+1)+1} - 1
+   \end{align*}
+   $$
+
+   This shows the statement is true for $n = k + 1$.
+
+It follows by induction that $F_2+F_4+F_6+F_8+\mathellipsis + F_{2n} = F_{2n+1} - 1$ for each natural number $n$.
+:::
+:::/answer
+
+:::exercise[10.30]{#ex-10-30}
+Here $F_n$ is the $n$th Fibonacci number. Prove that
+
+$$
+F_n = \dfrac{\left(\frac{1+\sqrt{5}}{2}\right)^n - \left(\frac{1-\sqrt{5}}{2}\right)^n}{\sqrt{5}}
+$$
+:::
+
+:::answer
+*Note: This is Binet's formula and many proofs can be found online.*
+
+:::proof
+Let $\varphi = \frac{1+\sqrt{5}}{2}$ and $\psi = \frac{1-\sqrt{5}}{2}$, so the statement reads $F_n = \dfrac{\varphi^n - \psi^n}{\sqrt{5}}$.
+First observe that $\varphi$ and $\psi$ are precisely the two roots of $x^2 - x - 1 = 0$, therefore $\varphi^2 = \varphi + 1$ and $\psi^2 = \psi + 1$.
+We now prove the statement by strong induction.
+
+1. Observe that if $n=1$, then the statement is $F_1 = \dfrac{\varphi - \psi}{\sqrt{5}}$. Since $\varphi - \psi = \frac{1+\sqrt{5}}{2} - \frac{1-\sqrt{5}}{2} = \sqrt{5}$, the right-hand side equals $1 = F_1$, so the statement is true.
+
+   If $n=2$, then the statement is $F_2 = \dfrac{\varphi^2 - \psi^2}{\sqrt{5}}$. Since $\varphi^2 - \psi^2 = (\varphi + 1) - (\psi + 1) = \varphi - \psi = \sqrt{5}$, the right-hand side equals $1 = F_2$, and the statement is true.
+
+2. Let $k \geq 2$ and assume $F_m = \dfrac{\varphi^m - \psi^m}{\sqrt{5}}$ for every natural number $m$ with $1 \leq m \leq k$. We need to show that $F_{k+1} = \dfrac{\varphi^{k+1} - \psi^{k+1}}{\sqrt{5}}$. Since $k \geq 2$, both $k$ and $k-1$ lie in the range covered by the inductive hypothesis, so
+
+   $$
+   \begin{align*}
+   F_{k+1} &= F_k + F_{k-1} && \text{(definition of Fibonacci Sequence)}\\
+           &= \dfrac{\varphi^k - \psi^k}{\sqrt{5}} + \dfrac{\varphi^{k-1} - \psi^{k-1}}{\sqrt{5}} && \text{(inductive hypothesis)}\\
+           &= \dfrac{\varphi^{k-1}(\varphi + 1) - \psi^{k-1}(\psi + 1)}{\sqrt{5}}\\
+           &= \dfrac{\varphi^{k-1}\varphi^2 - \psi^{k-1}\psi^2}{\sqrt{5}}\\
+           &= \dfrac{\varphi^{k+1} - \psi^{k+1}}{\sqrt{5}}
+   \end{align*}
+   $$
+
+   This shows the statement is true for $n = k + 1$.
+
+It follows by strong induction that $F_n = \dfrac{\varphi^n - \psi^n}{\sqrt{5}} = \dfrac{\left(\frac{1+\sqrt{5}}{2}\right)^n - \left(\frac{1-\sqrt{5}}{2}\right)^n}{\sqrt{5}}$ for each natural number $n$.
+:::
+:::/answer
+
+:::exercise[10.32]{#ex-10-32}
+Prove that the number of $n$-digit binary numbers that have no consecutive 1's is the Fibonacci number $F_{n+2}$. For example, for $n=2$ there are three such numbers (00,01, and 10), and $3 = F_{2+2} = F_{4}$. Also, for $n = 3$ there are five such numbers (000, 001, 010, 100, 101), and $5 = F_{3+2} = F_5$.
+:::
+
+:::answer
+:::proof
+Here an $n$-digit binary number means a string of $n$ digits, each 0 or 1, where leading zeros are allowed. Let $A_n$ be the number of $n$-digit binary strings containing no consecutive 1's. We claim that $A_n = F_{n+2}$ for every natural number $n$, and we prove this by strong induction.
+
+1. Observe that if $n=1$, then the valid strings are 0 and 1, so $A_1 = 2 = F_3$.
+
+   If $n=2$, then the valid strings are 00, 01, and 10, so $A_2 = 3 = F_4$.
+
+   Thus the statement holds for $n=1$ and $n=2$.
+
+2. Let $k \geq 2$ and assume $A_m = F_{m+2}$ for every integer $m$ with $1 \leq m \leq k$. We need to show that $A_{k+1} = F_{k+3}$.
+
+   Consider any valid binary string of length $k+1$. Its first digit is either 0 or 1, so every valid string falls into exactly one of the following two cases.
+
+   - If it begins with 0, then the remaining $k$ digits form a valid $k$-digit string. Conversely, placing a 0 in front of any valid $k$-digit string produces a valid $(k+1)$-digit string, since a leading 0 cannot create consecutive 1's. Thus there are $A_k$ such strings.
+   - If it begins with 1, then the second digit must be 0, so the string begins with 10 and the remaining $k-1$ digits form a valid $(k-1)$-digit string. Conversely, placing 10 in front of any valid $(k-1)$-digit string produces a valid $(k+1)$-digit string, since the 0 separates the leading 1 from whatever follows. Thus there are $A_{k-1}$ such strings.
+
+   Therefore $A_{k+1} = A_k + A_{k-1}$. Since $k \geq 2$, both $k$ and $k-1$ lie in the range covered by the inductive hypothesis, so $A_k = F_{k+2}$ and $A_{k-1} = F_{k+1}$. Hence
+
+   $$
+   A_{k+1} = F_{k+2} + F_{k+1} = F_{k+3}
+   $$
+
+   by the definition of the Fibonacci sequence. This shows the statement holds for $n = k+1$.
+
+It follows by strong induction that $A_n = F_{n+2}$ for every natural number $n$.
+:::
+:::/answer
+
+:::exercise[10.34]{#ex-10-34}
+Prove that $3^1+3^2+3^3+3^4+\dots +3^n = \frac{3^{n+1}-3}{2}$ for every $n \in \mathbb{N}$.
+:::
+
+:::answer
+:::proof
+We prove the statement by induction.
+
+1. Observe that if $n=1$, then the statement is $3^1 = \frac{3^2-3}{2} = \frac{6}{2} = 3$, which is true.
+
+2. Assume $3^1+3^2+3^3+3^4+\dots +3^k = \frac{3^{k+1}-3}{2}$ for some natural number $k \geq 1$.
+   We need to show that $3^1+3^2+3^3+3^4+\dots +3^k + 3^{k+1} = \frac{3^{k+2}-3}{2}$.
+   Observe that
+
+   $$
+   \begin{align*}
+   \MoveEqLeft 3^1+3^2+3^3+3^4+\dots +3^k + 3^{k+1}\\
+   & = \frac{3^{k+1}-3}{2} + 3^{k+1} && \text{(inductive hypothesis)}\\
+   & = \frac{3^{k+1}-3+2\cdot3^{k+1}}{2}\\
+   & = \frac{3\cdot3^{k+1}-3}{2}\\
+   & = \frac{3^{k+2}-3}{2}
+   \end{align*}
+   $$
+
+   This shows the statement holds for $n = k+1$.
+
+It follows by induction that the statement is true for every natural number $n$.
+:::
+:::/answer

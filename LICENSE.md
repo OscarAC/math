@@ -28,3 +28,4 @@ reserved.
 | --------------------------------------- | ------------------------------------------------------ | ------------------- |
 | `BookOfProof_Hammack/`                  | CC BY-ND 3.0 (© Richard Hammack, ed. 2.2)              | CC BY-NC 4.0        |
 | `Algebra_Chrystal/`                     | Public domain (G. Chrystal, 1886)                      | CC BY 4.0           |
+| `PlaneTrigonometry_Hobson/`             | Public domain (E. W. Hobson, ed. 7, 1928)              | CC BY 4.0           |

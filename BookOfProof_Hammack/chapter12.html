@@ -1,0 +1,529 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><title>Hammack, Book of Proof, Chapter 12: Functions</title><meta name="description" content="Worked solutions to selected exercises from chapter 12 of Richard Hammack, Book of Proof, edition 2.2."><script src="https://cdn.jsdelivr.net/gh/OscarAC/tern@v0.3.0/tern.js" data-use="../tern/math.js https://cdn.jsdelivr.net/gh/OscarAC/tern@v0.3.0/addons/katex.js ../tern/math.css"></script>
+
+{.kicker}
+Worked solutions to selected exercises from\
+Richard Hammack, *Book of Proof*, edition 2.2
+
+# Functions {#chapter-12}
+
+## 12.1 Functions {#sec-12-1}
+
+:::exercise[12.1.2]{#ex-12-1-2}
+Suppose $A = \set{a,b,c,d}$, $B = \set{2,3,4,5,6}$ and
+
+$$
+f = \set{(a,2),(b,3),(c,4),(d,5)}.
+$$
+
+State the domain and range of $f$. Find $f(b)$ and $f(d)$.
+:::
+
+:::answer
+The domain of $f$ is $A$ and the range of $f$ is $\set{2,3,4,5}$.\
+$f(b) = 3$ and $f(d) = 5$.
+:::
+
+:::exercise[12.1.4]{#ex-12-1-4}
+There are eight different functions $f : \set{a,b,c} \to \set{0,1}$. List them all. Diagrams will suffice.
+:::
+
+:::answer
+$f_1 = \set{(a,0),(b,0),(c,0)}$\
+$f_2 = \set{(a,0),(b,0),(c,1)}$\
+$f_3 = \set{(a,0),(b,1),(c,0)}$\
+$f_4 = \set{(a,0),(b,1),(c,1)}$\
+$f_5 = \set{(a,1),(b,0),(c,0)}$\
+$f_6 = \set{(a,1),(b,0),(c,1)}$\
+$f_7 = \set{(a,1),(b,1),(c,0)}$\
+$f_8 = \set{(a,1),(b,1),(c,1)}$
+:::
+
+:::exercise[12.1.6]{#ex-12-1-6}
+Suppose $f : \mathbb{Z} \to \mathbb{Z}$ is defined as $f = \set{(x, 4x+5) : x \in \mathbb{Z}}$. State the domain, codomain and range of $f$. Find $f(10)$.
+:::
+
+:::answer
+The domain and codomain of $f$ are both $\mathbb{Z}$. The range is the set of values $4x+5$ for $x \in \mathbb{Z}$, that is, the integers that are one more than a multiple of 4:
+
+$$
+\set{4x+5 : x \in \mathbb{Z}} = \set{\dots,-7,-3,1,5,9,13,\dots}.
+$$
+:::
+
+:::exercise[12.1.8]{#ex-12-1-8}
+Consider the set $f = \set{(x,y) \in \mathbb{Z} \times \mathbb{Z} : x + 3y = 4}$. Is this a function from $\mathbb{Z}$ to $\mathbb{Z}$? Explain.
+:::
+
+:::answer
+No. For $f$ to be a function from $\mathbb{Z}$ to $\mathbb{Z}$, every integer must occur as the first coordinate of some pair in $f$. But $x = 0$ does not: that would require $3y = 4$, which has no integer solution $y$. So $0$ is not the first coordinate of any element of $f$, and $f$ is not a function from $\mathbb{Z}$ to $\mathbb{Z}$.
+:::
+
+:::exercise[12.1.10]{#ex-12-1-10}
+Consider the set $f = \set{(x^3, x) : x \in \mathbb{R}}$. Is this a function from $\mathbb{R}$ to $\mathbb{R}$? Explain.
+:::
+
+:::answer
+Yes, this is a function $f : \mathbb{R} \to \mathbb{R}$. Every real number $k$ is the cube of exactly one real number, namely $x = \sqrt[3]{k}$, so each $k \in \mathbb{R}$ occurs exactly once as the first coordinate of an ordered pair in $f$.
+:::
+
+:::exercise[12.1.12]{#ex-12-1-12}
+Is the set $\theta = \set{\big((x,y),(3y,2x,x+y)\big) : x,y \in \mathbb{R}}$ a function? If so, what is its domain, codomain and range?
+:::
+
+:::answer
+Yes. Every first coordinate is a pair $(x,y) \in \mathbb{R}^2$, and each such pair occurs exactly once, so $\theta$ is a function $\theta : \mathbb{R}^2 \to \mathbb{R}^3$ given by $\theta(x,y) = (3y,2x,x+y)$.
+Its domain is $\mathbb{R}^2$ and its codomain is $\mathbb{R}^3$.
+
+For the range, a triple $(a,b,c) \in \mathbb{R}^3$ equals $\theta(x,y)$ exactly when $a = 3y$, $b = 2x$ and $c = x+y$, that is, when $y = \frac{a}{3}$, $x = \frac{b}{2}$ and $c = \frac{b}{2} + \frac{a}{3}$. Conversely, given any $(a,b,c)$ with $c = \frac{a}{3} + \frac{b}{2}$, taking $x = \frac{b}{2}$ and $y = \frac{a}{3}$ gives $\theta(x,y) = (a,b,c)$. Therefore the range is
+
+$$
+\set{(a,b,c) \in \mathbb{R}^3 : 2a + 3b = 6c},
+$$
+
+a plane through the origin in $\mathbb{R}^3$.
+:::
+
+## 12.2 Injective and Surjective Functions {#sec-12-2}
+
+:::exercise[12.2.2]{#ex-12-2-2}
+Consider the logarithm function $\ln : (0,\infty) \to \mathbb{R}$. Decide whether this function is injective and whether it is surjective.
+:::
+
+:::answer
+This function is bijective. Observe that, by properties of the exponential function, $e^{\ln{x}} = x$ for every $x \in (0,\infty)$, and $\ln{e^{b}} = b$ for every $b \in \mathbb{R}$.
+
+First we show $\ln$ is injective. Suppose $\ln{m} = \ln{n}$ for some $m,n \in (0,\infty)$. Applying the exponential function to both sides gives $e^{\ln{m}} = e^{\ln{n}}$, that is, $m = n$. Thus $\ln$ is injective.
+
+Next we show $\ln$ is surjective. Take any $b \in \mathbb{R}$, and let $a = e^{b}$. Then $a \in (0,\infty)$, since $e^{b} > 0$ for every real $b$, and $\ln{a} = \ln{e^{b}} = b$.
+So every $b \in \mathbb{R}$ equals $\ln{a}$ for some $a$ in the domain, and $\ln$ is surjective.
+
+Therefore $\ln$ is  bijective since it is both injective and surjective on this domain.
+:::
+
+:::exercise[12.2.4]{#ex-12-2-4}
+A function $f : \mathbb{Z} \to \mathbb{Z} \times \mathbb{Z}$ is defined as $f(n) = (2n, n+3)$. Verify whether this function is injective and whether it is surjective.
+:::
+
+:::answer
+This function is injective but not surjective.
+
+First we show $f$ is injective. Suppose $f(m) = f(n)$ for some $m,n \in \mathbb{Z}$. This means $(2m, m+3) = (2n, n+3)$, thus $2m = 2n$. Dividing this equation by two gives $m = n$. Thus $f$ is injective.
+
+Next we show $f$ is not surjective. Consider $(1,0) \in \mathbb{Z} \times \mathbb{Z}$. If $f(n) = (1,0)$ for some $n \in \mathbb{Z}$, then equating the first coordinates gives $2n = 1$, which has no solution $n \in \mathbb{Z}$. So no integer maps to $(1,0)$, and $f$ is not surjective.
+:::
+
+:::exercise[12.2.6]{#ex-12-2-6}
+A function $f : \mathbb{Z} \times \mathbb{Z} \to \mathbb{Z}$ is defined as $f(m,n) = 3n - 4m$. Verify whether this function is injective and whether it is surjective.
+:::
+
+:::answer
+This function is surjective but not injective.
+
+First we show $f$ is not injective. Observe that $f(0,0) = 3(0) - 4(0) = 0$ and $f(3,4) = 3(4) - 4(3) = 12 - 12 = 0$. Thus $f(0,0) = f(3,4)$ even though $(0,0) \neq (3,4)$, so $f$ is not injective.
+
+Next we show $f$ is surjective. Take any $b \in \mathbb{Z}$. Then $(-b,-b) \in \mathbb{Z} \times \mathbb{Z}$, and $f(-b,-b) = 3(-b) - 4(-b) = -3b + 4b = b$.
+So every $b \in \mathbb{Z}$ equals $f(m,n)$ for some $(m,n)$ in the domain, and $f$ is surjective.
+:::
+
+:::exercise[12.2.8]{#ex-12-2-8}
+A function $f : \mathbb{Z} \times \mathbb{Z} \to \mathbb{Z} \times \mathbb{Z}$ is defined as $f(m,n) = (m+n, 2m+n)$. Verify whether this function is injective and whether it is surjective.
+:::
+
+:::answer
+This function is both injective and surjective, hence bijective.
+
+First we show $f$ is injective. Suppose $f(m,n) = f(k,\ell)$ for some $(m,n),(k,\ell) \in \mathbb{Z} \times \mathbb{Z}$. This means $(m+n,\; 2m+n) = (k+\ell,\; 2k+\ell)$. Equating corresponding coordinates gives the two equations $m+n = k+\ell$ and $2m+n = 2k+\ell$. Subtracting the first from the second yields $m = k$, and substituting this back into the first gives $n = \ell$. Therefore $(m,n) = (k,\ell)$, so $f$ is injective.
+
+Next we show $f$ is surjective. Take any $(a,b) \in \mathbb{Z} \times \mathbb{Z}$, and let $m = b-a$ and $n = 2a-b$. So $(m,n) \in \mathbb{Z} \times \mathbb{Z}$, and $f(m,n) = \big((b-a) + (2a-b), 2(b-a) + (2a-b)\big) = \big(a,\; b\big)$.
+So every $(a,b) \in \mathbb{Z} \times \mathbb{Z}$ equals $f(m,n)$ for some $(m,n)$ in the domain, and $f$ is surjective.
+
+Being both injective and surjective, $f$ is bijective.
+:::
+
+:::exercise[12.2.10]{#ex-12-2-10}
+Prove the function $f : \mathbb{R} - \set{1} \to \mathbb{R} - \set{1}$ defined by $f(x) = \left(\dfrac{x+1}{x-1}\right)^3$ is bijective.
+:::
+
+:::answer
+:::proof
+First we show $f$ is injective. Suppose $f(x) = f(y)$ for some $x,y \in \mathbb{R} - \set{1}$, that is,
+
+$$
+\left(\dfrac{x+1}{x-1}\right)^3 = \left(\dfrac{y+1}{y-1}\right)^3.
+$$
+
+Every real number has exactly one real cube root, so taking cube roots of both sides gives
+
+$$
+\dfrac{x+1}{x-1} = \dfrac{y+1}{y-1}.
+$$
+
+Since $x \neq 1$ and $y \neq 1$, both denominators are nonzero, so we may cross-multiply to get $(x+1)(y-1) = (y+1)(x-1)$. Expanding both sides,
+
+$$
+xy - x + y - 1 = xy - y + x - 1.
+$$
+
+Cancelling $xy$ and $-1$ leaves $-x + y = -y + x$, that is, $2y = 2x$, so $x = y$. Thus $f$ is injective.
+
+Next we show $f$ is surjective. Take any $b \in \mathbb{R} - \set{1}$ and let $c = \sqrt[3]{b}$. Note that $c \neq 1$, for otherwise $b = c^3 = 1$. Now let
+
+$$
+x = \dfrac{c+1}{c-1},
+$$
+
+which is defined because $c \neq 1$. Also $x \neq 1$, since $x = 1$ would give $c+1 = c-1$, which is impossible. Hence $x \in \mathbb{R} - \set{1}$. Observe that
+
+$$
+x + 1 = \dfrac{c+1}{c-1} + 1 = \dfrac{2c}{c-1}
+\qquad \text{and} \qquad
+x - 1 = \dfrac{c+1}{c-1} - 1 = \dfrac{2}{c-1},
+$$
+
+so $\dfrac{x+1}{x-1} = \dfrac{2c}{2} = c$, and therefore
+
+$$
+f(x) = \left(\dfrac{x+1}{x-1}\right)^3 = c^3 = b.
+$$
+
+So every $b \in \mathbb{R} - \set{1}$ equals $f(x)$ for some $x$ in the domain, and $f$ is surjective.
+
+Being both injective and surjective, $f$ is bijective.
+:::
+:::/answer
+
+:::exercise[12.2.12]{#ex-12-2-12}
+Consider the function $\theta : \set{0,1} \times \mathbb{N} \to \mathbb{Z}$ defined as $\theta(a,b) = a - 2ab + b$. Is $\theta$ injective? Is it surjective? Bijective? Explain.
+:::
+
+:::answer
+This function is bijective. Since the first coordinate $a$ can only be 0 or 1, we compute the two cases separately:
+$\theta(0,b) = 0 - 2(0)b + b = b$ and $\theta(1,b) = 1 - 2b + b = 1 - b$.
+As $b$ ranges over $\mathbb{N} = \set{1,2,3,\dots}$, the first case produces exactly the integers $1,2,3,\dots$, and the second produces exactly $0,-1,-2,\dots$, that is, the integers less than or equal to 0.
+:::
+
+:::exercise[12.2.14]{#ex-12-2-14}
+Consider the function $\theta : \mathcal{P}(\mathbb{Z}) \to \mathcal{P}(\mathbb{Z})$ defined as $\theta(X) = \overline{X}$. Is $\theta$ injective? Is it surjective? Bijective? Explain.
+:::
+
+:::answer
+This function is a bijection, to show this, note that $\overline{\overline{X}} = X$ for every $X \subseteq \mathbb{Z}$.
+
+To see that $\theta$ is injective, suppose $\theta(X) = \theta(Y)$ for some $X,Y \in \mathcal{P}(\mathbb{Z})$, that is, $\overline{X} = \overline{Y}$. Taking complements of both sides gives $\overline{\overline{X}} = \overline{\overline{Y}}$, that is, $X = Y$. Thus $\theta$ is bijective.
+
+To see that $\theta$ is surjective, take any $Y \in \mathcal{P}(\mathbb{Z})$.
+Then $\overline{Y}$ is also a subset of $\mathbb{Z}$, so $\overline{Y} \in \mathcal{P}(\mathbb{Z})$, and $\theta(\overline{Y}) = \overline{\overline{Y}} = Y$.
+
+Being both injective and surjective, $\theta$ is bijective.
+:::
+
+:::exercise[12.2.16]{#ex-12-2-16}
+This question concerns functions $f : \set{A,B,C,D,E} \to \set{1,2,3,4,5,6,7}$. How many such functions are there? How many of these functions are injective? How many are surjective? How many are bijective?
+:::
+
+:::answer
+The domain has 5 elements and the codomain has 7.
+
+A function can be determined by choosing a value in $\set{1,2,\dots,7}$ for each of the 5 elements of the domain, so by the multiplication principle there are $7^5 = 168074$ such functions.
+
+Now, the 5 values must be distinct, so there are 7 choices for the image of $A$, then 6 for $B$, then 5, 4 and 3. This gives $7 \cdot 6 \cdot 5 \cdot 4 \cdot 3 = 2520$  injective functions.
+
+There are no surjective functions as this would require every element in the codomain to be $f(x)$ for some $x$ in the domain, but the domain supplies only 5 values.
+
+Because none of the functions are surjective, none of the functions are bijective.
+:::
+
+## 12.3 The Pigeonhole Principle {#sec-12-3}
+
+:::exercise[12.3.2]{#ex-12-3-2}
+Prove that if $a$ is a natural number, then there exist two unequal natural numbers $k$ and $\ell$ for which $a^k - a^\ell$ is divisible by 10.
+:::
+
+:::answer
+:::proof
+Let $a \in \mathbb{N}$ and consider the eleven powers $a^1,\; a^2,\; a^3,\; \dots,\; a^{11}$.
+Dividing any integer by 10 leaves a remainder in $\set{0,1,2,\dots,9}$, so there are only ten possible remainders.
+Because the number of powers is greater than the number of remainders, the pigeonhole principle guarantees that at least two of the powers would have the same remainder.
+That is, there are natural numbers $k$ and $\ell$ with $1 \leq k < \ell \leq 11$ such that $a^k$ and $a^\ell$ leave the same remainder when divided by 10. Writing $a^k = 10q + r$ and $a^\ell = 10q' + r$ for integers $q, q'$ and a common remainder $r$, we get
+
+$$
+a^k - a^\ell = (10q + r) - (10q' + r) = 10(q - q').
+$$
+
+Since $q - q'$ is an integer, $10 \mid (a^k - a^\ell)$. As $k < \ell$, the numbers $k$ and $\ell$ are unequal.
+:::
+:::/answer
+
+## 12.4 Composition {#sec-12-4}
+
+:::exercise[12.4.2]{#ex-12-4-2}
+Suppose $A = \set{1,2,3,4}$, $B = \set{0,1,2}$, $C = \set{1,2,3}$. Let $f : A \to B$ be
+
+$$
+f = \set{(1,0),(2,1),(3,2),(4,0)},
+$$
+
+and $g : B \to C$ be $g = \set{(0,1),(1,1),(2,3)}$. Find $g \circ f$.
+:::
+
+:::answer
+$g \circ f = \set{(1,1),(2,1),(3,3),(4,1)}$
+:::
+
+:::exercise[12.4.4]{#ex-12-4-4}
+Suppose $A = \set{a,b,c}$. Let $f : A \to A$ be the function
+
+$$
+f = \set{(a,c),(b,c),(c,c)},
+$$
+
+and let $g : A \to A$ be the function $g = \set{(a,a),(b,b),(c,a)}$. Find $g \circ f$ and $f \circ g$.
+:::
+
+:::answer
+$g \circ f = \set{(a,a),(b,a),(c,a)}$\
+$f \circ g = \set{(a,c),(b,c),(c,c)}$
+:::
+
+:::exercise[12.4.6]{#ex-12-4-6}
+Consider the functions $f,g : \mathbb{R} \to \mathbb{R}$ defined as $f(x) = \dfrac{1}{x^2+1}$ and $g(x) = 3x+2$. Find the formulas for $g \circ f$ and $f \circ g$.
+:::
+
+:::answer
+$g \circ f(x) = \dfrac{3}{x^2+1} + 2$\
+$f \circ g(x) = \dfrac{1}{(3x+2)^2+1}$
+:::
+
+:::exercise[12.4.8]{#ex-12-4-8}
+Consider the functions $f,g : \mathbb{Z} \times \mathbb{Z} \to \mathbb{Z} \times \mathbb{Z}$ defined as $f(m,n) = (3m-4n, 2m+n)$ and $g(m,n) = (5m+n, m)$. Find the formulas for $g \circ f$ and $f \circ g$.
+:::
+
+:::answer
+$$
+\begin{align*}
+g \circ f(m,n) &= g(3m-4n,\; 2m+n)\\
+               &= \big(5(3m-4n) + (2m+n),\; 3m-4n\big)\\
+               &= (17m - 19n,\; 3m - 4n).
+\end{align*}
+$$
+
+$$
+\begin{align*}
+f \circ g(m,n) &= f(5m+n,\; m)\\
+               &= \big(3(5m+n) - 4m,\; 2(5m+n) + m\big)\\
+               &= (11m + 3n,\; 11m + 2n).
+\end{align*}
+$$
+:::
+
+:::exercise[12.4.10]{#ex-12-4-10}
+Consider the function $f : \mathbb{R}^2 \to \mathbb{R}^2$ defined by the formula $f(x,y) = (xy, x^3)$. Find a formula for $f \circ f$.
+:::
+
+:::answer
+$$
+\begin{align*}
+f \circ f(x,y) &= f(xy,\; x^3)\\
+               &= \big((xy)(x^3),\; (xy)^3\big)\\
+               &= (x^4y,\; x^3y^3).
+\end{align*}
+$$
+:::
+
+## 12.5 Inverse Functions {#sec-12-5}
+
+:::exercise[12.5.2]{#ex-12-5-2}
+In Exercise 9 of Section 12.2 you proved that $f : \mathbb{R} - \set{2} \to \mathbb{R} - \set{5}$ defined by $f(x) = \dfrac{5x+1}{x-2}$ is bijective. Now find its inverse.
+:::
+
+:::answer
+Solving $y = \dfrac{5x+1}{x-2}$ for $x$ gives $x = \dfrac{2y+1}{y-5}$, so
+
+$$
+f^{-1} : \mathbb{R} - \set{5} \to \mathbb{R} - \set{2}, \qquad f^{-1}(x) = \dfrac{2x+1}{x-5}.
+$$
+:::
+
+:::exercise[12.5.4]{#ex-12-5-4}
+The function $f : \mathbb{R} \to (0,\infty)$ defined as $f(x) = e^{x^3+1}$ is bijective. Find its inverse.
+:::
+
+:::answer
+Solving $y = e^{x^3+1}$ for $x$ gives $x = \sqrt[3]{\ln{y}-1}$, so
+
+$$
+f^{-1} : (0,\infty) \to \mathbb{R}, \qquad f^{-1}(x) = \sqrt[3]{\ln{x}-1}.
+$$
+:::
+
+:::exercise[12.5.6]{#ex-12-5-6}
+The function $f : \mathbb{Z} \times \mathbb{Z} \to \mathbb{Z} \times \mathbb{Z}$ defined by the formula $f(m,n) = (5m+4n, 4m+3n)$ is bijective. Find its inverse.
+:::
+
+:::answer
+Solving $5m+4n = a$ and $4m+3n = b$ for $m$ and $n$ gives $m = -3a+4b$ and $n = 4a-5b$, so
+
+$$
+f^{-1}(a,b) = (-3a+4b,\; 4a-5b).
+$$
+:::
+
+:::exercise[12.5.8]{#ex-12-5-8}
+Is the function $\theta : \mathcal{P}(\mathbb{Z}) \to \mathcal{P}(\mathbb{Z})$ defined as $\theta(X) = \overline{X}$ bijective? If so, what is its inverse?
+:::
+
+:::answer
+Yes. Since $\overline{\overline{X}} = X$, the function $\theta$ is its own inverse: $\theta^{-1}(X) = \overline{X}$.
+:::
+
+:::exercise[12.5.10]{#ex-12-5-10}
+Consider $f : \mathbb{N} \to \mathbb{Z}$ defined as $f(n) = \dfrac{(-1)^n(2n-1)+1}{4}$. This function is bijective by Exercise 18 in Section 12.2. Find its inverse.
+:::
+
+:::answer
+By Exercise 18 of Section 12.2, $f(2k) = k$ for $k \geq 1$ and $f(2k+1) = -k$ for $k \geq 0$. Inverting each case,
+
+$$
+f^{-1} : \mathbb{Z} \to \mathbb{N}, \qquad
+f^{-1}(c) = \begin{cases}
+    2c      & \text{if } c \geq 1,\\
+    1 - 2c  & \text{if } c \leq 0.
+\end{cases}
+$$
+:::
+
+## 12.6 Image and Preimage {#sec-12-6}
+
+:::exercise[12.6.2]{#ex-12-6-2}
+Consider the function $f : \set{1,2,3,4,5,6,7} \to \set{0,1,2,3,4,5,6,7,8,9}$ given as
+
+$$
+f = \set{(1,3),(2,8),(3,3),(4,1),(5,2),(6,4),(7,6)}.
+$$
+
+Find:
+
+$$
+\begin{gathered}
+f(\set{1,2,3}), \quad f(\set{4,5,6,7}), \quad f(\emptyset),\\
+f^{-1}(\set{0,5,9}) \quad \text{and} \quad f^{-1}(\set{0,3,5,9}).
+\end{gathered}
+$$
+:::
+
+:::answer
+$$
+\begin{align*}
+f(\set{1,2,3}) &= \set{3,8}, & f(\set{4,5,6,7}) &= \set{1,2,4,6}, & f(\emptyset) &= \emptyset,\\
+f^{-1}(\set{0,5,9}) &= \emptyset, & f^{-1}(\set{0,3,5,9}) &= \set{1,3}. &&
+\end{align*}
+$$
+:::
+
+:::exercise[12.6.4]{#ex-12-6-4}
+This problem concerns functions
+
+$$
+f : \set{1,2,3,4,5,6,7,8} \to \set{0,1,2,3,4,5,6}.
+$$
+
+How many such functions have the property that $\abs{f^{-1}(\set{2})} = 4$?
+:::
+
+:::answer
+We can determine how many such functions have this property by firs choosing which 4 of the 8 elements of the domain are sent to 2, which can be done in $\binom{8}{4} = 70$ ways.
+Then each of the remaining 4 elements must be sent to one of the 6 elements of the codomain other than 3, giving $6^4 = 1296$ possibilities.
+Thus, by the multiplication principle, there are $\binom{8}{4} \cdot 6^4 = 90720$ such functions.
+:::
+
+:::exercise[12.6.6]{#ex-12-6-6}
+Given a function $f : A \to B$ and a subset $Y \subseteq B$, is $f(f^{-1}(Y)) = Y$ always true? Prove or give a counterexample.
+:::
+
+:::answer
+No. For a counterexample, let $A = \set{1}$, $B = \set{1,2}$ and $f = \set{(1,1)}$, and take $Y = \set{2}$. No element of $A$ is sent into $Y$, so $f^{-1}(Y) = \emptyset$ and therefore
+
+$$
+f\big(f^{-1}(Y)\big) = f(\emptyset) = \emptyset \neq \set{2} = Y.
+$$
+:::
+
+:::exercise[12.6.8]{#ex-12-6-8}
+Given a function $f : A \to B$ and subsets $W, X \subseteq A$, then $f(W \cap X) = f(W) \cap f(X)$ is false in general. Produce a counterexample.
+:::
+
+:::answer
+Let $A = \set{1,2}$, $B = \set{1}$ and $f = \set{(1,1),(2,1)}$, and take $W = \set{1}$ and $X = \set{2}$. Then $W \cap X = \emptyset$, so
+
+$$
+f(W \cap X) = f(\emptyset) = \emptyset,
+$$
+
+whereas $f(W) = \set{1}$ and $f(X) = \set{1}$, so $f(W) \cap f(X) = \set{1}$. Thus $f(W \cap X) \neq f(W) \cap f(X)$.
+:::
+
+:::exercise[12.6.10]{#ex-12-6-10}
+Given $f : A \to B$ and subsets $Y, Z \subseteq B$, prove $f^{-1}(Y \cap Z) = f^{-1}(Y) \cap f^{-1}(Z)$.
+:::
+
+:::answer
+:::proof
+Let $x \in A$. Recall that $x \in f^{-1}(S)$ means exactly that $f(x) \in S$. Then
+
+$$
+\begin{align*}
+x \in f^{-1}(Y \cap Z)
+    &\iff f(x) \in Y \cap Z\\
+    &\iff f(x) \in Y \text{ and } f(x) \in Z\\
+    &\iff x \in f^{-1}(Y) \text{ and } x \in f^{-1}(Z)\\
+    &\iff x \in f^{-1}(Y) \cap f^{-1}(Z).
+\end{align*}
+$$
+
+Since an element belongs to one set if and only if it belongs to the other, the two sets are equal.
+:::
+:::/answer
+
+:::exercise[12.6.12]{#ex-12-6-12}
+Consider $f : A \to B$. Prove that $f$ is injective if and only if $X = f^{-1}(f(X))$ for all $X \subseteq A$. Prove that $f$ is surjective if and only if $f(f^{-1}(Y)) = Y$ for all $Y \subseteq B$.
+:::
+
+:::answer
+:::proof
+First, we prove $f$ is injective.
+
+Suppose $f$ is injective and let $X \subseteq A$. If $x \in X$ then $f(x) \in f(X)$, so $x \in f^{-1}(f(X))$; this gives $X \subseteq f^{-1}(f(X))$.
+Conversely, suppose $a \in f^{-1}(f(X))$. Then $f(a) \in f(X)$, so $f(a) = f(x)$ for some $x \in X$. Since $f$ is injective, $a = x$, hence $a \in X$. This gives $f^{-1}(f(X)) \subseteq X$, so the two sets are equal.
+
+Now suppose $X = f^{-1}(f(X))$ for every $X \subseteq A$, and let $a, b \in A$ with $f(a) = f(b)$. Applying the hypothesis to $X = \set{a}$ gives $f^{-1}(f(\set{a})) = \set{a}$. But $f(b) = f(a) \in f(\set{a})$, so $b \in f^{-1}(f(\set{a})) = \set{a}$, which forces $b = a$. Therefore $f$ is injective.
+
+Next, we prove $f$ is surjective.
+
+Suppose $f$ is surjective and let $Y \subseteq B$.
+If $y \in f(f^{-1}(Y))$, then $y = f(x)$ for some $x \in f^{-1}(Y)$, and $x \in f^{-1}(Y)$ means $f(x) \in Y$, so $y \in Y$; this gives $f(f^{-1}(Y)) \subseteq Y$.
+Conversely, let $y \in Y$. Since $f$ is surjective there is an $x \in A$ with $f(x) = y$. As $f(x) = y \in Y$, we have $x \in f^{-1}(Y)$, and therefore $y = f(x) \in f(f^{-1}(Y))$. This gives $Y \subseteq f(f^{-1}(Y))$, so the two sets are equal.
+
+Now suppose $f(f^{-1}(Y)) = Y$ for every $Y \subseteq B$, and let $b \in B$. Applying the hypothesis to $Y = \set{b}$ gives $f(f^{-1}(\set{b})) = \set{b}$. In particular this set is nonempty, so $f^{-1}(\set{b}) \neq \emptyset$. Choosing any $x \in f^{-1}(\set{b})$ gives $f(x) \in \set{b}$, that is, $f(x) = b$. Therefore $f$ is surjective.
+:::
+:::/answer
+
+:::exercise[12.6.14]{#ex-12-6-14}
+Let $f : A \to B$ be a function, and $Y \subseteq B$. Prove or disprove: $f^{-1}\big(f(f^{-1}(Y))\big) = f^{-1}(Y)$.
+:::
+
+:::answer
+:::proof
+The statement is true. Let $W = f^{-1}(Y)$.
+
+First we show $W \subseteq f^{-1}(f(W))$.
+If $x \in W$ then $f(x) \in f(W)$, thus $x \in f^{-1}(f(W))$.
+
+Next we show $f^{-1}(f(W)) \subseteq W$.
+Suppose $x \in f^{-1}(f(W))$, so $f(x) \in f(W)$.
+Then $f(x) = f(w)$ for some $w \in W$.
+Since $w \in W = f^{-1}(Y)$, we have $f(w) \in Y$, and therefore $f(x) = f(w) \in Y$.
+This means $x \in f^{-1}(Y) = W$.
+
+The two inclusions give $f^{-1}\big(f(f^{-1}(Y))\big) = f^{-1}(Y)$.
+:::
+:::/answer
