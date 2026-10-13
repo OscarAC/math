@@ -17,11 +17,4 @@
 *.ilg
 *.ind
 *.xdv
-
-# Compiled output — kept in the repo so the solutions are browsable on GitHub.
-# Uncomment to stop tracking it:
-# *.pdf
-
-# ignore worktrees content, these are git worktrees
-worktree/
-notes/
+*notes.tern.html
