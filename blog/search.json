@@ -4,7 +4,7 @@
  {"url":"index.html","title":"Blog · OzkrAC"}
 ],
 "entries": [
- {"url":"index.html","id":"blog","line":9,"endLine":14,"kind":"heading","label":"Blog","title":"","text":"Posts, newest first."}
+ {"url":"index.html","id":"blog","line":15,"endLine":20,"kind":"heading","label":"Blog","title":"","text":"Posts, newest first."}
 ],
 "terms": {
  "blog": [[0,3]],

@@ -9,14 +9,10 @@ README states two things:
    terms each author grants. Those terms differ from book to book.
 
 2. **My solutions.** The solutions themselves, the answers, derivations,
-   explanatory prose, and LaTeX sources are my own work,
+   explanatory prose, and Tern sources are my own work,
    © 2026 OzkrAC. The license I grant for them is chosen per book so
    it can match the source's terms (for example, a noncommercial license for a
    noncommercial source, or no grant at all where the source is unlicensed).
-
-The shared LaTeX template at the repository root, `template.sty`, is my own
-work and is licensed under a [Creative Commons Attribution 4.0 International
-License](https://creativecommons.org/licenses/by/4.0/) (CC BY 4.0).
 
 Nothing in this file grants any rights beyond those stated in each book
 directory's README. Anything not explicitly licensed there, is all rights

@@ -12,7 +12,7 @@ unofficial and may contain errors, corrections are welcome.
 | ------------------------------------------------------------------------------------------- | ----------------------------------------------------- | -------------- | ------------------------------- |
 | [_Book of Proof_, Richard Hammack (ed. 2.2)](BookOfProof_Hammack/)                          | [solutions](https://ozkr.ac/wiki/math/#hammack)  | CC BY-ND 3.0   | `chapterN-exercises.tern.html`  |
 | [_Algebra: An Elementary Text-Book_, G. Chrystal, Part I (1886)](Algebra_Chrystal/)         | [solutions](https://ozkr.ac/wiki/math/#chrystal) | public domain  | `chapterN-exercises.tern.html`  |
-| [_A Treatise on Plane Trigonometry_, E. W. Hobson (ed. 7, 1928)](PlaneTrigonometry_Hobson/) | not yet                                               | public domain  | `chapterN.tex` / `chapterN.pdf` |
+| [_A Treatise on Plane Trigonometry_, E. W. Hobson (ed. 7, 1928)](PlaneTrigonometry_Hobson/) | not yet                                               | public domain  | `chapterN-exercises.tern.html`  |
 
 ## Attribution
 

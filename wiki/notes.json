@@ -4,7 +4,7 @@
     {
       "url": "index.html",
       "title": "Wiki · OzkrAC",
-      "description": "What OzkrAC writes while studying: worked solutions to the exercises of each book, one page per chapter.",
+      "description": "What OzkrAC studies: worked solutions to selected exercises from books about mathematics.",
       "date": "2026-10-15",
       "headings": [
         {
@@ -549,8 +549,28 @@
         "math/BookOfProof_Hammack/chapter10-exercises.tern.html",
         "math/BookOfProof_Hammack/chapter11-exercises.tern.html",
         "math/BookOfProof_Hammack/chapter12-exercises.tern.html",
-        "math/BookOfProof_Hammack/chapter13-exercises.tern.html"
+        "math/BookOfProof_Hammack/chapter13-exercises.tern.html",
+        "math/license.html"
       ]
+    },
+    {
+      "url": "math/license.html",
+      "title": "License · Worked Solutions",
+      "description": "How the worked solutions at ozkr.ac/wiki/math are licensed: the source material per its own terms, the solutions per book.",
+      "date": "2026-10-15",
+      "headings": [
+        {
+          "depth": 1,
+          "id": "license",
+          "text": "License"
+        },
+        {
+          "depth": 2,
+          "id": "per-book-terms",
+          "text": "Per-book terms"
+        }
+      ],
+      "links": []
     }
   ]
 }
