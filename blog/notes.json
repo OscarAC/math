@@ -1,0 +1,19 @@
+{
+  "tern": "0.4.0",
+  "notes": [
+    {
+      "url": "index.html",
+      "title": "Blog · OzkrAC",
+      "description": "Posts by OzkrAC, newest first.",
+      "date": "2026-10-15",
+      "headings": [
+        {
+          "depth": 1,
+          "id": "blog",
+          "text": "Blog"
+        }
+      ],
+      "links": []
+    }
+  ]
+}

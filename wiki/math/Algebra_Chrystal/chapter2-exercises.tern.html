@@ -1,0 +1,400 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><title>Chrystal, Algebra, Chapter II: Monomials—Laws of Indices—Degree</title><meta name="description" content="Worked solutions to selected exercises from chapter II of G. Chrystal, Algebra: An Elementary Text-Book, Part I (1886)."><script src="https://cdn.jsdelivr.net/gh/OzkrAC/tern@v0.4.2/tern.js" data-use="../../../lib/math.js ../../../lib/site.js https://cdn.jsdelivr.net/gh/OzkrAC/tern@v0.4.2/addons/katex.js ../../../lib/site.css"></script>
+
+{.kicker}
+Worked solutions to selected exercises from\
+G. Chrystal, *Algebra: An Elementary Text-Book*, Part I (1886)
+
+# Monomials—Laws of Indices—Degree {#chapter-2}
+
+## Exercises II {#exercises-ii}
+
+:::exercise[II.1]{#ex-ii-1}
+Simplify—
+
+$$
+\frac{5^7 \times 12^4 \times 32^2 \times (3^2 \times 4^2 \times 5)^2}{(3 \times 15 \times 2^3)^{10}}.
+$$
+:::
+
+:::answer
+First, we simplify the numerator,
+
+$$
+\begin{align*}
+&5^7 \times 12^4 \times 32^2 \times (3^2 \times 4^2 \times 5)^2 \\
+&= 5^7 \times (2\times2\times3)^4 \times (2^5)^2 \times (3^2 \times (2\times2)^2 \times 5)^2 && \text{(arithmetical factorization)}\\
+&= 5^7 \times 2^4 \times 2^4 \times 3^4 \times 2^{10} \times 3^4 \times 2^4 \times 2^4 \times 5^2 && \text{($(ab)^n = a^nb^n$; $(a^m)^n = a^{mn}$)}\\
+&= 5^9 \times 3^8 \times 2^{26} && \text{(commutation; $a^ma^n = a^{m+n}$)}
+\end{align*}
+$$
+
+Next, we simplify the denominator,
+
+$$
+\begin{align*}
+&(3 \times 15 \times 2^3)^{10} \\
+&= 3^{10} \times 15^{10} \times 2^{30} && \text{($(ab)^n = a^nb^n$; $(a^m)^n = a^{mn}$)}\\
+&= 3^{10} \times (3\times5)^{10} \times 2^{30} && \text{(arithmetical factorization)}\\
+&= 3^{10} \times 3^{10} \times 5^{10} \times 2^{30} && \text{($(ab)^n = a^nb^n$)}\\
+&= 3^{20} \times 5^{10} \times 2^{30} && \text{($a^ma^n = a^{m+n}$)}
+\end{align*}
+$$
+
+Finally, we simplify the fraction,
+
+$$
+\begin{align*}
+&\frac{5^9 \times 3^8 \times 2^{26}}{3^{20} \times 5^{10} \times 2^{30}} \\
+&= \frac{1}{3^{12} \times 2^4 \times 5} && \text{($\tfrac{a^m}{a^n} = \tfrac{1}{a^{n-m}}; n>m$)}\\
+&= \frac{1}{42515280}
+\end{align*}
+$$
+:::
+
+:::exercise[II.2]{#ex-ii-2}
+Which is greater, $(2^2)^{2^2}$ or $2^{2^{2^2}}$? Find the difference between them.
+:::
+
+:::answer
+Observe that $2^{2^{2^2}} = 2^{2^{4}} = 2^{16} = 65536$, whereas $(2^2)^{2^{2}} = (2^2)^4 = 2^8 = 256$. Therefore $2^{2^{2^2}}$ is larger.
+:::
+
+:::exercise[II.3]{#ex-ii-3}
+Simplify—
+
+$$
+\frac{2^{2^2}}{2(2^2)^2}.
+$$
+:::
+
+:::answer
+$$
+\frac{2^{2^2}}{2(2^2)^2} = \frac{(2 \times 2)^2}{2\times (2 \times 2)^2} = \frac{1}{2}
+$$
+:::
+
+:::exercise[II.4]{#ex-ii-4}
+Simplify—
+
+$$
+\frac{36^2 a^7 b^5 c^3 d^2}{81 a^4 b^3 c^3}.
+$$
+:::
+
+:::answer
+$$
+\begin{align*}
+\dfrac{36^2 a^7 b^5 c^3 d^2}{81 a^4 b^3 c^3} =
+\dfrac{(9 \times 4)^2 a^7 b^5 c^3 d^2}{(9 \times 9) a^4 b^3 c^3} =
+\dfrac{9^2 \times 4^2 \times a^7 b^5 c^3 d^2}{9^2 a^4 b^3 c^3} =
+4^2a^3b^2d^2 = 16a^3b^2d^2
+\end{align*}
+$$
+:::
+
+:::exercise[II.5]{#ex-ii-5}
+Express in its simplest form—
+
+$$
+\left(\frac{a^4 c^3 y^2}{a^3 b^2 c^3 x^2 y^2}\right)^{2} \times \left(\frac{a^3 b^3 x^3}{a^3 b^2 c^3 x^3 y^2}\right)^{3} \times \left(\frac{b^2 c^4 x^2 y}{a^4 b^3 x^3 y^3}\right)^{4}.
+$$
+:::
+
+:::answer
+$$
+\begin{align*}
+&\left(\frac{a^4c^3y^2}{a^3b^2c^3x^2y^2}\right)^2 \times
+\left(\frac{a^3b^3x^3}{a^3b^2c^3x^3y^2}\right)^3 \times
+\left(\frac{b^2c^4x^2y}{a^4b^3x^3y^3}\right)^4 \\
+&= \left(\frac{a}{b^2x^2}\right)^2 \times \left(\frac{b}{c^3y^2}\right)^3 \times \left(\frac{b^2c^4x^2y}{a^4b^3x^3y^3}\right)^4 && \text{($\tfrac{a^m}{a^n} = a^{m-n}; m>n$)}\\
+&= \left(\frac{a}{b^2x^2}\right)^2 \times \left(\frac{b}{c^3y^2}\right)^3 \times \left(\frac{c^4}{a^4bxy^2}\right)^4  && \text{($\tfrac{a^m}{a^n} = \tfrac{1}{a^{n-m}}; n>m $)}\\
+&= \frac{(a)^2}{(b^2x^2)^2} \times \frac{(b)^3}{(c^3y^2)^3} \times \frac{(c^4)^4}{(a^4bxy^2)^4} && \text{($(\tfrac{a}{b})^m = \tfrac{a^m}{b^m}$)}\\
+&= \frac{a^2}{(b^2)^2(x^2)^2} \times \frac{b^3}{(c^3)^3(y^2)^3} \times \frac{(c^4)^4}{(a^4)^4(y^2)^4b^4x^4} && \text{($(ab)^m = a^mb^m$)}\\
+&= \frac{a^2}{b^4x^4} \times \frac{b^3}{c^9y^6} \times \frac{c^{16}}{a^{16}y^8b^4x^4} && \text{($(a^m)^n = a^{mn}$)}\\
+&= \frac{a^2b^3c^{16}}{b^4x^4c^9y^6a^{16}y^8b^4x^4}\\
+&= \frac{a^2b^3c^{16}}{b^8x^8c^9y^{14}a^{16}} && \text{($a^ma^n = a^{m+n}$)}\\
+&= \frac{c^{16}}{b^5x^8c^9y^{14}a^{14}} && \text{($\tfrac{a^m}{a^n} = \tfrac{1}{a^{n-m}}; n>m$)}\\
+&= \frac{c^7}{b^5x^8y^{14}a^{14}} && \text{($\tfrac{a^m}{a^n} = a^{m-n}; m>n$)}
+\end{align*}
+$$
+:::
+
+:::exercise[II.6]{#ex-ii-6}
+Simplify—
+
+$$
+\left(\frac{45 a^3 b^2 c^4}{27 a^2 b^2 c}\right)^{2} \times \left(\frac{243 a^4 b^4 c^4 x}{180 a^2 b c}\right)^{2}.
+$$
+:::
+
+:::answer
+$$
+\begin{align*}
+\left(\frac{45a^3b^2c^4}{27a^2b^2c}\right)^2 \times \left(\frac{243a^4b^4c^4x}{180a^2bc}\right)^2 &\\
+= \left(\frac{(9\times5)a^3b^2c^4}{(9\times3)a^2b^2c}\right)^2 \times \left(\frac{3^5a^4b^4c^4x}{(2^2\times3^2\times5)a^2bc}\right)^2 \\
+= \left(\frac{5ac^3}{3}\right)^2 \times \left(\frac{3^3a^2b^3c^3x}{2^2\times5}\right)^2 \\
+= \frac{5^2a^2c^6}{3^2} \times \frac{3^6a^4b^6c^6x^2}{2^4\times5^2} \\
+= \frac{3^4a^6b^6c^{12}x^2}{2^4} \\
+= \frac{81a^6b^6c^{12}x^2}{16}
+\end{align*}
+$$
+:::
+
+:::exercise[II.7]{#ex-ii-7}
+Simplify—
+
+$$
+(3xyz)^2 \times \frac{x^6 y^9}{x^9 y^6} \div \left(\frac{3 x^2 z^2}{y^2 z^2}\right)^{2}.
+$$
+:::
+
+:::answer
+$$
+\begin{align*}
+(3xyz)^2 \times \frac{x^6y^9}{x^9y^6} \div \left(\frac{3x^2z^2}{y^2z^2}\right)^2 \\
+= 9x^2y^2z^2 \times \frac{y^3}{x^3} \div \frac{9x^4}{y^4} \\
+= \frac{9y^5z^2}{x} \div \frac{9x^4}{y^4} \\
+= \frac{y^9z^2}{x^5}
+\end{align*}
+$$
+:::
+
+:::exercise[II.8]{#ex-ii-8}
+Simplify—
+
+$$
+\frac{(x^3 y^2 z^2)^7 \times (y^3 z^2 x^2)^7 \times (z^3 x^2 y^2)^7}{\left(\dfrac{x^2}{yz}\right)^{7} \times \left(\dfrac{y^2}{zx}\right)^{7} \times \left(\dfrac{z^2}{xy}\right)^{7}}.
+$$
+:::
+
+:::answer
+$$
+\begin{align*}
+\frac{(x^3 y^2 z^2)^7 \times (y^3 z^2 x^2)^7 \times (z^3 x^2 y^2)^7}{\left(\dfrac{x^2}{yz}\right)^{7} \times \left(\dfrac{y^2}{zx}\right)^{7} \times \left(\dfrac{z^2}{xy}\right)^{7}} &\\
+= \left(\frac{x^3 y^2 z^2 y^3 z^2 x^2 z^3 x^2 y^2}{\frac{x^2}{yz} \times \frac{y^2}{zx} \times \frac{z^2}{xy}} \right)^7 && \text{($(ab)^m = a^mb^m; (\tfrac{a}{b})^m = \tfrac{a^m}{b^m}$)} \\
+= \left(\frac{x^7y^7z^7}{\frac{x^2}{yz} \times \frac{y^2}{zx} \times \frac{z^2}{xy}}\right)^7 && \text{($a^ma^n = a^{m+n}$)}\\
+= \left(\frac{x^7y^7z^7}{\frac{x^2y^2z^2}{yzzxxy}}\right)^7 \\
+= \left(\frac{x^7y^7z^7}{\frac{x^2y^2z^2}{y^2z^2x^2}}\right)^7 && \text{(definition of exponent)} \\
+= \left(x^7y^7z^7\right) ^7 \\
+= (xyz)^{49} && \text{($(a^m)^n = a^{mn}$)}
+\end{align*}
+$$
+:::
+
+:::exercise[II.9]{#ex-ii-9}
+Simplify—
+
+$$
+\left(\frac{x^m}{x^n}\right)^{m+n} \times \left(\frac{x^n}{x^l}\right)^{n+l} \times \left(\frac{x^l}{x^m}\right)^{l+m}.
+$$
+:::
+
+:::answer
+$$
+\begin{align*}
+\left(\frac{x^m}{x^n}\right)^{m+n} \times \left(\frac{x^n}{x^l}\right)^{n+l} \times \left(\frac{x^l}{x^m}\right)^{l+m}. & \\
+\frac{x^{m^2+mn}}{x^{n^2+mn}} \times \frac{x^{n^2+nl}}{x^{l^2+nl}} \times \frac{x^{l^2+lm}}{x^{m^2+lm}} && \text{($(a^m)^n = a^{mn}; (\tfrac{a}{b})^m = \tfrac{a^m}{b^m}$)}\\
+= \frac{x^{m^2}x^{mn}}{x^{n^2}x^{mn}} \times \frac{x^{n^2}x^{nl}}{x^{l^2}x^{nl}} \times \frac{x^{l^2}x^{lm}}{x^{m^2}x^{lm}}  && \text{($a^ma^n = a^{m+n}$)} \\
+= 1 && \text{($\tfrac{a}{a} = 1$)}
+\end{align*}
+$$
+:::
+
+:::exercise[II.10]{#ex-ii-10}
+Simplify—
+
+$$
+\left\{ \frac{(a^{p-q})^{q} \times (a^{q-r})^{r-p}}{(a^{r+q})^{r-q}} \right\}^{1/r}.
+$$
+:::
+
+:::answer
+$$
+\begin{align*}
+\left\{ \frac{(a^{p-q})^{q} \times (a^{q-r})^{r-p}}{(a^{r+q})^{r-q}} \right\}^{1/r} &
+= \left\{ \frac{a^{pq-q^2} \times a^{qr-qp-r^2+rp}}{a^{r^2-q^2}} \right\}^{1/r}\\
+= \left\{\frac{a^{pq-q^2+qr-qp-r^2+rp}}{a^{r^2-q^2}}\right\}^{1/r} &
+= \left\{\frac{a^{r(q+p)}a^{-r^2}a^{-q^2}}{a^{r^2}a^{-q^2}}\right\}^{1/r}\\
+= \frac{a^{q+p}a^{-r}}{a^r} &
+= a^{q+p-2r}
+\end{align*}
+$$
+:::
+
+:::exercise[II.11]{#ex-ii-11}
+Simplify—
+
+$$
+\frac{(x^{a-b} \times x^{b-c})^{a} \times \left(\dfrac{x^a}{x^c}\right)}{(x^a \times x^c)^{a} \div (x^{a+c})^{c}}.
+$$
+:::
+
+:::answer
+First, the numerator,
+
+$$
+\begin{align*}
+&(x^{a-b}\times x^{b-c})^a \times \left(\frac{x^a}{x^c}\right) \\
+&= (x^{a-c})^a \times x^{a-c} && \text{($a^ma^n = a^{m+n}$; $\tfrac{a^m}{a^n} = a^{m-n}$)}\\
+&= x^{a(a-c)} \times x^{a-c} && \text{($(a^m)^n = a^{mn}$)}\\
+&= x^{(a-c)(a+1)} && \text{($a^ma^n = a^{m+n}$)}
+\end{align*}
+$$
+
+Next, the denominator,
+
+$$
+\begin{align*}
+&(x^a \times x^c)^a \div (x^{a+c})^c \\
+&= (x^{a+c})^a \div (x^{a+c})^c && \text{($a^ma^n = a^{m+n}$)}\\
+&= x^{a(a+c)} \div x^{c(a+c)} && \text{($(a^m)^n = a^{mn}$)}\\
+&= x^{(a+c)(a-c)} && \text{($a^m \div a^n = a^{m-n}$)}
+\end{align*}
+$$
+
+Finally,
+
+$$
+\begin{align*}
+\frac{x^{(a-c)(a+1)}}{x^{(a-c)(a+c)}} = x^{(a-c)(a+1) - (a-c)(a+c)} = x^{(a-c)(a+1-a-c)} = x^{(a-c)(1-c)}.
+\end{align*}
+$$
+:::
+
+:::exercise[II.12]{#ex-ii-12}
+Simplify—
+
+$$
+\left(\frac{x^p}{x^q}\right)^{p+q} \div \left(\frac{x^{p+q}}{x^{p-q}}\right)^{p^2/q}.
+$$
+:::
+
+:::answer
+$$
+\begin{align*}
+&\left(\frac{x^p}{x^q}\right)^{p+q} \div \left(\frac{x^{p+q}}{x^{p-q}}\right)^{p^2/q} \\
+&= (x^{p-q})^{p+q} \div (x^{2q})^{p^2/q} && \text{($\tfrac{a^m}{a^n} = a^{m-n}$)}\\
+&= x^{p^2-q^2} \div x^{2p^2} && \text{($(a^m)^n = a^{mn}$)}\\
+&= \frac{1}{x^{p^2+q^2}} && \text{($a^m \div a^n = \tfrac{1}{a^{n-m}}; n>m$)}
+\end{align*}
+$$
+:::
+
+:::exercise[II.13]{#ex-ii-13}
+Simplify—
+
+$$
+\left\{ \left(\frac{x^l}{x^m}\right)^{l} \times \left(\frac{x^m}{x^l}\right)^{m} \right\} \div \{(x^l)^l \times (x^m)^m\} \times \{(x^m)^l \times (x^l)^m\}.
+$$
+:::
+
+:::answer
+First, we simplify each term inside brackets,
+
+$$
+\begin{align*}
+\left(\frac{x^l}{x^m}\right)^{l} \times \left(\frac{x^m}{x^l}\right)^{m} &= x^{l(l-m)} \times x^{m(m-l)} = x^{l^2+m^2-2lm}, \\
+(x^l)^l \times (x^m)^m &= x^{l^2+m^2}, \\
+(x^m)^l \times (x^l)^m &= x^{2lm}.
+\end{align*}
+$$
+
+Then, we perform the division and multiplication chain,
+
+$$
+\begin{align*}
+x^{l^2+m^2-2lm} \div x^{l^2+m^2} \times x^{2lm}
+&= x^{l^2+m^2-2lm} \times x^{2lm} \div x^{l^2+m^2} \\
+&= x^{l^2+m^2} \div x^{l^2+m^2} && \text{($a^ma^n = a^{m+n}$)}\\
+&= 1. && \text{($\tfrac{a}{a} = 1$)}
+\end{align*}
+$$
+:::
+
+:::exercise[II.14]{#ex-ii-14}
+Prove that—
+
+$$
+\frac{(yz)^{qr} (zx)^{rp} (xy)^{pq}}{(y^{q-1} z^{r-1})^{p} (z^{r-1} x^{p-1})^{q} (x^{p-1} y^{q-1})^{r}} = \frac{(xyz)^{p+q+r}}{x^p y^q z^r}.
+$$
+:::
+
+:::answer
+Observe that,
+
+$$
+\begin{align*}
+\MoveEqLeft\frac{(yz)^{qr}(zx)^{rp}(xy)^{pq}}{(y^{q-1}z^{r-1})^p(z^{r-1}x^{p-1})^q(x^{p-1}y^{q-1})^r}\\
+& = \frac{y^{qr}z^{qr}z^{rp}x^{rp}x^{pq}y^{pq}}{y^{pq-p}z^{pr-p}z^{qr-q}x^{pq-q}x^{pr-r}y^{qr-r}} && \text{($(ab)^n = a^nb^n$; $(a^m)^n = a^{mn}$)}\\
+& = \frac{y^{qr}z^{qr}z^{rp}x^{rp}x^{pq}y^{pq}}{y^{pq}y^{-p}z^{pr}z^{-p}z^{qr}z^{-q}x^{pq}x^{-q}x^{pr}x^{-r}y^{qr}y^{-r}} && \text{($a^{m+n} = a^ma^n$)}\\
+&= \frac{1}{y^{-p}z^{-p}z^{-q}x^{-q}x^{-r}y^{-r}} && \text{($\tfrac{a^m}{a^m} = 1$)}\\
+&= \frac{1}{y^{-p}z^{-p}z^{-q}x^{-q}x^{-r}y^{-r}} \times 1\\
+&= \frac{1}{y^{-p}z^{-p}z^{-q}x^{-q}x^{-r}y^{-r}} \times \frac{x^px^qx^ry^py^qy^rz^pz^qz^r}{x^px^qx^ry^py^qy^rz^pz^qz^r} && \text{($\tfrac{a}{a} = 1$)}\\
+&= \frac{x^px^qx^ry^py^qy^rz^pz^qz^r}{(y^{-p}z^{-p}z^{-q}x^{-q}x^{-r}y^{-r})(x^px^qx^ry^py^qy^rz^pz^qz^r)}\\
+&= \frac{x^px^qx^ry^py^qy^rz^pz^qz^r}{(y^{-p+p}z^{-p+p}z^{-q+q}x^{-q+q}x^{-r+r}y^{-r+r})(x^py^qz^r)} && \text{($a^ma^n = a^{m+n}$)}\\
+&= \frac{x^px^qx^ry^py^qy^rz^pz^qz^r}{x^py^qz^r} && \text{($a^{-m}a^{m} = 1$)}\\
+&= \frac{x^{p+q+r}\,y^{p+q+r}\,z^{p+q+r}}{x^py^qz^r} && \text{($a^ma^n = a^{m+n}$)}\\
+&= \frac{(xyz)^{p+q+r}}{x^py^qz^r} && \text{($a^nb^nc^n = (abc)^n$)}
+\end{align*}
+$$
+:::
+
+:::exercise[II.15]{#ex-ii-15}
+Distribute the product—
+
+$$
+(x^{b-c} - x^{c-a} + x^{a-b}) \left( \frac{1}{x^{b-c}} + \frac{1}{x^{c-a}} + \frac{1}{x^{a-b}} \right).
+$$
+:::
+
+:::answer
+$$
+\begin{align*}
+&\frac{x^{b-c}}{x^{b-c}} + \frac{x^{b-c}}{x^{c-a}} + \frac{x^{b-c}}{x^{a-b}}
+- \frac{x^{c-a}}{x^{b-c}} - \frac{x^{c-a}}{x^{c-a}} - \frac{x^{c-a}}{x^{a-b}}
++ \frac{x^{a-b}}{x^{b-c}} + \frac{x^{a-b}}{x^{c-a}} + \frac{x^{a-b}}{x^{a-b}}\\
+&= 1 + x^{(b-c)-(c-a)} + x^{(b-c)-(a-b)} - x^{(c-a)-(b-c)} - 1 - x^{(c-a)-(a-b)} \\
+&\qquad + x^{(a-b)-(b-c)} + x^{(a-b)-(c-a)} + 1\\
+&= 1 + x^{a+b-2c} + x^{-a+2b-c} - x^{-a-b+2c} - x^{-2a+b+c} + x^{a-2b+c} + x^{2a-b-c} \\
+&= 1 + x^{2a-b-c} - x^{-2a+b+c} + x^{-a+2b-c} + x^{a-2b+c} - x^{-a-b+2c} + x^{a+b-2c}
+\end{align*}
+$$
+:::
+
+:::exercise[II.16]{#ex-ii-16}
+Distribute—
+
+$$
+\left(a^p + \frac{1}{b^q}\right) \left(a^q + \frac{1}{b^p}\right)^{2}.
+$$
+:::
+
+:::answer
+$$
+\begin{align*}
+\left(a^p + \frac{1}{b^q}\right)\left(a^q+\frac{1}{b^p}\right)^2 &= \left(a^p+\frac{1}{b^q}\right)\left(a^q+\frac{1}{b^p}\right)\left(a^q+\frac{1}{b^p}\right)\\
+&= \left(a^{p+q}+\frac{a^p}{b^p}+\frac{a^q}{b^q}+\frac{1}{b^{q+p}}\right)\left(a^q+\frac{1}{b^p}\right)\\
+&= a^{p+2q}+\frac{a^{p+q}}{b^p}+\frac{a^{p+q}}{b^p}+\frac{a^p}{b^{2p}}+\frac{a^{2q}}{b^q}+\frac{a^q}{b^{q+p}}+\frac{a^q}{b^{q+p}}+\frac{1}{b^{q+2p}}\\
+&= a^{p+2q}+\frac{2a^{p+q}}{b^p}+\frac{a^p}{b^{2p}}+\frac{a^{2q}}{b^q}+\frac{2a^q}{b^{q+p}}+\frac{1}{b^{q+2p}}
+\end{align*}
+$$
+:::
+
+:::exercise[II.17]{#ex-ii-17}
+If $m = a^x$, $n = a^y$, $a^2 = (m^y n^x)^z$; show that $xyz = 1$.
+:::
+
+:::answer
+Substituting $m = a^x$ and $n = a^y$ in the third relation,
+
+$$
+\begin{align*}
+a^2 &= \{(a^x)^y (a^y)^x\}^z \\
+    &= \{a^{xy} \times a^{xy}\}^z && \text{($(a^m)^n = a^{mn}$)}\\
+    &= (a^{2xy})^z && \text{($a^ma^n = a^{m+n}$)}\\
+    &= a^{2xyz}. && \text{($(a^m)^n = a^{mn}$)}
+\end{align*}
+$$
+
+Since the two powers of $a$ are equal, their indices are equal, therefore $xyz = 1$.
+:::

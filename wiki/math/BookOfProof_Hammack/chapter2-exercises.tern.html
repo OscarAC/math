@@ -1,0 +1,546 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><title>Hammack, Book of Proof, Chapter 2: Logic</title><meta name="description" content="Worked solutions to selected exercises from chapter 2 of Richard Hammack, Book of Proof, edition 2.2."><script src="https://cdn.jsdelivr.net/gh/OzkrAC/tern@v0.4.2/tern.js" data-use="../../../lib/math.js ../../../lib/site.js https://cdn.jsdelivr.net/gh/OzkrAC/tern@v0.4.2/addons/katex.js ../../../lib/site.css"></script>
+
+{.kicker}
+Worked solutions to selected exercises from\
+Richard Hammack, *Book of Proof*, edition 2.2
+
+# Logic {#chapter-2}
+
+## 2.1 Statements {#sec-2-1}
+
+**Decide whether or not the following are statements. In the case of a statement, say if it is true or false, if possible.**
+
+:::exercise[2.1.2]{#ex-2-1-2}
+Every even integer is a real number.
+:::
+
+:::answer
+Statement, true.
+:::
+
+:::exercise[2.1.4]{#ex-2-1-4}
+Sets $\mathbb{Z}$ and $\mathbb{N}$.
+:::
+
+:::answer
+Not a statement.
+:::
+
+:::exercise[2.1.6]{#ex-2-1-6}
+Some sets are finite.
+:::
+
+:::answer
+Statement, true.
+:::
+
+:::exercise[2.1.8]{#ex-2-1-8}
+$\mathbb{N} \notin \mathcal{P}(\mathbb{N})$
+:::
+
+:::answer
+Statement, false.
+:::
+
+:::exercise[2.1.10]{#ex-2-1-10}
+$(\mathbb{R} \times \mathbb{N}) \cap (\mathbb{N} \times \mathbb{R}) = \mathbb{N} \times \mathbb{N}$.
+:::
+
+:::answer
+Statement, true.
+:::
+
+:::exercise[2.1.12]{#ex-2-1-12}
+If the integer $x$ is a multiple of 7, then it is divisible by 7.
+:::
+
+:::answer
+Statement, true.
+:::
+
+:::exercise[2.1.14]{#ex-2-1-14}
+Call me Ishmael.
+:::
+
+:::answer
+Not a statement.
+:::
+
+## 2.2 And, Or, Not {#sec-2-2}
+
+**Express each statement or open sentence in one of the forms $P \land Q$, $P \lor Q$, or $\lnot P$. Be sure to also state exactly what statements $P$ and $Q$ stand for.**
+
+:::exercise[2.2.2]{#ex-2-2-2}
+The matrix $A$ is not invertible.
+:::
+
+:::answer
+$\lnot P$, where $P$: Matrix $A$ is invertible.
+:::
+
+:::exercise[2.2.4]{#ex-2-2-4}
+$x < y$.
+:::
+
+:::answer
+$\lnot P$, where $P$: $x \geq y$.
+:::
+
+:::exercise[2.2.6]{#ex-2-2-6}
+There is a quiz scheduled for Wednesday or Friday.
+:::
+
+:::answer
+$P \lor Q$, where $P$: A quiz is scheduled for Wednesday, and $Q$: A quiz is scheduled for Friday.
+:::
+
+:::exercise[2.2.8]{#ex-2-2-8}
+At least one of the numbers $x$ and $y$ equals $0$.
+:::
+
+:::answer
+$P \lor Q$, where $P$: $x = 0$, and $Q$: $y = 0$.
+:::
+
+:::exercise[2.2.10]{#ex-2-2-10}
+$x \in A \cup B$.
+:::
+
+:::answer
+$P \lor Q$, where $P$: $x \in A$, and $Q$: $x \in B$.
+:::
+
+:::exercise[2.2.12]{#ex-2-2-12}
+Happy families are all alike, but each unhappy family is unhappy in its own way. (*Leo Tolstoy*, *Anna Karenina*)
+:::
+
+:::answer
+$P \land Q$, where $P$: Happy families are all alike, and $Q$: Each unhappy family is unhappy in its own way.
+:::
+
+:::exercise[2.2.14]{#ex-2-2-14}
+A man should look for what is, and not for what he thinks should be. (*Albert Einstein*)
+:::
+
+:::answer
+$P \land \lnot Q$, where $P$: Man should look for what is, and $Q$: Man should look for what he thinks should be.
+:::
+
+## 2.3 Conditional Statements {#sec-2-3}
+
+**Without changing their meanings, convert each of the following sentences into a sentence having the form “*If P, then Q*”.**
+
+:::exercise[2.3.2]{#ex-2-3-2}
+For a function to be continuous, it is sufficient that it is differentiable.
+:::
+
+:::answer
+If a function is differentiable, then the function is continuous.
+:::
+
+:::exercise[2.3.4]{#ex-2-3-4}
+A function is rational if it is a polynomial.
+:::
+
+:::answer
+If a function is a polynomial, then the function is rational.
+:::
+
+:::exercise[2.3.6]{#ex-2-3-6}
+Whenever a surface has only one side, it is non-orientable.
+:::
+
+:::answer
+If a surface has only one side, then the surface is non-orientable.
+:::
+
+:::exercise[2.3.8]{#ex-2-3-8}
+A geometric series with ratio $r$ converges if $\abs{r} < 1$.
+:::
+
+:::answer
+If a geometric series has a ratio with an absolute value less than 1, then the geometric series converges.
+:::
+
+:::exercise[2.3.10]{#ex-2-3-10}
+The discriminant is negative only if the quadratic equation has no real solutions.
+:::
+
+:::answer
+If a quadratic equation has a discriminant that is negative, then the quadratic equation has no real solutions.
+:::
+
+:::exercise[2.3.12]{#ex-2-3-12}
+People will generally accept facts as truth only if the facts agree with what they already believe. (*Andy Rooney*)
+:::
+
+:::answer
+If people accept facts as truth, then the facts agree with what they already believe.
+:::
+
+## 2.4 Biconditional Statements {#sec-2-4}
+
+**Without changing their meanings, convert each of the following sentences into a sentence having the form “*P if and only if Q*”.**
+
+:::exercise[2.4.2]{#ex-2-4-2}
+If a function has a constant derivative then it is linear, and conversely.
+:::
+
+:::answer
+A function is linear if and only if the function has a constant derivative.
+:::
+
+:::exercise[2.4.4]{#ex-2-4-4}
+If $a \in \mathbb{Q}$ then $5a \in \mathbb{Q}$, and if $5a \in \mathbb{Q}$ then $a \in \mathbb{Q}$.
+:::
+
+:::answer
+$5a \in \mathbb{Q}$ if and only if $a \in \mathbb{Q}$
+:::
+
+## 2.5 Truth Tables for Statements {#sec-2-5}
+
+**Write a truth table for the logical statements in problems 1-9:**
+
+:::exercise[2.5.2]{#ex-2-5-2}
+$(Q \lor R) \iff (R \land Q)$
+:::
+
+:::answer
+| $Q$ | $R$ | $(Q \lor R)$ | $(R \land Q)$ | $(Q \lor R) \iff (R \land Q)$ |
+|:-:|:-:|:-:|:-:|:-:|
+| T | T | T | T | T |
+| T | F | T | F | F |
+| F | T | T | F | F |
+| F | F | F | F | T |
+:::
+
+:::exercise[2.5.4]{#ex-2-5-4}
+$\lnot (P \lor Q) \lor (\lnot P)$
+:::
+
+:::answer
+| $P$ | $Q$ | $(P \lor Q)$ | $\lnot(P \lor Q)$ | $\lnot P$ | $\lnot(P \lor Q) \lor (\lnot P)$ |
+|:-:|:-:|:-:|:-:|:-:|:-:|
+| T | T | T | F | F | F |
+| T | F | T | F | F | F |
+| F | T | T | F | T | T |
+| F | F | F | T | T | T |
+:::
+
+:::exercise[2.5.6]{#ex-2-5-6}
+$(P \land \lnot P) \land Q$
+:::
+
+:::answer
+| $P$ | $Q$ | $(P \land \lnot P)$ | $(P \land \lnot P) \land Q$ |
+|:-:|:-:|:-:|:-:|
+| T | T | F | F |
+| T | F | F | F |
+| F | T | F | F |
+| F | F | F | F |
+:::
+
+:::exercise[2.5.8]{#ex-2-5-8}
+$P \lor (Q \land \lnot R)$
+:::
+
+:::answer
+| $P$ | $Q$ | $R$ | $(Q \land \lnot R)$ | $P \lor (Q \land \lnot R)$ |
+|:-:|:-:|:-:|:-:|:-:|
+| T | T | T | F | T |
+| T | T | F | T | T |
+| T | F | T | F | T |
+| T | F | F | F | T |
+| F | T | T | F | F |
+| F | T | F | T | T |
+| F | F | T | F | F |
+| F | F | F | F | F |
+:::
+
+## 2.6 Logical Equivalence {#sec-2-6}
+
+**A. Use truth tables to show that the following statements are logically equivalent.**
+
+:::exercise[2.6.2]{#ex-2-6-2}
+$P \lor (Q \land R) = (P \lor Q) \land (P \lor R)$
+:::
+
+:::answer
+| $P$ | $Q$ | $R$ | $(Q \land R)$ | $P \lor (Q \land R)$ | $(P \lor Q)$ | $(P \lor R)$ | $(P \lor Q) \land (P \lor R)$ |
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+| T | T | T | T | T | T | T | T |
+| T | T | F | F | T | T | T | T |
+| T | F | T | F | T | T | T | T |
+| T | F | F | F | T | T | T | T |
+| F | T | T | T | T | T | T | T |
+| F | T | F | F | F | T | F | F |
+| F | F | T | F | F | F | T | F |
+| F | F | F | F | F | F | F | F |
+:::
+
+:::exercise[2.6.4]{#ex-2-6-4}
+$\lnot (P \lor Q) = (\lnot P) \land (\lnot Q)$
+:::
+
+:::answer
+| $P$ | $Q$ | $(P \lor Q)$ | $\lnot (P \lor Q)$ | $\lnot P$ | $\lnot Q$ | $(\lnot P) \land (\lnot Q)$ |
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+| T | T | T | F | F | F | F |
+| T | F | T | F | F | T | F |
+| F | T | T | F | T | F | F |
+| F | F | F | T | T | T | T |
+:::
+
+:::exercise[2.6.6]{#ex-2-6-6}
+$\lnot (P \land Q \land R) = (\lnot P) \lor (\lnot Q) \lor (\lnot R)$
+:::
+
+:::answer
+| $P$ | $Q$ | $R$ | $(P \land Q \land R)$ | $\lnot (P \land Q \land R)$ | $\lnot P$ | $\lnot Q$ | $\lnot R$ | $(\lnot P) \lor (\lnot Q) \lor (\lnot R)$ |
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+| T | T | T | T | F | F | F | F | F |
+| T | T | F | F | T | F | F | T | T |
+| T | F | T | F | T | F | T | F | T |
+| T | F | F | F | T | F | T | T | T |
+| F | T | T | F | T | T | F | F | T |
+| F | T | F | F | T | T | F | T | T |
+| F | F | T | F | T | T | T | F | T |
+| F | F | F | F | T | T | T | T | T |
+:::
+
+:::exercise[2.6.8]{#ex-2-6-8}
+$\lnot P \iff Q = (P \implies \lnot Q) \land (\lnot Q \implies P)$
+:::
+
+:::answer
+| $P$ | $Q$ | $\lnot P$ | $\lnot Q$ | $\lnot P \iff Q$ | $(P \implies \lnot Q)$ | $(\lnot Q \implies P)$ | $(P \implies \lnot Q) \land (\lnot Q \implies P)$ |
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+| T | T | F | F | F | F | T | F |
+| T | F | F | T | T | T | T | T |
+| F | T | T | F | T | T | T | T |
+| F | F | T | T | F | T | F | F |
+:::
+
+**B. Decide whether or not the following pairs of statements are logically equivalent.**
+
+:::exercise[2.6.10]{#ex-2-6-10}
+$(P \implies Q) \lor R$ and $\lnot((P \land \lnot Q) \land \lnot R)$
+:::
+
+:::answer
+| $P$ | $Q$ | $R$ | $(P \implies Q)$ | $(P \implies Q) \lor R$ | $\lnot Q$ | $(P \land \lnot Q)$ | $\lnot R$ | $(P \land \lnot Q) \land \lnot R$ | $\lnot((P \land \lnot Q) \land \lnot R)$ |
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+| T | T | T | T | T | F | F | F | F | T |
+| T | T | F | T | T | F | F | T | F | T |
+| T | F | T | F | T | T | T | F | F | T |
+| T | F | F | F | F | T | T | T | T | F |
+| F | T | T | T | T | F | F | F | F | T |
+| F | T | F | T | T | F | F | T | F | T |
+| F | F | T | T | T | T | F | F | F | T |
+| F | F | F | T | T | T | F | T | F | T |
+
+The statements are logically equivalent.
+:::
+
+:::exercise[2.6.12]{#ex-2-6-12}
+$\lnot (P \implies Q)$ and $P \land \lnot Q$
+:::
+
+:::answer
+| $P$ | $Q$ | $(P \implies Q)$ | $\lnot (P \implies Q)$ | $\lnot Q$ | $P \land \lnot Q$ |
+|:-:|:-:|:-:|:-:|:-:|:-:|
+| T | T | T | F | F | F |
+| T | F | F | T | T | T |
+| F | T | T | F | F | F |
+| F | F | T | F | T | F |
+
+The statements are logically equivalent.
+:::
+
+:::exercise[2.6.14]{#ex-2-6-14}
+$P \land (Q \lor \lnot Q)$ and $(\lnot P) \implies (Q \land \lnot Q)$
+:::
+
+:::answer
+| $P$ | $Q$ | $\lnot Q$ | $(Q \lor \lnot Q)$ | $P \land (Q \lor \lnot Q)$ | $\lnot P$ | $(Q \land \lnot Q)$ | $(\lnot P) \implies (Q \land \lnot Q)$ |
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+| T | T | F | T | T | F | F | T |
+| T | F | T | T | T | F | F | T |
+| F | T | F | T | F | T | F | F |
+| F | F | T | T | F | T | F | F |
+
+The statements are logically equivalent.
+:::
+
+## 2.7 Quantifiers {#sec-2-7}
+
+**Write the following as English sentences, Say whether they are true or false.**
+
+:::exercise[2.7.2]{#ex-2-7-2}
+$\forall x \in \mathbb{R}, \exists n \in \mathbb{N}, x^n \geq 0$
+:::
+
+:::answer
+For every real number $x$, there is a natural number $n$ for which $x^n \geq 0$.\
+The statement is true, consider $n = 2$.
+:::
+
+:::exercise[2.7.4]{#ex-2-7-4}
+$\forall X \in \mathcal{P}(\mathbb{N}), X \subseteq \mathbb{R}$
+:::
+
+:::answer
+Every subset of the natural numbers is also a subset of the real numbers.\
+The statement is true, since $\mathbb{N} \subseteq \mathbb{R}$.
+:::
+
+:::exercise[2.7.6]{#ex-2-7-6}
+$\exists n \in \mathbb{N}, \forall X \in \mathcal{P}(\mathbb{N}), |X| < n$
+:::
+
+:::answer
+There exists a natural number $n$ for which $|X| < n$ for all subsets $X$ of the natural numbers.\
+This statement is false, since $\mathbb{N} \in \mathcal{P}(\mathbb{N})$ and $\mathbb{N}$ is infinite.
+:::
+
+:::exercise[2.7.8]{#ex-2-7-8}
+$\forall n \in \mathbb{Z}, \exists X \subseteq \mathbb{N}, |X| = n$
+:::
+
+:::answer
+For every integer $n$, there exists a subset $X$ of the natural numbers for which $|X| = n$.\
+This statement is false, consider $n = -1$.
+:::
+
+:::exercise[2.7.10]{#ex-2-7-10}
+$\exists m \in \mathbb{Z}, \forall n \in \mathbb{Z}, m = n + 5$
+:::
+
+:::answer
+There exists an integer $m$ such that for every integer $n$, $m = n + 5$.\
+This statement is false, consider $n = 0$ and $n = 1$.
+:::
+
+## 2.9 Translating English to Symbolic Logic {#sec-2-9}
+
+**Translate each of the following sentences into symbolic logic.**
+
+:::exercise[2.9.2]{#ex-2-9-2}
+The number $x$ is positive but the number $y$ is not positive.
+:::
+
+:::answer
+$(x > 0) \land (y \leq 0)$
+:::
+
+:::exercise[2.9.4]{#ex-2-9-4}
+For every prime number $p$ there is another prime number $q$ with $q > p$.
+:::
+
+:::answer
+$\forall p \in P, \exists q \in P, q > p$. Where $P$ is the set of prime numbers.
+:::
+
+:::exercise[2.9.6]{#ex-2-9-6}
+For every positive number $\epsilon$ there is a positive number $M$ for which $|f(x) - b| < \epsilon$, whenever $x > M$.
+:::
+
+:::answer
+$\forall \epsilon \in \mathbb{R}, \epsilon > 0, \exists M \in \mathbb{R}, M > 0, (x > M) \implies |f(x) - b| < \epsilon$
+:::
+
+:::exercise[2.9.8]{#ex-2-9-8}
+I don't eat anything that has a face.
+:::
+
+:::answer
+$\forall x, Q(x) \implies \lnot P(x)$, where $P(x)$: I eat $x$, and $Q(x)$: $x$ has a face.
+:::
+
+:::exercise[2.9.10]{#ex-2-9-10}
+If $\sin(x) < 0$, then it is not the case that $0 \leq x \leq \pi$.
+:::
+
+:::answer
+$\sin(x) < 0 \implies \lnot(0 \leq x \leq \pi)$.
+:::
+
+:::exercise[2.9.12]{#ex-2-9-12}
+You can fool some of the people all of the time, and you can fool all of the people some of the time, but you can't fool all of the people all of the time. (*Abraham Lincoln*)
+:::
+
+:::answer
+$\big(\exists p \in P, \forall t \in T, F(p,t)\big) \land \big(\forall p \in P, \exists t \in T, F(p,t)\big) \land \lnot\big(\forall p \in P, \forall t \in T, F(p,t)\big)$,\
+where $P$ is the set of people, $T$ is the set of times, and $F(p,t)$: you can fool person $p$ at time $t$.
+:::
+
+## 2.10 Negating Statements {#sec-2-10}
+
+**Negate the following sentences.**
+
+:::exercise[2.10.2]{#ex-2-10-2}
+If $x$ is prime, then $\sqrt{x}$ is not a rational number.
+:::
+
+:::answer
+1. $\forall x \in \mathbb{Z}, x \in P \implies \lnot(\sqrt{x} \in \mathbb{Q})$
+2. $\exists x \in \mathbb{Z}, x \in P \land \sqrt{x} \in \mathbb{Q}$
+
+There is a prime number $x$ whose square root is rational.
+:::
+
+:::exercise[2.10.4]{#ex-2-10-4}
+For every positive number $\epsilon$, there is a positive number $\delta$ such that $|x - a| < \delta$ implies $|f(x) - f(a)| < \epsilon$.
+:::
+
+:::answer
+1. $\forall \epsilon \in \mathbb{R}, \epsilon > 0, \exists \delta \in \mathbb{R}, \delta > 0, |x - a| < \delta \implies |f(x) - f(a)| < \epsilon$
+2. $\lnot(\forall \epsilon \in \mathbb{R}, \epsilon > 0, \exists \delta \in \mathbb{R}, \delta > 0, |x - a| < \delta \implies |f(x) - f(a)| < \epsilon)$
+3. $\exists \epsilon \in \mathbb{R}, \epsilon > 0, \lnot(\exists \delta \in \mathbb{R}, \delta > 0, |x - a| < \delta \implies |f(x) - f(a)| < \epsilon)$
+4. $\exists \epsilon \in \mathbb{R}, \epsilon > 0, \forall \delta \in \mathbb{R}, \delta > 0, \lnot(|x - a| < \delta \implies |f(x) - f(a)| < \epsilon)$
+5. $\exists \epsilon \in \mathbb{R}, \epsilon > 0, \forall \delta \in \mathbb{R}, \delta > 0, |x - a| < \delta \land \lnot(|f(x) - f(a)| < \epsilon)$
+
+There is a positive number $\epsilon$ such that for every positive number $\delta$, $|x - a| < \delta$ and $|f(x) - f(a)| \geq \epsilon$.
+:::
+
+:::exercise[2.10.6]{#ex-2-10-6}
+There exists a real number $a$ for which $a + x = x$ for every real number $x$.
+:::
+
+:::answer
+1. $\exists a \in \mathbb{R}, \forall x \in \mathbb{R}, a + x = x$
+2. $\lnot(\exists a \in \mathbb{R}, \forall x \in \mathbb{R}, a + x = x)$
+3. $\forall a \in \mathbb{R}, \exists x \in \mathbb{R}, a + x \neq x$
+
+For every real number $a$, there is a real number $x$ for which $a + x \neq x$.
+:::
+
+:::exercise[2.10.8]{#ex-2-10-8}
+If $x$ is a rational number and $x \neq 0$, then $\tan(x)$ is not a rational number.
+:::
+
+:::answer
+1. $\forall x \in \mathbb{Q},x \neq 0 \implies \tan(x) \notin \mathbb{Q}$
+2. $\lnot(\forall x \in \mathbb{Q}, x \neq 0 \implies \tan(x) \notin \mathbb{Q})$
+3. $\exists x \in \mathbb{Q}, \lnot(x \neq 0 \implies \tan(x) \notin \mathbb{Q})$
+4. $\exists{x \in \mathbb{Q}}, x \neq 0 \land \tan(x) \in \mathbb{Q}$
+
+There is a rational number $x$ where $x \neq 0$ and $\tan(x)$ is rational.
+:::
+
+:::exercise[2.10.10]{#ex-2-10-10}
+If $f$ is a polynomial and its degree is greater than 2, then $f'$ is not constant.
+:::
+
+:::answer
+$f$ is a polynomial with its degree greater than 2 and its derivative is constant.
+:::
+
+:::exercise[2.10.12]{#ex-2-10-12}
+Whenever I have to choose between two evils, I choose the one I haven't tried yet. (*Mae West*)
+:::
+
+:::answer
+Sometimes, when I have to choose between two evils, I choose one that I have already tried.
+:::

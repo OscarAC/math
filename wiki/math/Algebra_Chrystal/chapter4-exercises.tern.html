@@ -1,0 +1,265 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><title>Chrystal, Algebra, Chapter IV: Distribution of Products</title><meta name="description" content="Worked solutions to selected exercises from chapter IV of G. Chrystal, Algebra: An Elementary Text-Book, Part I (1886)."><script src="https://cdn.jsdelivr.net/gh/OzkrAC/tern@v0.4.2/tern.js" data-use="../../../lib/math.js ../../../lib/site.js https://cdn.jsdelivr.net/gh/OzkrAC/tern@v0.4.2/addons/katex.js ../../../lib/site.css"></script>
+
+{.kicker}
+Worked solutions to selected exercises from\
+G. Chrystal, *Algebra: An Elementary Text-Book*, Part I (1886)
+
+# Distribution of Products—Elements of the Theory of Rational Integral Functions {#chapter-4}
+
+## Exercises V {#exercises-v}
+
+:::exercise[V.1]{#ex-v-1}
+How many terms are there in the distributed product
+
+$$
+(a_1+a_2)(b_1+b_2+b_3)(c_1+c_2+c_3+c_4)(d_1+d_2+d_3+d_4+d_5)?
+$$
+:::
+
+:::answer
+$2 \times 3 \times 4 \times 5 = 120$ terms
+:::
+
+:::exercise[V.6]{#ex-v-6}
+Distribute, condense, and arrange—
+
+$$
+(b+c)(c+a)(a+b)(b-c)(c-a)(a-b).
+$$
+:::
+
+:::answer
+$$
+\begin{align*}
+\MoveEqLeft
+(b+c)(c+a)(a+b)(b-c)(c-a)(a-b) \\
+&= (b+c)(b-c)(c+a)(c-a)(a+b)(a-b) && \text{(commutation)}\\
+&= (b^2-c^2)(c^2-a^2)(a^2-b^2) && \text{(by 3.)}\\
+&= b^2c^4-b^4c^2+c^2a^4-c^4a^2+a^2b^2-a^4b^2 && \text{(by 11.)}
+\end{align*}
+$$
+:::
+
+:::exercise[V.11]{#ex-v-11}
+Write down all the quaternary products of the three letters $x$, $y$, $z$; point out how many different types they fall into, and how many products there are of each type.
+:::
+
+:::answer
+$x^4, x^3y, x^3z, x^2y^2, x^2yz, x^2z^2, xy^3, xy^2z, xyz^2, xz^3, y^4, y^3z, y^2z^2, yz^3, z^4$
+
+These terms fall into four types; of the type $x^4$ there are three products, $x^4$, $y^4$, $z^4$; of the type $x^3y$ six, $x^3y$, $x^3z$, $xy^3$, $xz^3$, $y^3z$, $yz^3$; of the type $x^2y^2$ three, $x^2y^2$, $x^2z^2$, $y^2z^2$; and of the type $x^2yz$ three, $x^2yz$, $xy^2z$, $xyz^2$.
+:::
+
+:::exercise[V.13]{#ex-v-13}
+Find the sum of the coefficients in the expansion of $(2a+3b+4c)^3$.
+:::
+
+:::answer
+$(2+3+4)^3 = 9^3 = 729$
+:::
+
+:::exercise[V.17]{#ex-v-17}
+Distribute and condense, arranging terms of the same type together—
+
+$$
+(b+c)(y+z) + (c+a)(z+x) + (a+b)(x+y) - (a+b+c)(x+y+z).
+$$
+:::
+
+:::answer
+$$
+\begin{align*}
+\MoveEqLeft
+(b+c)(y+z) + (c+a)(z+x) + (a+b)(x+y) - (a+b+c)(x+y+z) \\
+&=\left[(b+c)(y+z) + (c+a)(z+x) + (a+b)(x+y)\right] - \left[(a+b+c)(x+y+z)\right] \\
+&= \left[2by+2cz+2ax+bz+cy+cx+az+ay+bx\right] \\
+& \quad - \left[ ax+ay+az+bx+by+bz+cx+cy+cz \right]\\
+&= 2by+2cz+2ax+bz+cy+cx+az+ay+bx\\
+& \quad -ax-ay-az-bx-by-bz-cx-cy-cz\\
+&= by+cz+ax
+\end{align*}
+$$
+:::
+
+## Exercises VI {#exercises-vi}
+
+:::exercise[VI.1]{#ex-vi-1}
+The variables being $x$, $y$, $z$, point out the integral functions among the following, and state their degree—
+
+{.parts}
+1. $3x^2 + 2xy + 3y^2$;
+2. $\dfrac{3}{x^2} + \dfrac{2}{xy} + \dfrac{3}{y^2}$;
+3. $x^2yz + y^2zx + z^2xy + x^3 + y^3 + z^3$;
+4. $\dfrac{x^2y^3z^2}{x^2yz} + \dfrac{x^2y^3z^2}{xy^2z} + \dfrac{x^2y^3z^2}{xyz^2}$.
+:::
+
+:::answer
+{.parts}
+1. Integral function of degree 2;
+2. Not an integral function;
+3. Integral function of degree 3;
+4. Integral function of degree 2.
+:::
+
+:::exercise[VI.8]{#ex-vi-8}
+Distribute, and arrange according to powers of $x$—
+
+$$
+\{ax+(b-c)y\}\{bx+(c-a)y\}\{cx+(a-b)y\};
+$$
+
+and show that the sum of the coefficients of $x^2y$ and $y^3$ is zero.
+:::
+
+:::answer
+Taking first the terms in which $y$ does not occur, then those in which it occurs once, twice, and thrice,
+
+$$
+\begin{align*}
+\{ax+(b-c)y\}&\{bx+(c-a)y\}\{cx+(a-b)y\}\\
+&= abc\,x^3 + \{ab(a-b) + bc(b-c) + ca(c-a)\}x^2y\\
+&\quad + \{a(c-a)(a-b) + b(b-c)(a-b) + c(b-c)(c-a)\}xy^2\\
+&\quad + (b-c)(c-a)(a-b)\,y^3 .
+\end{align*}
+$$
+
+Write this result $\mathrm{A}_3x^3 + \mathrm{A}_2x^2y + \mathrm{A}_1xy^2 + \mathrm{A}_0y^3$. The terms in $x^2y$ and $y^3$ are those in which $y$ occurs an odd number of times, and may therefore be separated from the rest by giving $y$ the values $1$ and $-1$ in turn. Putting $x=1$, $y=1$, and again $x=1$, $y=-1$, we have
+
+$$
+\begin{align*}
+\mathrm{A}_3 + \mathrm{A}_2 + \mathrm{A}_1 + \mathrm{A}_0 &= (a+b-c)(b+c-a)(c+a-b),\\
+\mathrm{A}_3 - \mathrm{A}_2 + \mathrm{A}_1 - \mathrm{A}_0 &= (a-b+c)(a+b-c)(b+c-a).
+\end{align*}
+$$
+
+Subtracting, $2(\mathrm{A}_2 + \mathrm{A}_0) = 0$; that is, the sum of the coefficients of $x^2y$ and $y^3$ is zero.
+:::
+
+:::exercise[VI.10]{#ex-vi-10}
+Show that
+
+$$
+\begin{align*}
+\MoveEqLeft
+\left(x+\frac{q}{r}y\right)\left(x+\frac{r}{p}y\right)\left(x+\frac{p}{q}y\right)
+- \left(x+\frac{r}{q}y\right)\left(x+\frac{p}{r}y\right)\left(x+\frac{q}{p}y\right)\\
+&= \frac{xy(x-y)(q-r)(r-p)(p-q)}{pqr}.
+\end{align*}
+$$
+:::
+
+:::answer
+Let $\mathrm{A} = \dfrac{q}{r} + \dfrac{r}{p} + \dfrac{p}{q}$ and $\mathrm{B} = \dfrac{q}{p} + \dfrac{r}{q} + \dfrac{p}{r}$.
+
+Then,
+
+$$
+\begin{align*}
+\MoveEqLeft
+\left(x+\frac{q}{r}y\right)\left(x+\frac{r}{p}y\right)\left(x+\frac{p}{q}y\right)
+- \left(x+\frac{r}{q}y\right)\left(x+\frac{p}{r}y\right)\left(x+\frac{q}{p}y\right)\\
+&= x^3 + \mathrm{A}x^2y + \mathrm{B}xy^2 + y^3 - \left(x^3 + \mathrm{B}x^2y + \mathrm{A}xy^2 + y^3\right)\\
+&= x^3 + \mathrm{A}x^2y + \mathrm{B}xy^2 + y^3 - x^3 - \mathrm{B}x^2y - \mathrm{A}xy^2 - y^3\\
+&= Ax^2y + \mathrm{B}xy^2 - \mathrm{B}x^2y - \mathrm{A}xy^2\\
+&= (A-B)x^2y - (A-B)xy^2\\
+&= (A-B)xy(x-y)
+\end{align*}
+$$
+
+It remains to evaluate $\mathrm{A}-\mathrm{B}$,
+
+$$
+\begin{align*}
+\mathrm{A}-\mathrm{B} &= \frac{pq^2 + qr^2 + p^2r}{pqr} - \frac{p^2q + q^2r + pr^2}{pqr}\\
+&= \frac{pq^2 + qr^2 + p^2r - p^2q - q^2r - pr^2}{pqr}\\
+&= \frac{(q-r)(r-p)(p-q)}{pqr}
+\end{align*}
+$$
+
+Therefore the difference of the two products is
+
+$$
+\frac{xy(x-y)(q-r)(r-p)(p-q)}{pqr}.
+$$
+:::
+
+:::exercise[VI.26]{#ex-vi-26}
+Calculate the coefficient of $x^4$ in the expansion of $(1+x+x^2)^8$.
+:::
+
+:::exercise[VI.29]{#ex-vi-29}
+Show that
+
+$$
+\begin{align*}
+{}_n\mathrm{C}_1 + {}_n\mathrm{C}_2 + {}_n\mathrm{C}_3 + \dotsb + {}_n\mathrm{C}_n &= 2^n - 1;\\
+1 + {}_n\mathrm{C}_2 + {}_n\mathrm{C}_4 + \dotsb &= {}_n\mathrm{C}_1 + {}_n\mathrm{C}_3 + {}_n\mathrm{C}_5 + \dotsb;\\
+{}_n\mathrm{C}_r &= {}_{n-2}\mathrm{C}_r + 2\,{}_{n-2}\mathrm{C}_{r-1} + {}_{n-2}\mathrm{C}_{r-2}.
+\end{align*}
+$$
+:::
+
+:::exercise[VI.30]{#ex-vi-30}
+There are five boxes each containing five counters marked with the numbers 0, 1, 2, 3, 4; a counter is drawn from each of the boxes and the numbers drawn are added together. In how many different ways can the drawing be made so that the sum of the numbers shall be 8?
+:::
+
+## Exercises VII {#exercises-vii}
+
+:::exercise[VII.3]{#ex-vii-3}
+Distribute, and arrange according to descending powers of $x$—
+
+$$
+(x-a)(x-2a)(x-3a)(x-4a)(x+a)(x+2a)(x+3a)(x+4a).
+$$
+:::
+
+:::exercise[VII.8]{#ex-vii-8}
+Distribute, and arrange according to descending powers of $x$—
+
+$$
+(2x-3)^{11}.
+$$
+:::
+
+:::exercise[VII.10]{#ex-vii-10}
+Distribute, and arrange according to descending powers of $x$—
+
+$$
+(x^2-1)^4(x+1)^{10}.
+$$
+:::
+
+## Exercises VIII {#exercises-viii}
+
+:::exercise[VIII.1]{#ex-viii-1}
+Write down the most general rational integral symmetrical function of $x$, $y$, $z$, $u$ of the 3rd degree.
+:::
+
+:::exercise[VIII.3]{#ex-viii-3}
+Construct a homogeneous integral function of $x$ and $y$ of the 1st degree which shall vanish when $x=y$, and become 1 when $x=5$ and $y=2$.
+:::
+
+:::exercise[VIII.6]{#ex-viii-6}
+If $\mathrm{A}(x-3)(x-5) + \mathrm{B}(x-5)(x-7) + \mathrm{C}(x-7)(x-3) = 8x-120$ for all values of $x$, determine the coefficients $\mathrm{A}$, $\mathrm{B}$, $\mathrm{C}$.
+:::
+
+:::exercise[VIII.9]{#ex-viii-9}
+Find a rational integral function of $x$ of the 3rd degree which shall have the values $\mathrm{P}$, $\mathrm{Q}$, $\mathrm{R}$, $\mathrm{S}$ when $x=a$, $x=b$, $x=c$, $x=d$ respectively.
+:::
+
+:::exercise[VIII.19]{#ex-viii-19}
+Prove the identity—
+
+$$
+\Sigma(x+y-z)\left\{(y-z)^2 - (z-x)(x-y)\right\} = \Sigma x^3 - 3xyz.
+$$
+:::
+
+:::exercise[VIII.21]{#ex-viii-21}
+Show that
+
+$$
+(x^3+y^3+z^3-3xyz)^2 = \mathrm{X}^3 + \mathrm{Y}^3 + \mathrm{Z}^3 - 3\mathrm{XYZ},
+\quad\text{where}\quad \mathrm{X} = x^2+2yz, \text{ \&c.}
+$$
+:::

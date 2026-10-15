@@ -1,0 +1,603 @@
+/* site.css: the look every page of ozkr.ac shares. A printed book: paper and
+   ink by day, a dark room by night, one serif for text and headings alike,
+   KaTeX for formulas. Every colour is a light-dark() pair, so one set of
+   tokens serves the system's scheme and the reader's choice (site.js sets
+   color-scheme through data-theme). Loaded after tern.js's own sheet, so it
+   only has to say what differs. */
+
+@import url("https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&display=swap");
+
+:root {
+  color-scheme: light dark;
+
+  --t-bg: light-dark(#faf8f2, #151412);
+  --t-fg: light-dark(#1e1c19, #e4e0d6);
+  --t-muted: light-dark(#6e685e, #9a958a);
+  --t-line: light-dark(#ddd7ca, #2c2a26);
+  --t-soft: light-dark(#f2eee4, #1d1c19);
+  --t-link: light-dark(#2c5a9b, #8fb4ec);
+  --t-mark: light-dark(#fbeeb4, #4a3f14);
+  --t-error: light-dark(#b3261e, #ff9b8f);
+  --t-error-bg: light-dark(#fdecea, #2a0c08);
+  --t-warn: light-dark(#8a5300, #e0b771);
+  --t-code-comment: light-dark(#59636e, #949da6);
+  --t-code-keyword: light-dark(#cf222e, #ff7b72);
+  --t-code-string: light-dark(#0a3069, #a5d6ff);
+  --t-code-number: light-dark(#0550ae, #79c0ff);
+  --t-code-function: light-dark(#6639ba, #d2a8ff);
+  --t-code-type: light-dark(#953800, #ffa657);
+  --t-code-variable: light-dark(#0550ae, #79c0ff);
+  --t-code-meta: light-dark(#116329, #7ee787);
+  --t-code-inserted: light-dark(#116329, #7ee787);
+  --t-code-deleted: light-dark(#82071e, #ffa198);
+
+  --t-font: "STIX Two Text", Charter, "Iowan Old Style", Georgia, serif;
+  --t-sans: "STIX Two Text", Charter, "Iowan Old Style", Georgia, serif;
+  --t-width: 42rem;
+  --t-size: 18px;
+  --t-leading: 1.6;
+
+  /* The kinds of block, each with a hue. */
+  --n-defn: light-dark(#0f6e63, #69d3c6); /* definition */
+  --n-thm: light-dark(#8a5a00, #e0b771); /* theorem, lemma, proposition, corollary, law; summary */
+  --n-eg: light-dark(#2f6f36, #95cf96); /* example */
+  --n-note: light-dark(#2c5a9b, #8cc3fc); /* note, recall */
+  --n-caution: light-dark(#9a3f2a, #f7a792); /* caution */
+  --n-violet: light-dark(#5e4a99, #c2b1f8); /* question, exercise numbers, references */
+  --n-exercise: var(--n-violet);
+  --n-question: var(--n-violet);
+  --n-summary: var(--n-thm);
+  --n-accent: var(--t-muted);
+}
+:root[data-theme="light"] {
+  color-scheme: light;
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--t-link) 25%, transparent);
+}
+
+/* The footer sits at the foot of a short page: the body is a column of
+   masthead, note and footer, as tall as the window at least. */
+html {
+  min-block-size: 100%;
+}
+body {
+  min-block-size: 100vh;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  padding-block: 2rem 3rem;
+}
+body > main.tern {
+  flex: 1 0 auto;
+  inline-size: 100%;
+}
+
+/* ------------------------------------------------------------ the chrome */
+
+/* The masthead: the mark and the name at the start, the sections at the end,
+   the section this page is in underlined. site.js adds it to every page but
+   the home page, which is its own masthead. */
+.site-head {
+  inline-size: 100%;
+  max-inline-size: var(--t-width);
+  margin: 0 auto 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem 1.5rem;
+  flex-wrap: wrap;
+  font-size: 0.9rem;
+}
+.site-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--t-fg);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+}
+.site-brand:hover {
+  color: var(--t-link);
+}
+.site-mark {
+  inline-size: 32px;
+  block-size: 32px;
+}
+.site-nav a {
+  color: var(--t-muted);
+  text-decoration: none;
+  margin-inline-start: 1.25rem;
+}
+.site-nav a:hover {
+  color: var(--t-link);
+}
+.site-nav a[aria-current] {
+  color: var(--t-fg);
+  text-decoration: underline;
+  text-decoration-color: var(--t-link);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.4em;
+}
+
+/* The footer: a hairline, a line of small print, the scheme switch. */
+.site-foot {
+  inline-size: 100%;
+  max-inline-size: var(--t-width);
+  margin: 5rem auto 0;
+  padding-block-start: 1rem;
+  border-block-start: 1px solid var(--t-line);
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem 1.5rem;
+  flex-wrap: wrap;
+  font-size: 0.85rem;
+  color: var(--t-muted);
+}
+.site-foot p {
+  margin: 0;
+}
+.site-foot a {
+  color: inherit;
+  text-decoration: none;
+}
+.site-foot a:hover {
+  color: var(--t-link);
+  text-decoration: underline;
+}
+.site-theme {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  text-decoration: underline dotted;
+  text-underline-offset: 0.2em;
+}
+.site-theme:hover {
+  color: var(--t-link);
+}
+
+/* The woodcut: black ink on white. multiply drops the white on paper; in
+   the dark it is inverted and screened, white ink on the dark. */
+.site-mark,
+.tern .logo img {
+  mix-blend-mode: multiply;
+}
+:root[data-theme="dark"] .site-mark,
+:root[data-theme="dark"] .tern .logo img {
+  mix-blend-mode: screen;
+  filter: invert(1) brightness(0.92);
+}
+
+/* The home page: the logo and the sections under it, centred. */
+.tern .logo,
+.tern .logo + .kicker {
+  text-align: center;
+}
+.tern .logo {
+  margin-block-start: 2rem;
+}
+.tern .logo img {
+  display: inline-block;
+}
+.tern .logo + .kicker {
+  font-size: 1rem;
+  margin-block-start: 1.5rem;
+}
+.tern .logo + .kicker a {
+  margin-inline: 0.35rem;
+}
+
+/* ------------------------------------------------------------ headings */
+
+.tern :is(h1, h2, h3, h4, h5, h6) {
+  font-family: var(--t-font);
+  font-weight: 600;
+  letter-spacing: -0.005em;
+  color: var(--t-fg);
+}
+.tern h1 {
+  font-size: 2.1rem;
+  line-height: 1.15;
+  margin-block: 0 2.25rem;
+}
+.tern h2 {
+  font-size: 1.4rem;
+  border: 0;
+  padding: 0;
+  margin-block: 3rem 1rem;
+}
+.tern h3 {
+  font-size: 1.12rem;
+  margin-block: 2rem 0.75rem;
+}
+.tern :is(h4, h5, h6) {
+  font-size: 1rem;
+  font-style: italic;
+  font-weight: 500;
+  color: var(--t-muted);
+}
+
+/* {.kicker} on the paragraph before the title: the small line above it, as
+   \titlehead sets it: the book a chapter's solutions follow. */
+.tern .kicker {
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--t-muted);
+  margin-block-end: 1rem;
+}
+.tern .kicker a {
+  color: inherit;
+  text-decoration: none;
+}
+.tern .kicker a:hover {
+  color: var(--t-link);
+  text-decoration: underline;
+}
+
+/* ------------------------------------------------------------ text */
+
+.tern a {
+  color: var(--t-link);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+  text-decoration-color: color-mix(in srgb, currentColor 45%, transparent);
+}
+.tern a:hover {
+  text-decoration-color: currentColor;
+}
+.tern a.t-ref {
+  color: inherit;
+  text-decoration: underline dotted;
+  text-decoration-color: var(--t-muted);
+}
+.tern a.t-ref:hover {
+  color: var(--t-link);
+  text-decoration-color: currentColor;
+}
+.tern .term {
+  font-style: inherit;
+  font-weight: 600;
+  color: var(--n-defn);
+}
+.tern blockquote {
+  border-inline-start: 2px solid var(--t-line);
+  color: var(--t-muted);
+}
+.tern hr {
+  margin-block: 2.5rem;
+}
+.tern th {
+  font-family: var(--t-font);
+  font-weight: 600;
+}
+.tern pre {
+  border: 1px solid var(--t-line);
+  border-radius: 4px;
+}
+
+/* {.parts} on the line before a numbered list: lettered a) b) c), */
+.tern .parts {
+  list-style-type: lower-alpha;
+}
+.tern .parts > li::marker {
+  content: counter(list-item, lower-alpha) ")\2002";
+}
+
+/* Formulas, at the size of the text around them. */
+.tern .katex {
+  font-size: 1.04em;
+}
+.t-eqno {
+  font-size: 0.9em;
+}
+
+/* ------------------------------------------------------------ labels */
+
+/* A label: small tracked capitals in its kind's colour; a title after it in
+   italic. */
+.tern :is(.defn, .thm, .eg, .exercise, .callout, .rmk) > .t-title > .t-label {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 0.74em;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--n-accent);
+  margin-inline-end: 0.6em;
+}
+.tern :is(.defn, .thm, .eg, .callout, .rmk) > .t-title {
+  font-weight: normal;
+  font-style: italic;
+  color: var(--t-muted);
+  margin-block-end: 0.35rem;
+}
+
+/* Definition, theorem and kin, example: a label, the kind's colour. */
+.tern :is(.defn, .thm, .eg) {
+  margin-block: 1.5rem;
+}
+.tern .defn {
+  --n-accent: var(--n-defn);
+}
+.tern .thm {
+  --n-accent: var(--n-thm);
+}
+.tern .eg {
+  --n-accent: var(--n-eg);
+}
+/* A statement is set in italic; emphasis inside it turns upright. */
+.tern .stmt > :not(.t-title) {
+  font-style: italic;
+}
+.tern .stmt :is(em, i) {
+  font-style: normal;
+}
+
+/* Proof, disproof: "Proof." run in with the first line, in italic, ∎ at the
+   end of the last. :::proof[of (a)] reads "Proof of (a)." */
+.tern .pf {
+  margin-block: 0 1.25rem;
+}
+.tern .pf > .t-title {
+  float: inline-start;
+  font-weight: normal;
+  font-style: italic;
+  color: var(--t-fg);
+  margin-block: 0;
+  margin-inline-end: 0.5em;
+}
+.tern .pf > .t-title > .t-label {
+  font-weight: normal;
+}
+.tern .pf > .t-title::after {
+  content: ".";
+}
+.tern .pf > :is(.t-eq, pre, table, figure, ul, ol) {
+  clear: both;
+}
+.tern .pf > :nth-last-child(2) {
+  margin-block-end: 0;
+}
+.tern .pf > .t-end {
+  clear: both;
+  color: var(--t-muted);
+  font-size: 0.8em;
+  line-height: 1.4;
+}
+
+/* Remark: a muted label, nothing more. */
+.tern .rmk {
+  --n-accent: var(--t-muted);
+}
+
+/* ------------------------------------------------------------ exercises */
+
+/* Exercise: the book's number in a small head, then the statement as the
+   book sets it; the answer below, indented behind a thin rule. */
+.tern .exercise {
+  margin-block: 2.25rem 0.75rem;
+}
+.tern .exercise > .t-title {
+  font-weight: 600;
+  font-size: 0.74rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--n-exercise);
+  margin-block-end: 0.3rem;
+}
+.tern .exercise > .t-title > .t-label {
+  color: var(--t-muted);
+  font-size: 1em;
+  letter-spacing: inherit;
+  margin-inline-end: 0.5em;
+}
+.tern .answer {
+  padding-inline-start: 1.25rem;
+  border-inline-start: 1px solid var(--t-line);
+  margin-block: 0 2.25rem;
+}
+.tern .answer > :last-child {
+  margin-block-end: 0;
+}
+
+/* Folds: hint, recall. A caret before the head turns when it opens. */
+.tern .fold > .t-title {
+  list-style: none;
+  cursor: pointer;
+  user-select: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--t-muted);
+}
+.tern .fold > .t-title::-webkit-details-marker {
+  display: none;
+}
+.tern .fold > .t-title::before {
+  content: "";
+  display: inline-block;
+  inline-size: 0.38em;
+  block-size: 0.38em;
+  margin-inline: 0.1em 0.65em;
+  vertical-align: 0.12em;
+  border-inline-end: 1.5px solid;
+  border-block-end: 1.5px solid;
+  transform: rotate(-45deg);
+  transition: transform 0.15s;
+}
+.tern .fold[open] > .t-title::before {
+  transform: rotate(45deg);
+}
+.tern .fold > .t-title:hover {
+  color: var(--t-fg);
+}
+.tern .fold:not(.callout) {
+  padding-inline-start: 1.25rem;
+}
+.tern .fold:not(.callout)[open] {
+  border-inline-start: 1px solid var(--t-line);
+}
+.tern .fold:not(.callout) > .t-title {
+  margin-inline-start: -1.25rem;
+  padding-inline-start: 1.25rem;
+}
+.tern .exercise + .fold {
+  margin-block-end: 0.75rem;
+}
+
+/* ------------------------------------------------------------ callouts */
+
+/* Summary, note, caution, question, recall: a soft panel, a rule at the side
+   in the kind's colour. */
+.tern .callout {
+  background: var(--t-soft);
+  border-inline-start: 2px solid var(--n-accent);
+  border-radius: 0 4px 4px 0;
+  padding: 0.75rem 1.1rem 0.8rem;
+  margin-block: 1.5rem;
+}
+.tern .callout.fold > .t-title {
+  font-size: 1em;
+  font-style: normal;
+  letter-spacing: normal;
+  color: var(--t-fg);
+}
+.tern .callout.fold:not([open]) > .t-title {
+  margin-block-end: 0;
+}
+.tern .callout > :last-child {
+  margin-block-end: 0;
+}
+.tern .note,
+.tern .recall {
+  --n-accent: var(--n-note);
+}
+.tern .caution {
+  --n-accent: var(--n-caution);
+}
+.tern .question {
+  --n-accent: var(--n-question);
+}
+.tern .summary {
+  --n-accent: var(--n-summary);
+}
+
+/* ------------------------------------------------------------ figures, contents */
+
+.tern :is(figcaption, caption).t-title .t-label {
+  font-weight: 600;
+  color: var(--t-fg);
+}
+.tern figure.t-block {
+  text-align: center;
+}
+
+.tern .toc {
+  font-size: 0.92rem;
+  margin-block: 0 2.5rem;
+}
+.tern .toc > .t-label {
+  display: block;
+  font-size: 0.74rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--t-muted);
+  margin-block-end: 0.5rem;
+}
+.tern .toc ol {
+  margin: 0;
+  padding-inline-start: 1.4rem;
+}
+.tern .toc li::marker {
+  color: var(--t-muted);
+}
+.tern .toc a {
+  color: var(--t-fg);
+  text-decoration: none;
+}
+.tern .toc a:hover {
+  color: var(--t-link);
+}
+
+/* ------------------------------------------------------------ search, notes */
+
+/* ::search (addons/search.js): the box in the text's type, hits as a list
+   under hairlines. ::notes (addons/notes.js): the same list, for posts. */
+.tern .t-search {
+  margin-block: 1.5rem 2rem;
+}
+.tern .t-search-box {
+  font-family: var(--t-font);
+  font-size: 1rem;
+  padding: 0.55rem 0.8rem;
+  border-radius: 4px;
+  background: var(--t-soft);
+}
+.tern .t-search-box:focus-visible {
+  outline: 1px solid var(--t-link);
+  outline-offset: 0;
+  border-color: var(--t-link);
+}
+.tern :is(.t-search-status, .t-notes-status) {
+  font-size: 0.85rem;
+  color: var(--t-muted);
+}
+.tern :is(.t-search-results, .t-notes-list) > li {
+  padding-block: 0.7rem;
+  border-block-start: 1px solid var(--t-line);
+}
+.tern :is(.t-search-label, .t-notes-title) {
+  font-weight: 600;
+  color: var(--t-fg);
+}
+.tern .t-search-results a:hover :is(.t-search-title, .t-search-label),
+.tern .t-notes-title:hover {
+  color: var(--t-link);
+}
+.tern :is(.t-search-page, .t-notes-date) {
+  font-family: var(--t-font);
+  font-size: 0.85rem;
+  color: var(--t-muted);
+  margin-inline-start: 0.6em;
+}
+.tern :is(.t-search-snippet, .t-notes-desc) {
+  margin-block: 0.25rem 0;
+  font-size: 0.95rem;
+  color: var(--t-fg);
+}
+
+/* ------------------------------------------------------------ print */
+
+@media print {
+  :root,
+  :root[data-theme] {
+    color-scheme: light;
+    --t-bg: #fff;
+    --t-fg: #000;
+    --t-muted: #555;
+    --t-line: #cfcfcf;
+    --t-soft: #f4f4f2;
+    --t-size: 11pt;
+  }
+  .site-head,
+  .site-foot {
+    display: none;
+  }
+  .tern :is(.defn, .thm, .eg, .exercise, .callout) {
+    break-inside: avoid;
+  }
+  .tern .exercise {
+    break-after: avoid;
+  }
+  .tern .fold > .t-title::before {
+    content: none;
+  }
+}

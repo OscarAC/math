@@ -1,0 +1,20 @@
+#!/bin/sh
+# Before every commit: the tracked notes are checked, and the catalogue and
+# search index of each section (notes.json, search.json) are written again
+# and staged, so that the committed tree is always consistent.
+# Set up once per clone:  git config core.hooksPath .githooks
+set -e
+cd "$(git rev-parse --show-toplevel)"
+
+if ! command -v tern >/dev/null 2>&1; then
+  echo "pre-commit: tern is not on PATH; run npm link in the Tern checkout" >&2
+  exit 1
+fi
+
+# Only tracked notes are checked and indexed: a private note (gitignored)
+# never reaches the check or the published files.
+git ls-files -z -- '*.html' | xargs -0 tern check --fail-on=warning --quiet
+
+tern index wiki -o wiki
+tern index blog -o blog
+git add wiki/notes.json wiki/search.json blog/notes.json blog/search.json
