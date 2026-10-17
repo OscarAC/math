@@ -17,7 +17,6 @@
 *.ilg
 *.ind
 *.xdv
-*notes.tern.html
 
-# Agent skill, a symlink into the Tern checkout
-.claude/skills/tern-notes
+# Reading notes and anything else that stays off the site
+private/

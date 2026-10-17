@@ -43,8 +43,7 @@
   --n-eg: light-dark(#2f6f36, #95cf96); /* example */
   --n-note: light-dark(#2c5a9b, #8cc3fc); /* note, recall */
   --n-caution: light-dark(#9a3f2a, #f7a792); /* caution */
-  --n-violet: light-dark(#5e4a99, #c2b1f8); /* question, exercise numbers, references */
-  --n-exercise: var(--n-violet);
+  --n-violet: light-dark(#5e4a99, #c2b1f8); /* question, references */
   --n-question: var(--n-violet);
   --n-summary: var(--n-thm);
   --n-accent: var(--t-muted);
@@ -303,7 +302,7 @@ body > main.tern {
 
 /* A label: small tracked capitals in its kind's colour; a title after it in
    italic. */
-.tern :is(.defn, .thm, .eg, .exercise, .callout, .rmk) > .t-title > .t-label {
+.tern :is(.defn, .thm, .eg, .callout, .rmk) > .t-title > .t-label {
   font-style: normal;
   font-weight: 600;
   font-size: 0.74em;
@@ -377,37 +376,7 @@ body > main.tern {
   --n-accent: var(--t-muted);
 }
 
-/* ------------------------------------------------------------ exercises */
-
-/* Exercise: the book's number in a small head, then the statement as the
-   book sets it; the answer below, indented behind a thin rule. */
-.tern .exercise {
-  margin-block: 2.25rem 0.75rem;
-}
-.tern .exercise > .t-title {
-  font-weight: 600;
-  font-size: 0.74rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--n-exercise);
-  margin-block-end: 0.3rem;
-}
-.tern .exercise > .t-title > .t-label {
-  color: var(--t-muted);
-  font-size: 1em;
-  letter-spacing: inherit;
-  margin-inline-end: 0.5em;
-}
-.tern .answer {
-  padding-inline-start: 1.25rem;
-  border-inline-start: 1px solid var(--t-line);
-  margin-block: 0 2.25rem;
-}
-.tern .answer > :last-child {
-  margin-block-end: 0;
-}
-
-/* Folds: hint, recall. A caret before the head turns when it opens. */
+/* Folds: recall. A caret before the head turns when it opens. */
 .tern .fold > .t-title {
   list-style: none;
   cursor: pointer;
@@ -447,9 +416,6 @@ body > main.tern {
 .tern .fold:not(.callout) > .t-title {
   margin-inline-start: -1.25rem;
   padding-inline-start: 1.25rem;
-}
-.tern .exercise + .fold {
-  margin-block-end: 0.75rem;
 }
 
 /* ------------------------------------------------------------ callouts */
@@ -591,11 +557,8 @@ body > main.tern {
   .site-foot {
     display: none;
   }
-  .tern :is(.defn, .thm, .eg, .exercise, .callout) {
+  .tern :is(.defn, .thm, .eg, .callout) {
     break-inside: avoid;
-  }
-  .tern .exercise {
-    break-after: avoid;
   }
   .tern .fold > .t-title::before {
     content: none;
